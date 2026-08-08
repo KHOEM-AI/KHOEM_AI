@@ -1,0 +1,1236 @@
+
+2026-08-07 01:05:49,260 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: No module named 'routes.voice_routes'
+2026-08-07 01:05:49,313 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/khoem-new/database/khoem_ai.db
+2026-08-07 01:05:49,329 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-07 01:05:49,388 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-07 01:05:49,389 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-07 01:05:49,391 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-07 01:05:50,286 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: No module named 'routes.voice_routes'
+2026-08-07 01:05:50,310 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/khoem-new/database/khoem_ai.db
+2026-08-07 01:05:50,326 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-07 01:05:50,375 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-07 01:05:50,450 [INFO] [khoem_ai]  * Debugger PIN: 573-364-647
+2026-08-07 01:07:04,917 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:04] "GET / HTTP/1.1" 200 -
+2026-08-07 01:07:05,010 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-08-07 01:07:05,059 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "GET /static/css/khoem_ai_nexus.css HTTP/1.1" 200 -
+2026-08-07 01:07:05,082 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "GET /static/css/khoemai.css HTTP/1.1" 200 -
+2026-08-07 01:07:05,100 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "GET /static/css/magnifying_glass.css HTTP/1.1" 200 -
+2026-08-07 01:07:05,128 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "GET /static/js/khoem_ai_nexus_hub.js HTTP/1.1" 200 -
+2026-08-07 01:07:05,169 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "GET /static/js/voice.js HTTP/1.1" 200 -
+2026-08-07 01:07:05,181 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "GET /static/js/gps.js HTTP/1.1" 200 -
+2026-08-07 01:07:05,185 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "GET /static/js/video_khoemai.js HTTP/1.1" 200 -
+2026-08-07 01:07:05,214 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "GET /static/js/khoemai.js HTTP/1.1" 200 -
+2026-08-07 01:07:05,240 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2026-08-07 01:07:05,282 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "GET /static/js/settings.js HTTP/1.1" 200 -
+2026-08-07 01:07:05,320 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "GET /static/js/map.js HTTP/1.1" 200 -
+2026-08-07 01:07:05,340 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "GET /static/js/camera.js HTTP/1.1" 200 -
+2026-08-07 01:07:05,360 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "GET /static/js/navigator.js HTTP/1.1" 200 -
+2026-08-07 01:07:05,362 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "GET /static/js/magnifying_glass.js HTTP/1.1" 200 -
+2026-08-07 01:07:05,484 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 01:07:05,500 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 01:07:05,518 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-07 01:07:05,529 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:05] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 01:07:57,307 [ERROR] [khoem_ai] Groq HTTP error: 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions — {"error":{"message":"Invalid API Key","type":"invalid_request_error","code":"invalid_api_key"}}
+
+2026-08-07 01:07:57,320 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:07:57] "[35m[1mPOST /api/chat HTTP/1.1[0m" 502 -
+2026-08-07 01:08:03,471 [ERROR] [khoem_ai] Groq HTTP error: 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions — {"error":{"message":"Invalid API Key","type":"invalid_request_error","code":"invalid_api_key"}}
+
+2026-08-07 01:08:03,492 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:08:03] "[35m[1mPOST /api/chat HTTP/1.1[0m" 502 -
+2026-08-07 01:08:27,035 [ERROR] [khoem_ai] Groq HTTP error: 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions — {"error":{"message":"Invalid API Key","type":"invalid_request_error","code":"invalid_api_key"}}
+
+2026-08-07 01:08:27,045 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:08:27] "[35m[1mPOST /api/chat HTTP/1.1[0m" 502 -
+2026-08-07 01:32:30,922 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: No module named 'routes.voice_routes'
+2026-08-07 01:32:30,962 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/khoem-new/database/khoem_ai.db
+2026-08-07 01:32:30,979 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-07 01:32:31,096 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-07 01:32:31,096 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-07 01:32:31,101 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-07 01:32:31,992 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: No module named 'routes.voice_routes'
+2026-08-07 01:32:32,016 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/khoem-new/database/khoem_ai.db
+2026-08-07 01:32:32,032 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-07 01:32:32,080 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-07 01:32:32,166 [INFO] [khoem_ai]  * Debugger PIN: 203-649-911
+2026-08-07 01:32:42,694 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:42] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 01:32:47,009 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "GET / HTTP/1.1" 200 -
+2026-08-07 01:32:47,105 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2026-08-07 01:32:47,221 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-07 01:32:47,227 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-07 01:32:47,245 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-07 01:32:47,258 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-07 01:32:47,292 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-07 01:32:47,299 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-07 01:32:47,328 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-07 01:32:47,404 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-07 01:32:47,411 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-07 01:32:47,430 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-07 01:32:47,459 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-07 01:32:47,462 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-07 01:32:47,490 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 01:32:47,494 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 01:32:47,596 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 01:32:47,612 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-07 01:32:47,604 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 01:32:47,637 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:47] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 01:32:56,010 [ERROR] [khoem_ai] Groq HTTP error: 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions — {"error":{"message":"Invalid API Key","type":"invalid_request_error","code":"invalid_api_key"}}
+
+2026-08-07 01:32:56,024 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:32:56] "[35m[1mPOST /api/chat HTTP/1.1[0m" 502 -
+2026-08-07 01:54:16,190 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: No module named 'routes.voice_routes'
+2026-08-07 01:54:16,215 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/khoem-new/database/khoem_ai.db
+2026-08-07 01:54:16,231 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-07 01:54:16,288 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-07 01:54:16,289 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-07 01:54:16,291 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-07 01:54:17,182 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: No module named 'routes.voice_routes'
+2026-08-07 01:54:17,206 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/khoem-new/database/khoem_ai.db
+2026-08-07 01:54:17,222 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-07 01:54:17,265 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-07 01:54:17,307 [INFO] [khoem_ai]  * Debugger PIN: 746-037-955
+2026-08-07 01:55:23,405 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:23] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 01:55:27,986 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:27] "GET / HTTP/1.1" 200 -
+2026-08-07 01:55:28,080 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2026-08-07 01:55:28,145 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-07 01:55:28,152 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-07 01:55:28,168 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-07 01:55:28,191 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-07 01:55:28,233 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-07 01:55:28,277 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-07 01:55:28,349 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-07 01:55:28,361 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-07 01:55:28,397 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-07 01:55:28,415 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-07 01:55:28,464 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-07 01:55:28,476 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-07 01:55:28,494 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 01:55:28,506 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 01:55:28,578 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 01:55:28,586 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 01:55:28,601 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-07 01:55:28,613 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:28] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 01:55:51,360 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:55:51] "POST /api/chat HTTP/1.1" 200 -
+2026-08-07 01:59:13,985 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:59:13] "[33mPOST /api/auth/google HTTP/1.1[0m" 404 -
+2026-08-07 01:59:47,928 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 01:59:47] "[33mPOST /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 02:00:04,502 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 02:00:04] "[31m[1mPOST / HTTP/1.1[0m" 405 -
+2026-08-07 02:00:41,053 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 02:00:41] "[33mGET /api/auth/google HTTP/1.1[0m" 404 -
+2026-08-07 02:00:48,873 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 02:00:48] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 02:01:49,902 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 02:01:49] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 02:02:13,888 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 02:02:13] "POST /api/chat HTTP/1.1" 200 -
+2026-08-07 02:06:51,617 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 02:06:51] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 08:28:03,695 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: No module named 'routes.voice_routes'
+2026-08-07 08:28:03,733 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/khoem-new/database/khoem_ai.db
+2026-08-07 08:28:03,751 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-07 08:28:03,893 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-07 08:28:03,894 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-07 08:28:03,900 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-07 08:28:04,787 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: No module named 'routes.voice_routes'
+2026-08-07 08:28:04,811 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/khoem-new/database/khoem_ai.db
+2026-08-07 08:28:04,827 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-07 08:28:04,872 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-07 08:28:04,948 [INFO] [khoem_ai]  * Debugger PIN: 555-259-532
+2026-08-07 08:28:21,221 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "GET / HTTP/1.1" 200 -
+2026-08-07 08:28:21,661 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-07 08:28:21,690 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-07 08:28:21,709 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-07 08:28:21,710 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-07 08:28:21,750 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:21,754 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:21,779 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:21,784 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:21,794 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:21,876 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:21,894 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:21,902 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:21,918 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:21,936 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:21,947 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2026-08-07 08:28:21,994 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:21] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 08:28:22,014 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 08:28:22,025 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 08:28:22,030 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-07 08:28:22,103 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "GET / HTTP/1.1" 200 -
+2026-08-07 08:28:22,427 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-07 08:28:22,447 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2026-08-07 08:28:22,482 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-07 08:28:22,493 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-07 08:28:22,510 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-07 08:28:22,546 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:22,566 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:22,589 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:22,618 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:22,626 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:22,675 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:22,681 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:22,694 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:22,708 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:22,736 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 08:28:22,771 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 08:28:22,792 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-07 08:28:22,823 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 08:28:22,857 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:28:22] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 08:29:22,307 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:29:22] "POST /api/chat HTTP/1.1" 200 -
+2026-08-07 08:29:39,368 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:29:39] "POST /api/chat HTTP/1.1" 200 -
+2026-08-07 08:29:52,133 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:29:52] "POST /api/chat HTTP/1.1" 200 -
+2026-08-07 08:30:45,805 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:30:45] "POST /api/chat HTTP/1.1" 200 -
+2026-08-07 08:31:21,040 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:31:21] "POST /api/chat HTTP/1.1" 200 -
+2026-08-07 08:33:30,045 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:33:30] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 08:33:36,151 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:33:36] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 08:33:46,081 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:33:46] "[33mGET /api/auth/google HTTP/1.1[0m" 404 -
+2026-08-07 08:34:56,239 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 08:34:56] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 10:38:41,104 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: No module named 'routes.voice_routes'
+2026-08-07 10:38:41,159 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/khoem-new/database/khoem_ai.db
+2026-08-07 10:38:41,160 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-07 10:38:41,320 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-07 10:38:41,320 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-07 10:38:41,340 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-07 10:38:42,313 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: No module named 'routes.voice_routes'
+2026-08-07 10:38:42,340 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/khoem-new/database/khoem_ai.db
+2026-08-07 10:38:42,341 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-07 10:38:42,407 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-07 10:38:42,488 [INFO] [khoem_ai]  * Debugger PIN: 634-155-669
+2026-08-07 10:39:00,633 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:00] "GET / HTTP/1.1" 200 -
+2026-08-07 10:39:00,974 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:00] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-08-07 10:39:00,992 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:00] "GET /static/css/khoem_ai_nexus.css HTTP/1.1" 200 -
+2026-08-07 10:39:01,004 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "GET /static/css/khoemai.css HTTP/1.1" 200 -
+2026-08-07 10:39:01,023 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "GET /static/css/magnifying_glass.css HTTP/1.1" 200 -
+2026-08-07 10:39:01,185 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "GET /static/js/settings.js HTTP/1.1" 200 -
+2026-08-07 10:39:01,192 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "GET /static/js/voice.js HTTP/1.1" 200 -
+2026-08-07 10:39:01,208 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "GET /static/js/gps.js HTTP/1.1" 200 -
+2026-08-07 10:39:01,258 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "GET /static/js/map.js HTTP/1.1" 200 -
+2026-08-07 10:39:01,269 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "GET /static/js/camera.js HTTP/1.1" 200 -
+2026-08-07 10:39:01,285 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "GET /static/js/navigator.js HTTP/1.1" 200 -
+2026-08-07 10:39:01,331 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "GET /static/js/magnifying_glass.js HTTP/1.1" 200 -
+2026-08-07 10:39:01,333 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "GET /static/js/video_khoemai.js HTTP/1.1" 200 -
+2026-08-07 10:39:01,358 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "GET /static/js/khoem_ai_nexus_hub.js HTTP/1.1" 200 -
+2026-08-07 10:39:01,363 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "GET /static/js/khoemai.js HTTP/1.1" 200 -
+2026-08-07 10:39:01,420 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 10:39:01,426 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-07 10:39:01,437 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:01] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 10:39:02,542 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:02] "GET / HTTP/1.1" 200 -
+2026-08-07 10:39:02,937 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-07 10:39:03,016 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-07 10:39:03,044 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-07 10:39:03,057 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-07 10:39:03,072 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-07 10:39:03,092 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-07 10:39:03,096 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-07 10:39:03,113 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-07 10:39:03,146 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-07 10:39:03,150 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-07 10:39:03,169 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-07 10:39:03,186 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 10:39:03,196 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-07 10:39:03,214 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 10:39:03,326 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 10:39:03,335 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-07 10:39:03,341 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:39:03] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 10:44:03,731 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 10:44:03] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 20:22:41,124 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: No module named 'routes.voice_routes'
+2026-08-07 20:22:41,162 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/khoem-new/database/khoem_ai.db
+2026-08-07 20:22:41,162 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-07 20:22:41,308 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-07 20:22:41,309 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-07 20:22:41,326 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-07 20:22:42,289 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: No module named 'routes.voice_routes'
+2026-08-07 20:22:42,318 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/khoem-new/database/khoem_ai.db
+2026-08-07 20:22:42,318 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-07 20:22:42,385 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-07 20:22:42,462 [INFO] [khoem_ai]  * Debugger PIN: 293-576-071
+2026-08-07 20:22:52,083 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "GET / HTTP/1.1" 200 -
+2026-08-07 20:22:52,321 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-08-07 20:22:52,381 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-07 20:22:52,371 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-07 20:22:52,403 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-07 20:22:52,445 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:52,471 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:52,474 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:52,496 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:52,532 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:52,535 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:52,553 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:52,573 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:52,586 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:52,592 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:52,677 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 20:22:52,693 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-07 20:22:52,702 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:52] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 20:22:53,249 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "GET / HTTP/1.1" 200 -
+2026-08-07 20:22:53,702 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-07 20:22:53,723 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-07 20:22:53,745 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-07 20:22:53,768 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:53,774 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-07 20:22:53,791 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:53,808 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:53,831 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:53,837 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:53,841 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:53,864 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:53,869 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:53,881 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:53,902 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 20:22:53,996 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:53] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 20:22:54,024 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:54] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 20:22:54,029 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:54] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-07 20:22:54,254 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:22:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-07 20:23:04,049 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "GET / HTTP/1.1" 200 -
+2026-08-07 20:23:04,227 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-07 20:23:04,249 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-07 20:23:04,258 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-07 20:23:04,282 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-07 20:23:04,288 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-07 20:23:04,310 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-07 20:23:04,340 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-07 20:23:04,342 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-07 20:23:04,362 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-07 20:23:04,381 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-07 20:23:04,407 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-07 20:23:04,416 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 20:23:04,421 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-07 20:23:04,455 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 20:23:04,509 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 20:23:04,516 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-07 20:23:04,526 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:04] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 20:23:19,205 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:19] "POST /api/chat HTTP/1.1" 200 -
+2026-08-07 20:23:33,325 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:23:33] "POST /api/chat HTTP/1.1" 200 -
+2026-08-07 20:25:09,489 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:25:09] "POST /api/chat HTTP/1.1" 200 -
+2026-08-07 20:26:23,492 [ERROR] [khoem_ai] Groq Vision HTTP error: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions — {"error":{"message":"The model `llava-v1.5-7b-4096-preview` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.","type":"invalid_request_error","code":"model_decommissioned"}}
+
+2026-08-07 20:26:23,512 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:26:23] "[35m[1mPOST /api/vision HTTP/1.1[0m" 502 -
+2026-08-07 20:28:04,981 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:28:04] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 20:34:24,991 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 20:34:24] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 22:00:55,997 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: cannot import name 'navigator_engine' from 'core.navigator_engine' (/data/data/com.termux/files/home/khoem-new/core/navigator_engine.py)
+2026-08-07 22:00:56,024 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-07 22:00:56,025 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=False)
+2026-08-07 22:00:56,090 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-07 22:00:56,091 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-07 22:02:29,715 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:29] "GET / HTTP/1.1" 200 -
+2026-08-07 22:02:29,964 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:29] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-08-07 22:02:30,000 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "GET /static/css/khoem_ai_nexus.css HTTP/1.1" 200 -
+2026-08-07 22:02:30,020 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "GET /static/css/khoemai.css HTTP/1.1" 200 -
+2026-08-07 22:02:30,028 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "GET /static/css/magnifying_glass.css HTTP/1.1" 200 -
+2026-08-07 22:02:30,089 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "GET /static/js/settings.js HTTP/1.1" 200 -
+2026-08-07 22:02:30,090 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "GET /static/js/voice.js HTTP/1.1" 200 -
+2026-08-07 22:02:30,096 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "GET /static/js/gps.js HTTP/1.1" 200 -
+2026-08-07 22:02:30,130 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "GET /static/js/map.js HTTP/1.1" 200 -
+2026-08-07 22:02:30,151 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "GET /static/js/navigator.js HTTP/1.1" 200 -
+2026-08-07 22:02:30,152 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "GET /static/js/camera.js HTTP/1.1" 200 -
+2026-08-07 22:02:30,172 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "GET /static/js/magnifying_glass.js HTTP/1.1" 200 -
+2026-08-07 22:02:30,193 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "GET /static/js/video_khoemai.js HTTP/1.1" 200 -
+2026-08-07 22:02:30,203 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "GET /static/js/khoem_ai_nexus_hub.js HTTP/1.1" 200 -
+2026-08-07 22:02:30,225 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "GET /static/js/khoemai.js HTTP/1.1" 200 -
+2026-08-07 22:02:30,281 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 22:02:30,288 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-07 22:02:30,296 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 22:02:30,666 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:30] "GET / HTTP/1.1" 200 -
+2026-08-07 22:02:31,072 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-07 22:02:31,116 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-07 22:02:31,164 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-07 22:02:31,168 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-07 22:02:31,173 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-07 22:02:31,180 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-07 22:02:31,204 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-07 22:02:31,214 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-07 22:02:31,247 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-07 22:02:31,266 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-07 22:02:31,275 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-07 22:02:31,285 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 22:02:31,303 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-07 22:02:31,318 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 22:02:31,471 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 22:02:31,479 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-07 22:02:31,487 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 22:02:31,884 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-07 22:02:51,709 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 22:02:51] "[35m[1mPOST /api/chat HTTP/1.1[0m" 502 -
+2026-08-07 22:12:29,481 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: cannot import name 'navigator_engine' from 'core.navigator_engine' (/data/data/com.termux/files/home/khoem-new/core/navigator_engine.py)
+2026-08-07 22:12:29,524 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-07 22:12:29,525 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-07 22:12:29,526 [WARNING] [khoem_ai] Python-dotenv could not parse statement starting at line 1
+2026-08-07 22:12:29,892 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-07 22:12:29,893 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-07 22:12:29,913 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-07 22:12:31,303 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: cannot import name 'navigator_engine' from 'core.navigator_engine' (/data/data/com.termux/files/home/khoem-new/core/navigator_engine.py)
+2026-08-07 22:12:31,335 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-07 22:12:31,336 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-07 22:12:31,337 [WARNING] [khoem_ai] Python-dotenv could not parse statement starting at line 1
+2026-08-07 22:12:31,411 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-07 22:12:31,480 [INFO] [khoem_ai]  * Debugger PIN: 203-185-126
+2026-08-07 23:36:40,634 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:40] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 23:36:47,630 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:47] "GET / HTTP/1.1" 200 -
+2026-08-07 23:36:47,890 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-07 23:36:47,957 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:47] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-07 23:36:47,959 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:47] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-07 23:36:48,015 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:48] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-07 23:36:48,028 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:48] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-07 23:36:48,040 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:48] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-07 23:36:48,052 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:48] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-07 23:36:48,061 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:48] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-07 23:36:48,075 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:48] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-07 23:36:48,093 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:48] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-07 23:36:48,120 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:48] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 23:36:48,126 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:48] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-07 23:36:48,148 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:48] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-07 23:36:48,156 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:48] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-07 23:36:48,246 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:48] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-07 23:36:48,249 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:48] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-07 23:36:48,278 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:36:48] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-07 23:39:03,359 [INFO] [khoem_ai] 127.0.0.1 - - [07/Aug/2026 23:39:03] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 00:43:25,199 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:25] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 00:43:34,485 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:34] "GET / HTTP/1.1" 200 -
+2026-08-08 00:43:34,754 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-08 00:43:34,776 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:34] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 00:43:34,788 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:34] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 00:43:34,809 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:34] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 00:43:34,838 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:34] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:34,861 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:34] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:34,896 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:34] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:34,921 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:34] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:34,955 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:34] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:34,962 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:34] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:34,974 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:34] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:35,012 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:35] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:35,031 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:35] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:35,044 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:35] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:35,083 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:35] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 00:43:35,088 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:35] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 00:43:35,100 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:35] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 00:43:36,454 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:36] "GET / HTTP/1.1" 200 -
+2026-08-08 00:43:36,885 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:36] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 00:43:36,906 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:36] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 00:43:36,917 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:36] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:36,941 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:36] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:36,945 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:36] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:36,975 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:36] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 00:43:36,981 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-08 00:43:36,998 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:36] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:37,003 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:37] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:37,030 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:37] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:37,040 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:37] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:37,061 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:37] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:37,069 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:37] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:37,080 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:37] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 00:43:37,223 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:37] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 00:43:37,239 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:37] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 00:43:37,247 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:43:37] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 00:44:35,006 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:44:35] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 00:45:17,398 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:45:17] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 00:46:01,972 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:01] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 00:46:40,317 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "GET / HTTP/1.1" 200 -
+2026-08-08 00:46:40,442 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-08 00:46:40,473 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 00:46:40,485 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 00:46:40,504 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 00:46:40,506 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 00:46:40,512 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 00:46:40,535 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 00:46:40,546 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 00:46:40,573 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 00:46:40,597 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 00:46:40,609 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 00:46:40,622 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 00:46:40,642 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 00:46:40,650 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 00:46:40,684 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 00:46:40,693 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 00:46:40,705 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:46:40] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 00:47:09,940 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:09] "GET / HTTP/1.1" 200 -
+2026-08-08 00:47:10,241 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-08-08 00:47:10,268 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "GET /static/css/khoem_ai_nexus.css HTTP/1.1" 200 -
+2026-08-08 00:47:10,297 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "GET /static/css/khoemai.css HTTP/1.1" 200 -
+2026-08-08 00:47:10,330 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "GET /static/css/magnifying_glass.css HTTP/1.1" 200 -
+2026-08-08 00:47:10,432 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "GET /static/js/settings.js HTTP/1.1" 200 -
+2026-08-08 00:47:10,440 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "GET /static/js/voice.js HTTP/1.1" 200 -
+2026-08-08 00:47:10,495 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "GET /static/js/gps.js HTTP/1.1" 200 -
+2026-08-08 00:47:10,496 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "GET /static/js/map.js HTTP/1.1" 200 -
+2026-08-08 00:47:10,541 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "GET /static/js/navigator.js HTTP/1.1" 200 -
+2026-08-08 00:47:10,549 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "GET /static/js/camera.js HTTP/1.1" 200 -
+2026-08-08 00:47:10,568 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "GET /static/js/magnifying_glass.js HTTP/1.1" 200 -
+2026-08-08 00:47:10,620 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "GET /static/js/khoemai.js HTTP/1.1" 200 -
+2026-08-08 00:47:10,622 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "GET /static/js/khoem_ai_nexus_hub.js HTTP/1.1" 200 -
+2026-08-08 00:47:10,621 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "GET /static/js/video_khoemai.js HTTP/1.1" 200 -
+2026-08-08 00:47:10,695 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 00:47:10,703 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 00:47:10,709 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:10] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 00:47:11,190 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "GET / HTTP/1.1" 200 -
+2026-08-08 00:47:11,294 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-08 00:47:11,311 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 00:47:11,351 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 00:47:11,409 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 00:47:11,418 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 00:47:11,429 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 00:47:11,464 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 00:47:11,489 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 00:47:11,527 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 00:47:11,565 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 00:47:11,582 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 00:47:11,606 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 00:47:11,622 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 00:47:11,643 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 00:47:11,700 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 00:47:11,726 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 00:47:11,735 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:47:11] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 00:51:28,623 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-08 00:51:54,873 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:54] "GET / HTTP/1.1" 200 -
+2026-08-08 00:51:54,992 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-08 00:51:55,011 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 00:51:55,022 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 00:51:55,047 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 00:51:55,061 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 00:51:55,079 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 00:51:55,094 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 00:51:55,116 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 00:51:55,141 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 00:51:55,160 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 00:51:55,174 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 00:51:55,188 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 00:51:55,224 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 00:51:55,226 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 00:51:55,267 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 00:51:55,277 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 00:51:55,284 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:51:55] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 00:52:29,609 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:52:29] "GET /api/status HTTP/1.1" 200 -
+2026-08-08 00:57:14,192 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 00:57:14] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 01:05:25,824 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: cannot import name 'navigator_engine' from 'core.navigator_engine' (/data/data/com.termux/files/home/khoem-new/core/navigator_engine.py)
+2026-08-08 01:05:25,849 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 01:05:25,849 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 01:05:25,850 [WARNING] [khoem_ai] Python-dotenv could not parse statement starting at line 1
+2026-08-08 01:05:26,001 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 01:05:26,002 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 01:05:26,006 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 01:05:26,879 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: cannot import name 'navigator_engine' from 'core.navigator_engine' (/data/data/com.termux/files/home/khoem-new/core/navigator_engine.py)
+2026-08-08 01:05:26,904 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 01:05:26,904 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 01:05:26,905 [WARNING] [khoem_ai] Python-dotenv could not parse statement starting at line 1
+2026-08-08 01:05:26,963 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 01:05:27,032 [INFO] [khoem_ai]  * Debugger PIN: 595-127-671
+2026-08-08 01:06:34,308 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "GET / HTTP/1.1" 200 -
+2026-08-08 01:06:34,362 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-08 01:06:34,399 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 01:06:34,410 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 01:06:34,416 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 01:06:34,449 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:34,471 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:34,491 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:34,507 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:34,529 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:34,541 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:34,566 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:34,584 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:34,600 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:34,612 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:34,651 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 01:06:34,665 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 01:06:34,665 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:34] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 01:06:36,071 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "GET / HTTP/1.1" 200 -
+2026-08-08 01:06:36,388 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2026-08-08 01:06:36,413 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 01:06:36,441 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 01:06:36,452 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:36,460 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 01:06:36,476 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:36,490 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:36,507 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:36,522 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:36,556 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:36,564 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:36,574 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:36,576 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:36,598 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 01:06:36,657 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 01:06:36,664 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 01:06:36,674 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:06:36] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 01:09:14,083 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: cannot import name 'navigator_engine' from 'core.navigator_engine' (/data/data/com.termux/files/home/khoem-new/core/navigator_engine.py)
+2026-08-08 01:09:14,108 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 01:09:14,109 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 01:09:14,109 [WARNING] [khoem_ai] Python-dotenv could not parse statement starting at line 1
+2026-08-08 01:09:14,183 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 01:09:14,184 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 01:09:14,186 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 01:09:15,057 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: cannot import name 'navigator_engine' from 'core.navigator_engine' (/data/data/com.termux/files/home/khoem-new/core/navigator_engine.py)
+2026-08-08 01:09:15,083 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 01:09:15,083 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 01:09:15,084 [WARNING] [khoem_ai] Python-dotenv could not parse statement starting at line 1
+2026-08-08 01:09:15,143 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 01:09:15,184 [INFO] [khoem_ai]  * Debugger PIN: 173-479-713
+2026-08-08 01:09:31,183 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "GET / HTTP/1.1" 200 -
+2026-08-08 01:09:31,243 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 01:09:31,265 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 01:09:31,272 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 01:09:31,297 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:31,314 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:31,333 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:31,348 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:31,361 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:31,375 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:31,400 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:31,422 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:31,440 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:31,442 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:31,502 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 01:09:31,513 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 01:09:31,525 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:31] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 01:09:32,733 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:32] "GET / HTTP/1.1" 200 -
+2026-08-08 01:09:33,081 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 01:09:33,116 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:33,122 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 01:09:33,132 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:33,145 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 01:09:33,176 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:33,180 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:33,189 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:33,214 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:33,234 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:33,246 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:33,285 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:33,297 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 01:09:33,403 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 01:09:33,414 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 01:09:33,421 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:09:33] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 01:10:40,814 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:40] "GET / HTTP/1.1" 200 -
+2026-08-08 01:10:40,868 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:40] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 01:10:40,883 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:40] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 01:10:40,900 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:40] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 01:10:40,917 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:40] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:40,927 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:40] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:40,963 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:40] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:40,978 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:40] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:40,998 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:40] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,009 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,026 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,058 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,065 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,070 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,128 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 01:10:41,135 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 01:10:41,144 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 01:10:41,744 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "GET / HTTP/1.1" 200 -
+2026-08-08 01:10:41,802 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,819 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,832 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,846 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,861 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,882 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,895 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,909 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,920 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,938 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,949 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,962 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:41,977 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:41] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 01:10:42,009 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:42] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 01:10:42,017 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:42] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 01:10:42,038 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:10:42] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 01:11:05,625 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:11:05] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 01:11:19,015 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:11:19] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 01:11:39,937 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:11:39] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 01:13:15,055 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:13:15] "[33mGET /api/auth/google HTTP/1.1[0m" 404 -
+2026-08-08 01:13:40,469 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:13:40] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 01:14:20,010 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:14:20] "[33mPOST /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 01:15:00,194 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:15:00] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 01:15:16,597 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:15:16] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 01:15:42,131 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:15:42] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 01:17:08,158 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:17:08] "GET / HTTP/1.1" 200 -
+2026-08-08 01:17:09,151 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:17:09] "GET /static/css/khoemai.css HTTP/1.1" 200 -
+2026-08-08 01:17:09,165 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:17:09] "GET /static/css/magnifying_glass.css HTTP/1.1" 200 -
+2026-08-08 01:17:09,167 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:17:09] "GET /static/css/khoem_ai_nexus.css HTTP/1.1" 200 -
+2026-08-08 01:17:39,902 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:17:39] "[31m[1mPOST /api/vision HTTP/1.1[0m" 400 -
+2026-08-08 01:19:16,637 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:19:16] "[33mPOST /api/vision/ HTTP/1.1[0m" 404 -
+2026-08-08 01:19:27,815 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:19:27] "[33mPOST /api/vision/ HTTP/1.1[0m" 404 -
+2026-08-08 01:19:44,449 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:19:44] "[31m[1mGET /api/vision HTTP/1.1[0m" 405 -
+2026-08-08 01:22:26,441 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:22:26] "[33mPOST /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 01:22:38,610 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:22:38] "[33mPOST /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 01:23:07,471 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:23:07] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 01:23:46,182 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:23:46] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 01:40:57,764 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 01:40:57] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 03:47:57,781 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: cannot import name 'navigator_engine' from 'core.navigator_engine' (/data/data/com.termux/files/home/khoem-new/core/navigator_engine.py)
+2026-08-08 03:47:57,808 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 03:47:57,809 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 03:47:57,810 [WARNING] [khoem_ai] Python-dotenv could not parse statement starting at line 1
+2026-08-08 03:47:57,918 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 03:47:57,919 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 03:47:57,923 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 03:47:58,805 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: cannot import name 'navigator_engine' from 'core.navigator_engine' (/data/data/com.termux/files/home/khoem-new/core/navigator_engine.py)
+2026-08-08 03:47:58,830 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 03:47:58,831 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 03:47:58,831 [WARNING] [khoem_ai] Python-dotenv could not parse statement starting at line 1
+2026-08-08 03:47:58,892 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 03:47:58,965 [INFO] [khoem_ai]  * Debugger PIN: 225-112-445
+2026-08-08 03:48:21,024 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "GET / HTTP/1.1" 200 -
+2026-08-08 03:48:21,246 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 03:48:21,277 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 03:48:21,279 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 03:48:21,331 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:21,352 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:21,367 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:21,397 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:21,411 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:21,460 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:21,469 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:21,476 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:21,498 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:21,518 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:21,580 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 03:48:21,592 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 03:48:21,615 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:21] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 03:48:22,073 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "GET / HTTP/1.1" 200 -
+2026-08-08 03:48:22,376 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 03:48:22,385 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 03:48:22,423 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 03:48:22,465 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:22,475 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:22,491 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:22,534 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:22,541 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:22,577 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:22,596 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:22,607 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:22,621 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:22,651 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 03:48:22,708 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 03:48:22,717 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 03:48:22,725 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 03:48:22,989 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-08 03:48:48,237 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:48:48] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 03:51:02,507 [ERROR] [khoem_ai] Groq Vision HTTP error: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions — {"error":{"message":"The model `llava-v1.5-7b-4096-preview` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.","type":"invalid_request_error","code":"model_decommissioned"}}
+
+2026-08-08 03:51:02,533 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:51:02] "[35m[1mPOST /api/vision HTTP/1.1[0m" 502 -
+2026-08-08 03:51:36,119 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:51:36] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 03:51:54,145 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:51:54] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 03:53:23,999 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:53:23] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 03:56:16,793 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:56:16] "[31m[1mPOST /api/directions HTTP/1.1[0m" 400 -
+2026-08-08 03:56:21,478 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:56:21] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 03:56:29,403 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:56:29] "[31m[1mPOST /api/directions HTTP/1.1[0m" 400 -
+2026-08-08 03:56:54,152 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:56:54] "[31m[1mGET /api/directions HTTP/1.1[0m" 405 -
+2026-08-08 03:57:03,720 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:57:03] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 03:57:07,693 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:57:07] "GET / HTTP/1.1" 200 -
+2026-08-08 03:57:08,926 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:57:08] "GET /static/css/khoemai.css HTTP/1.1" 200 -
+2026-08-08 03:57:08,935 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:57:08] "GET /static/css/khoem_ai_nexus.css HTTP/1.1" 200 -
+2026-08-08 03:57:08,949 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:57:08] "GET /static/css/magnifying_glass.css HTTP/1.1" 200 -
+2026-08-08 03:57:45,821 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:57:45] "[31m[1mPOST / HTTP/1.1[0m" 405 -
+2026-08-08 03:57:51,768 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:57:51] "[31m[1mGET /api/directions HTTP/1.1[0m" 405 -
+2026-08-08 03:57:55,935 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 03:57:55] "[33mPOST /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 04:00:14,231 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:00:14] "GET / HTTP/1.1" 200 -
+2026-08-08 04:00:14,842 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:00:14] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 04:00:14,855 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:00:14] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 04:00:14,875 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:00:14] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 04:00:22,272 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:00:22] "[31m[1mPOST / HTTP/1.1[0m" 405 -
+2026-08-08 04:02:00,386 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:02:00] "GET / HTTP/1.1" 200 -
+2026-08-08 04:02:00,874 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:02:00] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 04:02:00,884 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:02:00] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 04:02:00,890 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:02:00] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 04:02:49,916 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:02:49] "[31m[1mGET /api/directions HTTP/1.1[0m" 405 -
+2026-08-08 04:03:18,751 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:03:18] "[33mGET /api/directions/ HTTP/1.1[0m" 404 -
+2026-08-08 04:04:14,591 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:04:14] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 04:05:15,239 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:05:15] "[33mGET /api/directions/ HTTP/1.1[0m" 404 -
+2026-08-08 04:06:01,627 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:06:01] "GET / HTTP/1.1" 200 -
+2026-08-08 04:06:02,125 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:06:02] "GET /static/css/khoem_ai_nexus.css HTTP/1.1" 200 -
+2026-08-08 04:06:02,143 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:06:02] "GET /static/css/khoemai.css HTTP/1.1" 200 -
+2026-08-08 04:06:02,158 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:06:02] "GET /static/css/magnifying_glass.css HTTP/1.1" 200 -
+2026-08-08 04:06:13,839 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:06:13] "[33mPOST /api/directions/ HTTP/1.1[0m" 404 -
+2026-08-08 04:06:33,951 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 04:06:33] "[33mPOST /api/directions/ HTTP/1.1[0m" 404 -
+2026-08-08 14:12:15,310 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 14:12:15,339 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: cannot import name 'navigator_engine' from 'core.navigator_engine' (/data/data/com.termux/files/home/khoem-new/core/navigator_engine.py)
+2026-08-08 14:15:44,917 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 14:15:44,926 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: cannot import name 'navigator_engine' from 'core.navigator_engine' (/data/data/com.termux/files/home/khoem-new/core/navigator_engine.py)
+2026-08-08 14:15:44,969 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 14:15:44,970 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 14:15:44,971 [WARNING] [khoem_ai] Python-dotenv could not parse statement starting at line 1
+2026-08-08 14:15:45,153 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 14:15:45,153 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 14:15:45,171 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 14:15:46,131 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 14:15:46,140 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: cannot import name 'navigator_engine' from 'core.navigator_engine' (/data/data/com.termux/files/home/khoem-new/core/navigator_engine.py)
+2026-08-08 14:15:46,171 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 14:15:46,172 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 14:15:46,173 [WARNING] [khoem_ai] Python-dotenv could not parse statement starting at line 1
+2026-08-08 14:15:46,237 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 14:15:46,293 [INFO] [khoem_ai]  * Debugger PIN: 109-781-026
+2026-08-08 14:24:52,949 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 14:24:52,961 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: cannot import name 'navigator_engine' from 'core.navigator_engine' (/data/data/com.termux/files/home/khoem-new/core/navigator_engine.py)
+2026-08-08 14:24:52,992 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 14:24:52,993 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 14:24:52,994 [WARNING] [khoem_ai] Python-dotenv could not parse statement starting at line 1
+2026-08-08 14:24:53,076 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 14:24:53,076 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 14:24:53,079 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 14:24:54,037 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 14:24:54,046 [WARNING] [khoem_ai] Some route blueprints not found and were skipped: cannot import name 'navigator_engine' from 'core.navigator_engine' (/data/data/com.termux/files/home/khoem-new/core/navigator_engine.py)
+2026-08-08 14:24:54,077 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 14:24:54,077 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 14:24:54,078 [WARNING] [khoem_ai] Python-dotenv could not parse statement starting at line 1
+2026-08-08 14:24:54,143 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 14:24:54,247 [INFO] [khoem_ai]  * Debugger PIN: 115-162-859
+2026-08-08 14:30:33,283 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 14:30:33,328 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 14:30:33,375 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 14:30:33,375 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 14:30:33,376 [WARNING] [khoem_ai] Python-dotenv could not parse statement starting at line 1
+2026-08-08 14:30:33,445 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 14:30:33,445 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 14:30:33,448 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 14:30:34,418 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 14:30:34,463 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 14:30:34,510 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 14:30:34,510 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 14:30:34,511 [WARNING] [khoem_ai] Python-dotenv could not parse statement starting at line 1
+2026-08-08 14:30:34,560 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 14:30:34,622 [INFO] [khoem_ai]  * Debugger PIN: 648-180-424
+2026-08-08 14:33:40,855 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 14:33:40,893 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 14:33:40,934 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 14:33:40,934 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 14:33:40,996 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 14:33:40,997 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 14:33:41,000 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 14:33:41,882 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 14:33:41,919 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 14:33:41,959 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 14:33:41,959 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 14:33:42,003 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 14:33:42,046 [INFO] [khoem_ai]  * Debugger PIN: 967-789-788
+2026-08-08 14:44:56,512 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:56] "GET / HTTP/1.1" 200 -
+2026-08-08 14:44:56,945 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:56] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 14:44:56,970 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:56] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 14:44:56,978 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:56] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 14:44:57,002 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:57] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:57,018 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:57] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:57,030 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:57] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:57,048 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:57] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:57,058 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:57] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:57,077 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:57] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:57,098 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:57] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:57,112 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:57] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:57,128 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:57] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:57,136 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:57] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:57,197 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:57] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 14:44:57,212 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:57] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 14:44:57,204 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:57] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 14:44:57,545 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:57] "GET / HTTP/1.1" 200 -
+2026-08-08 14:44:58,085 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 14:44:58,189 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 14:44:58,196 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:58,204 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 14:44:58,227 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:58,233 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:58,262 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:58,312 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:58,323 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:58,363 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:58,376 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:58,400 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:58,406 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 14:44:58,474 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 14:44:58,484 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[33mGET /api/video/history HTTP/1.1[0m" 404 -
+2026-08-08 14:44:58,493 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:44:58] "[33mGET /api/nexus/status HTTP/1.1[0m" 404 -
+2026-08-08 14:45:28,947 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:45:28] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 14:46:26,393 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:46:26] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 14:46:43,507 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:46:43] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 14:47:03,554 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:47:03] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 14:47:21,718 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:47:21] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 14:50:19,036 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 14:50:19] "[33mGET /api/account HTTP/1.1[0m" 404 -
+2026-08-08 15:03:41,898 [INFO] [khoem_ai] 🧹 Rate-limit cleanup: បានលុប 1 entry ចាស់
+2026-08-08 15:10:41,576 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 15:10:41,648 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 15:10:41,698 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 15:10:41,698 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 15:10:41,833 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 15:10:41,834 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 15:10:41,838 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 15:10:42,791 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 15:10:42,834 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 15:10:42,884 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 15:10:42,885 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 15:10:42,934 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 15:10:43,015 [INFO] [khoem_ai]  * Debugger PIN: 233-597-537
+2026-08-08 15:15:08,504 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 15:15:08,542 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 15:15:08,586 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 15:15:08,587 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 15:15:08,649 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 15:15:08,649 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 15:15:08,652 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 15:15:09,537 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បើក)
+2026-08-08 15:15:09,582 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 15:15:09,636 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 15:15:09,637 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 15:15:09,689 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 15:15:09,765 [INFO] [khoem_ai]  * Debugger PIN: 139-196-551
+2026-08-08 15:44:17,351 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 15:44:17,419 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 15:44:17,480 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 15:44:17,480 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 15:44:17,633 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 15:44:17,633 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 15:44:17,640 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 15:44:18,623 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បើក)
+2026-08-08 15:44:18,663 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 15:44:18,715 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 15:44:18,716 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 15:44:18,771 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 15:44:18,833 [INFO] [khoem_ai]  * Debugger PIN: 632-997-979
+2026-08-08 15:46:19,628 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:19] "GET / HTTP/1.1" 200 -
+2026-08-08 15:46:19,953 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:19] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 15:46:19,974 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:19] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 15:46:19,982 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:19] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 15:46:20,013 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:20] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:20,019 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:20] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:20,033 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:20] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:20,069 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:20] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:20,069 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:20] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:20,072 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:20] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:20,107 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:20] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:20,117 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:20] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:20,131 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:20] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:20,145 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:20] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:20,186 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:20] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 15:46:20,194 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:20] "GET /api/video/history HTTP/1.1" 200 -
+2026-08-08 15:46:20,205 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:20] "GET /api/nexus/status HTTP/1.1" 200 -
+2026-08-08 15:46:20,792 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:20] "GET / HTTP/1.1" 200 -
+2026-08-08 15:46:21,223 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 15:46:21,245 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 15:46:21,262 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 15:46:21,287 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:21,320 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:21,339 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:21,361 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:21,377 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:21,394 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:21,403 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:21,429 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:21,445 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:21,451 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 15:46:21,563 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "GET /api/video/history HTTP/1.1" 200 -
+2026-08-08 15:46:21,567 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 15:46:21,575 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "GET /api/nexus/status HTTP/1.1" 200 -
+2026-08-08 15:46:21,852 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:46:21] "[33mGET /api/subscription HTTP/1.1[0m" 404 -
+2026-08-08 15:47:14,150 [WARNING] [khoem_ai] 🚫 API key មិនត្រឹមត្រូវពី 127.0.0.1 → /api/chat
+2026-08-08 15:47:14,157 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:47:14] "[31m[1mPOST /api/chat HTTP/1.1[0m" 401 -
+2026-08-08 15:47:38,374 [WARNING] [khoem_ai] 🚫 API key មិនត្រឹមត្រូវពី 127.0.0.1 → /api/chat
+2026-08-08 15:47:38,378 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 15:47:38] "[31m[1mPOST /api/chat HTTP/1.1[0m" 401 -
+2026-08-08 15:58:31,693 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 15:58:31,738 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 15:58:31,786 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 15:58:31,787 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 15:58:31,859 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 15:58:31,859 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 15:58:31,862 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 15:58:32,823 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 15:58:32,869 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 15:58:32,919 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 15:58:32,919 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 15:58:32,975 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 15:58:33,053 [INFO] [khoem_ai]  * Debugger PIN: 979-819-738
+2026-08-08 16:00:59,690 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:00:59] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 16:00:59,837 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:00:59] "[33mGET /api/subscription HTTP/1.1[0m" 404 -
+2026-08-08 16:01:04,877 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:04] "GET / HTTP/1.1" 200 -
+2026-08-08 16:01:05,030 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 16:01:05,079 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 16:01:05,095 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 16:01:05,178 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 16:01:05,195 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 16:01:05,196 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 16:01:05,210 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 16:01:05,227 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 16:01:05,233 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 16:01:05,328 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 16:01:05,362 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 16:01:05,379 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 16:01:05,394 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 16:01:05,460 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 16:01:05,469 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "GET /api/nexus/status HTTP/1.1" 200 -
+2026-08-08 16:01:05,478 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "GET /api/video/history HTTP/1.1" 200 -
+2026-08-08 16:01:05,562 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:05] "[33mGET /api/subscription HTTP/1.1[0m" 404 -
+2026-08-08 16:01:15,838 [ERROR] [khoem_ai] Groq HTTP error: 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions — {"error":{"message":"Invalid API Key","type":"invalid_request_error","code":"invalid_api_key"}}
+
+2026-08-08 16:01:15,855 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:01:15] "[35m[1mPOST /api/chat HTTP/1.1[0m" 502 -
+2026-08-08 16:18:32,846 [INFO] [khoem_ai] 🧹 Rate-limit cleanup: បានលុប 1 entry ចាស់
+2026-08-08 16:25:21,604 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 16:25:21,664 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 16:25:21,723 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 16:25:21,723 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 16:25:21,851 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 16:25:21,852 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 16:25:21,857 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 16:25:22,733 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បើក)
+2026-08-08 16:25:22,769 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 16:25:22,813 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 16:25:22,813 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 16:25:22,862 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 16:25:22,937 [INFO] [khoem_ai]  * Debugger PIN: 562-790-724
+2026-08-08 16:25:28,046 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:28] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 16:25:28,114 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:28] "[33mGET /api/subscription HTTP/1.1[0m" 404 -
+2026-08-08 16:25:34,473 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:34] "GET / HTTP/1.1" 200 -
+2026-08-08 16:25:34,918 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:34] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 16:25:34,926 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:34] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 16:25:34,937 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:34] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 16:25:34,943 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:34] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 16:25:34,969 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:34] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 16:25:34,971 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:34] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 16:25:34,985 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:34] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 16:25:35,018 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:35] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 16:25:35,035 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:35] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 16:25:35,049 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:35] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 16:25:35,059 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:35] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 16:25:35,078 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:35] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 16:25:35,090 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:35] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 16:25:35,186 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:35] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 16:25:35,196 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:35] "GET /api/video/history HTTP/1.1" 200 -
+2026-08-08 16:25:35,209 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:35] "GET /api/nexus/status HTTP/1.1" 200 -
+2026-08-08 16:25:35,396 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:35] "[33mGET /api/subscription HTTP/1.1[0m" 404 -
+2026-08-08 16:25:43,202 [WARNING] [khoem_ai] 🚫 API key មិនត្រឹមត្រូវពី 127.0.0.1 → /api/chat
+2026-08-08 16:25:43,208 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:25:43] "[31m[1mPOST /api/chat HTTP/1.1[0m" 401 -
+2026-08-08 16:35:34,448 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 16:35:34,516 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 16:35:34,571 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 16:35:34,571 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 16:35:34,701 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 16:35:34,702 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 16:35:34,714 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 16:35:35,595 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 16:35:35,634 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 16:35:35,679 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 16:35:35,679 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 16:35:35,723 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 16:35:35,782 [INFO] [khoem_ai]  * Debugger PIN: 765-016-760
+2026-08-08 16:35:46,654 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:35:46] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 16:35:46,707 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:35:46] "[33mGET /api/subscription HTTP/1.1[0m" 404 -
+2026-08-08 16:36:02,739 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:02] "GET / HTTP/1.1" 200 -
+2026-08-08 16:36:02,852 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:02] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 16:36:02,873 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:02] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 16:36:02,883 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:02] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 16:36:02,917 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:02] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 16:36:02,923 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:02] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 16:36:02,942 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:02] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 16:36:02,961 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:02] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 16:36:02,991 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:02] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 16:36:03,023 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:03] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 16:36:03,039 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:03] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 16:36:03,043 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:03] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 16:36:03,058 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:03] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 16:36:03,085 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:03] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 16:36:03,137 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:03] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 16:36:03,155 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:03] "GET /api/nexus/status HTTP/1.1" 200 -
+2026-08-08 16:36:03,146 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:03] "GET /api/video/history HTTP/1.1" 200 -
+2026-08-08 16:36:03,255 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:03] "[33mGET /api/subscription HTTP/1.1[0m" 404 -
+2026-08-08 16:36:20,535 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:36:20] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 16:37:16,027 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:37:16] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 16:37:50,332 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:37:50] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 16:38:22,680 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:38:22] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 16:38:54,657 [ERROR] [khoem_ai] Groq Vision HTTP error: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions — {"error":{"message":"The model `llava-v1.5-7b-4096-preview` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.","type":"invalid_request_error","code":"model_decommissioned"}}
+
+2026-08-08 16:38:54,693 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:38:54] "[35m[1mPOST /api/vision HTTP/1.1[0m" 502 -
+2026-08-08 16:40:26,281 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:40:26] "[33mGET /api/auth/google HTTP/1.1[0m" 404 -
+2026-08-08 16:40:32,002 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:40:32] "GET / HTTP/1.1" 200 -
+2026-08-08 16:40:33,185 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:40:33] "GET /static/css/magnifying_glass.css HTTP/1.1" 200 -
+2026-08-08 16:40:33,195 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:40:33] "GET /static/css/khoemai.css HTTP/1.1" 200 -
+2026-08-08 16:40:33,203 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:40:33] "GET /static/css/khoem_ai_nexus.css HTTP/1.1" 200 -
+2026-08-08 16:40:47,720 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:40:47] "GET / HTTP/1.1" 200 -
+2026-08-08 16:40:48,193 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:40:48] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 16:40:48,229 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:40:48] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 16:40:48,276 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:40:48] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 16:41:39,338 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:41:39] "[31m[1mPOST /api/directions HTTP/1.1[0m" 400 -
+2026-08-08 16:41:58,659 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:41:58] "[31m[1mGET /api/directions HTTP/1.1[0m" 405 -
+2026-08-08 16:43:05,698 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:43:05] "GET / HTTP/1.1" 200 -
+2026-08-08 16:43:06,168 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:43:06] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 16:43:06,177 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:43:06] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 16:43:06,197 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:43:06] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 16:43:12,496 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:43:12] "[33mGET /api/auth/google HTTP/1.1[0m" 404 -
+2026-08-08 16:43:50,184 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:43:50] "[33mPOST /api/auth/google HTTP/1.1[0m" 404 -
+2026-08-08 16:44:34,416 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:44:34] "GET / HTTP/1.1" 200 -
+2026-08-08 16:44:34,939 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:44:34] "GET /static/css/khoemai.css HTTP/1.1" 200 -
+2026-08-08 16:44:34,944 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:44:34] "GET /static/css/khoem_ai_nexus.css HTTP/1.1" 200 -
+2026-08-08 16:44:34,952 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:44:34] "GET /static/css/magnifying_glass.css HTTP/1.1" 200 -
+2026-08-08 16:45:22,648 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:45:22] "[33mPOST /api/auth/google HTTP/1.1[0m" 404 -
+2026-08-08 16:45:41,069 [INFO] [khoem_ai] 192.168.1.4 - - [08/Aug/2026 16:45:41] "[31m[1mPOST / HTTP/1.1[0m" 405 -
+2026-08-08 16:45:46,319 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:45:46] "GET / HTTP/1.1" 200 -
+2026-08-08 16:45:46,842 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:45:46] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 16:45:46,851 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:45:46] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 16:45:46,865 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:45:46] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 16:46:03,359 [INFO] [khoem_ai] 192.168.1.4 - - [08/Aug/2026 16:46:03] "GET / HTTP/1.1" 200 -
+2026-08-08 16:46:04,142 [INFO] [khoem_ai] 192.168.1.4 - - [08/Aug/2026 16:46:04] "GET /static/css/khoemai.css HTTP/1.1" 200 -
+2026-08-08 16:46:04,153 [INFO] [khoem_ai] 192.168.1.4 - - [08/Aug/2026 16:46:04] "GET /static/css/khoem_ai_nexus.css HTTP/1.1" 200 -
+2026-08-08 16:46:04,160 [INFO] [khoem_ai] 192.168.1.4 - - [08/Aug/2026 16:46:04] "GET /static/css/magnifying_glass.css HTTP/1.1" 200 -
+2026-08-08 16:46:44,302 [INFO] [khoem_ai] 192.168.1.4 - - [08/Aug/2026 16:46:44] "GET / HTTP/1.1" 200 -
+2026-08-08 16:46:44,817 [INFO] [khoem_ai] 192.168.1.4 - - [08/Aug/2026 16:46:44] "GET /static/css/khoemai.css HTTP/1.1" 200 -
+2026-08-08 16:46:44,837 [INFO] [khoem_ai] 192.168.1.4 - - [08/Aug/2026 16:46:44] "GET /static/css/magnifying_glass.css HTTP/1.1" 200 -
+2026-08-08 16:46:44,838 [INFO] [khoem_ai] 192.168.1.4 - - [08/Aug/2026 16:46:44] "GET /static/css/khoem_ai_nexus.css HTTP/1.1" 200 -
+2026-08-08 16:46:58,075 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:46:58] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 16:46:58,117 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:46:58] "[33mGET /api/subscription HTTP/1.1[0m" 404 -
+2026-08-08 16:47:28,446 [ERROR] [khoem_ai] Groq Vision HTTP error: 400 Client Error: Bad Request for url: https://api.groq.com/openai/v1/chat/completions — {"error":{"message":"The model `llava-v1.5-7b-4096-preview` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.","type":"invalid_request_error","code":"model_decommissioned"}}
+
+2026-08-08 16:47:28,478 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:47:28] "[35m[1mPOST /api/vision HTTP/1.1[0m" 502 -
+2026-08-08 16:47:44,355 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:47:44] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 16:48:07,409 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:48:07] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 16:51:58,980 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:51:58] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 16:51:59,020 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 16:51:59] "[33mGET /api/subscription HTTP/1.1[0m" 404 -
+2026-08-08 17:06:14,844 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 17:06:14,898 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 17:06:14,955 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 17:06:14,956 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 17:06:15,077 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 17:06:15,077 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 17:06:15,082 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 17:06:15,963 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 17:06:16,002 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 17:06:16,047 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 17:06:16,048 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 17:06:16,092 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 17:06:16,141 [INFO] [khoem_ai]  * Debugger PIN: 131-858-678
+2026-08-08 17:06:26,456 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:26] "GET / HTTP/1.1" 200 -
+2026-08-08 17:06:26,862 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:26] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 17:06:26,884 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:26] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 17:06:26,901 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:26] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 17:06:26,944 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:26] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:26,956 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:26] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:26,971 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:26] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:27,007 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:27] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:27,018 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:27] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:27,047 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:27] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:27,062 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:27] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:27,102 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:27] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:27,112 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:27] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:27,123 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:27] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:27,188 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:27] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 17:06:27,194 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:27] "GET /api/video/history HTTP/1.1" 200 -
+2026-08-08 17:06:27,205 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:27] "GET /api/nexus/status HTTP/1.1" 200 -
+2026-08-08 17:06:27,933 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:27] "[33mGET /api/subscription HTTP/1.1[0m" 404 -
+2026-08-08 17:06:28,676 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:28] "GET / HTTP/1.1" 200 -
+2026-08-08 17:06:29,092 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 17:06:29,164 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:29,196 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:29,200 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 17:06:29,207 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 17:06:29,216 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:29,243 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:29,260 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:29,265 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:29,283 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:29,293 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:29,308 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:29,333 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 17:06:29,439 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 17:06:29,449 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "GET /api/video/history HTTP/1.1" 200 -
+2026-08-08 17:06:29,460 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "GET /api/nexus/status HTTP/1.1" 200 -
+2026-08-08 17:06:29,653 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:06:29] "[33mGET /api/subscription HTTP/1.1[0m" 404 -
+2026-08-08 17:18:23,841 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 17:18:23,887 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 17:18:23,938 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 17:18:23,939 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 17:18:24,007 [INFO] [khoem_ai] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-08-08 17:18:24,007 [INFO] [khoem_ai] [33mPress CTRL+C to quit[0m
+2026-08-08 17:18:24,010 [INFO] [khoem_ai]  * Restarting with stat
+2026-08-08 17:18:24,972 [INFO] [khoem_ai] 🛡️  Security engine ចាប់ផ្តើមរួចរាល់ (API key: បិទ — ⚠️ dev mode)
+2026-08-08 17:18:25,015 [INFO] [khoem_ai] Optional route blueprints registered.
+2026-08-08 17:18:25,066 [INFO] [khoem_ai] Database initialised at /data/data/com.termux/files/home/khoem-new/database/khoem_ai.db
+2026-08-08 17:18:25,066 [INFO] [khoem_ai] KHOEM_AI 3.3 starting on port 5000 (debug=True)
+2026-08-08 17:18:25,115 [WARNING] [khoem_ai]  * Debugger is active!
+2026-08-08 17:18:25,189 [INFO] [khoem_ai]  * Debugger PIN: 119-839-282
+2026-08-08 17:18:52,875 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:52] "GET / HTTP/1.1" 200 -
+2026-08-08 17:18:53,442 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 17:18:53,467 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 17:18:53,491 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 17:18:53,505 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:53,525 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:53,538 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:53,568 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:53,573 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:53,586 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:53,604 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:53,632 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:53,640 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:53,651 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:53,685 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 17:18:53,695 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "GET /api/video/history HTTP/1.1" 200 -
+2026-08-08 17:18:53,710 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:53] "GET /api/nexus/status HTTP/1.1" 200 -
+2026-08-08 17:18:54,113 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:54] "[33mGET /api/subscription HTTP/1.1[0m" 404 -
+2026-08-08 17:18:54,726 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:54] "GET / HTTP/1.1" 200 -
+2026-08-08 17:18:55,062 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "[36mGET /static/css/khoem_ai_nexus.css HTTP/1.1[0m" 304 -
+2026-08-08 17:18:55,151 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "[36mGET /static/css/khoemai.css HTTP/1.1[0m" 304 -
+2026-08-08 17:18:55,199 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "[36mGET /static/css/magnifying_glass.css HTTP/1.1[0m" 304 -
+2026-08-08 17:18:55,203 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:55,206 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "[36mGET /static/js/voice.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:55,234 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "[36mGET /static/js/gps.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:55,265 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "[36mGET /static/js/map.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:55,284 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:55,305 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "[36mGET /static/js/magnifying_glass.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:55,315 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "[36mGET /static/js/navigator.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:55,317 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "[36mGET /static/js/video_khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:55,340 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "[36mGET /static/js/khoem_ai_nexus_hub.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:55,363 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "[36mGET /static/js/khoemai.js HTTP/1.1[0m" 304 -
+2026-08-08 17:18:55,437 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 17:18:55,455 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "GET /api/nexus/status HTTP/1.1" 200 -
+2026-08-08 17:18:55,448 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "GET /api/video/history HTTP/1.1" 200 -
+2026-08-08 17:18:55,606 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:18:55] "[33mGET /api/subscription HTTP/1.1[0m" 404 -
+2026-08-08 17:19:35,685 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:19:35] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 17:23:40,509 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:23:40] "POST /api/chat HTTP/1.1" 200 -
+2026-08-08 17:23:55,637 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:23:55] "GET /api/account HTTP/1.1" 200 -
+2026-08-08 17:23:55,668 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:23:55] "[33mGET /api/subscription HTTP/1.1[0m" 404 -
+2026-08-08 17:24:04,064 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:24:04] "GET /api/status HTTP/1.1" 200 -
+2026-08-08 17:24:13,982 [INFO] [khoem_ai] 127.0.0.1 - - [08/Aug/2026 17:24:13] "[33mGET /api/subscription HTTP/1.1[0m" 404 -

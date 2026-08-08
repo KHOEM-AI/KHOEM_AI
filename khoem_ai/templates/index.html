@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KHOEM_AI 2.1</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+    body { background-color: #0f111a; color: #fff; display: flex; flex-direction: column; height: 100vh; }
+    header { text-align: center; padding: 10px; background: #16192b; border-bottom: 1px solid #232742; }
+    header h1 { font-size: 18px; color: #00d2ff; }
+    header p { font-size: 10px; color: #8a8f style; }
+    #chat-box { flex: 1; overflow-y: auto; padding: 15px; display: flex; flex-direction: column; gap: 10px; }
+    .msg { max-width: 80%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.4; }
+    .msg.user { background: #0084ff; align-self: flex-end; border-bottom-right-radius: 2px; }
+    .msg.assistant { background: #232742; align-self: flex-start; border-bottom-left-radius: 2px; border: 1px solid #323859; }
+    #map { height: 180px; width: 100%; display: none; border-radius: 8px; margin-top: 5px; }
+    #route-info { display: none; font-size: 12px; color: #00d2ff; padding: 5px; text-align: center; }
+    #location-status { display: none; font-size: 11px; color: #a0a0a0; padding: 2px 10px; }
+    .controls { padding: 10px; background: #16192b; border-top: 1px solid #232742; }
+    .input-row { display: flex; gap: 8px; align-items: center; margin-top: 5px; }
+    input[type="text"] { flex: 1; background: #0f111a; border: 1px solid #323859; color: #fff; padding: 10px; border-radius: 20px; outline: none; }
+    button { background: #0084ff; color: #fff; border: none; padding: 8px 15px; border-radius: 20px; font-weight: bold; cursor: pointer; }
+    .btn-icon { background: #232742; border: 1px solid #323859; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; padding: 0; }
+    .chips { display: flex; gap: 8px; margin-top: 8px; }
+    .chip { background: #232742; font-size: 11px; padding: 4px 10px; border-radius: 12px; border: 1px solid #323859; color: #aaa; cursor: pointer; }
+    #image-preview-row { display: none; align-items: center; gap: 10px; padding: 5px; background: #232742; border-radius: 8px; margin-bottom: 5px; }
+    #image-preview { width: 40px; height: 40px; object-fit: cover; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>KHOEM_AI 2.1</h1>
+    <p>Chat • Voice • GPS • Map • Vision</p>
+  </header>
+
+  <div id="chat-box"></div>
+
+  <div style="padding: 0 10px;">
+    <div id="route-info"></div>
+    <div id="map"></div>
+    <div id="location-status"></div>
+  </div>
+
+  <div class="controls">
+    <div id="image-preview-row">
+      <img id="image-preview" src="" alt="preview">
+      <span id="image-name" style="font-size: 12px; flex: 1;"></span>
+      <button id="clear-image-btn" style="background: transparent; color: #ff4d4d; padding: 0;">✕</button>
+    </div>
+
+    <div class="input-row">
+      <button class="btn-icon" id="mic-btn">🎙️</button>
+      <label class="btn-icon" style="cursor: pointer;">
+        📷 <input type="file" id="camera-input" accept="image/*" style="display: none;">
+      </label>
+      <input type="text" id="user-input" placeholder="វាយសារទីនេះ...">
+      <button id="send-btn">SEND</button>
+    </div>
+
+    <div class="chips">
+      <div class="chip" data-action="location">LOC</div>
+      <div class="chip" data-action="navigate">GPS ROUTE</div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
