@@ -196,3 +196,47 @@ header h1 {
   border-radius: 10px;
   margin-bottom: 8px;
 }
+
+/* =========================================
+   PINK LED & PURPLE HAIRLINE THEME (3 LANGUAGES)
+   ========================================= */
+
+/* ១. ផ្ទៃកន្លែងឆាតជាមួយ AI និងប្រអប់កម្មវិធីក្រៅ (Pink LED & ខ្សែស្វាយតូច) */
+.assistant-workspace, .chat-container, .panel, .nexus-hub, .command-center {
+    background-color: #000000 !important; /* ផ្ទៃក្នុងខ្មៅ */
+    border: 0.5px solid #800080 !important; /* ខ្សែឆ្នូតពណ៌ស្វាយតូចជាងសរសៃសក់ (Hairline) */
+    /* ពន្លឺ LED ផ្កាឈូកស្រស់ស្អាត ជះចេញមកក្រៅ */
+    box-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493 !important; 
+    border-radius: 12px !important;
+}
+
+/* ២. ប៊ូតុងទូទៅទាំងអស់ (ផ្ទៃខ្មៅ អក្សរស និងមានខ្សែស្វាយពន្លឺផ្កាឈូក) */
+button, .btn, .nav-btn {
+    background-color: #000000 !important; /* ប៊ូតុងខ្មៅផ្លុច */
+    color: #ffffff !important; /* អក្សរពណ៌ស */
+    border: 0.5px solid #800080 !important; /* ខ្សែឆ្នូតស្វាយតូច */
+    box-shadow: 0 0 8px #ff1493 !important; /* ពន្លឺ LED ផ្កាឈូកជុំវិញប៊ូតុង */
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+/* ពេលយកដៃ ឬម៉ៅទៅដាក់លើប៊ូតុង ឱ្យពន្លឺកើនឡើងបន្តិច */
+button:hover, .btn:hover, .nav-btn:hover {
+    box-shadow: 0 0 15px #ff1493, inset 0 0 5px #ff1493 !important;
+}
+
+/* ៣. ប៊ូតុងប្ដូរភាសា (ផ្លាស់ប្ដូរពណ៌អក្សរឆ្លាស់គ្នា ៣ ពណ៌) */
+@keyframes languageColorShift {
+    0%   { color: #ffffff; } /* ភាសាទី១: ស */
+    33%  { color: #00ffff; } /* ភាសាទី២: ខៀវស្រាល (Cyan) */
+    66%  { color: #ffff00; } /* ភាសាទី៣: លឿង */
+    100% { color: #ffffff; } /* ត្រឡប់មកដើមវិញ */
+}
+
+/* សន្មតថាប៊ូតុងប្តូរភាសាមាន Class ឈ្មោះ lang-btn, language-btn ឬប៊ូតុងដែលមានអក្សរភាសា */
+.lang-btn, #lang-btn, .language-switch, button[id*="lang"] {
+    animation: languageColorShift 6s infinite !important; /* ពណ៌ផ្លាស់ប្តូរស្វ័យប្រវត្តិ */
+    background-color: #000000 !important; /* នៅតែរក្សាផ្ទៃខ្មៅដដែល */
+    border: 0.5px solid #800080 !important; /* រក្សាខ្សែស្វាយដដែល */
+}
+
