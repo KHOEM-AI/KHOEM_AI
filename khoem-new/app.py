@@ -38,10 +38,18 @@ class Config:
     MUSIC_API_KEY  = os.getenv("MUSIC_API_KEY", "")
     MUSIC_API_URL  = os.getenv("MUSIC_API_URL", "https://api.example-music-gen.com/v1/generate")
     MUSIC_PROVIDER = os.getenv("MUSIC_PROVIDER", "stub")
+    MUSIC_STUB_URL = os.getenv(
+        "MUSIC_STUB_URL",
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    )
 
     VIDEO_API_KEY  = os.getenv("VIDEO_API_KEY", "")
     VIDEO_API_URL  = os.getenv("VIDEO_API_URL", "https://api.example-video-gen.com/v1/generate")
     VIDEO_PROVIDER = os.getenv("VIDEO_PROVIDER", "stub")
+    VIDEO_STUB_URL = os.getenv(
+        "VIDEO_STUB_URL",
+        "https://www.w3schools.com/html/mov_bbb.mp4",
+    )
 
     FFMPEG_BIN     = os.getenv("FFMPEG_BIN", "ffmpeg")
     OUTPUT_DIR     = os.path.join(BASE_DIR, "static", "generated")
@@ -87,7 +95,11 @@ logger = logging.getLogger(__name__)
 # ==============================================================================
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
-app.secret_key = os.environ.get("FLASK_SECRET_KEY", "change-me-in-production")
+app.secret_key = (
+    os.getenv("SESSION_SECRET")
+    or os.getenv("FLASK_SECRET_KEY")
+    or "dev-only-change-this-secret"
+)
 
 CORS(app, origins=os.getenv("CORS_ORIGINS", "*").split(","))
 init_security(app)
@@ -142,6 +154,11 @@ def init_db() -> None:
                 ON saved_places(session_id);
         """)
     logger.info("Database initialised at %s", Config.DB_PATH)
+
+
+# Initialise SQLite when the module is imported by a production WSGI server too.
+# The main block below calls this again harmlessly when running app.py directly.
+init_db()
 
 
 def _now_iso() -> str:
@@ -282,8 +299,9 @@ def call_music_api(prompt: str, style: str = "", duration_sec: int = 30, instrum
         logger.warning("MUSIC_API_KEY មិនទាន់បានកំណត់ — ត្រឡប់ stub response")
         return True, {
             "status": "stub",
-            "track_url": None,
-            "message": "សូមកំណត់ MUSIC_API_KEY ក្នុង .env ដើម្បីបង្កើតបទចម្រៀងពិតប្រាកដ",
+            "track_url": Config.MUSIC_STUB_URL,
+            "music_url": Config.MUSIC_STUB_URL,
+            "message": "នេះជាបទចម្រៀងសាកល្បង។ សូមកំណត់ MUSIC_API_KEY ដើម្បីបង្កើតបទចម្រៀងពិតប្រាកដ",
         }
 
     payload = {
@@ -303,6 +321,7 @@ def call_music_api(prompt: str, style: str = "", duration_sec: int = 30, instrum
         return True, {
             "status": "completed",
             "track_url": result.get("audio_url") or result.get("track_url"),
+            "music_url": result.get("audio_url") or result.get("track_url"),
             "job_id": result.get("id") or result.get("job_id"),
         }
     except requests.exceptions.HTTPError as e:
@@ -319,8 +338,9 @@ def call_video_api(prompt: str, duration_sec: int = 5, resolution: str = "720p",
         logger.warning("VIDEO_API_KEY មិនទាន់បានកំណត់ — ត្រឡប់ stub response")
         return True, {
             "status": "stub",
-            "video_url": None,
-            "message": "សូមកំណត់ VIDEO_API_KEY ក្នុង .env ដើម្បីបង្កើតវីដេអូពិតប្រាកដ",
+            "video_url": Config.VIDEO_STUB_URL,
+            "final_video_url": Config.VIDEO_STUB_URL,
+            "message": "នេះជាវីដេអូសាកល្បង។ សូមកំណត់ VIDEO_API_KEY ដើម្បីបង្កើតវីដេអូពិតប្រាកដ",
         }
 
     payload = {
@@ -342,6 +362,7 @@ def call_video_api(prompt: str, duration_sec: int = 5, resolution: str = "720p",
         return True, {
             "status": "completed",
             "video_url": result.get("video_url") or result.get("download_url"),
+            "final_video_url": result.get("video_url") or result.get("download_url"),
             "job_id": result.get("id") or result.get("job_id"),
         }
     except requests.exceptions.HTTPError as e:
@@ -530,12 +551,18 @@ def generate_music():
         return jsonify(result), 502
 
     if result["status"] == "completed":
-        save_message(session_id, "assistant", f"[music-track] {result.get('track_url')}")
+        save_message(
+            session_id,
+            "assistant",
+            f"[music-track] {result.get('track_url') or result.get('music_url')}",
+        )
 
     return jsonify({
+        "success": True,
         "session_id": session_id,
         "status":     result["status"],
-        "track_url":  result.get("track_url"),
+        "track_url":  result.get("track_url") or result.get("music_url"),
+        "music_url":  result.get("music_url") or result.get("track_url"),
         "job_id":     result.get("job_id"),
         "message":    result.get("message"),
     })
@@ -559,7 +586,10 @@ def generate_video_with_music():
     music_prompt = str(data.get("music_prompt") or video_prompt).strip()
     style        = str(data.get("style", "cinematic")).strip()
     resolution   = str(data.get("resolution", "720p")).strip()
-    fps          = int(data.get("fps", 24))
+    try:
+        fps = int(data.get("fps", 24))
+    except (TypeError, ValueError):
+        return jsonify({"error": "fps ត្រូវតែជាលេខ"}), 400
     quality      = str(data.get("quality", "standard")).strip()
     instrumental = bool(data.get("instrumental", False))
 
@@ -570,6 +600,8 @@ def generate_video_with_music():
 
     if duration_sec < 5 or duration_sec > 60:
         return jsonify({"error": "duration ត្រូវនៅចន្លោះ ៥ ដល់ ៦០ វិនាទី"}), 400
+    if fps < 1 or fps > 60:
+        return jsonify({"error": "fps ត្រូវនៅចន្លោះ ១ ដល់ ៦០"}), 400
     if len(video_prompt) > 1000 or len(music_prompt) > 1000:
         return jsonify({"error": "Prompt វែងពេក (អតិបរមា ១០០០ តួអក្សរ)"}), 400
 
@@ -596,12 +628,18 @@ def generate_video_with_music():
         return jsonify({"stage": "video", **video_result}), 502
 
     if music_result["status"] == "stub" or video_result["status"] == "stub":
+        demo_video_url = video_result.get("video_url") or video_result.get("final_video_url")
         return jsonify({
+            "success": True,
             "session_id": session_id,
             "status": "stub",
-            "message": "ត្រូវការទាំង MUSIC_API_KEY និង VIDEO_API_KEY ដើម្បីបង្កើត និងបញ្ចូលគ្នាដោយស្វ័យប្រវត្តិ",
+            "message": "នេះជាលទ្ធផលសាកល្បង។ សូមកំណត់ MUSIC_API_KEY និង VIDEO_API_KEY ដើម្បីបង្កើត និងបញ្ចូលគ្នាពិតប្រាកដ",
             "music": music_result,
             "video": video_result,
+            "music_url": music_result.get("track_url") or music_result.get("music_url"),
+            "track_url": music_result.get("track_url") or music_result.get("music_url"),
+            "video_url": demo_video_url,
+            "final_video_url": demo_video_url,
         })
 
     music_url = music_result.get("track_url")
@@ -785,5 +823,4 @@ if __name__ == "__main__":
         Config.VERSION, Config.PORT, Config.DEBUG,
     )
     app.run(host="0.0.0.0", port=Config.PORT, debug=Config.DEBUG)
-
 
