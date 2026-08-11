@@ -618,6 +618,7 @@
                         <button class="chip" data-action="goto-work" type="button">ទៅធ្វើការ</button>
                         <button class="chip" data-action="music" type="button">🎵 ចម្រៀង</button>
                         <button class="chip" data-action="video-music" type="button">🎬🎵 វីដេអូ+ចម្រៀង</button>
+                        <button class="chip" data-action="toggle-map" type="button">🗺️ បិទ/បើកផែនទី</button>
                     </div>
                 </section>
 
@@ -1095,6 +1096,12 @@
                     if (action === "music") {
                         const musicPrompt = window.prompt("ពិពណ៌នាបទចម្រៀងដែលបងចង់បង្កើត (ឧ. បទស្នេហាយឺតៗ សំឡេងគីតា):");
                         if (musicPrompt) generateMusic(musicPrompt);
+                    }
+                    if (action === "toggle-map") {
+                        const isHidden = mapContainer.style.display === "none" || mapContainer.style.display === "";
+                        mapContainer.style.display = isHidden ? "block" : "none";
+                        locationStatus.style.display = isHidden ? "block" : "none";
+                        routeInfo.style.display = isHidden ? "block" : "none";
                     }
                     if (action === "video-music") {
                         const vPrompt = window.prompt("ពិពណ៌នាវីដេអូដែលបងចង់បង្កើត:");
