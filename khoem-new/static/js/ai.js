@@ -1,3 +1,77 @@
+/*
+ * KHOEM_AI additive client module
+ * --------------------------------
+ * This file is intentionally independent from the legacy inline script.
+ * It does not claim existing IDs, route names, or global function names.
+ *
+ * Optional usage:
+ *   window.KhoemAI.chat("session_id", "សួស្តី")
+ *   window.KhoemAI.music({ sessionId, prompt: "..." })
+ *
+ * When static/js/api-client.js is already loaded, this module reuses
+ * window.KhoemAPI so the existing API-key and error behavior is preserved.
+ */
+(function (window, document) {
+  "use strict";
+
+  var existing = window.KhoemAI;
+  var api = existing && typeof existing === "object" ? existing : {};
+  var apiBase = "";
+
+  function getStoredApiKey() {
+    try {
+      return window.localStorage.getItem("khoem_api_key") || "";
+    } catch (error) {
+      return "";
+    }
+  }
+
+  function buildHeaders(extraHeaders) {
+    var headers = Object.assign(
+      { "Content-Type": "application/json" },
+      extraHeaders || {}
+    );
+    var key = getStoredApiKey();
+    if (key && !headers["X-API-Key"]) {
+      headers["X-API-Key"] = key;
+    }
+    return headers;
+  }
+
+  function parseResponse(response) {
+    return response.text().then(function (text) {
+      var data = {};
+      if (text) {
+        try {
+          data = JSON.parse(text);
+        } catch (error) {
+          data = { error: "Server returned an invalid JSON response." };
+        }
+      }
+
+      if (!response.ok) {
+        var requestError = new Error(
+          data.error || "The API request was not successful."
+        );
+        requestError.status = response.status;
+        requestError.payload = data;
+        throw requestError;
+      }
+      return data;
+    });
+  }
+
+  function request(path, options) {
+    var config = options || {};
+    var method = config.method || "GET";
+    var body = config.body;
+    var headers = buildHeaders(config.headers);
+
+    /*
+     * Reuse the old client when available. This avoids creating a second
+     * API-key implementation beside static/js/api-client.js.
+     */
+    if (window.KhoemAPI) {
       if (method === "GET" && typeof window.KhoemAPI.get === "function") {
         return window.KhoemAPI.get(path);
       }
