@@ -903,7 +903,12 @@
 
             function updateClock() {
                 const timezone = timezoneSelect.value || "Asia/Phnom_Penh";
-                const parts = new Intl.DateTimeFormat("en-GB", { timeZone: timezone, hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }).formatToParts(new Date());
+                let parts;
+                try {
+                    parts = new Intl.DateTimeFormat("en-GB", { timeZone: timezone, hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }).formatToParts(new Date());
+                } catch (e) {
+                    parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Phnom_Penh", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }).formatToParts(new Date());
+                }
                 const values = {};
                 parts.forEach(function (part) { values[part.type] = part.value; });
                 clock.textContent = values.hour + ":" + values.minute + ":" + values.second;
