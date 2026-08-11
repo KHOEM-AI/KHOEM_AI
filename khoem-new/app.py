@@ -811,6 +811,17 @@ def internal_error(exc):
     logger.exception("Unhandled exception: %s", exc)
     return jsonify({"error": "បញ្ហាខាងក្នុង server"}), 500
 
+@app.route('/api/video/history')
+def api_vh(): return jsonify({"status": "success", "history": []})
+
+@app.route('/api/account')
+def api_ac(): return jsonify({"status": "success", "username": "KHOEM", "role": "Master"})
+
+@app.route('/api/nexus/status')
+def api_ns(): return jsonify({"status": "operational", "code": 200})
+
+@app.route('/api/subscription')
+def api_sub(): return jsonify({"status": "active", "plan": "pro"})
 
 # ==============================================================================
 # Main Entry Point
