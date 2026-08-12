@@ -1,115 +1,105 @@
 /**
  * ==============================================================================
- * KHOEM_AI Nexus Hub - Frontend Logic (Updated: Google Sign-In auth)
- * File: static/js/khoem_ai_nexus_hub.js
+ * KHOEM_AI Nexus Hub - Angular Frontend Service (Patched)
+ * Path: khoem-new/angular-src/khoem_ai_nexus.ts
  *
- * ការផ្លាស់ប្តូរសំខាន់ៗ៖
- * - លុប USER_CREDENTIALS hardcode ចេញ (email/device_id លែងនៅ frontend ទៀតហើយ)
- * - លុប verifyFaceBiometrics() ក្លែងក្លាយចេញ
- * - Server ជាអ្នកផ្ទៀងផ្ទាត់អត្តសញ្ញាណម្ចាស់ (តាម session cookie ដែលបានពី Google Sign-In)
- * - បន្ថែម: ហៅ window.unlockCamera() (បើមាននៅលើទំព័រ) បន្ទាប់ពី Sign-In ជោគជ័យ
+ * *** ការផ្លាស់ប្តូរសំខាន់ៗ (Security Fixes) ***
+ * 1. លុបចោល verifyFaceBiometrics() ក្លែងក្លាយ (setTimeout → true) —
+ *    ការផ្ទៀងផ្ទាត់ត្រូវតែកើតឡើងនៅ server-side, មិនមែន client-side ទេ។
+ * 2. លុបចោល hardcoded ownerEmail/deviceId — ទាំងនេះមើលឃើញដោយអ្នកប្រើប្រាស់
+ *    ណាមួយតាមរយៈ browser DevTools ព្រោះ JS bundle ត្រូវផ្ញើទៅ client ទាំងស្រុង។
+ * 3. ប្រើ session token (ដែល backend ចេញឲ្យបន្ទាប់ពី real login) ជំនួសវិញ —
+ *    server ជាអ្នកសម្រេចថា user ណាមានសិទ្ធិគ្រប់គ្រងឧបករណ៍ណា។
+ *
+ * *** តម្រូវការនៅខាង Backend (ត្រូវធ្វើផងដែរ) ***
+ * - Endpoint login ពិតប្រាកដ (password/OTP/ការផ្ទៀងផ្ទាត់ biometric ដែលដំណើរការ
+ *   លើ server ឬ device OS API ដែលទុកចិត្តបាន — មិនមែន setTimeout ក្នុង JS)
+ * - /api/nexus/control ត្រូវ verify Authorization header មុននឹងប្រតិបត្តិ
+ *   action ណាមួយ, ហើយត្រូវពិនិត្យថា user នេះមានសិទ្ធិលើ target_device នោះ
  * ==============================================================================
  */
 
-// ១. ដំណើរការពេលទទួល Google Sign-In (ហៅដោយ Google Identity Services library)
-async function handleGoogleSignIn(response) {
-    try {
-        const res = await fetch("/api/auth/google", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            credentials: "include", // ចាំបាច់ ដើម្បីឲ្យ browser រក្សា session cookie
-            body: JSON.stringify({ credential: response.credential })
-        });
-        const result = await res.json();
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, firstValueFrom } from 'rxjs';
 
-        if (result.ok) {
-            console.log("[KHOEM_AI] ចូលជោគជ័យ:", result.message);
-            const statusEl = document.getElementById("nexus-login-status");
-            if (statusEl) statusEl.textContent = result.message;
-
-            // បើទំព័រនេះមាន camera lock (khoem_ai_nexus_hub.html) — ដោះសោវា
-            if (typeof window.unlockCamera === "function") {
-                window.unlockCamera();
-            }
-
-            fetchNexusEcosystem();
-        } else {
-            alert("ការចូលបរាជ័យ: " + result.message);
-        }
-    } catch (error) {
-        console.error("Google Sign-In error:", error);
-        alert("មានបញ្ហាក្នុងការចូលគណនី");
-    }
+export interface NexusStatusResponse {
+  system: string;
+  total_devices: number;
+  ecosystem: any;
 }
 
-// ២. មុខងារពិនិត្យមើលស្ថានភាពឧបករណ៍ទាំងអស់ (Real-time Status)
-async function fetchNexusEcosystem() {
-    try {
-        console.log("[KHOEM_AI] Fetching devices status...");
-        const response = await fetch("/api/nexus/status", { credentials: "include" });
-        const data = await response.json();
-
-        if (response.ok) {
-            console.log("Ecosystem Data:", data);
-            // renderDevicesUI(data.ecosystem);
-        } else {
-            console.error("Failed to load status:", data);
-        }
-    } catch (error) {
-        console.error("Network Error:", error);
-    }
+export interface NexusCommandResponse {
+  status: string;
+  message: string;
+  executed_by?: string;
+  timestamp?: string;
 }
 
-// ៣. មុខងារបញ្ជាឧបករណ៍
-// កំណត់ចំណាំ៖ គ្មាន email/device_id ត្រូវផ្ញើពី client ទៀតទេ —
-// server ស្គាល់ថាអ្នកណាបញ្ជា ពី session cookie ដែលបានបង្កើតតាំងពេល Google Sign-In
-async function sendCommand(targetDevice, action) {
-    console.log(`[KHOEM_AI] Initiating command: ${action} -> ${targetDevice}`);
+@Injectable({
+  providedIn: 'root'
+})
+export class KhoemAiNexusService {
 
+  private readonly apiUrl = '/api/nexus';
+
+  constructor(private http: HttpClient) {}
+
+  /**
+   * ទាញយក session token ដែលបានរក្សាទុកបន្ទាប់ពី login ជោគជ័យ។
+   * សូមប្រើវិធីសាស្ត្ររក្សាទុក token ដែលសមស្របតាមស្ថាបត្យកម្មរបស់បង
+   * (ឧ. HttpOnly cookie ដែល backend set ដោយស្វ័យប្រវត្តិ ជាជម្រើសសុវត្ថិភាព
+   * ជាងការទុកក្នុង localStorage)។
+   */
+  private getAuthHeaders(): HttpHeaders {
+    const token = this.getSessionToken();
+    if (!token) {
+      throw new Error('Not authenticated: no active session token.');
+    }
+    return new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+  }
+
+  private getSessionToken(): string | null {
+    // ជំនួសដោយវិធីទាញយក token ពិតប្រាកដពី AuthService របស់បង
+    // (ឧ. inject AuthService ហើយហៅ authService.getToken())
+    return null;
+  }
+
+  /**
+   * ទាញយកស្ថានភាពឧបករណ៍ទាំងអស់ពី Server (Real-time Status)
+   */
+  getDeviceStatus(): Observable<NexusStatusResponse> {
+    return this.http.get<NexusStatusResponse>(`${this.apiUrl}/status`, {
+      headers: this.getAuthHeaders()
+    });
+  }
+
+  /**
+   * បញ្ជាឧបករណ៍ — backend ជាអ្នកទទួលខុសត្រូវផ្ទៀងផ្ទាត់ identity
+   * និងសិទ្ធិអំណាច (authorization) ដោយផ្អែកលើ session token,
+   * មិនមែនផ្អែកលើ payload ណាមួយដែល client ផ្ញើមកទេ។
+   *
+   * @param targetDevice ឈ្មោះឧបករណ៍ (ឧ. main_door_lock)
+   * @param action សកម្មភាព (ឧ. ON, OFF, LOCK, UNLOCK)
+   */
+  async sendCommand(targetDevice: string, action: string): Promise<NexusCommandResponse> {
     const payload = {
-        target_device: targetDevice,
-        action: action
+      target_device: targetDevice,
+      action: action
     };
 
     try {
-        const response = await fetch("/api/nexus/control", {
-            method: "POST",
-            credentials: "include", // ផ្ញើ session cookie ជាមួយសំណើ
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-        });
-
-        const result = await response.json();
-
-        if (response.status === 401 || response.status === 403) {
-            alert("សូមចូលគណនី Google ជាម្ចាស់ជាមុនសិន");
-            return;
-        }
-
-        if (response.ok) {
-            console.log(`✅ Success: ${result.message}`);
-            fetchNexusEcosystem();
-        } else {
-            console.error(`❌ Error: ${result.message}`);
-            alert(`ការបញ្ជាបរាជ័យ: ${result.message}`);
-        }
+      const response = await firstValueFrom(
+        this.http.post<NexusCommandResponse>(`${this.apiUrl}/control`, payload, {
+          headers: this.getAuthHeaders()
+        })
+      );
+      return response;
     } catch (error) {
-        console.error("Critical Error during command execution:", error);
-        alert("មានបញ្ហាក្នុងការតភ្ជាប់ទៅកាន់ Server!");
+      console.error('❌ បញ្ហាក្នុងការភ្ជាប់ទៅកាន់មេបញ្ជាការ (Server API):', error);
+      throw error;
     }
+  }
 }
-
-// ៤. ដំណើរការមុខងារស្វ័យប្រវត្តិ ពេលបើកវេបសាយ
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("KHOEM_AI Nexus Hub Frontend JS Loaded.");
-    fetchNexusEcosystem();
-});
-
-// មុខងារនេះត្រូវហៅតាម Google Identity Services callback (ដាក់ក្នុង HTML):
-// <div id="g_id_onload"
-//      data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
-//      data-callback="handleGoogleSignIn">
-// </div>
-// <div class="g_id_signin"></div>
