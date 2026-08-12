@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="static/css/magnifying_glass.css">
     <link rel="stylesheet" href="static/css/api-status.css">
     <link rel="stylesheet" href="static/css/theme-override.css">
+    <link rel="stylesheet" href="static/css/vault.css">
     <style>
         :root {
             --bg: #071923;
@@ -671,6 +672,51 @@
                    </div>
                 </section>
 
+                <section class="bento-card vault-card" id="vault-card">
+    <div class="card-title">
+        <h3 class="card-title">
+            <span class="vault-lock-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>
+                </svg>
+            </span>
+            SECURE VAULT MATRIX
+        </h3>
+    </div>
+    <div id="vault-state" class="vault-state">កំពុងផ្ទុក...</div>
+    <div id="vault-error" class="vault-error" role="alert"></div>
+
+    <div id="vault-gate" class="vault-panel vault-gate" hidden>
+        <p id="vault-gate-title" style="margin:0;color:#c1d8db;font-size:12px;"></p>
+        <input id="vault-gate-password" type="password" placeholder="Master password" autocomplete="off">
+        <div class="vault-gate-actions">
+            <button id="vault-gate-submit" class="vault-btn primary" type="button">បន្ត</button>
+            <button id="vault-face-unlock-btn" class="vault-btn" type="button" hidden>📷 ស្កេនមុខ</button>
+        </div>
+        <div id="vault-face-box" class="vault-face-box" hidden>
+            <video id="vault-face-video" muted playsinline></video>
+        </div>
+        <button id="vault-face-capture-btn" class="vault-btn primary" type="button" hidden style="margin-top:8px;">ថតរូប</button>
+    </div>
+
+    <div id="vault-unlocked" class="vault-panel" hidden>
+        <div class="vault-google-row" id="vault-google-row"></div>
+        <button id="vault-enroll-face-btn" class="vault-btn" type="button">📷 ចុះឈ្មោះមុខសម្រាប់ Face Unlock</button>
+        <div class="vault-tabs" role="tablist" aria-label="Vault categories">
+            <button class="vault-tab is-active" data-category="document" type="button">📄<span class="vault-tab-label">ឯកសារ</span></button>
+            <button class="vault-tab" data-category="image" type="button">🖼️<span class="vault-tab-label">រូបភាព</span></button>
+            <button class="vault-tab" data-category="video" type="button">🎥<span class="vault-tab-label">វីដេអូ</span></button>
+            <button class="vault-tab" data-category="code" type="button">💻<span class="vault-tab-label">កូដ</span></button>
+            <button class="vault-tab" data-category="audio" type="button">🎵<span class="vault-tab-label">សំឡេង</span></button>
+        </div>
+        <div class="vault-dropzone" id="vault-dropzone">
+            ទាញឯកសារមកទីនេះ ឬចុចដើម្បីជ្រើសរើស
+            <input type="file" id="vault-file-input">
+        </div>
+        <div class="vault-upload-progress" id="vault-upload-progress"><span></span></div>
+        <div class="vault-file-list" id="vault-file-list"></div>
+    </div>
+</section>
             </aside>
         </div>
     </div>
@@ -687,7 +733,8 @@
     <script src="static/js/video_khoemai.js"></script>
     <script src="static/js/khoem_ai_nexus_hub.js"></script>
     <script src="static/js/khoemai.js"></script>
-
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script src="static/js/vault.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const setupBox   = document.getElementById("api-key-setup");
