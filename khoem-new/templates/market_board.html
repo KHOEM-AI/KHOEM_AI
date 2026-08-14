@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHOEM_AI Market Board — មាស / ដុល្លារ / ប្រេង / ហ្គាស</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/khoem_ai_nexus.css') }}">
+    <style>
+        :root {
+            --primary: #00f0ff;
+            --gold: #ffd700;
+            --bg-dark: #0b0d14;
+            --card: #151a28;
+            --text: #f8fafc;
+        }
+        body {
+            background: var(--bg-dark);
+            color: var(--text);
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .board-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .board-header h1 {
+            color: var(--gold);
+            margin: 0;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+        .status-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        #market-status {
+            font-size: 12px;
+            color: #888;
+        }
+        #refresh-btn {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            border-radius: 8px;
+            padding: 3px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        #refresh-btn:hover:not(:disabled) {
+            background: var(--primary);
+            color: #000;
+        }
+        #refresh-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .price-card {
+            background: var(--card);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 14px;
+            padding: 18px;
+            text-align: center;
+        }
+        .price-card.gold { border-color: rgba(255, 215, 0, 0.4); }
+        .price-card h3 {
+            margin: 0 0 10px;
+            font-size: 13px;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .price-value {
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .price-card.gold .price-value { color: var(--gold); }
+        .price-change {
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+        .price-sub {
+            font-size: 13px;
+            color: #888;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="board-header">
+        <h1>💰 KHOEM_AI Market Board</h1>
+        <div class="status-row">
+            <p id="market-status">កំពុងទាញយកទិន្នន័យ...</p>
+            <button id="refresh-btn" title="ទាញយកតម្លៃថ្មី">🔄 Refresh</button>
+        </div>
+    </div>
+
+    <div class="board-grid">
+        <div class="price-card gold">
+            <h3>មាស 24K (ក្នុង 1 អោន)</h3>
+            <div class="price-value" id="gold-oz">--</div>
+            <div class="price-change" id="gold-oz-change">--</div>
+        </div>
+
+        <div class="price-card gold">
+            <h3>មាស 24K (ក្នុង 1 ក្រាម)</h3>
+            <div class="price-value" id="gold-gram">--</div>
+            <div class="price-change" id="gold-gram-change">--</div>
+            <div class="price-sub" id="gold-gram-khr">--</div>
+        </div>
+
+        <div class="price-card">
+            <h3>ដុល្លារ / រៀល</h3>
+            <div class="price-value" id="usd-khr">--</div>
+            <div class="price-change" id="usd-khr-change">--</div>
+        </div>
+
+        <div class="price-card">
+            <h3>ប្រេងឆៅ WTI (1 barrel)</h3>
+            <div class="price-value" id="wti-price">--</div>
+            <div class="price-change" id="wti-price-change">--</div>
+        </div>
+
+        <div class="price-card">
+            <h3>ប្រេងឆៅ Brent (1 barrel)</h3>
+            <div class="price-value" id="brent-price">--</div>
+            <div class="price-change" id="brent-price-change">--</div>
+        </div>
+
+        <div class="price-card">
+            <h3>ហ្គាសធម្មជាតិ (1 MMBtu)</h3>
+            <div class="price-value" id="gas-price">--</div>
+            <div class="price-change" id="gas-price-change">--</div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/market_board.js') }}"></script>
+</body>
+  </html>
+
