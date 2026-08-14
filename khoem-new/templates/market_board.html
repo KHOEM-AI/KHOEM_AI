@@ -1,154 +1,279 @@
 <!DOCTYPE html>
 <html lang="km">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KHOEM_AI Market Board — មាស / ដុល្លារ / ប្រេង / ហ្គាស</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/khoem_ai_nexus.css') }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071923" />
+    <title>KHOEM_AI 3.3 PRO — Nexus Master Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/khoem_ai_nexus.css') }}" />
     <style>
-        :root {
-            --primary: #00f0ff;
-            --gold: #ffd700;
-            --bg-dark: #0b0d14;
-            --card: #151a28;
-            --text: #f8fafc;
-        }
-        body {
-            background: var(--bg-dark);
-            color: var(--text);
-            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        .board-header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .board-header h1 {
-            color: var(--gold);
-            margin: 0;
-            font-size: 26px;
-            letter-spacing: 1px;
-        }
-        .status-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 8px;
-        }
-        #market-status {
-            font-size: 12px;
-            color: #888;
-        }
-        #refresh-btn {
-            background: transparent;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            border-radius: 8px;
-            padding: 3px 10px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        #refresh-btn:hover:not(:disabled) {
-            background: var(--primary);
-            color: #000;
-        }
-        #refresh-btn:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-        }
-        .board-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .price-card {
-            background: var(--card);
-            border: 1px solid rgba(0, 240, 255, 0.2);
-            border-radius: 14px;
-            padding: 18px;
-            text-align: center;
-        }
-        .price-card.gold { border-color: rgba(255, 215, 0, 0.4); }
-        .price-card h3 {
-            margin: 0 0 10px;
-            font-size: 13px;
-            color: #aaa;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .price-value {
-            font-size: 26px;
-            font-weight: bold;
-            color: var(--primary);
-        }
-        .price-card.gold .price-value { color: var(--gold); }
-        .price-change {
-            font-size: 13px;
-            font-weight: bold;
-            margin-top: 4px;
-        }
-        .price-sub {
-            font-size: 13px;
-            color: #888;
-            margin-top: 4px;
-        }
+      :root {
+        --bg: #071923;
+        --bg-deep: #04131b;
+        --panel: rgba(12, 34, 45, 0.9);
+        --line: rgba(151, 221, 231, 0.16);
+        --line-strong: rgba(151, 221, 231, 0.28);
+        --text: #f1fbfc;
+        --muted: #8ca8b0;
+        --cyan: #61e4ef;
+        --green: #75e3c0;
+        --yellow: #f6d56b;
+        --red: #ff7a83;
+        --radius: 22px;
+      }
+      * { box-sizing: border-box; }
+      html { min-width: 320px; background: var(--bg); }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 86% 4%, rgba(35, 153, 169, .12), transparent 25rem),
+          radial-gradient(circle at 8% 100%, rgba(25, 113, 131, .1), transparent 28rem),
+          linear-gradient(145deg, #061720 0%, #081e2a 48%, #06151e 100%);
+        font-family: "Noto Sans Khmer", "Segoe UI", sans-serif;
+      }
+      button, input, select { font: inherit; }
+      button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible {
+        outline: 3px solid rgba(97, 228, 239, .55);
+        outline-offset: 2px;
+      }
+      .app-container { width: min(1480px, 100%); margin: 0 auto; padding: 24px; }
+      .topbar {
+        min-height: 76px; display: flex; align-items: center;
+        justify-content: space-between; gap: 18px; padding: 15px 20px;
+        border: 1px solid var(--line); border-radius: 24px;
+        background: rgba(7, 27, 37, .84); backdrop-filter: blur(18px);
+      }
+      .brand { display: flex; align-items: center; gap: 13px; min-width: 0; }
+      .brand-mark {
+        width: 46px; height: 46px; display: grid; place-items: center;
+        border: 1px solid rgba(97, 228, 239, .42); border-radius: 15px;
+        color: var(--cyan); background: rgba(97, 228, 239, .1);
+      }
+      .brand-mark svg { width: 25px; height: 25px; }
+      .brand h1 { margin: 0; font-size: 16px; letter-spacing: .15em; white-space: nowrap; }
+      .brand h1 span { color: var(--cyan); }
+      .brand p { margin: 3px 0 0; color: var(--muted); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+      .topbar-status { display: flex; align-items: center; gap: 16px; color: var(--muted); font-size: 11px; }
+      .system-status { display: flex; align-items: center; gap: 8px; }
+      .status-dot { width: 7px; height: 7px; display: inline-block; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 11px var(--cyan); }
+      .session-clock { min-width: 95px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 12px; text-align: right; font-size: 9px; }
+      .session-clock strong { display: block; color: var(--text); font-size: 12px; }
+      .profile { width: 37px; height: 37px; display: grid; place-items: center; border-radius: 50%; color: var(--bg-deep); background: var(--cyan); font-size: 11px; font-weight: 800; }
+      .dashboard-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr) 300px; gap: 18px; align-items: start; margin-top: 20px; }
+      .sidebar, .main-content, .right-rail { min-width: 0; display: grid; gap: 18px; }
+      .sidebar, .right-rail { position: sticky; top: 20px; }
+      .bento-card { border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg, rgba(13, 40, 52, .94), rgba(7, 26, 36, .92)); box-shadow: 0 18px 50px rgba(0, 0, 0, .22); overflow: hidden; }
+      .card-pad { padding: 20px; }
+      .eyebrow { margin: 0 0 9px; color: #70919a; font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+      .card-title { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0; font-size: 16px; }
+      .muted { color: var(--muted); font-size: 12px; line-height: 1.7; }
+      .divider { height: 1px; margin: 18px 0; background: var(--line); }
+      .command-heading { display: flex; justify-content: space-between; gap: 12px; }
+      .command-heading h2 { margin: 0; font-size: 22px; }
+      .signal-button, .composer-button { display: grid; place-items: center; border: 1px solid var(--line); border-radius: 12px; color: var(--cyan); background: rgba(97, 228, 239, .1); cursor: pointer; }
+      .signal-button { width: 38px; height: 38px; }
+      .signal-button svg, .composer-button svg { width: 18px; height: 18px; }
+      .tool-list, .api-list, .focus-list, .context-list { display: grid; gap: 9px; }
+      .tool-button, .place-button { width: 100%; display: flex; align-items: center; gap: 9px; padding: 11px 12px; border: 1px solid var(--line); border-radius: 13px; color: #b9d2d6; background: rgba(18, 54, 68, .58); text-align: left; cursor: pointer; }
+      .tool-button:hover, .place-button:hover, .chip:hover { border-color: var(--line-strong); background: rgba(23, 63, 78, .9); }
+      .tool-button .toggle { width: 7px; height: 7px; margin-left: auto; border-radius: 50%; background: var(--green); }
+      .api-row, .context-row { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 12px; }
+      .api-row span:last-child { display: flex; align-items: center; gap: 7px; color: #bfd6d9; }
+      .api-row.warning .status-dot { background: var(--yellow); box-shadow: 0 0 8px var(--yellow); }
+      .assistant-card { min-height: 620px; display: flex; flex-direction: column; }
+      .assistant-head { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 20px 22px 15px; }
+      .assistant-head h2 { margin: 0; font-size: 20px; }
+      .encrypted { padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: #8bb8be; font-size: 9px; }
+      #chat-box { flex: 1; min-height: 370px; max-height: 500px; display: flex; flex-direction: column; gap: 15px; margin: 0 20px; padding: 20px; overflow-y: auto; border: 1px solid var(--line); border-radius: 18px; background: rgba(5, 24, 32, .91); }
+      .msg { max-width: 82%; padding: 13px 15px; border: 1px solid var(--line); border-radius: 15px; color: #d4e7e9; font-size: 13px; line-height: 1.8; white-space: pre-wrap; }
+      .msg.assistant { align-self: flex-start; background: rgba(22, 59, 73, .8); border-top-left-radius: 5px; }
+      .msg.user { align-self: flex-end; background: rgba(30, 117, 134, .76); border-top-right-radius: 5px; }
+      .msg-label { display: block; margin-bottom: 5px; color: #75a5ad; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+      .composer { display: flex; gap: 8px; align-items: center; padding: 12px 20px 10px; }
+      .composer-button { width: 44px; height: 44px; flex: 0 0 auto; }
+      .composer-button.send { color: var(--bg-deep); background: var(--cyan); }
+      .composer input { min-width: 0; width: 100%; height: 44px; padding: 0 14px; border: 1px solid var(--line); border-radius: 13px; color: var(--text); background: #102f3c; }
+      .quick-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 20px 20px; }
+      .chip { min-height: 38px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 11px; color: #b6d4d8; background: rgba(17, 52, 65, .8); cursor: pointer; font-size: 11px; }
+      .market-card { padding: 20px; }
+      .market-link { display: block; margin-top: 15px; color: var(--cyan); font-size: 12px; text-decoration: none; }
+      .market-link:hover { text-decoration: underline; }
+      .market-mini-list { display: grid; gap: 12px; margin-top: 18px; }
+      .market-mini-row { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 12px; }
+      .market-mini-row strong { color: var(--text); }
+      .timezone-card select { width: 100%; margin-top: 12px; padding: 10px; border: 1px solid var(--line); border-radius: 12px; color: var(--text); background: #102f3c; }
+      .clock { margin-top: 12px; color: var(--cyan); font-size: 25px; font-weight: 600; }
+      .status-text { min-height: 18px; padding: 0 22px 16px; color: var(--muted); font-size: 11px; }
+      @media (max-width: 1120px) { .dashboard-layout { grid-template-columns: 230px minmax(0, 1fr); } .right-rail { grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); position: static; } }
+      @media (max-width: 760px) { .app-container { padding: 12px; } .topbar { padding: 10px 12px; border-radius: 18px; } .topbar-status { gap: 0; } .system-status, .session-id, .session-clock { display: none; } .brand h1 { font-size: 13px; } .dashboard-layout { display: flex; flex-direction: column; margin-top: 12px; gap: 12px; } .sidebar, .right-rail { width: 100%; position: static; } .main-content { display: contents; } .assistant-card { order: 5; min-height: 610px; } .right-rail { order: 6; grid-template-columns: 1fr; } #chat-box { min-height: 375px; margin: 0 12px; padding: 14px; } .composer { padding: 10px 12px 8px; } .quick-actions { grid-template-columns: repeat(2, 1fr); padding: 0 12px 14px; } }
     </style>
-</head>
-<body>
-
-    <div class="board-header">
-        <h1>💰 KHOEM_AI Market Board</h1>
-        <div class="status-row">
-            <p id="market-status">កំពុងទាញយកទិន្នន័យ...</p>
-            <button id="refresh-btn" title="ទាញយកតម្លៃថ្មី">🔄 Refresh</button>
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v4M12 17v4M3 12h4m10 0h4M5.6 5.6l2.8 2.8m7.2 7.2 2.8 2.8m0-12.8-2.8 2.8m-7.2 7.2-2.8 2.8"/><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/></svg>
+          </div>
+          <div><h1>KHOEM_AI <span>3.3 PRO</span></h1><p>Nexus Master Dashboard</p></div>
         </div>
+        <div class="topbar-status">
+          <div class="system-status"><i class="status-dot"></i> System operational</div>
+          <div class="session-id">SESSION / <span id="session-label">--</span></div>
+          <div class="session-clock">Local session<strong id="session-clock">--:--:--</strong></div>
+          <div class="profile">KM</div>
+        </div>
+      </header>
+
+      <div class="dashboard-layout">
+        <aside class="sidebar" aria-label="KHOEM_AI controls">
+          <section class="bento-card command-card card-pad">
+            <div class="command-heading"><div><p class="eyebrow">Command center</p><h2>សួស្តី, បង</h2><p class="muted">តើខ្ញុំអាចជួយអ្វីបានខ្លះ?</p></div><button id="voice-toggle" class="signal-button" type="button" aria-label="Voice toggle">◉</button></div>
+            <div class="divider"></div>
+            <div class="tool-list">
+              <button id="voice-assistant-btn" class="tool-button" type="button">Voice assistant <i class="toggle"></i></button>
+              <button id="clear-chat-btn" class="tool-button" type="button">Clear conversation</button>
+              <a class="tool-button" href="{{ url_for('market_board') }}">Open Market Board</a>
+            </div>
+          </section>
+          <section class="bento-card card-pad">
+            <p class="eyebrow">API ecosystem</p><h3 class="card-title">System status</h3>
+            <div class="api-list" style="margin-top:16px;">
+              <div class="api-row"><span>Core intelligence</span><span><i class="status-dot"></i>Connected</span></div>
+              <div class="api-row"><span>Market API</span><span><i class="status-dot"></i>Ready</span></div>
+              <div class="api-row warning"><span>GPS services</span><span><i class="status-dot"></i>Standby</span></div>
+            </div>
+          </section>
+          <section class="bento-card card-pad timezone-card">
+            <p class="eyebrow">Global time</p>
+            <select id="timezone-select" aria-label="Select timezone"><option value="Asia/Phnom_Penh">កម្ពុជា · ភ្នំពេញ</option><option value="Asia/Tokyo">ជប៉ុន · តូក្យូ</option><option value="Asia/Singapore">សិង្ហបុរី</option><option value="Europe/London">ឡុងដ៍</option></select>
+            <div id="clock" class="clock" role="status" aria-live="polite">--:--:--</div>
+            <p id="timezone-label" class="muted">GMT+7 · ភ្នំពេញ</p>
+          </section>
+        </aside>
+
+        <main class="main-content">
+          <section class="bento-card assistant-card">
+            <div class="assistant-head"><div><p class="eyebrow">Assistant workspace</p><h2>Conversation · Chat</h2></div><span class="encrypted"><i class="status-dot"></i> encrypted</span></div>
+            <div id="chat-box" role="log" aria-live="polite">
+              <div class="msg assistant"><span class="msg-label">KHOEM_AI</span>សួស្តី! ខ្ញុំជា KHOEM_AI របស់បង។ ខ្ញុំអាចជួយជជែក និងភ្ជាប់ទៅមុខងារទីផ្សារបាន។</div>
+            </div>
+            <div class="composer">
+              <button id="mic-btn" class="composer-button" type="button" aria-label="Voice input">◌</button>
+              <input id="user-input" type="text" placeholder="វាយសារនៅទីនេះ..." autocomplete="off" />
+              <button id="send-btn" class="composer-button send" type="button" aria-label="Send message">→</button>
+            </div>
+            <div id="chat-status" class="status-text">Ready · Session connected</div>
+            <div class="quick-actions">
+              <button class="chip" data-action="market" type="button">តម្លៃទីផ្សារ</button>
+              <button class="chip" data-action="time" type="button">ម៉ោងឥឡូវនេះ</button>
+              <button class="chip" data-action="status" type="button">ពិនិត្យប្រព័ន្ធ</button>
+            </div>
+          </section>
+        </main>
+
+        <aside class="right-rail" aria-label="Market and saved information">
+          <section class="bento-card market-card">
+            <p class="eyebrow">Market board</p>
+            <h3 class="card-title">តម្លៃសំខាន់ៗ <span id="market-badge" class="muted">Loading...</span></h3>
+            <div class="market-mini-list">
+              <div class="market-mini-row"><span>មាស / oz</span><strong id="mini-gold">--</strong></div>
+              <div class="market-mini-row"><span>ដុល្លារ / រៀល</span><strong id="mini-usd">--</strong></div>
+              <div class="market-mini-row"><span>WTI / barrel</span><strong id="mini-wti">--</strong></div>
+              <div class="market-mini-row"><span>Brent / barrel</span><strong id="mini-brent">--</strong></div>
+            </div>
+            <a class="market-link" href="{{ url_for('market_board') }}">បើក Market Board ពេញលេញ →</a>
+          </section>
+          <section class="bento-card card-pad">
+            <p class="eyebrow">Quick context</p>
+            <div class="context-list"><div class="context-row"><span>Network</span><strong>Stable</strong></div><div class="context-row"><span>Market cache</span><strong>5 minutes</strong></div><div class="context-row"><span>Language</span><strong>ខ្មែរ</strong></div></div>
+          </section>
+        </aside>
+      </div>
     </div>
 
-    <div class="board-grid">
-        <div class="price-card gold">
-            <h3>មាស 24K (ក្នុង 1 អោន)</h3>
-            <div class="price-value" id="gold-oz">--</div>
-            <div class="price-change" id="gold-oz-change">--</div>
-        </div>
+    <script>
+      const sessionId = "session_" + Math.random().toString(36).slice(2, 10);
+      const chatBox = document.getElementById("chat-box");
+      const input = document.getElementById("user-input");
+      const statusText = document.getElementById("chat-status");
 
-        <div class="price-card gold">
-            <h3>មាស 24K (ក្នុង 1 ក្រាម)</h3>
-            <div class="price-value" id="gold-gram">--</div>
-            <div class="price-change" id="gold-gram-change">--</div>
-            <div class="price-sub" id="gold-gram-khr">--</div>
-        </div>
+      function addMessage(role, text) {
+        const item = document.createElement("div");
+        item.className = "msg " + (role === "user" ? "user" : "assistant");
+        const label = document.createElement("span");
+        label.className = "msg-label";
+        label.textContent = role === "user" ? "You" : "KHOEM_AI";
+        item.append(label, document.createTextNode(String(text || "")));
+        chatBox.appendChild(item);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
 
-        <div class="price-card">
-            <h3>ដុល្លារ / រៀល</h3>
-            <div class="price-value" id="usd-khr">--</div>
-            <div class="price-change" id="usd-khr-change">--</div>
-        </div>
+      async function api(path, options) {
+        const response = await fetch(path, { headers: { "Content-Type": "application/json", ...(options && options.headers || {}) }, ...options });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || "Request failed");
+        return data;
+      }
 
-        <div class="price-card">
-            <h3>ប្រេងឆៅ WTI (1 barrel)</h3>
-            <div class="price-value" id="wti-price">--</div>
-            <div class="price-change" id="wti-price-change">--</div>
-        </div>
+      async function sendMessage(value) {
+        const message = (value || input.value).trim();
+        if (!message) return;
+        input.value = "";
+        addMessage("user", message);
+        statusText.textContent = "កំពុងគិត...";
+        try {
+          const data = await api("/api/chat", { method: "POST", body: JSON.stringify({ session_id: sessionId, message }) });
+          addMessage("assistant", data.reply);
+          statusText.textContent = "Ready · Session connected";
+        } catch (error) {
+          addMessage("assistant", error.message);
+          statusText.textContent = "សូមពិនិត្យ API configuration";
+        }
+      }
 
-        <div class="price-card">
-            <h3>ប្រេងឆៅ Brent (1 barrel)</h3>
-            <div class="price-value" id="brent-price">--</div>
-            <div class="price-change" id="brent-price-change">--</div>
-        </div>
+      document.getElementById("send-btn").addEventListener("click", () => sendMessage());
+      input.addEventListener("keydown", (event) => { if (event.key === "Enter") sendMessage(); });
+      document.getElementById("clear-chat-btn").addEventListener("click", () => { chatBox.innerHTML = ""; addMessage("assistant", "ការសន្ទនាត្រូវបានសម្អាតរួចរាល់។"); });
+      document.getElementById("voice-assistant-btn").addEventListener("click", () => addMessage("assistant", "ការបញ្ចូលសំឡេងនឹងដំណើរការតាម Browser ដែលគាំទ្រ Speech Recognition។"));
+      document.getElementById("mic-btn").addEventListener("click", () => addMessage("assistant", "សូមប្រើប៊ូតុងសំឡេងនៅលើ Browser ដើម្បីនិយាយជាមួយខ្ញុំ។"));
+      document.getElementById("voice-toggle").addEventListener("click", () => addMessage("assistant", "Voice assistant បានបើកសម្រាប់ session នេះ។"));
 
-        <div class="price-card">
-            <h3>ហ្គាសធម្មជាតិ (1 MMBtu)</h3>
-            <div class="price-value" id="gas-price">--</div>
-            <div class="price-change" id="gas-price-change">--</div>
-        </div>
-    </div>
+      async function loadMarketSummary() {
+        try {
+          const data = await api("/api/market-prices");
+          document.getElementById("mini-gold").textContent = "$" + Number(data.gold_usd_per_oz).toFixed(2);
+          document.getElementById("mini-usd").textContent = "៛" + Number(data.usd_khr).toFixed(2);
+          document.getElementById("mini-wti").textContent = "$" + Number(data.wti_usd_per_bbl).toFixed(2);
+          document.getElementById("mini-brent").textContent = "$" + Number(data.brent_usd_per_bbl).toFixed(2);
+          document.getElementById("market-badge").textContent = data.is_live ? "Live" : "Snapshot";
+        } catch (error) {
+          document.getElementById("market-badge").textContent = "Unavailable";
+        }
+      }
 
-    <script src="{{ url_for('static', filename='js/market_board.js') }}"></script>
-</body>
-  </html>
+      function updateClock() {
+        const timezone = document.getElementById("timezone-select").value;
+        const parts = new Intl.DateTimeFormat("en-GB", { timeZone: timezone, hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }).format(new Date());
+        document.getElementById("clock").textContent = parts;
+        const labels = { "Asia/Phnom_Penh": "GMT+7 · ភ្នំពេញ", "Asia/Tokyo": "GMT+9 · តូក្យូ", "Asia/Singapore": "GMT+8 · សិង្ហបុរី", "Europe/London": "GMT · ឡុងដ៍" };
+        document.getElementById("timezone-label").textContent = labels[timezone] || timezone;
+      }
 
+      document.querySelectorAll("[data-action]").forEach((button) => button.addEventListener("click", () => {
+        if (button.dataset.action === "market") { loadMarketSummary(); addMessage("assistant", "ខ្ញុំបានធ្វើបច្ចុប្បន្នភាពសង្ខេបតម្លៃទីផ្សារហើយ។"); }
+        if (button.dataset.action === "time") addMessage("assistant", "ម៉ោងតំបន់ដែលបងបានជ្រើសគឺ " + document.getElementById("clock").textContent);
+        if (button.dataset.action === "status") api("/api/status").then((data) => addMessage("assistant", "ប្រព័ន្ធ " + data.status + " · version " + data.version)).catch(() => addMessage("assistant", "មិនអាចពិនិត្យស្ថានភាពប្រព័ន្ធបានទេ។"));
+      }));
+
+      document.getElementById("session-label").textContent = sessionId.replace("session_", "").toUpperCase();
+      setInterval(() => { document.getElementById("session-clock").textContent = new Date().toLocaleTimeString("en-GB", { hour12: false }); }, 1000);
+      document.getElementById("timezone-select").addEventListener("change", updateClock);
+      setInterval(updateClock, 1000);
+      updateClock();
+      loadMarketSummary();
+    </script>
+  </body>
+</html>
