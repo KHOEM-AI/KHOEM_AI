@@ -837,4 +837,3 @@ if __name__ == "__main__":
         Config.VERSION, Config.PORT, Config.DEBUG,
     )
     app.run(host="0.0.0.0", port=Config.PORT, debug=Config.DEBUG)
-
