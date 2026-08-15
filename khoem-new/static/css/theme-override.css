@@ -1,16 +1,11 @@
-/* ==============================================================================
-   theme-override.css — KHOEM_AI Sky Blue Theme (Vivid buttons)
-   ស៊ុមក្រៅ = ខៀវមេឃ | ផ្ទៃ chat = ខ្មៅសុទ្ធ | ប៊ូតុង = ខៀវដិត | អក្សរ = ស
-   ============================================================================== */
-
 :root {
-  --bg: #000000 !important;
-  --bg-deep: #000000 !important;
-  --panel: rgba(14, 165, 233, 0.08) !important;
-  --panel-soft: rgba(14, 165, 233, 0.05) !important;
-  --panel-hover: rgba(14, 165, 233, 0.18) !important;
-  --line: rgba(14, 165, 233, 0.6) !important;
-  --line-strong: rgba(14, 165, 233, 0.9) !important;
+  --bg: #0a1826 !important;
+  --bg-deep: #071320 !important;
+  --panel: rgba(14, 165, 233, 0.14) !important;
+  --panel-soft: rgba(14, 165, 233, 0.10) !important;
+  --panel-hover: rgba(14, 165, 233, 0.22) !important;
+  --line: rgba(14, 165, 233, 0.5) !important;
+  --line-strong: rgba(14, 165, 233, 0.8) !important;
   --text: #ffffff !important;
   --muted: #d6ecfb !important;
   --cyan: #0ea5e9 !important;
@@ -23,7 +18,7 @@
 * { color: #ffffff; }
 
 html, body {
-  background: #000000 !important;
+  background: #0a1826 !important;
   color: #ffffff !important;
 }
 
@@ -32,23 +27,21 @@ html, body {
 .main-content,
 .sidebar,
 .right-rail {
-  background: #000000 !important;
+  background: transparent !important;
 }
 
-/* ── Topbar — ស៊ុមខៀវមេឃដិត ផ្ទៃខ្មៅ ── */
 .topbar {
-  background: #000000 !important;
-  border: 1px solid rgba(14, 165, 233, .65) !important;
-  box-shadow: 0 0 20px rgba(14, 165, 233, .12) !important;
+  background: linear-gradient(145deg, #123049, #0d2338) !important;
+  border: 1px solid rgba(14, 165, 233, .5) !important;
+  box-shadow: 0 0 20px rgba(14, 165, 233, .1) !important;
 }
 
 .brand-mark {
-  background: linear-gradient(145deg, rgba(14, 165, 233, .3), rgba(14, 165, 233, .08)) !important;
-  border: 1px solid rgba(14, 165, 233, .65) !important;
+  background: linear-gradient(145deg, rgba(14, 165, 233, .3), rgba(14, 165, 233, .1)) !important;
+  border: 1px solid rgba(14, 165, 233, .6) !important;
   color: #0ea5e9 !important;
 }
 
-/* ── ស៊ុមកាតទាំងអស់ — ផ្ទៃខ្មៅសុទ្ធ ស៊ុមខៀវមេឃ ── */
 .bento-card,
 .card,
 .settings-panel,
@@ -59,14 +52,13 @@ html, body {
 .timezone-card,
 .assistant-card,
 .telemetry-card {
-  background: #000000 !important;
-  border: 1px solid rgba(14, 165, 233, .5) !important;
+  background: linear-gradient(145deg, #10263c, #0c1e30) !important;
+  border: 1px solid rgba(14, 165, 233, .4) !important;
   box-shadow:
-    0 8px 24px rgba(0, 0, 0, .7),
+    0 8px 24px rgba(0, 0, 0, .5),
     0 0 0 1px rgba(14, 165, 233, .08) inset !important;
 }
 
-/* ── ប៊ូតុងទាំងអស់ — ខៀវដិត ស្រស់ ច្បាស់ ── */
 .tool-button,
 .place-button,
 .chip,
@@ -78,13 +70,13 @@ html, body {
 .btn-secondary,
 #send-btn,
 button {
-  background: linear-gradient(160deg, rgba(14, 165, 233, .38), rgba(2, 132, 199, .28)) !important;
-  border: 1px solid rgba(14, 165, 233, .8) !important;
+  background: linear-gradient(160deg, rgba(14, 165, 233, .45), rgba(2, 132, 199, .35)) !important;
+  border: 1px solid rgba(14, 165, 233, .85) !important;
   color: #ffffff !important;
   box-shadow:
-    3px 3px 10px rgba(0, 0, 0, .7),
-    -2px -2px 8px rgba(14, 165, 233, .12),
-    0 1px 0 rgba(255, 255, 255, .06) inset !important;
+    3px 3px 10px rgba(0, 0, 0, .5),
+    -2px -2px 8px rgba(14, 165, 233, .15),
+    0 1px 0 rgba(255, 255, 255, .08) inset !important;
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
 
@@ -98,11 +90,11 @@ button {
 .btn-secondary:hover,
 button:hover {
   transform: translateY(-2px) !important;
-  background: linear-gradient(160deg, rgba(14, 165, 233, .55), rgba(2, 132, 199, .42)) !important;
+  background: linear-gradient(160deg, rgba(14, 165, 233, .62), rgba(2, 132, 199, .5)) !important;
   border-color: rgba(14, 165, 233, 1) !important;
   box-shadow:
-    5px 6px 16px rgba(0, 0, 0, .75),
-    -2px -2px 10px rgba(14, 165, 233, .2) !important;
+    5px 6px 16px rgba(0, 0, 0, .55),
+    -2px -2px 10px rgba(14, 165, 233, .25) !important;
 }
 
 .tool-button:active,
@@ -113,23 +105,22 @@ button:hover {
 button:active {
   transform: translateY(0) !important;
   box-shadow:
-    1px 1px 4px rgba(0, 0, 0, .6),
-    inset 2px 2px 8px rgba(0, 0, 0, .5) !important;
+    1px 1px 4px rgba(0, 0, 0, .5),
+    inset 2px 2px 8px rgba(0, 0, 0, .4) !important;
 }
 
-/* Send button — ខៀវពេញដិតបំផុត (action សំខាន់) */
 .composer-button.send,
 .nav-btn.save {
   background: linear-gradient(160deg, #0ea5e9, #0369a1) !important;
   color: #ffffff !important;
   border: 1px solid #0ea5e9 !important;
   box-shadow:
-    4px 4px 12px rgba(0, 0, 0, .7),
-    -2px -2px 8px rgba(14, 165, 233, .3) !important;
+    4px 4px 12px rgba(0, 0, 0, .5),
+    -2px -2px 8px rgba(14, 165, 233, .35) !important;
 }
 
 .nav-btn.stop {
-  background: linear-gradient(160deg, rgba(255, 122, 131, .32), rgba(0, 0, 0, .9)) !important;
+  background: linear-gradient(160deg, rgba(255, 122, 131, .35), rgba(10, 24, 38, .9)) !important;
   border: 1px solid rgba(255, 122, 131, .7) !important;
   color: #ffffff !important;
 }
@@ -139,7 +130,6 @@ button:active {
   box-shadow: 0 0 8px #0ea5e9 !important;
 }
 
-/* ── Text — អក្សរស ១០០% ── */
 h1, h2, h3, h4, p, span, label, a, li, small, strong, b, i,
 .msg, .card-title, .eyebrow, .metric-value, .clock, .focus-copy,
 .context-row, .nav-item, .welcome, .place-button, .chip, .tool-button,
@@ -150,7 +140,7 @@ h1, h2, h3, h4, p, span, label, a, li, small, strong, b, i,
 
 .muted { color: #d6ecfb !important; }
 
-/* ── Chat box — ខ្មៅសុទ្ធ (មិនប្តូរ) ── */
+/* ── Chat box — ខ្មៅសុទ្ធ (មិនប្តូរ តែមួយកន្លែងនេះទេ) ── */
 #chat-box {
   background: #000000 !important;
   border: 1px solid rgba(14, 165, 233, .45) !important;
@@ -161,12 +151,12 @@ h1, h2, h3, h4, p, span, label, a, li, small, strong, b, i,
 }
 
 .msg.assistant {
-  background: rgba(14, 165, 233, .1) !important;
+  background: rgba(14, 165, 233, .12) !important;
   border: 1px solid rgba(14, 165, 233, .45) !important;
   color: #ffffff !important;
 }
 .msg.user {
-  background: linear-gradient(160deg, rgba(14, 165, 233, .38), rgba(2, 132, 199, .28)) !important;
+  background: linear-gradient(160deg, rgba(14, 165, 233, .4), rgba(2, 132, 199, .3)) !important;
   border: 1px solid rgba(14, 165, 233, .65) !important;
   color: #ffffff !important;
 }
@@ -177,7 +167,6 @@ h1, h2, h3, h4, p, span, label, a, li, small, strong, b, i,
   color: #e0f2fe !important;
 }
 
-/* ── Inputs / selects ── */
 .composer input,
 .search-box input,
 .timezone-card select,
@@ -188,13 +177,12 @@ h1, h2, h3, h4, p, span, label, a, li, small, strong, b, i,
 input,
 select,
 textarea {
-  background: #000000 !important;
+  background: #0d2338 !important;
   border: 1px solid rgba(14, 165, 233, .5) !important;
   color: #ffffff !important;
 }
 input::placeholder { color: #8fb3c9 !important; }
 
-/* ── Status dots ── */
 .status-dot {
   background: #0ea5e9 !important;
   box-shadow: 0 0 10px rgba(14, 165, 233, .9) !important;
@@ -205,13 +193,13 @@ input::placeholder { color: #8fb3c9 !important; }
 }
 
 .encrypted {
-  background: rgba(14, 165, 233, .14) !important;
+  background: rgba(14, 165, 233, .18) !important;
   border: 1px solid rgba(14, 165, 233, .5) !important;
   color: #ffffff !important;
 }
 
 #route-info, #location-status {
-  background: rgba(14, 165, 233, .14) !important;
+  background: rgba(14, 165, 233, .18) !important;
   border: 1px solid rgba(14, 165, 233, .4) !important;
   color: #ffffff !important;
 }
@@ -223,7 +211,7 @@ input::placeholder { color: #8fb3c9 !important; }
   color: #0ea5e9 !important;
 }
 .graph-grid {
-  stroke: rgba(14, 165, 233, .18) !important;
+  stroke: rgba(14, 165, 233, .2) !important;
 }
 
 .divider {
@@ -240,7 +228,7 @@ input::placeholder { color: #8fb3c9 !important; }
 }
 
 ::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: #000000; }
+::-webkit-scrollbar-track { background: #0a1826; }
 ::-webkit-scrollbar-thumb {
   background: rgba(14, 165, 233, .6);
   border-radius: 8px;
