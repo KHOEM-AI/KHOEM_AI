@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.npm/
+
+# Build / generated output
+dist/
+build/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs / runtime files
+*.log
+*.pid
+*.tmp
+*.temp
+
+# Backups
+*.bak
+*.backup
+*.old
+*.orig
+*_backup.*
+*_backup*/
+backups/
+old-check-files-backup/
+tmp_work/
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Local generated reports / scratch files
+audit-report.txt
+status-test.log
+tsc.txt
+local-list.txt
+github-list.txt
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
