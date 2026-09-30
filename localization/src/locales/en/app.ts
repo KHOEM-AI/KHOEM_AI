@@ -47,6 +47,18 @@ const app: TranslationTree = {
     "videoGenerating": "Generating…",
     "videoDownload": "Download video",
     "videoNoImages": "Add at least 2 images"
+  },
+  "ai": {
+    "menu": {
+      "patchDashboard": "Patch Dashboard",
+      "codeCenter": "Code Center",
+      "learningCenter": "Learning Center",
+      "auditMetrics": "Audit & Metrics",
+      "observability": "Observability",
+      "management": "Management",
+      "safety": "Safety",
+      "toolRegistry": "Tool Registry"
+    }
   }
 };
 export default app;

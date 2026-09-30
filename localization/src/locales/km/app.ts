@@ -47,6 +47,18 @@ const app: TranslationTree = {
     "videoGenerating": "កំពុងបង្កើត…",
     "videoDownload": "ទាញយកវីដេអូ",
     "videoNoImages": "សូមបន្ថែមរូបភាពយ៉ាងតិច ២សន្លឹក"
+  },
+  "ai": {
+    "menu": {
+      "patchDashboard": "ផ្ទាំងគ្រប់គ្រងបំណះកូដ",
+      "codeCenter": "មជ្ឈមណ្ឌលកូដ",
+      "learningCenter": "មជ្ឈមណ្ឌលសិក្សា",
+      "auditMetrics": "សវនកម្ម និងរង្វាស់",
+      "observability": "ការតាមដានប្រព័ន្ធ",
+      "management": "ការគ្រប់គ្រង",
+      "safety": "សុវត្ថិភាព",
+      "toolRegistry": "បញ្ជីឧបករណ៍"
+    }
   }
 };
 export default app;
