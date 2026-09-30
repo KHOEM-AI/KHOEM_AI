@@ -19,6 +19,7 @@
     "validate:locales": "npm run build && node dist/scripts/validate-locales.js",
     "check:duplicates": "npm run build && node dist/scripts/check-duplicates.js",
     "report:translations": "npm run build && node dist/scripts/translation-report.js",
+    "api": "npm run build && node dist/src/api/main.js",
     "verify": "npm run build && node dist/scripts/check-duplicates.js && node dist/scripts/validate-locales.js && node --test dist/tests/*.test.js && node dist/scripts/translation-report.js"
   },
   "devDependencies": {
