@@ -1,0 +1,42 @@
+import type { TranslationTree } from "../types/index.js";
+
+/**
+ * Registry-approved loaders. User input is only ever used as a lookup key here,
+ * never as a path or module specifier.
+ */
+export const LOCALE_LOADERS: Readonly<Record<string, () => Promise<{ default: TranslationTree }>>> = {
+  en: () => import("./en/index.js"),
+  km: () => import("./km/index.js"),
+  bn: () => import("./bn/index.js"),
+  cs: () => import("./cs/index.js"),
+  de: () => import("./de/index.js"),
+  el: () => import("./el/index.js"),
+  es: () => import("./es/index.js"),
+  fa: () => import("./fa/index.js"),
+  he: () => import("./he/index.js"),
+  hi: () => import("./hi/index.js"),
+  hu: () => import("./hu/index.js"),
+  id: () => import("./id/index.js"),
+  it: () => import("./it/index.js"),
+  ja: () => import("./ja/index.js"),
+  ko: () => import("./ko/index.js"),
+  lo: () => import("./lo/index.js"),
+  ms: () => import("./ms/index.js"),
+  my: () => import("./my/index.js"),
+  ne: () => import("./ne/index.js"),
+  nl: () => import("./nl/index.js"),
+  pl: () => import("./pl/index.js"),
+  pt: () => import("./pt/index.js"),
+  ro: () => import("./ro/index.js"),
+  ru: () => import("./ru/index.js"),
+  si: () => import("./si/index.js"),
+  sv: () => import("./sv/index.js"),
+  ta: () => import("./ta/index.js"),
+  th: () => import("./th/index.js"),
+  tr: () => import("./tr/index.js"),
+  uk: () => import("./uk/index.js"),
+  ur: () => import("./ur/index.js"),
+  vi: () => import("./vi/index.js"),
+  zh: () => import("./zh/index.js"),
+};
+export const SOURCE_LOCALE = "en";
