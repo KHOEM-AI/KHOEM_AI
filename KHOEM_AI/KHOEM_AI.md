@@ -1,29 +1,29 @@
-KHOEM_AI — Language Structure
+KHOEM_AI — Language System
 
-ស្ថានភាពបច្ចុប្បន្ន
+1. ស្ថានភាពបច្ចុប្បន្ន
 
-1. ថត "languages/"
+ថត "languages/"
 
 Path:
 
-"KHOEM_AI/KHOEM_AI/languages/"
+"~/KHOEM_AI/KHOEM_AI/languages/"
 
 ចំនួនថត៖ 1
 
-ក្នុងថតនេះមានឯកសារ 2៖
+មានឯកសារ 2៖
 
-1. "frequencywords-languages.json"
-2. "language-registry.ts"
+- "frequencywords-languages.json"
+- "language-registry.ts"
 
-2. ឯកសារ Language Registry សំខាន់
+Language Registry សំខាន់
 
 Path:
 
-"KHOEM_AI/KHOEM_AI/localization/src/registry/languages.ts"
+"~/KHOEM_AI/KHOEM_AI/localization/src/registry/languages.ts"
 
-ឯកសារនេះមាន 60 language records ហើយជាប្រភព registry សំខាន់សម្រាប់ language metadata របស់ KHOEM_AI។
+ឯកសារនេះមាន 60 language records និងជាប្រភពសំខាន់សម្រាប់ language metadata របស់ KHOEM_AI។
 
-វាមានព័ត៌មានដូចជា៖
+វាមានព័ត៌មាន៖
 
 - Language ID
 - ISO 639-1
@@ -36,122 +36,205 @@ Path:
 - Language status
 - CLDR support
 
-3. "frequencywords-languages.json"
+---
+
+2. Source of Truth
+
+KHOEM_AI គឺជា single source of truth សម្រាប់ language data។
+
+Language metadata សំខាន់ស្ថិតនៅ៖
+
+"~/KHOEM_AI/KHOEM_AI/localization/src/registry/languages.ts"
+
+AI App មិនត្រូវរក្សា language registry ស្ទួនដោយខ្លួនឯងទេ។
+
+AI App ត្រូវទាញ language data ពី KHOEM_AI API។
+
+---
+
+3. ឯកសារនៅក្នុង "languages/"
+
+"frequencywords-languages.json"
 
 Path:
 
-"KHOEM_AI/KHOEM_AI/languages/frequencywords-languages.json"
+"~/KHOEM_AI/KHOEM_AI/languages/frequencywords-languages.json"
 
-ឯកសារនេះជាទិន្នន័យ frequency words សម្រាប់ភាសា។ វាមិនគួរត្រូវបានយកទៅជំនួស "localization/src/registry/languages.ts" ជា language registry ទេ។
+តួនាទី៖
 
-4. "language-registry.ts" ក្នុង "languages/"
+- ផ្ទុកទិន្នន័យ frequency words សម្រាប់ភាសា។
+- មិនប្រើជំនួស language registry metadata ទេ។
+
+"language-registry.ts"
 
 Path:
 
-"KHOEM_AI/KHOEM_AI/languages/language-registry.ts"
+"~/KHOEM_AI/KHOEM_AI/languages/language-registry.ts"
 
-នេះជាឯកសារ language registry ចាស់/ជំនួយដែលមាន language options មួយចំនួន។
+តួនាទី៖
 
-វាមានភាសា 13 ដែល code ទាំងអស់ស្ថិតក្នុង registry 60 រួចហើយ។
+- ជា language options/registry ជំនួយដែលមានពីមុន។
+- មាន language codes មួយចំនួនដែលស្ថិតក្នុង registry 60 រួចហើយ។
+- មិនត្រូវបង្កើត language ID ស្ទួនពីវាទៅ source registry ទេ។
 
-ដូច្នេះមិនគួរបង្កើត language IDs ស្ទួននៅកន្លែងផ្សេងទៀតទេ។
+«ប្រសិនបើឯកសារនេះលែងត្រូវបានប្រើប្រាស់ គួរតែពិនិត្យ references មុនពេលលុប។ មិនលុបដោយសន្មត់។»
 
-5. "localization/dist/"
+---
 
-មាន build output ដូចជា:
+4. "localization/dist/"
 
-"localization/dist/src/registry/languages.js"
+ឧទាហរណ៍៖
 
-"localization/dist/src/registry/languages.d.ts"
+- "localization/dist/src/registry/languages.js"
+- "localization/dist/src/registry/languages.d.ts"
+- "localization/dist/src/registry/languages.js.map"
 
-"localization/dist/src/registry/languages.js.map"
+"dist/" គឺជា generated/build output។
 
-ឯកសារ "dist" គឺ generated/build output។ មិនគួរកែដោយដៃ។ Source ត្រូវកែពី "localization/src/"។
+ច្បាប់៖
 
-Source of Truth
+- មិនកែ "dist" ដោយដៃ។
+- កែ source នៅ "localization/src/"។
+- បន្ទាប់មក build នឹងបង្កើត "dist" ឡើងវិញ។
 
-សម្រាប់ language metadata របស់ KHOEM_AI៖
+---
 
-"KHOEM_AI/KHOEM_AI/localization/src/registry/languages.ts"
-
-គឺជា registry សំខាន់។
-
-AI App មិនគួររក្សា language list ស្ទួនដោយខ្លួនឯងទេ។ AI App គួរទាញ language data ពី KHOEM_AI API។
-
-របៀបប្រើប្រាស់
-
-Flow សំខាន់៖
+5. Flow នៃប្រព័ន្ធ
 
 KHOEM_AI Language Registry
-→ KHOEM_AI API
-→ AI App
-→ Language Selection / UI
+        ↓
+KHOEM_AI API
+        ↓
+AI App
+        ↓
+Language Selection / AI UI
 
-AI App មិនគួរបង្កើត language registry ថ្មីដែលស្ទួនជាមួយ KHOEM_AI ទេ។
+AI App connection point:
 
-ចំនួនភាសា
+"~/ai-project/AI/src/App.tsx"
+
+App.tsx ត្រូវប្រើ language data ពី KHOEM_AI API ជំនួសការរក្សាបញ្ជីភាសាដាច់ដោយឡែក។
+
+---
+
+6. ចំនួនភាសា
 
 បច្ចុប្បន្ន៖ 60 language records
 
-គោលដៅរបស់គម្រោង៖ 307 languages
+គោលដៅគម្រោង៖ 307 languages
 
-ចំនួន 60 records មិនមានន័យថា translation content របស់ 60 ភាសាបានបញ្ចប់ 100% ទេ។ Language registry និង translation coverage គឺជារឿងពីរផ្សេងគ្នា។
+ចំណាំ៖
 
-ច្បាប់សម្រាប់ការបន្ថែមភាសា
+60 language records ≠ 60 languages ដែលមាន translation content 100%។
+
+Language registry និង translation coverage គឺជារឿងពីរផ្សេងគ្នា។
+
+---
+
+7. គោលដៅ 307 Languages
+
+ភាសាថ្មីដែលបន្ថែមក្រោយ ត្រូវប្រើរចនាសម្ព័ន្ធដូចគ្នា និងចូលទៅក្នុង source registry តែមួយ។
+
+មិនត្រូវបង្កើត registry ថ្មីសម្រាប់ភាសាថ្មីទេ។
+
+---
+
+8. កំណត់ត្រាភាសា
+
+គោលការណ៍៖
+
+មួយភាសា = មួយ language record
+
+Language record ត្រូវមាន metadata ដែលមានស្រាប់ក្នុង "LanguageRecord" ដូចជា៖
+
+- "languageId"
+- "iso639_1"
+- "iso639_3"
+- "bcp47"
+- "englishName"
+- "nativeName"
+- "defaultScript"
+- "direction"
+- "status"
+- "cldrSupport"
+
+«Country/region និង flag មិនមែនជា fields ដែលមាននៅក្នុង "LanguageRecord" បច្ចុប្បន្នទេ។ ប្រសិនបើត្រូវការបន្ថែម វាត្រូវរៀបចំ schema ជាមុន មិនត្រូវដាក់ field សន្មត់ចូលទៅក្នុង record ដោយចៃដន្យ។»
+
+---
+
+9. ច្បាប់សម្រាប់បន្ថែមភាសា
 
 ពេលបន្ថែមភាសាថ្មី៖
 
-1. ពិនិត្យ registry មុនថាមាន language code រួចឬអត់។
-2. បើមានរួច មិនត្រូវបង្កើត duplicate។
-3. បន្ថែម metadata ទៅ source registry តែមួយ។
-4. KHOEM API ត្រូវជាប្រភពដែល AI App ប្រើ។
-5. កុំកែឯកសារ "dist" ដោយដៃ។
-6. កុំយក "node_modules" ឬ generated files មកធ្វើជា language source។
+1. ពិនិត្យ language registry មុន។
+2. ពិនិត្យថា language code មានរួចឬអត់។
+3. បើមានរួច មិនបង្កើត duplicate។
+4. បន្ថែម metadata ទៅ source registry តែមួយ។
+5. KHOEM API ត្រូវផ្តល់ language data ទៅ AI App។
+6. មិនកែ "dist" ដោយដៃ។
+7. មិនកែ "node_modules" ជា source។
+8. មិនបង្កើត file/folder ថ្មីដោយគ្មានតម្រូវការ។
+9. រក្សាឈ្មោះ file/folder ឱ្យខ្លី និងច្បាស់។
+10. បើមិនប្រាកដ មិនកែភ្លាមទេ—ពិនិត្យ references ជាមុន។
 
-ស្ថានភាពឯកសារ
+---
 
-ឯកសារ| ស្ថានភាព| តួនាទី
-"languages/frequencywords-languages.json"| មាន| Frequency-word data
-"languages/language-registry.ts"| មាន| Legacy/auxiliary language options
-"localization/src/registry/languages.ts"| មាន| Main language registry / source
-"localization/dist/src/registry/languages.js"| Generated| Build output
-"localization/dist/src/registry/languages.d.ts"| Generated| Type declaration
-"localization/dist/src/registry/languages.js.map"| Generated| Source map
+10. AI App
 
-សេចក្តីសង្ខេប
+ទីតាំង៖
 
-"languages/" បច្ចុប្បន្នមាន 1 ថត និង 2 ឯកសារ។
+"~/ai-project/AI/src/App.tsx"
 
-Language registry សំខាន់ដែលមាន 60 records ស្ថិតនៅក្នុង:
+តួនាទី៖
 
-"KHOEM_AI/KHOEM_AI/localization/src/registry/languages.ts"
+- ទទួល language list ពី KHOEM API។
+- បង្ហាញ language selection។
+- ប្រើ language ដែលអ្នកប្រើជ្រើសសម្រាប់ AI/UI។
 
-គោលដៅរយៈពេលវែងគឺ 307 languages ដោយរក្សា KHOEM_AI ជា single source of truth និងជៀសវាង language data duplication។
+AI App មិនគួរមាន language source ផ្ទាល់ខ្លួនដែលស្ទួននឹង KHOEM_AI ទេ។
 
-KHOEM_AI — ប្រព័ន្ធភាសា
+---
 
-1. ប្រភពតែមួយ
-- ទិន្នន័យភាសាទាំងអស់ស្ថិតនៅ ~/KHOEM_AI/ ជា Source of Truth។
-- ទីតាំងទិន្នន័យ៖ ~/KHOEM_AI/languages/
-  • language-registry.ts
-  • frequencywords-languages.json
+11. អ្វីដែលមិនត្រូវធ្វើ
 
-2. គោលដៅ
-- 307 ភាសា។ ភាសាបច្ចុប្បន្ន និងភាសាបន្ថែមក្រោយ ត្រូវប្រើរចនាសម្ព័ន្ធដូចគ្នា។
+- មិនចម្លង language list ទៅ "App.tsx"។
+- មិនបង្កើត language registry ទីពីរ។
+- មិនបង្កើត language source ថ្មីនៅក្រៅ KHOEM_AI ដោយគ្មានតម្រូវការ។
+- មិនកែ generated "dist" ដោយដៃ។
+- មិនយក "node_modules" មកធ្វើជា language source។
+- មិនលុបឯកសារដែលសង្ស័យ មុនពេលពិនិត្យថាមាន code ប្រើវាឬអត់។
+- មិនបង្កើត duplicate language IDs។
 
-3. កំណត់ត្រាភាសា
-- មួយភាសា = មួយកំណត់ត្រា = មួយប្រទេស/តំបន់តំណាងច្បាស់លាស់។
-- វាលចាំបាច់៖ code, nameEn, label, flag
+---
 
-4. ការតភ្ជាប់ទៅ AI App
-KHOEM_AI → Language API → ~/ai-project/AI/src/App.tsx
-- App.tsx ទាញយកបញ្ជីភាសាតាម API ប៉ុណ្ណោះ។
-- ភាសាដែលជ្រើស ត្រូវប្រើជាភាសា AI/UI។
+12. ស្ថានភាពឯកសារ
 
-5. ច្បាប់សំខាន់
-- កែ ឬបន្ថែមភាសា ធ្វើនៅ KHOEM_AI ជាមុនសិន។
-- មិនចម្លងបញ្ជីភាសាទៅ App.tsx។
-- មិនបង្កើត language source ទីពីរ។
-- មិនបង្កើត file/folder ថ្មីដោយគ្មានតម្រូវការ។ រក្សាឈ្មោះឱ្យខ្លី សាមញ្ញ។
-- មិនលាយបញ្ចូលកូដ ឬទិន្នន័យភាសាចូលគ្នាក្នុង file ផ្សេងៗ។ កែតែក្នុង ~/KHOEM_AI/languages/ ប៉ុណ្ណោះ។
-- បើមិនប្រាកដ សូមសួរមុនពេលកែ។ ពេលចប់ ប្រាប់ឈ្មោះ file ដែលបានកែ។
+Path| ស្ថានភាព| តួនាទី
+"KHOEM_AI/languages/frequencywords-languages.json"| មាន| Frequency-word data
+"KHOEM_AI/languages/language-registry.ts"| មាន| Auxiliary/legacy language options
+"KHOEM_AI/localization/src/registry/languages.ts"| មាន| Main language registry / source
+"KHOEM_AI/localization/dist/src/registry/languages.js"| Generated| Build output
+"KHOEM_AI/localization/dist/src/registry/languages.d.ts"| Generated| Type declaration
+"KHOEM_AI/localization/dist/src/registry/languages.js.map"| Generated| Source map
+
+---
+
+13. សេចក្តីសង្ខេប
+
+បច្ចុប្បន្ន៖
+
+- "languages/" → 1 ថត
+- ឯកសារនៅក្នុង "languages/" → 2
+- Main language registry → "localization/src/registry/languages.ts"
+- Language records → 60
+- Project target → 307 languages
+- KHOEM_AI → Single Source of Truth
+- AI App → ប្រើ KHOEM API
+- "dist/" → generated output
+- "node_modules/" → dependency files មិនមែន language source
+
+គោលការណ៍សំខាន់បំផុត៖
+
+KHOEM_AI → Language Registry → KHOEM API → AI App
+
+កុំបង្កើត language source ស្ទួន និងកុំឱ្យ AI App ក្លាយជាប្រភព language data។
