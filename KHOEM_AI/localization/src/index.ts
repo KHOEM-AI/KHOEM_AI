@@ -12,6 +12,8 @@ export { getLocaleDirection } from "./core/direction.js";
 export { canonicalizeLocale, resolveLocaleDetailed } from "./core/resolver.js";
 export { buildFallbackChain } from "./core/fallback.js";
 export { KhoemError } from "./core/errors.js";
+export { buildLanguageHub, getHubEntry } from "./hub/languageHub.js";
+export type { LanguageHubEntry } from "./hub/languageHub.js";
 export type * from "./types/index.js";
 
 /** Resolve against locales that actually have translation data. */
