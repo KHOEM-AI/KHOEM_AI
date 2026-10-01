@@ -48122,14 +48122,30 @@ const GENERATED_VOCABULARY: readonly GlobalVocabularyEntry[] = GENERATED_VOCABUL
 export const GLOBAL_VOCABULARY: readonly GlobalVocabularyEntry[] = [
   ...GLOBAL_195_VOCABULARY,
   ...GENERATED_VOCABULARY,
-] as const;
+];
 
-export const GLOBAL_VOCABULARY_COUNT = GLOBAL_VOCABULARY.length as number;
+export const GLOBAL_VOCABULARY_COUNT = GLOBAL_VOCABULARY.length;
+
+/** Index vocabulary entries once so language lookups do not rescan all 48,007 records. */
+const BY_LANGUAGE = new Map<string, GlobalVocabularyEntry[]>();
+
+for (const entry of GLOBAL_VOCABULARY) {
+  const list = BY_LANGUAGE.get(entry.language);
+  if (list) list.push(entry);
+  else BY_LANGUAGE.set(entry.language, [entry]);
+}
+
+export function getEntriesByLanguage(
+  language: string,
+): readonly GlobalVocabularyEntry[] {
+  return BY_LANGUAGE.get(language) ?? [];
+}
+
+/** Backward-compatible lookup: returns the first entry for a language. */
+export function getLanguageByCode(language: string): GlobalVocabularyEntry | undefined {
+  return BY_LANGUAGE.get(language)?.[0];
+}
 
 /** Backward-compatible names used by the original module. */
 export const GLOBAL_195_VOCABULARY_30K = GLOBAL_VOCABULARY;
 export const GLOBAL_195_VOCABULARY_30K_COUNT = GLOBAL_VOCABULARY_COUNT;
-
-export function getLanguageByCode(language: string): GlobalVocabularyEntry | undefined {
-  return GLOBAL_VOCABULARY.find((entry) => entry.language === language);
-}
