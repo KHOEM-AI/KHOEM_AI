@@ -48135,10 +48135,16 @@ for (const entry of GLOBAL_VOCABULARY) {
   else BY_LANGUAGE.set(entry.language, [entry]);
 }
 
+/** Registry codes (languages.ts) mapped to the codes used in vocabulary data. */
+const REGISTRY_TO_VOCAB: Readonly<Record<string, string>> = {
+  fil: "tl",
+  nb: "no",
+};
+
 export function getEntriesByLanguage(
   language: string,
 ): readonly GlobalVocabularyEntry[] {
-  return BY_LANGUAGE.get(language) ?? [];
+  return BY_LANGUAGE.get(REGISTRY_TO_VOCAB[language] ?? language) ?? [];
 }
 
 /** Backward-compatible lookup: returns the first entry for a language. */
