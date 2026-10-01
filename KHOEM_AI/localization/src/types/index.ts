@@ -10,6 +10,7 @@ export interface LanguageRecord {
   readonly bcp47: string;
   readonly englishName: string;
   readonly nativeName: string;
+  readonly flag: string;
   readonly defaultScript: string;
   readonly direction: Direction;
   readonly status: LanguageStatus;
