@@ -1,0 +1,43 @@
+# KHOEM AI Corpus Strategy
+
+**Status:** P0 design only. This document does not authorize corpus-content collection. No corpus payloads have been collected by this change.
+
+## Goal and counting rule
+
+The planning target is **75,000,000 retained word-token occurrences** across rights-approved datasets. Count only text that has passed parsing, normalization, privacy/quality checks, and exact document deduplication. A repeated word occurrence inside a retained document counts again; vocabulary type counts are a separate metric. Report counts by language, data type, dataset, and tokenizer version as well as the aggregate. Pin and version each language tokenizer; whitespace splitting is not a valid default for languages without reliable whitespace word boundaries.
+
+The existing 48,007-entry vocabulary at KHOEM_AI/src/core/ai/patterns/global-195-vocabulary.ts is a separate lexicon asset. It is not corpus text and does not count toward this target.
+
+## Corpus composition
+
+Each dataset has one primary data_type:
+
+- native - text originally authored in the recorded language.
+- parallel - aligned text in two or more languages; retain alignment and per-side language provenance.
+- instruction - instruction / response examples with source and rights lineage.
+- dialogue - conversational text with role and privacy checks.
+- knowledge - reference or explanatory text.
+- synthetic - generated content, always labeled synthetic and linked to model, prompt/template, generation date, and input-source lineage where applicable.
+
+Track additional characteristics with tags rather than changing the primary type. Never report synthetic material as human-authored. Track language and source concentration; do not claim balanced coverage until the per-language reports support it. Khmer coverage is reported explicitly, not inferred from source-country metadata.
+
+## Source admission principles
+
+1. Publicly reachable does not mean licensed for collection, model training, evaluation, or redistribution. Verify each intended use separately.
+2. A source is blocked until its exact license/terms, evidence, restrictions, and permitted purposes are recorded and a reviewer marks rights review approved.
+3. Do not collect private, login-gated, leaked, confidential, or paywalled content without explicit rights that cover the intended acquisition and use. At P0, exclude sensitive personal data and personal account content.
+4. Unknown, conflicting, or missing rights evidence means blocked, not assumed permission. Preserve attribution, share-alike, notice, and other obligations per source; do not combine incompatible license groups without review.
+5. Synthetic data requires its own provenance and policy review; generation does not erase restrictions inherited from prompts or source material.
+6. Keep source files and derived records traceable to their source, version, license evidence, and transformations. Respect takedown, deletion, and retention obligations.
+
+## P0 gates
+
+P0 is limited to defining policy, provenance fields, and the future pipeline contract. No corpus files may be downloaded or ingested until:
+
+- the provenance schema and processing states in DATA_PROVENANCE.md are adopted;
+- a human reviewer approves the data policy and the source-specific license evidence;
+- allowed purposes, retention/deletion handling, and privacy exclusions are recorded for each source;
+- language-specific tokenizers and the 75M counting rule are pinned;
+- validation, quarantine, deduplication, and audit-log behavior are implemented and tested on synthetic fixtures or separately approved samples.
+
+A source that fails any gate remains metadata-only or is rejected. P0 does not create an allowlist or approve any source by implication.
