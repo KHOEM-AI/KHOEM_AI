@@ -56,3 +56,9 @@ corpus-sample/report.json
 corpus-sample/raw/
 
 corpus-sample/extracted/
+
+# Local Khmer vocabulary analysis files
+km_195_candidates.tsv
+km_195_clean.tsv
+km_195_final.tsv
+km_vocab_candidates.tsv
