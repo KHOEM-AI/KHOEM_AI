@@ -17,6 +17,7 @@ for (const d of m.datasets) {
   if (d.quality_status !== "passed") why.push("quality_status=" + d.quality_status);
   if (d.processing_status !== "ready") why.push("processing_status=" + d.processing_status);
   if (!d.license || d.license === "UNKNOWN") why.push("license unknown");
+  if (d.data_type !== "synthetic" && !d.license_evidence) why.push("license_evidence missing");
   if (why.length) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: why }); continue; }
   const f = (d.files || [])[0];
   if (!f || !f.path) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: ["files_missing"] }); continue; }
