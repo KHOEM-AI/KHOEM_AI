@@ -16,6 +16,10 @@ const cases = [
   ['processing_status rights_review', { processing_status: 'rights_review' }],
   ['rights rejected', { rights_review_status: 'rejected' }],
   ['non-synthetic without license_evidence', { data_type: 'human', approved_purposes: ['training'], license_evidence: null }],
+  ['evidence empty object', { data_type: 'human', approved_purposes: ['training'], license_evidence: {} }],
+  ['evidence missing reviewer/decision', { data_type: 'human', approved_purposes: ['training'], license_evidence: { terms_url: 'internal:test' } }],
+  ['evidence missing terms_url', { data_type: 'human', approved_purposes: ['training'], license_evidence: { reviewer: 'test', decision: 'approved' } }],
+  ['evidence decision pending', { data_type: 'human', approved_purposes: ['training'], license_evidence: { terms_url: 'internal:test', reviewer: 'test', decision: 'pending' } }],
 ];
 
 for (const [name, patch] of cases) {
@@ -48,7 +52,7 @@ for (const [name, patch] of cases) {
   fs.cpSync(`${src}/raw`, path.join(dir, 'raw'), { recursive: true });
   fs.copyFileSync(`${src}/pipeline.mjs`, path.join(dir, 'pipeline.mjs'));
   const d = { ...JSON.parse(JSON.stringify(good)), dataset_id: 'gate-fixture', data_type: 'human',
-    approved_purposes: ['training'], license_evidence: { terms_url: 'internal:test', reviewer: 'test' } };
+    approved_purposes: ['training'], license_evidence: { terms_url: 'internal:test', reviewer: 'test', decision: 'approved' } };
   fs.writeFileSync(path.join(dir, 'manifest.json'), JSON.stringify({ ...base, datasets: [d] }, null, 2));
   try {
     execFileSync('node', ['corpus-sample/pipeline.mjs'], { cwd: tmp, stdio: 'pipe' });

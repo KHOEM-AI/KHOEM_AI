@@ -17,7 +17,15 @@ for (const d of m.datasets) {
   if (d.quality_status !== "passed") why.push("quality_status=" + d.quality_status);
   if (d.processing_status !== "ready") why.push("processing_status=" + d.processing_status);
   if (!d.license || d.license === "UNKNOWN") why.push("license unknown");
-  if (d.data_type !== "synthetic" && !d.license_evidence) why.push("license_evidence missing");
+  if (d.data_type !== "synthetic") {
+    const ev = d.license_evidence;
+    const okStr = v => typeof v === "string" && v.trim() !== "";
+    if (!ev || typeof ev !== "object") why.push("license_evidence missing");
+    else {
+      for (const k of ["terms_url", "reviewer", "decision"]) if (!okStr(ev[k])) why.push("license_evidence." + k + " missing");
+      if (okStr(ev.decision) && ev.decision !== "approved") why.push("license_evidence.decision=" + ev.decision);
+    }
+  }
   if (why.length) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: why }); continue; }
   const f = (d.files || [])[0];
   if (!f || !f.path) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: ["files_missing"] }); continue; }
