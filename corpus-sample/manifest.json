@@ -168,6 +168,54 @@
       "parent_dataset_ids": [],
       "pipeline_version": "0.2",
       "tokenizer_id": "Intl.Segmenter:km:word"
+    },
+    {
+      "dataset_id": "km-vocab-voa-001",
+      "source_name": "Multilingual Open Text (MOT), Voice of America",
+      "source_url": "https://github.com/bltlab/mot",
+      "source_country": "US",
+      "language": "Khmer",
+      "language_code": "km",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "data_type": "derived_wordlist",
+      "version": "v1.11",
+      "file": "khm_khmer_voanews.tgz",
+      "domain": "khmer-general",
+      "rights_review_status": "pending",
+      "approved_purposes": [],
+      "restrictions": [
+        "attribution required (CC BY 4.0)",
+        "verify third-party content inside VOA items"
+      ],
+      "usage_notes": "Derived word list (22,756 tokens, freq>=5) from mot-km-voa-001. Committed in repo; license of parent not yet verified.",
+      "asset_size_bytes": 172567694,
+      "asset_url": "https://github.com/bltlab/mot/releases/download/v1.11/khm_khmer_voanews.tgz",
+      "language_code_iso639_3": "khm",
+      "source_content_status": "public domain per MOT paper; third-party items not yet verified",
+      "attribution": "Palen-Michel, Kim, Partlan, Lignos. Multilingual Open Text Release 1: Public Domain News in 44 Languages. Source: Voice of America. Collection licensed CC BY 4.0.",
+      "sha256": "b03dbf4794dd874de62d9136bf22d72bf275916aa173e119788edc13459318f8",
+      "collection_date": null,
+      "provenance": [],
+      "processing_status": "rights_review",
+      "quality_status": "unreviewed",
+      "license_evidence": null,
+      "acquisition_method": null,
+      "retrieved_at": null,
+      "retention_policy": "derived word list committed; remove on takedown or license change of parent",
+      "privacy_review_status": "pending",
+      "files": [
+        {
+          "file_id": "km-vocab-voa-001-f1",
+          "path": "../KHOEM_AI/src/core/ai/patterns/km-corpus-vocabulary.ts",
+          "content_sha256": "b03dbf4794dd874de62d9136bf22d72bf275916aa173e119788edc13459318f8"
+        }
+      ],
+      "parent_dataset_ids": [
+        "mot-km-voa-001"
+      ],
+      "pipeline_version": "0.2",
+      "tokenizer_id": "Intl.Segmenter:km:word"
     }
   ]
 }
