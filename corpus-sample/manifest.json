@@ -2,8 +2,90 @@
   "schema_version": "0.1",
   "target_words_total": 75000000,
   "datasets": [
-    {"dataset_id": "sample-km-general-001", "source_name": "pipeline test sample", "source_url": null, "source_country": "UNKNOWN", "language": "Khmer", "language_code": "km", "license": "project-owned original text", "license_url": "internal:project-owned", "data_type": "synthetic", "version": "sample-1", "file": "km-general.txt", "domain": "khmer-general", "rights_review_status": "approved", "approved_purposes": ["internal analysis"], "restrictions": []},
-    {"dataset_id": "sample-km-code-001", "source_name": "pipeline test sample", "source_url": null, "source_country": "UNKNOWN", "language": "Khmer", "language_code": "km", "license": "project-owned original text", "license_url": "internal:project-owned", "data_type": "synthetic", "version": "sample-1", "file": "km-code.txt", "domain": "khmer-code", "rights_review_status": "approved", "approved_purposes": ["internal analysis"], "restrictions": []},
-    {"dataset_id": "sample-km-dup-001", "source_name": "pipeline test sample", "source_url": null, "source_country": "UNKNOWN", "language": "Khmer", "language_code": "km", "license": "project-owned original text", "license_url": "internal:project-owned", "data_type": "synthetic", "version": "sample-1", "file": "km-dup-test.txt", "domain": "dedupe-test", "rights_review_status": "approved", "approved_purposes": ["internal analysis"], "restrictions": []}
+    {
+      "dataset_id": "sample-km-general-001",
+      "source_name": "pipeline test sample",
+      "source_url": null,
+      "source_country": "UNKNOWN",
+      "language": "Khmer",
+      "language_code": "km",
+      "license": "project-owned original text",
+      "license_url": "internal:project-owned",
+      "data_type": "synthetic",
+      "version": "sample-1",
+      "file": "km-general.txt",
+      "domain": "khmer-general",
+      "rights_review_status": "approved",
+      "approved_purposes": [
+        "internal analysis"
+      ],
+      "restrictions": []
+    },
+    {
+      "dataset_id": "sample-km-code-001",
+      "source_name": "pipeline test sample",
+      "source_url": null,
+      "source_country": "UNKNOWN",
+      "language": "Khmer",
+      "language_code": "km",
+      "license": "project-owned original text",
+      "license_url": "internal:project-owned",
+      "data_type": "synthetic",
+      "version": "sample-1",
+      "file": "km-code.txt",
+      "domain": "khmer-code",
+      "rights_review_status": "approved",
+      "approved_purposes": [
+        "internal analysis"
+      ],
+      "restrictions": []
+    },
+    {
+      "dataset_id": "sample-km-dup-001",
+      "source_name": "pipeline test sample",
+      "source_url": null,
+      "source_country": "UNKNOWN",
+      "language": "Khmer",
+      "language_code": "km",
+      "license": "project-owned original text",
+      "license_url": "internal:project-owned",
+      "data_type": "synthetic",
+      "version": "sample-1",
+      "file": "km-dup-test.txt",
+      "domain": "dedupe-test",
+      "rights_review_status": "approved",
+      "approved_purposes": [
+        "internal analysis"
+      ],
+      "restrictions": []
+    },
+    {
+      "dataset_id": "mot-km-voa-001",
+      "source_name": "Multilingual Open Text (MOT), Voice of America",
+      "source_url": "https://github.com/bltlab/mot",
+      "source_country": "US",
+      "language": "Khmer",
+      "language_code": "km",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "data_type": "native",
+      "version": "v1.11",
+      "file": "khm_khmer_voanews.tgz",
+      "domain": "khmer-general",
+      "rights_review_status": "pending",
+      "approved_purposes": [],
+      "restrictions": [
+        "attribution required (CC BY 4.0)",
+        "verify third-party content inside VOA items"
+      ],
+      "usage_notes": "Candidate only. Not downloaded. Khmer-only subset; do not fetch other language files. Compute sha256 after download.",
+      "asset_size_bytes": 172567694,
+      "asset_url": "https://github.com/bltlab/mot/releases/download/v1.11/khm_khmer_voanews.tgz",
+      "language_code_iso639_3": "khm",
+      "source_content_status": "public domain per MOT paper; third-party items not yet verified",
+      "attribution": "Palen-Michel, Kim, Partlan, Lignos. Multilingual Open Text Release 1: Public Domain News in 44 Languages. Source: Voice of America. Collection licensed CC BY 4.0.",
+      "asset_created_at": "2025-05-08T22:35:58Z",
+      "sha256": null
+    }
   ]
 }
