@@ -62,3 +62,5 @@ km_195_candidates.tsv
 km_195_clean.tsv
 km_195_final.tsv
 km_vocab_candidates.tsv
+*.bak*
+corpus-sample/raw/*.tgz
