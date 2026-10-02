@@ -17,7 +17,7 @@ test("script fallback chain is generated from structure", () => {
 });
 test("never picks an unrelated language", () => {
   assert.equal(resolveIn("fr-FR", ["en", "km"]), null);
-  assert.equal(resolveLocale("ar"), null);
+  assert.equal(resolveLocale("af"), null);
 });
 test("invalid locale does not crash", () => {
   for (const bad of ["", "!!!", "en--US", "x".repeat(200)]) {

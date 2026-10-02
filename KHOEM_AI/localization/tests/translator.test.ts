@@ -22,11 +22,11 @@ test("plurals via Intl.PluralRules", async () => {
   await assert.rejects(getTranslation("en", "common.items"), (e: unknown) => e instanceof KhoemError && e.code === "INVALID_PARAMETERS");
 });
 test("unregistered-data locale falls back to en and reports it", async () => {
-  const r = await getTranslationDetailed("fr", "common.save");
+  const r = await getTranslationDetailed("af", "common.save");
   assert.equal(r.text, "Save");
   assert.equal(r.fallbackUsed, true);
   assert.equal(r.resolvedLocale, null);
-  assert.equal(await hasTranslation("fr", "common.save"), false);
+  assert.equal(await hasTranslation("af", "common.save"), false);
 });
 test("missing key: returns key, calls onMissing, strict throws", async () => {
   let seen = "";
@@ -49,7 +49,7 @@ test("createTranslator sync t()", async () => {
 });
 test("loader: unregistered and unavailable locales", async () => {
   await assert.rejects(loadLocale("xx-ZZ"), (e: unknown) => e instanceof KhoemError && e.code === "UNSUPPORTED_LOCALE");
-  await assert.rejects(loadLocale("fr"), (e: unknown) => e instanceof KhoemError && e.code === "LOCALE_NOT_FOUND");
+  await assert.rejects(loadLocale("af"), (e: unknown) => e instanceof KhoemError && e.code === "LOCALE_NOT_FOUND");
   await assert.rejects(loadLocale("///"), (e: unknown) => e instanceof KhoemError && e.code === "INVALID_LOCALE");
 });
 test("cache hit / miss / invalidate / clear", async () => {

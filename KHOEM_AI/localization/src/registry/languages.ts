@@ -56,6 +56,7 @@ const ROWS: readonly Row[] = [
   ["et", "et", "est", "Estonian", "Eesti", "Latn"],
   ["ka", "ka", "kat", "Georgian", "ქართული", "Geor"],
   ["hy", "hy", "hye", "Armenian", "Հայերեն", "Armn"],
+  ["mn", "mn", "mon", "Mongolian", "Монгол", "Cyrl"],
   ["kk", "kk", "kaz", "Kazakh", "Қазақ тілі", "Cyrl"],
   ["uz", "uz", "uzb", "Uzbek", "Oʻzbek", "Latn"],
   ["ne", "ne", "nep", "Nepali", "नेपाली", "Deva", "ltr", "review"],

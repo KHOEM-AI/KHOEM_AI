@@ -1,0 +1,45 @@
+import type { TranslationTree } from "../../types/index.js";
+
+// Status: partial. Imported from AI src/i18n/ar.ts; only genuinely translated keys.
+const app: TranslationTree = {
+  "app": {
+    "menuOpen": "افتح القائمة",
+    "menuClose": "اغلق القائمة",
+    "newChat": "دردشة جديدة",
+    "navStatus": "حالة الذكاء الاصطناعي",
+    "navControlCenter": "مركز التحكم",
+    "navHonorific": "تغيير العنوان",
+    "navLanguage": "اللغة",
+    "navClearChat": "مسح الدردشة",
+    "emptyTitle": "ابدأ محادثة مع الذكاء الاصطناعي",
+    "emptyHint": "اكتب سؤالك أدناه واضغط على Enter للإرسال",
+    "thinking": "يفكر…",
+    "composerPlaceholder": "اكتب سؤالك هنا...",
+    "send": "إرسال",
+    "sendAria": "إرسال رسالة",
+    "languageTitle": "اختر اللغة",
+    "languageClose": "إغلاق",
+    "close": "إغلاق",
+    "systemHealthLabel": "حالة النظام",
+    "lastChecked": "آخر فحص",
+    "lastSuccessfulCheck": "آخر فحص ناجح",
+    "moduleLabel": "الوحدة",
+    "errorLabel": "خطأ",
+    "timeoutLabel": "انتهت المهلة",
+    "honorificTitle": "كيف تفضل أن أخاطبك؟",
+    "honorificAriaLabel": "اختر لقب المخاطبة",
+    "controlCenterSubtitle": "الأحداث والأذونات",
+    "pendingApprovalsLabel": "الموافقات المعلقة",
+    "noPendingApprovals": "لا توجد موافقات معلقة",
+    "recentEventsLabel": "أحداث المهام الأخيرة",
+    "noEvents": "لا توجد أحداث بعد",
+    "permissionAuditLabel": "سجل تدقيق الأذونات",
+    "noAuditEntries": "لا توجد إدخالات تدقيق بعد",
+    "apiKeyPrompt": "أدخل x-api-key لاتخاذ قرار بشأن هذه الموافقة:",
+    "decisionFailed": "فشل",
+    "connectFailed": "تعذر الاتصال بالخادم",
+    "approveAction": "موافقة",
+    "rejectAction": "رفض"
+  }
+};
+export default app;

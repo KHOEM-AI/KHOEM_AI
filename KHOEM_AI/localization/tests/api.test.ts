@@ -102,7 +102,7 @@ test("GET translate: Khmer, region, fallback, unregistered", async () => {
   const th = await call(api, "GET", "/api/translate?locale=th&key=common.save");
   assert.equal(data<Tr>(th).text, "Save");
   assert.equal(data<Tr>(th).fallbackUsed, true);
-  const fr = await call(api, "GET", "/api/translate?locale=fr&key=common.save");
+  const fr = await call(api, "GET", "/api/translate?locale=af&key=common.save");
   assert.equal(fr.status, 200);
   assert.equal(data<Tr>(fr).text, "Save");
   assert.equal(data<Tr>(fr).resolvedLocale, null);
