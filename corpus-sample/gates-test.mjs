@@ -20,6 +20,10 @@ const cases = [
   ['evidence missing reviewer/decision', { data_type: 'human', approved_purposes: ['training'], license_evidence: { terms_url: 'internal:test' } }],
   ['evidence missing terms_url', { data_type: 'human', approved_purposes: ['training'], license_evidence: { reviewer: 'test', decision: 'approved' } }],
   ['evidence decision pending', { data_type: 'human', approved_purposes: ['training'], license_evidence: { terms_url: 'internal:test', reviewer: 'test', decision: 'pending' } }],
+  ['evidence missing access_date', { data_type: 'human', approved_purposes: ['training'], license_evidence: { terms_url: 'internal:test', reviewer: 'test', decision: 'approved', archive_ref: 'arch:1' } }],
+  ['evidence bad access_date format', { data_type: 'human', approved_purposes: ['training'], license_evidence: { terms_url: 'internal:test', reviewer: 'test', decision: 'approved', access_date: '03/10/2026', archive_ref: 'arch:1' } }],
+  ['evidence missing checksum and archive_ref', { data_type: 'human', approved_purposes: ['training'], license_evidence: { terms_url: 'internal:test', reviewer: 'test', decision: 'approved', access_date: '2026-10-03' } }],
+  ['evidence malformed sha256', { data_type: 'human', approved_purposes: ['training'], license_evidence: { terms_url: 'internal:test', reviewer: 'test', decision: 'approved', access_date: '2026-10-03', evidence_sha256: 'xyz' } }],
 ];
 
 for (const [name, patch] of cases) {
@@ -52,7 +56,7 @@ for (const [name, patch] of cases) {
   fs.cpSync(`${src}/raw`, path.join(dir, 'raw'), { recursive: true });
   fs.copyFileSync(`${src}/pipeline.mjs`, path.join(dir, 'pipeline.mjs'));
   const d = { ...JSON.parse(JSON.stringify(good)), dataset_id: 'gate-fixture', data_type: 'human',
-    approved_purposes: ['training'], license_evidence: { terms_url: 'internal:test', reviewer: 'test', decision: 'approved' } };
+    approved_purposes: ['training'], license_evidence: { terms_url: 'internal:test', reviewer: 'test', decision: 'approved', access_date: '2026-10-03', evidence_sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' } };
   fs.writeFileSync(path.join(dir, 'manifest.json'), JSON.stringify({ ...base, datasets: [d] }, null, 2));
   try {
     execFileSync('node', ['corpus-sample/pipeline.mjs'], { cwd: tmp, stdio: 'pipe' });

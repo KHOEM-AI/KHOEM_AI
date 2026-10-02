@@ -24,6 +24,9 @@ for (const d of m.datasets) {
     else {
       for (const k of ["terms_url", "reviewer", "decision"]) if (!okStr(ev[k])) why.push("license_evidence." + k + " missing");
       if (okStr(ev.decision) && ev.decision !== "approved") why.push("license_evidence.decision=" + ev.decision);
+      if (!okStr(ev.access_date) || !/^\d{4}-\d{2}-\d{2}$/.test(ev.access_date)) why.push("license_evidence.access_date missing_or_invalid");
+      const hasSha = typeof ev.evidence_sha256 === "string" && /^[0-9a-f]{64}$/i.test(ev.evidence_sha256);
+      if (!hasSha && !okStr(ev.archive_ref)) why.push("license_evidence.checksum_or_archive_ref missing");
     }
   }
   if (why.length) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: why }); continue; }
