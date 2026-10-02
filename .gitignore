@@ -64,3 +64,4 @@ km_195_final.tsv
 km_vocab_candidates.tsv
 *.bak*
 corpus-sample/raw/*.tgz
+corpus-sample/raw/voa_extracted/
