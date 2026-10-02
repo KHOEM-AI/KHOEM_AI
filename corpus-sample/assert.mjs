@@ -25,4 +25,7 @@ ok('totalWordsProcessed 89', r.totalWordsProcessed === 89);
 ok('uniqueWords 76', r.uniqueWords === 76);
 ok('mot blocked', !!blk('mot-km-voa-001'));
 ok('vocab blocked', !!blk('km-vocab-voa-001'));
+ok('target 75M', r.target === 75000000);
+ok('progressPercent 0', r.progressPercent === 0);
+ok('no source counts toward target', (r.sources || []).every(s => s.counts_toward_target === false));
 process.exit(fail ? 1 : 0);
