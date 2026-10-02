@@ -78,14 +78,14 @@
         "attribution required (CC BY 4.0)",
         "verify third-party content inside VOA items"
       ],
-      "usage_notes": "Candidate only. Not downloaded. Khmer-only subset; do not fetch other language files. Compute sha256 after download.",
+      "usage_notes": "Downloaded to raw/ (local only, not committed). Khmer-only subset. Rights review still pending: scan for third-party content first.",
       "asset_size_bytes": 172567694,
       "asset_url": "https://github.com/bltlab/mot/releases/download/v1.11/khm_khmer_voanews.tgz",
       "language_code_iso639_3": "khm",
       "source_content_status": "public domain per MOT paper; third-party items not yet verified",
       "attribution": "Palen-Michel, Kim, Partlan, Lignos. Multilingual Open Text Release 1: Public Domain News in 44 Languages. Source: Voice of America. Collection licensed CC BY 4.0.",
       "asset_created_at": "2025-05-08T22:35:58Z",
-      "sha256": null
+      "sha256": "4960cc66f9dcf80dd2ad52bba63045a5070b0d0825edbfbf0c29c045493a3e78"
     }
   ]
 }

@@ -53,3 +53,6 @@ Thumbs.db
 .vscode/
 .idea/
 corpus-sample/report.json
+corpus-sample/raw/
+
+corpus-sample/extracted/
