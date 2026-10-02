@@ -123,6 +123,46 @@
       "sha256": "d59cd70f5bd5d9375aec215c059e49b26fc68dc7cb42a0d08c643b1d8a6e605a"
     },
     {
+      "dataset_id": "sample-km-exactdup-001",
+      "source_name": "pipeline test sample",
+      "source_url": null,
+      "source_country": "UNKNOWN",
+      "language": "Khmer",
+      "language_code": "km",
+      "license": "project-owned original text",
+      "license_url": "internal:project-owned",
+      "data_type": "synthetic",
+      "version": "sample-1",
+      "file": "km-exactdup.txt",
+      "domain": "dedupe-test-exact",
+      "rights_review_status": "approved",
+      "approved_purposes": [
+        "internal analysis"
+      ],
+      "restrictions": [],
+      "collection_date": null,
+      "provenance": [],
+      "usage_notes": "Synthetic exact-duplicate fixture (BOM + zero-width space variant of km-general); not counted toward target.",
+      "processing_status": "ready",
+      "quality_status": "passed",
+      "license_evidence": null,
+      "acquisition_method": null,
+      "retrieved_at": null,
+      "retention_policy": "project-owned synthetic fixture; keep local",
+      "privacy_review_status": "passed",
+      "files": [
+        {
+          "file_id": "sample-km-exactdup-001-f1",
+          "path": "raw/km-exactdup.txt",
+          "content_sha256": "668262b5dd8529f48561dd925b894ffa87bd34a55b402411a08fc700be4d09a5"
+        }
+      ],
+      "parent_dataset_ids": [],
+      "pipeline_version": "0.2",
+      "tokenizer_id": "Intl.Segmenter:km:word",
+      "sha256": "668262b5dd8529f48561dd925b894ffa87bd34a55b402411a08fc700be4d09a5"
+    },
+    {
       "dataset_id": "mot-km-voa-001",
       "source_name": "Multilingual Open Text (MOT), Voice of America",
       "source_url": "https://github.com/bltlab/mot",
