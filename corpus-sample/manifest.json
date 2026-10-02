@@ -1,0 +1,9 @@
+{
+  "schema_version": "0.1",
+  "target_words_total": 75000000,
+  "datasets": [
+    {"dataset_id": "sample-km-general-001", "source_name": "pipeline test sample", "source_url": null, "source_country": "UNKNOWN", "language": "Khmer", "language_code": "km", "license": "project-owned original text", "license_url": "internal:project-owned", "data_type": "synthetic", "version": "sample-1", "file": "km-general.txt", "domain": "khmer-general", "rights_review_status": "approved", "approved_purposes": ["internal analysis"], "restrictions": []},
+    {"dataset_id": "sample-km-code-001", "source_name": "pipeline test sample", "source_url": null, "source_country": "UNKNOWN", "language": "Khmer", "language_code": "km", "license": "project-owned original text", "license_url": "internal:project-owned", "data_type": "synthetic", "version": "sample-1", "file": "km-code.txt", "domain": "khmer-code", "rights_review_status": "approved", "approved_purposes": ["internal analysis"], "restrictions": []},
+    {"dataset_id": "sample-km-dup-001", "source_name": "pipeline test sample", "source_url": null, "source_country": "UNKNOWN", "language": "Khmer", "language_code": "km", "license": "project-owned original text", "license_url": "internal:project-owned", "data_type": "synthetic", "version": "sample-1", "file": "km-dup-test.txt", "domain": "dedupe-test", "rights_review_status": "approved", "approved_purposes": ["internal analysis"], "restrictions": []}
+  ]
+}
