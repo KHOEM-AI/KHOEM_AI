@@ -256,6 +256,31 @@
       ],
       "pipeline_version": "0.2",
       "tokenizer_id": "Intl.Segmenter:km:word"
+    },
+    {
+      "dataset_id": "frequencywords-2018-001",
+      "source_name": "hermitdave/FrequencyWords (2018 content lists)",
+      "source_url": "https://github.com/hermitdave/FrequencyWords",
+      "source_country": "UNKNOWN",
+      "language": "Multiple (supported subset of the 55 vocabulary language codes)",
+      "language_code": "und",
+      "license": "CC BY-SA 4.0 (as stated in global-195-vocabulary.ts header; verify at source)",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "data_type": "native",
+      "version": "2018",
+      "file": null,
+      "domain": "khmer-general",
+      "rights_review_status": "pending",
+      "approved_purposes": [],
+      "restrictions": [
+        "attribution required (CC BY-SA 4.0)",
+        "share-alike: review effect on license of derived vocabulary and repo",
+        "already incorporated (~10,000 tokens) into global-195-vocabulary.ts before this review"
+      ],
+      "usage_notes": "Retroactive provenance record. Not a Khmer source: domain value is a placeholder because the schema needs one; do not count toward the Khmer 75M target.",
+      "privacy_review_status": "pending",
+      "quality_status": "unreviewed",
+      "processing_status": "rights_review"
     }
   ]
 }
