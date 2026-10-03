@@ -135,3 +135,12 @@ Derived wordlist (`km-vocab-voa-001`):
 - [ ] Do not push publicly before review is complete
 
 Do not pre-fill evidence values. Do not set `decision: approved` while any item is open.
+
+## Addendum: km-vocab-voa-001 (recorded 2026-10-03)
+
+Facts only. Not a rights approval or a legal conclusion. This addendum supersedes the "Generator: not present" line above; earlier text is kept for history.
+
+- Generator: `corpus-sample/build-vocab.mjs` is now in the repository (commit `f40af9f`).
+- Reproducibility: the builder outputs 22,761 tokens; the committed asset has 22,756. The builder output contains every asset token plus 5 extra: U+17D7 (repetition sign), U+17AD, U+17B3, U+17AB, U+17A9 (independent vowels). No decision yet on keeping or removing them. The asset is therefore not byte-for-byte reproducible.
+- Visibility: the repository was public when this was checked and was set to private afterwards (GitHub API returned 404 without credentials). Copies made while it was public cannot be recalled.
+- Rights review: still pending. `license_evidence: null`, `rights_review_status: pending`, `privacy_review_status: pending`, `approved_purposes: []`. `NOTICE` remains an unverified skeleton.
