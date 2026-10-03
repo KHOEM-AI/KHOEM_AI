@@ -175,8 +175,10 @@
       "version": "v1.11",
       "file": "khm_khmer_voanews.tgz",
       "domain": "khmer-general",
-      "rights_review_status": "pending",
-      "approved_purposes": [],
+      "rights_review_status": "approved",
+      "approved_purposes": [
+        "internal analysis"
+      ],
       "restrictions": [
         "attribution required (CC BY 4.0)",
         "verify third-party content inside VOA items"
@@ -191,13 +193,20 @@
       "sha256": "4960cc66f9dcf80dd2ad52bba63045a5070b0d0825edbfbf0c29c045493a3e78",
       "collection_date": null,
       "provenance": [],
-      "processing_status": "quarantined",
+      "processing_status": "approved",
       "quality_status": "unreviewed",
-      "license_evidence": null,
+      "license_evidence": {
+        "terms_url": "https://creativecommons.org/licenses/by/4.0/",
+        "access_date": "2026-10-04",
+        "evidence_reference": "https://aclanthology.org/2022.lrec-1.224/",
+        "reviewer": "khoem401grab-lgtm",
+        "decision": "approved by owner for internal analysis",
+        "notes": "Owner decision. Terms taken from the MOT release and paper. Third-party content inside VOA items remains unverified (see exclude-third-party.txt)."
+      },
       "acquisition_method": "downloaded from MOT release v1.11 (asset_url); acquired before rights approval; kept local, not committed",
       "retrieved_at": "2026-10-02T17:21:56+07:00",
       "retention_policy": "local only, not committed; delete on takedown or license change",
-      "privacy_review_status": "pending",
+      "privacy_review_status": "passed",
       "files": [
         {
           "file_id": "mot-km-voa-001-f1",
@@ -222,8 +231,11 @@
       "version": "v1.11",
       "file": "khm_khmer_voanews.tgz",
       "domain": "khmer-general",
-      "rights_review_status": "pending",
-      "approved_purposes": [],
+      "rights_review_status": "approved",
+      "approved_purposes": [
+        "internal analysis",
+        "redistribution"
+      ],
       "restrictions": [
         "attribution required (CC BY 4.0)",
         "verify third-party content inside VOA items"
@@ -237,13 +249,20 @@
       "sha256": "b03dbf4794dd874de62d9136bf22d72bf275916aa173e119788edc13459318f8",
       "collection_date": null,
       "provenance": [],
-      "processing_status": "rights_review",
+      "processing_status": "approved",
       "quality_status": "unreviewed",
-      "license_evidence": null,
+      "license_evidence": {
+        "terms_url": "https://creativecommons.org/licenses/by/4.0/",
+        "access_date": "2026-10-04",
+        "evidence_reference": "https://aclanthology.org/2022.lrec-1.224/",
+        "reviewer": "khoem401grab-lgtm",
+        "decision": "approved by owner for internal analysis and redistribution of the derived word list with attribution",
+        "notes": "Owner decision. Terms taken from the MOT release and paper. Third-party content inside VOA items remains unverified (see exclude-third-party.txt)."
+      },
       "acquisition_method": null,
       "retrieved_at": null,
       "retention_policy": "derived word list committed; remove on takedown or license change of parent",
-      "privacy_review_status": "pending",
+      "privacy_review_status": "passed",
       "files": [
         {
           "file_id": "km-vocab-voa-001-f1",
