@@ -183,7 +183,7 @@
         "attribution required (CC BY 4.0)",
         "verify third-party content inside VOA items"
       ],
-      "usage_notes": "Downloaded to raw/ (local only, not committed). Khmer-only subset. Rights review still pending: scan for third-party content first.",
+      "usage_notes": "Downloaded to raw/ (local only, not committed); extracted to extracted/. Approved for internal analysis only. Third-party content scan incomplete; training NOT approved.",
       "asset_size_bytes": 172567694,
       "asset_url": "https://github.com/bltlab/mot/releases/download/v1.11/khm_khmer_voanews.tgz",
       "language_code_iso639_3": "khm",
@@ -203,7 +203,17 @@
         "archive_ref": "corpus-sample/evidence/",
         "reviewer": "khoem401grab-lgtm",
         "decision": "approved",
-        "notes": "Owner approval for internal analysis only. Terms from MOT release and paper; third-party items inside VOA content still unverified."
+        "notes": "Owner approval for internal analysis only. Terms from MOT release and paper; third-party items inside VOA content still unverified.",
+        "evidence_files": [
+          {
+            "path": "evidence/cc-by-4.0-legalcode.txt",
+            "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+          },
+          {
+            "path": "evidence/mot-paper-page.html",
+            "sha256": "480e506c23aa11560bc7cb39d89dfe42350af58456753fda91cc5f86f3fcb719"
+          }
+        ]
       },
       "acquisition_method": "downloaded from MOT release v1.11 (asset_url); acquired before rights approval; kept local, not committed",
       "retrieved_at": "2026-10-02T17:21:56+07:00",
@@ -232,7 +242,7 @@
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "data_type": "derived_wordlist",
       "version": "v1.11",
-      "file": "khm_khmer_voanews.tgz",
+      "file": "../KHOEM_AI/src/core/ai/patterns/km-corpus-vocabulary.ts",
       "domain": "khmer-general",
       "rights_review_status": "approved",
       "approved_purposes": [
