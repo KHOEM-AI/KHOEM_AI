@@ -99,3 +99,39 @@ parent_dataset_ids: []
 pipeline_version: null
 tokenizer_id: null
 ~~~
+
+## Findings: km-vocab-voa-001 (recorded 2026-10-03)
+
+Facts only. This section is not a rights approval or a legal conclusion.
+
+- Asset: `KHOEM_AI/src/core/ai/patterns/km-corpus-vocabulary.ts`, sha256 `b03dbf47...318f8` (matches manifest), 22,756 entries.
+- History: added in `9ff150e` (23,625 tokens), cleaned in `7e822d3`. The cleanup removed 869 tokens and added 0.
+- Generator: not present in this repository. The asset is not reproducible from the repo.
+- Header says "punctuation removed", but `9ff150e` contained punctuation tokens. The `7e822d3` message says "digits removed", but only single-digit tokens were removed. Multi-digit Khmer-digit tokens remain.
+- Hygiene tests: `KHOEM_AI/tests/km-corpus-vocabulary.test.ts` (sha256, count, no duplicates, NFC, Khmer script, no Latin/ASCII digits/whitespace/zero-width/punctuation, no single-character tokens). These are content-hygiene checks only.
+- Raw VOA files (`corpus-sample/raw/voa_extracted/`) were never tracked in git. Only four synthetic fixtures are tracked under `corpus-sample/raw/`.
+- No production code imports `KM_CORPUS_VOCABULARY`. It is referenced only by the test and `corpus-sample/manifest.json`.
+- Gate status: `assert.mjs` confirms `mot-km-voa-001` and `km-vocab-voa-001` are blocked and nothing counts toward the target.
+- Rights review: pending. `license_evidence: null`, `rights_review_status: pending`, `privacy_review_status: pending`, `approved_purposes: []`.
+
+## Review checklist (project policy; extends schema v1)
+
+The fields `access_date`, `evidence_sha256`, `archive_ref`, `reviewer`, `decision` are project policy enforced in `pipeline.mjs`. They are not required by schema v1 itself.
+
+Parent (MOT / VOA):
+- [ ] Official license and terms URL recorded
+- [ ] Attribution requirements recorded
+- [ ] Derivative / redistribution / training-use conditions reviewed
+- [ ] Third-party content inside VOA items investigated
+- [ ] Privacy review completed
+- [ ] Evidence snapshot retained (sha256 or archive_ref), with real access date
+- [ ] Human reviewer and decision recorded
+
+Derived wordlist (`km-vocab-voa-001`):
+- [ ] Generator added to the repo, or non-reproducibility accepted by reviewer
+- [ ] Decision on keeping multi-digit tokens; header/commit wording corrected
+- [ ] Decision on keeping the file in git while review is pending
+- [ ] Attribution present in `NOTICE`
+- [ ] Do not push publicly before review is complete
+
+Do not pre-fill evidence values. Do not set `decision: approved` while any item is open.

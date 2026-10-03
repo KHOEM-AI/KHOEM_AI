@@ -1,0 +1,13 @@
+THIRD-PARTY NOTICES (skeleton, not verified)
+
+This file is a placeholder. Do not fill it by guessing. Copy attribution
+text from the verified source and record the evidence in DATA_PROVENANCE.md.
+
+Dataset: Multilingual Open Text (MOT), Voice of America (Khmer)
+Source:  [verified source URL goes here]
+Author/creator attribution: [verified text goes here]
+License: CC BY 4.0
+License URL: [verified license URL goes here]
+Changes made: derived word list (frequency-filtered tokens) in
+  KHOEM_AI/src/core/ai/patterns/km-corpus-vocabulary.ts
+Review status: pending (see DATA_PROVENANCE.md)
