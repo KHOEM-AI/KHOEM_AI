@@ -1,0 +1,73 @@
+{
+  "dataset_id": "mot-km-voa-001",
+  "tool": "process-articles.mjs",
+  "tokenizer_id": "Intl.Segmenter:km:word",
+  "articlesRead": 30886,
+  "excluded": 5,
+  "emptyOrUnreadable": 0,
+  "duplicateDocs": 59,
+  "sentences": 633654,
+  "duplicateSentences": 29726,
+  "khmerWords": 16200844,
+  "otherWords": 358946,
+  "uniqueKhmerWords": 111960,
+  "approved_purposes": [
+    "internal analysis"
+  ],
+  "counts_toward_target": false,
+  "target": 75000000,
+  "eligibleWords": 0,
+  "informational_percent_of_target_if_training_were_approved": 21.601,
+  "topSections": [
+    {
+      "section": "អន្តរជាតិ",
+      "articles": 11022,
+      "khmerWords": 3682062
+    },
+    {
+      "section": "កម្ពុជា",
+      "articles": 3509,
+      "khmerWords": 2640961
+    },
+    {
+      "section": "នយោបាយ",
+      "articles": 3497,
+      "khmerWords": 2445300
+    },
+    {
+      "section": "សិទ្ធិ​មនុស្ស",
+      "articles": 2256,
+      "khmerWords": 1590151
+    },
+    {
+      "section": "article",
+      "articles": 1989,
+      "khmerWords": 1254190
+    },
+    {
+      "section": "សេដ្ឋកិច្ច",
+      "articles": 810,
+      "khmerWords": 606520
+    },
+    {
+      "section": "សុខភាព",
+      "articles": 1026,
+      "khmerWords": 545336
+    },
+    {
+      "section": "ខ្មែរ​ក្រហម",
+      "articles": 556,
+      "khmerWords": 377435
+    },
+    {
+      "section": "អាមេរិក​",
+      "articles": 901,
+      "khmerWords": 342377
+    },
+    {
+      "section": "អាស៊ី​អាគ្នេយ៍",
+      "articles": 531,
+      "khmerWords": 340623
+    }
+  ]
+}
