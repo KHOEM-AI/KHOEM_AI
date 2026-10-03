@@ -246,8 +246,7 @@
       "domain": "khmer-general",
       "rights_review_status": "approved",
       "approved_purposes": [
-        "internal analysis",
-        "redistribution"
+        "internal analysis"
       ],
       "restrictions": [
         "attribution required (CC BY 4.0)",
