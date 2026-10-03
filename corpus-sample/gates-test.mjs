@@ -30,7 +30,10 @@ for (const [name, patch] of cases) {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'gate-'));
   const dir = path.join(tmp, 'corpus-sample');
   fs.mkdirSync(dir);
-  fs.cpSync(`${src}/raw`, path.join(dir, 'raw'), { recursive: true });
+  fs.cpSync(`${src}/raw`, path.join(dir, 'raw'), {
+    recursive: true,
+    filter: (p) => !p.includes('voa_extracted') && !p.endsWith('.tgz'),
+  });
   fs.copyFileSync(`${src}/pipeline.mjs`, path.join(dir, 'pipeline.mjs'));
   const d = { ...JSON.parse(JSON.stringify(good)), dataset_id: 'gate-fixture', ...patch };
   fs.writeFileSync(path.join(dir, 'manifest.json'),
@@ -53,7 +56,10 @@ for (const [name, patch] of cases) {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'gate-'));
   const dir = path.join(tmp, 'corpus-sample');
   fs.mkdirSync(dir);
-  fs.cpSync(`${src}/raw`, path.join(dir, 'raw'), { recursive: true });
+  fs.cpSync(`${src}/raw`, path.join(dir, 'raw'), {
+    recursive: true,
+    filter: (p) => !p.includes('voa_extracted') && !p.endsWith('.tgz'),
+  });
   fs.copyFileSync(`${src}/pipeline.mjs`, path.join(dir, 'pipeline.mjs'));
   const d = { ...JSON.parse(JSON.stringify(good)), dataset_id: 'gate-fixture', data_type: 'human',
     approved_purposes: ['training'], license_evidence: { terms_url: 'internal:test', reviewer: 'test', decision: 'approved', access_date: '2026-10-03', evidence_sha256: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' } };
