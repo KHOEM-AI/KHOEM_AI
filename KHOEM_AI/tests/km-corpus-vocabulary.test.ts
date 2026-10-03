@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import { KM_CORPUS_VOCABULARY as V } from "../src/core/ai/patterns/km-corpus-vocabulary";
 
 const FILE = "src/core/ai/patterns/km-corpus-vocabulary.ts";
-const SHA = "b03dbf4794dd874de62d9136bf22d72bf275916aa173e119788edc13459318f8";
+const SHA = "6176c91bbaebcb607352d1fcd522e0342b12e99813688b7130584fc5bf255401";
 
 describe("km-corpus-vocabulary (hygiene checks, not a rights approval)", () => {
   it("sha256 matches manifest", () =>

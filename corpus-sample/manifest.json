@@ -253,12 +253,12 @@
         "verify third-party content inside VOA items"
       ],
       "usage_notes": "Derived word list (22,756 tokens, freq>=5) from mot-km-voa-001. Already committed in repo before review; internal analysis only until parent third-party scan is complete.",
-      "asset_size_bytes": 172567694,
+      "asset_size_bytes": 561371,
       "asset_url": "https://github.com/bltlab/mot/releases/download/v1.11/khm_khmer_voanews.tgz",
       "language_code_iso639_3": "khm",
       "source_content_status": "public domain per MOT paper; third-party items not yet verified",
       "attribution": "Palen-Michel, Kim, Partlan, Lignos. Multilingual Open Text Release 1: Public Domain News in 44 Languages. Source: Voice of America. Collection licensed CC BY 4.0.",
-      "sha256": "b03dbf4794dd874de62d9136bf22d72bf275916aa173e119788edc13459318f8",
+      "sha256": "6176c91bbaebcb607352d1fcd522e0342b12e99813688b7130584fc5bf255401",
       "collection_date": null,
       "provenance": [],
       "processing_status": "ready",
@@ -281,7 +281,7 @@
         {
           "file_id": "km-vocab-voa-001-f1",
           "path": "../KHOEM_AI/src/core/ai/patterns/km-corpus-vocabulary.ts",
-          "content_sha256": "b03dbf4794dd874de62d9136bf22d72bf275916aa173e119788edc13459318f8"
+          "content_sha256": "6176c91bbaebcb607352d1fcd522e0342b12e99813688b7130584fc5bf255401"
         }
       ],
       "parent_dataset_ids": [

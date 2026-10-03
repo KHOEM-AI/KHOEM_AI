@@ -6,7 +6,10 @@
  * Filter: tokens containing Khmer script, punctuation removed, frequency >= 5.
  * NFC-normalized, zero-width spaces removed, deduplicated.
  *
- * NOTE: VOA/MOT license terms not yet verified. Check before publishing publicly.
+ * Attribution: derived from Multilingual Open Text (MOT) Release 1, Voice of America,
+ * Palen-Michel, Kim, Partlan, Lignos. Collection licensed CC BY 4.0
+ * (https://creativecommons.org/licenses/by/4.0/). Changes: tokenized, filtered, deduplicated.
+ * Status: internal analysis only; third-party content scan of the source is incomplete.
  */
 export const KM_CORPUS_VOCABULARY: readonly string[] = [
   "បាន", "លោក", "ដែល", "ថា", "មាន", "និង", "នេះ", "របស់", "នៅ", "ជា",
