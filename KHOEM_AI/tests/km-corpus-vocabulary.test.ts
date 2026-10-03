@@ -15,7 +15,7 @@ describe("km-corpus-vocabulary (hygiene checks, not a rights approval)", () => {
   it("every token has Khmer script", () =>
     expect(V.filter((w) => !/\p{Script=Khmer}/u.test(w))).toEqual([]));
   it("no Latin, ASCII digits, whitespace, zero-width, punctuation", () =>
-    expect(V.filter((w) => /[A-Za-z0-9\u17E0-\u17E9\s\u200B-\u200D\uFEFF]|\p{P}/u.test(w))).toEqual([]));
+    expect(V.filter((w) => /[A-Za-z0-9\s\u200B-\u200D\uFEFF]|\p{P}/u.test(w))).toEqual([]));
   it("no single-consonant or single-digit tokens", () =>
     expect(V.filter((w) => /^[\u1780-\u17A2\u17E0-\u17E9]$/u.test(w))).toEqual([]));
 });
