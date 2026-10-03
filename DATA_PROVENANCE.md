@@ -160,3 +160,13 @@ Facts only. Not a rights approval or a legal conclusion.
 - Exact byte-for-byte reproducibility is therefore still unresolved and requires an explicit vocabulary-policy decision.
 - Rights review remains pending.
 
+## Addendum: legacy vocabulary compatibility policy (recorded 2026-10-03)
+
+Facts only. Not a rights approval or a legal conclusion.
+
+- The deterministic builder now applies an explicit `LEGACY_EXCLUDE` set containing the 5 tokens previously present only in the builder output: `ៗ`, `ឭ`, `ឳ`, `ឫ`, and `ឩ`.
+- This exclusion exists to reproduce the currently committed 22,756-entry vocabulary asset; it is a compatibility policy for the legacy asset, not a general Khmer-language or Unicode validity rule.
+- With this explicit exclusion, the builder produced 22,756 tokens and the candidate set matched the committed asset exactly: `onlyInCandidate=0` and `onlyInCurrent=0`.
+- The committed vocabulary artifact itself has not been changed by this builder update.
+- The exclusion policy has not been presented as evidence that the 5 tokens are invalid Khmer characters.
+- Rights review remains pending.

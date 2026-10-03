@@ -43,7 +43,9 @@ const keep = (w, n) =>
   !/^[\u1780-\u17A2\u17E0-\u17E9]$/u.test(w); // no single consonant / single digit
 
 
-const words = [...counts].filter(([w, n]) => keep(w, n))
+// Legacy exclusions: match committed asset (policy, not a language rule)
+const LEGACY_EXCLUDE = new Set(['ៗ', 'ឭ', 'ឳ', 'ឫ', 'ឩ']);
+const words = [...counts].filter(([w, n]) => keep(w, n) && !LEGACY_EXCLUDE.has(w))
   .sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? -1 : 1))
   .map(([w]) => w);
 
