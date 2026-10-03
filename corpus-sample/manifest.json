@@ -183,7 +183,7 @@
         "attribution required (CC BY 4.0)",
         "verify third-party content inside VOA items"
       ],
-      "usage_notes": "Downloaded to raw/ (local only, not committed); extracted to extracted/. Approved for internal analysis only. Third-party content scan incomplete; training NOT approved.",
+      "usage_notes": "Downloaded to raw/ (local only, not committed); extracted to extracted/. Approved for internal analysis only. Heuristic third-party exclusion: 81 article files excluded (external-outlet author attribution or multiple credit signals; see exclude-third-party.txt); 792 further files with a single outlet credit in the final paragraphs are pending review (pending-third-party-review.txt) and NOT excluded. Scan is NOT verified complete; training NOT approved.",
       "asset_size_bytes": 172567694,
       "asset_url": "https://github.com/bltlab/mot/releases/download/v1.11/khm_khmer_voanews.tgz",
       "language_code_iso639_3": "khm",

@@ -2,42 +2,42 @@
   "dataset_id": "mot-km-voa-001",
   "tool": "process-articles.mjs",
   "tokenizer_id": "Intl.Segmenter:km:word",
-  "articlesRead": 30886,
-  "excluded": 5,
+  "articlesRead": 30810,
+  "excluded": 81,
   "emptyOrUnreadable": 0,
   "duplicateDocs": 59,
-  "sentences": 633654,
-  "duplicateSentences": 29726,
-  "khmerWords": 16200844,
-  "otherWords": 358946,
-  "uniqueKhmerWords": 111960,
+  "sentences": 632741,
+  "duplicateSentences": 29672,
+  "khmerWords": 16176678,
+  "otherWords": 357397,
+  "uniqueKhmerWords": 111870,
   "approved_purposes": [
     "internal analysis"
   ],
   "counts_toward_target": false,
   "target": 75000000,
   "eligibleWords": 0,
-  "informational_percent_of_target_if_training_were_approved": 21.601,
+  "informational_percent_of_target_if_training_were_approved": 21.569,
   "topSections": [
     {
       "section": "អន្តរជាតិ",
-      "articles": 11022,
-      "khmerWords": 3682062
+      "articles": 10980,
+      "khmerWords": 3671823
     },
     {
       "section": "កម្ពុជា",
-      "articles": 3509,
-      "khmerWords": 2640961
+      "articles": 3507,
+      "khmerWords": 2639146
     },
     {
       "section": "នយោបាយ",
-      "articles": 3497,
-      "khmerWords": 2445300
+      "articles": 3490,
+      "khmerWords": 2441072
     },
     {
       "section": "សិទ្ធិ​មនុស្ស",
-      "articles": 2256,
-      "khmerWords": 1590151
+      "articles": 2253,
+      "khmerWords": 1587244
     },
     {
       "section": "article",
@@ -47,12 +47,12 @@
     {
       "section": "សេដ្ឋកិច្ច",
       "articles": 810,
-      "khmerWords": 606520
+      "khmerWords": 606527
     },
     {
       "section": "សុខភាព",
-      "articles": 1026,
-      "khmerWords": 545336
+      "articles": 1025,
+      "khmerWords": 544960
     },
     {
       "section": "ខ្មែរ​ក្រហម",
@@ -61,13 +61,13 @@
     },
     {
       "section": "អាមេរិក​",
-      "articles": 901,
-      "khmerWords": 342377
+      "articles": 895,
+      "khmerWords": 341202
     },
     {
       "section": "អាស៊ី​អាគ្នេយ៍",
-      "articles": 531,
-      "khmerWords": 340623
+      "articles": 530,
+      "khmerWords": 340257
     }
   ]
 }
