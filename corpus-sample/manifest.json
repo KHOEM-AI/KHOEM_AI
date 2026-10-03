@@ -269,7 +269,7 @@
       "data_type": "native",
       "version": "2018",
       "file": null,
-      "domain": "khmer-general",
+      "domain": "multilingual-wordlist",
       "rights_review_status": "pending",
       "approved_purposes": [],
       "restrictions": [
@@ -277,7 +277,7 @@
         "share-alike: review effect on license of derived vocabulary and repo",
         "already incorporated (~10,000 tokens) into global-195-vocabulary.ts before this review"
       ],
-      "usage_notes": "Retroactive provenance record. Not a Khmer source: domain value is a placeholder because the schema needs one; do not count toward the Khmer 75M target.",
+      "usage_notes": "Retroactive provenance record. Not a Khmer source: domain is a separate non-Khmer value; do not count toward the Khmer 75M target.",
       "privacy_review_status": "pending",
       "quality_status": "unreviewed",
       "processing_status": "rights_review"
