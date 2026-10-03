@@ -144,3 +144,19 @@ Facts only. Not a rights approval or a legal conclusion. This addendum supersede
 - Reproducibility: the builder outputs 22,761 tokens; the committed asset has 22,756. The builder output contains every asset token plus 5 extra: U+17D7 (repetition sign), U+17AD, U+17B3, U+17AB, U+17A9 (independent vowels). No decision yet on keeping or removing them. The asset is therefore not byte-for-byte reproducible.
 - Visibility: the repository was public when this was checked and was set to private afterwards (GitHub API returned 404 without credentials). Copies made while it was public cannot be recalled.
 - Rights review: still pending. `license_evidence: null`, `rights_review_status: pending`, `privacy_review_status: pending`, `approved_purposes: []`. `NOTICE` remains an unverified skeleton.
+
+## Addendum: Unicode audit of km-vocab-voa-001 (recorded 2026-10-03)
+
+Facts only. Not a rights approval or a legal conclusion.
+
+- The deterministic builder was audited without rescanning the raw corpus.
+- The builder produced 22,761 tokens, while the committed vocabulary asset contains 22,756.
+- The 5 builder-only tokens are `ៗ` (U+17D7), `ឭ` (U+17AD), `ឳ` (U+17B3), `ឫ` (U+17AB), and `ឩ` (U+17A9).
+- Unicode property checks classify all 5 as Khmer-script letters; none is classified as punctuation, symbol, number, or combining mark.
+- Therefore, the audit found no Unicode-category basis by itself for removing those 5 tokens.
+- An experimental single-character `\p{L}/\p{N}` filter was tested and reverted. It also removed 6 existing Khmer letters from the committed asset: `ឬ`, `ឮ`, `ឯ`, `ឪ`, `ឱ`, and `ឲ`.
+- The builder was restored to the committed version; no builder change remains in the working tree.
+- No decision has been made to add or remove the 5 builder-only tokens. The current committed asset remains unchanged.
+- Exact byte-for-byte reproducibility is therefore still unresolved and requires an explicit vocabulary-policy decision.
+- Rights review remains pending.
+
