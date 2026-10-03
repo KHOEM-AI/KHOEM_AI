@@ -252,7 +252,7 @@
         "attribution required (CC BY 4.0)",
         "verify third-party content inside VOA items"
       ],
-      "usage_notes": "Derived word list (22,756 tokens, freq>=5) from mot-km-voa-001. Committed in repo; license of parent not yet verified.",
+      "usage_notes": "Derived word list (22,756 tokens, freq>=5) from mot-km-voa-001. Already committed in repo before review; internal analysis only until parent third-party scan is complete.",
       "asset_size_bytes": 172567694,
       "asset_url": "https://github.com/bltlab/mot/releases/download/v1.11/khm_khmer_voanews.tgz",
       "language_code_iso639_3": "khm",
@@ -271,7 +271,7 @@
         "archive_ref": "corpus-sample/evidence/",
         "reviewer": "khoem401grab-lgtm",
         "decision": "approved",
-        "notes": "Owner approval for internal analysis and redistribution of the derived word list with attribution. Third-party items unverified."
+        "notes": "Owner approval for internal analysis only. Redistribution withdrawn pending completion of third-party scan of parent mot-km-voa-001. Attribution required (CC BY 4.0)."
       },
       "acquisition_method": null,
       "retrieved_at": null,
