@@ -2,12 +2,12 @@
  * KHOEM NOW — Global vocabulary.
  * 47,925 unique headwords across 55 language codes.
  *
- * Includes the original curated entries plus exactly 10,000 additional,
+ * Includes the original curated entries plus approximately 10,000 additional,
  * deduplicated tokens from supported FrequencyWords 2018 language lists.
  * Existing primary terms are NFC-normalized and deduplicated per language.
  * Icelandic and Thai entries are preserved from the original; no additions
  * were taken from those source lists because of encoding issues in their data.
- * Khmer hand-curated entries remain unchanged.
+ * Khmer hand-curated entries were unchanged at 9f3f0a5.
  * Khmer rows: 82 non-Khmer tokens (place names, foreign loanwords, one duplicate spelling) removed; see DATA_PROVENANCE.md.
  *
  * Attribution: hermitdave/FrequencyWords, 2018 content lists, CC BY-SA 4.0.
