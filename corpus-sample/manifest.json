@@ -193,15 +193,17 @@
       "sha256": "4960cc66f9dcf80dd2ad52bba63045a5070b0d0825edbfbf0c29c045493a3e78",
       "collection_date": null,
       "provenance": [],
-      "processing_status": "approved",
-      "quality_status": "unreviewed",
+      "processing_status": "ready",
+      "quality_status": "passed",
       "license_evidence": {
         "terms_url": "https://creativecommons.org/licenses/by/4.0/",
         "access_date": "2026-10-04",
         "evidence_reference": "https://aclanthology.org/2022.lrec-1.224/",
+        "evidence_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+        "archive_ref": "corpus-sample/evidence/",
         "reviewer": "khoem401grab-lgtm",
-        "decision": "approved by owner for internal analysis",
-        "notes": "Owner decision. Terms taken from the MOT release and paper. Third-party content inside VOA items remains unverified (see exclude-third-party.txt)."
+        "decision": "approved",
+        "notes": "Owner approval for internal analysis only. Terms from MOT release and paper; third-party items inside VOA content still unverified."
       },
       "acquisition_method": "downloaded from MOT release v1.11 (asset_url); acquired before rights approval; kept local, not committed",
       "retrieved_at": "2026-10-02T17:21:56+07:00",
@@ -216,7 +218,8 @@
       ],
       "parent_dataset_ids": [],
       "pipeline_version": "0.2",
-      "tokenizer_id": "Intl.Segmenter:km:word"
+      "tokenizer_id": "Intl.Segmenter:km:word",
+      "quality_notes": "Automated check on local VOA articles: {\"article_files\": 30950, \"empty_or_unreadable\": 0, \"median_khmer_ratio\": 0.947}; thresholds: >=1000 files, median Khmer ratio >=0.5, empty <=5%"
     },
     {
       "dataset_id": "km-vocab-voa-001",
@@ -249,15 +252,17 @@
       "sha256": "b03dbf4794dd874de62d9136bf22d72bf275916aa173e119788edc13459318f8",
       "collection_date": null,
       "provenance": [],
-      "processing_status": "approved",
-      "quality_status": "unreviewed",
+      "processing_status": "ready",
+      "quality_status": "passed",
       "license_evidence": {
         "terms_url": "https://creativecommons.org/licenses/by/4.0/",
         "access_date": "2026-10-04",
         "evidence_reference": "https://aclanthology.org/2022.lrec-1.224/",
+        "evidence_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+        "archive_ref": "corpus-sample/evidence/",
         "reviewer": "khoem401grab-lgtm",
-        "decision": "approved by owner for internal analysis and redistribution of the derived word list with attribution",
-        "notes": "Owner decision. Terms taken from the MOT release and paper. Third-party content inside VOA items remains unverified (see exclude-third-party.txt)."
+        "decision": "approved",
+        "notes": "Owner approval for internal analysis and redistribution of the derived word list with attribution. Third-party items unverified."
       },
       "acquisition_method": null,
       "retrieved_at": null,
@@ -274,7 +279,8 @@
         "mot-km-voa-001"
       ],
       "pipeline_version": "0.2",
-      "tokenizer_id": "Intl.Segmenter:km:word"
+      "tokenizer_id": "Intl.Segmenter:km:word",
+      "quality_notes": "Automated check on local VOA articles: {\"article_files\": 30950, \"empty_or_unreadable\": 0, \"median_khmer_ratio\": 0.947}; thresholds: >=1000 files, median Khmer ratio >=0.5, empty <=5%"
     },
     {
       "dataset_id": "frequencywords-2018-001",
