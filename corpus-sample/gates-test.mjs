@@ -75,4 +75,43 @@ for (const [name, patch] of cases) {
   }
   fs.rmSync(tmp, { recursive: true, force: true });
 }
+// lineage: child purposes must be a subset of parent purposes
+{
+  const ev = { terms_url: 'internal:test', reviewer: 'test', decision: 'approved', access_date: '2026-10-03', evidence_sha256: 'a'.repeat(64) };
+  const lin = [
+    ['lineage: child exceeds parent', ['internal analysis'], ['training'], ['gate-parent'], 'purpose_exceeds_parent', false],
+    ['lineage: parent missing', ['training'], ['training'], ['gate-nope'], 'parent_missing', false],
+    ['lineage: child within parent', ['training'], ['training'], ['gate-parent'], null, true],
+  ];
+  for (const [name, pp, cp, ids, reason, accepted] of lin) {
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'gate-'));
+    const dir = path.join(tmp, 'corpus-sample');
+    fs.mkdirSync(dir);
+    fs.cpSync(`${src}/raw`, path.join(dir, 'raw'), {
+      recursive: true,
+      filter: (p) => !p.includes('voa_extracted') && !p.endsWith('.tgz'),
+    });
+    fs.copyFileSync(`${src}/pipeline.mjs`, path.join(dir, 'pipeline.mjs'));
+    const clone = () => JSON.parse(JSON.stringify(good));
+    const parent = { ...clone(), dataset_id: 'gate-parent', processing_status: 'rights_review', approved_purposes: pp };
+    const child = { ...clone(), dataset_id: 'gate-fixture', data_type: 'human', approved_purposes: cp, license_evidence: ev, parent_dataset_ids: ids };
+    fs.writeFileSync(path.join(dir, 'manifest.json'), JSON.stringify({ ...base, datasets: [parent, child] }, null, 2));
+    try {
+      execFileSync('node', ['corpus-sample/pipeline.mjs'], { cwd: tmp, stdio: 'pipe' });
+      const r = JSON.parse(fs.readFileSync(path.join(dir, 'report.json'), 'utf8'));
+      const bl = (r.blocked || []).find(x => x.dataset_id === 'gate-fixture');
+      const s0 = (r.sources || []).find(x => x.dataset_id === 'gate-fixture');
+      if (accepted) {
+        ok(`${name}: accepted`, !!s0 && s0.counts_toward_target === true);
+      } else {
+        ok(`${name}: blocked with ${reason}`, !!bl && bl.reasons.some(x => x.startsWith(reason)));
+        ok(`${name}: not in sources`, !s0);
+        ok(`${name}: eligibleWords 0`, r.eligibleWords === 0);
+      }
+    } catch (e) {
+      ok(`${name}: pipeline ran (${String(e.stderr || e.message).split('\n')[0]})`, false);
+    }
+    fs.rmSync(tmp, { recursive: true, force: true });
+  }
+}
 process.exit(fail ? 1 : 0);

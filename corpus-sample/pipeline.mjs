@@ -9,6 +9,7 @@ const seg = new Intl.Segmenter("km", { granularity: "word" });
 const seenDocs = new Set(), seenSentences = new Set(), vocab = new Set();
 const rep = { pipeline_version: "0.2", sources: [], blocked: [], eligibleWords: 0 };
 let total = 0;
+const byId = new Map(m.datasets.map(x => [x.dataset_id, x]));
 for (const d of m.datasets) {
   const why = [];
   if (d.rights_review_status !== "approved") why.push("rights_review_status=" + d.rights_review_status);
@@ -27,6 +28,14 @@ for (const d of m.datasets) {
       if (!okStr(ev.access_date) || !/^\d{4}-\d{2}-\d{2}$/.test(ev.access_date)) why.push("license_evidence.access_date missing_or_invalid");
       const hasSha = typeof ev.evidence_sha256 === "string" && /^[0-9a-f]{64}$/i.test(ev.evidence_sha256);
       if (!hasSha && !okStr(ev.archive_ref)) why.push("license_evidence.checksum_or_archive_ref missing");
+    }
+  }
+  // Lineage: a child may not be approved for more purposes than its parent.
+  for (const pid of d.parent_dataset_ids || []) {
+    const par = byId.get(pid);
+    if (!par) { why.push("parent_missing:" + pid); continue; }
+    for (const x of d.approved_purposes || []) {
+      if (!(par.approved_purposes || []).includes(x)) why.push("purpose_exceeds_parent:" + x + ":" + pid);
     }
   }
   if (why.length) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: why }); continue; }
