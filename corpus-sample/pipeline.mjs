@@ -30,6 +30,13 @@ for (const d of m.datasets) {
     }
   }
   if (why.length) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: why }); continue; }
+
+  // Derived wordlists are lineage/redistribution artifacts, not corpus inputs.
+  if (d.data_type === "derived_wordlist") {
+    rep.blocked.push({ dataset_id: d.dataset_id, reasons: ["derived_wordlist_not_corpus"] });
+    continue;
+  }
+
   const f = (d.files || [])[0];
   if (!f || !f.path) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: ["files_missing"] }); continue; }
   if (/\.(tgz|tar|gz|zip)$/i.test(f.path)) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: ["archive_not_extracted"] }); continue; }
