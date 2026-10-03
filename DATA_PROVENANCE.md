@@ -170,3 +170,12 @@ Facts only. Not a rights approval or a legal conclusion.
 - The committed vocabulary artifact itself has not been changed by this builder update.
 - The exclusion policy has not been presented as evidence that the 5 tokens are invalid Khmer characters.
 - Rights review remains pending.
+
+## km rows cleanup in global-195-vocabulary.ts (2026-10-03)
+
+- 82 of 665 Khmer (`km`) rows removed by the maintainer's editorial judgment: place names, foreign loanwords and one duplicate spelling. This is not a linguistic certification.
+- Removed: 20 country names, 33 place names (provinces, cities, rivers, landmarks), 28 foreign loanwords (mostly French/English transliterations), 1 duplicate spelling (`ក្ដៅ`; `ក្តៅ` kept).
+- Kept: Pali/Sanskrit-derived Khmer words and long-established everyday loans.
+- Hand-curated entries (`GLOBAL_195_VOCABULARY`, including 16 `km`) are unchanged. Khmer entries: 599 (583 rows + 16 curated). Total entries: 47,925.
+- Scope: this file only. `km-corpus-vocabulary.ts` and the legacy-token policy are not affected.
+- The removed terms are not stored in this repository (the maintainer keeps a local list).

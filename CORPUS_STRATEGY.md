@@ -6,7 +6,7 @@
 
 The planning target is **75,000,000 retained word-token occurrences** across rights-approved datasets. Count only text that has passed parsing, normalization, privacy/quality checks, and exact document deduplication. A repeated word occurrence inside a retained document counts again; vocabulary type counts are a separate metric. Report counts by language, data type, dataset, and tokenizer version as well as the aggregate. Pin and version each language tokenizer; whitespace splitting is not a valid default for languages without reliable whitespace word boundaries.
 
-The existing 48,007-entry vocabulary at KHOEM_AI/src/core/ai/patterns/global-195-vocabulary.ts is a separate lexicon asset. It is not corpus text and does not count toward this target.
+The existing 47,925-entry vocabulary at KHOEM_AI/src/core/ai/patterns/global-195-vocabulary.ts is a separate lexicon asset. It is not corpus text and does not count toward this target.
 
 ## Corpus composition
 
