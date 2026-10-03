@@ -253,7 +253,7 @@
         "verify third-party content inside VOA items"
       ],
       "usage_notes": "Derived word list (22,756 tokens, freq>=5) from mot-km-voa-001. Already committed in repo before review; internal analysis only until parent third-party scan is complete.",
-      "asset_size_bytes": 561371,
+      "asset_size_bytes": 172567694,
       "asset_url": "https://github.com/bltlab/mot/releases/download/v1.11/khm_khmer_voanews.tgz",
       "language_code_iso639_3": "khm",
       "source_content_status": "public domain per MOT paper; third-party items not yet verified",
