@@ -1,6 +1,6 @@
 # Extract approximate plain text from the local Khmer Wikipedia dump (CC BY-SA 4.0).
 # Input : raw/kmwiki-latest-pages-articles.xml.bz2   Output: raw/kmwiki-clean.txt (local only)
-import bz2, re
+import bz2, re, unicodedata
 import xml.etree.ElementTree as ET
 def clean(t):
     t = re.sub(r'<!--.*?-->', '', t, flags=re.S)
@@ -23,7 +23,8 @@ def clean(t):
         if l and re.search(r'[\u1780-\u17FF]', l) and '{{' not in l and '|' not in l:
             out.append(l)
     return out
-pages = kept = 0
+pages = kept = dropped = 0
+seen = set()
 with open('raw/kmwiki-clean.txt', 'w', encoding='utf8') as w:
     for ev, el in ET.iterparse(bz2.open('raw/kmwiki-latest-pages-articles.xml.bz2'), events=('end',)):
         if el.tag.endswith('}page'):
@@ -31,7 +32,12 @@ with open('raw/kmwiki-clean.txt', 'w', encoding='utf8') as w:
             ns = el.find('./{*}ns'); red = el.find('./{*}redirect'); tx = el.find('./{*}revision/{*}text')
             if ns is not None and ns.text == '0' and red is None and tx is not None and tx.text:
                 for l in clean(tx.text):
-                    w.write(l + '\n')
+                    l = unicodedata.normalize('NFC', l).replace('\u200b', '').replace('\ufeff', '')
+                    for sent in l.split('។'):
+                        sent = sent.strip()
+                        if not sent or not re.search(r'[\u1780-\u17FF]', sent): continue
+                        if sent in seen: dropped += 1; continue
+                        seen.add(sent); w.write(sent + '\n')
                 kept += 1
             el.clear()
-print('pages=%d main_ns_articles=%d' % (pages, kept))
+print('pages=%d main_ns_articles=%d duplicate_sentences_dropped=%d' % (pages, kept, dropped))
