@@ -184,7 +184,7 @@
         "attribution required (CC BY 4.0)",
         "verify third-party content inside VOA items"
       ],
-      "usage_notes": "Downloaded to raw/ (local only, not committed); extracted to extracted/. Approved for internal analysis and training by owner on 2026-10-04 on the basis of a HEURISTIC third-party exclusion: 729 article files excluded (81 by external-outlet author attribution or multiple credit signals, see exclude-third-party.txt; 585 more with an external outlet named in the final two paragraphs; 63 more with an external outlet named in the first two or the last four paragraphs). 144 further files with no outlet signal remain unreviewed by a human and are NOT excluded. Scan is NOT verified complete.",
+      "usage_notes": "Downloaded to raw/ (local only, not committed); extracted to extracted/. Approved for internal analysis and training by owner on 2026-10-04 on the basis of a HEURISTIC third-party exclusion: 729 article files excluded (81 by external-outlet author attribution or multiple credit signals, see exclude-third-party.txt; 585 more with an external outlet named in the final two paragraphs; 63 more with an external outlet named in the first two or the last four paragraphs). 144 further files with no outlet signal remain unreviewed by a human and are NOT excluded; separately, the pipeline skips 821 articles with under 50% Khmer characters (English text), a language filter unrelated to third-party exclusion. Scan is NOT verified complete.",
       "asset_size_bytes": 172567694,
       "asset_url": "https://github.com/bltlab/mot/releases/download/v1.11/khm_khmer_voanews.tgz",
       "language_code_iso639_3": "khm",

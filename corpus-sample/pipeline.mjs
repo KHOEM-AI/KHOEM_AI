@@ -59,7 +59,7 @@ for (const d of m.datasets) {
     const base = path.basename(exDir);
     const exclIds = new Set([...excl].map(x => (x.match(/_(\d+)\.json$/) || [])[1]).filter(Boolean));
     const parts = [];
-    let used = 0, excluded = 0, noText = 0;
+    let used = 0, excluded = 0, noText = 0, nonKhmer = 0;
     for (const fn of fs.readdirSync(path.join(exDir, "article")).sort()) {
       if (!fn.endsWith(".json")) continue;
       if (exclIds.has((fn.match(/(\d+)\.json$/) || [])[1])) { excluded++; continue; }
@@ -68,9 +68,11 @@ for (const d of m.datasets) {
       let t = j.paragraphs;
       if (Array.isArray(t)) t = t.join("\n");
       if (typeof t !== "string" || !t.trim()) { noText++; continue; }
+      const kmN = (t.match(/[\u1780-\u17FF]/g) || []).length, laN = (t.match(/[A-Za-z]/g) || []).length;
+      if (kmN / ((kmN + laN) || 1) < 0.5) { nonKhmer++; continue; }
       parts.push(t); used++;
     }
-    console.error("[" + d.dataset_id + "] articles used=" + used + " excluded=" + excluded + " no_text=" + noText);
+    console.error("[" + d.dataset_id + "] articles used=" + used + " excluded=" + excluded + " no_text=" + noText + " non_khmer=" + nonKhmer);
     text = parts.join("\n").normalize("NFC").replace(/[\u200B\uFEFF]/g, "");
   } else {
     text = rawBuf.toString("utf8").normalize("NFC").replace(/[\u200B\uFEFF]/g, "");
