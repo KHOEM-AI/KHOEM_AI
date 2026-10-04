@@ -53,6 +53,7 @@ for (const d of m.datasets) {
   if (isArchive && !fs.existsSync(path.join(exDir, "article"))) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: ["archive_not_extracted"] }); continue; }
   const rawBuf = fs.readFileSync(path.join(DIR, f.path));
   if ((f.content_sha256 || d.sha256) && crypto.createHash("sha256").update(rawBuf).digest("hex") !== (f.content_sha256 || d.sha256)) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: ["checksum_mismatch"] }); continue; }
+  let nonKhmerSkipped = 0;
   let text;
   if (isArchive) {
     const excl = new Set(fs.readFileSync(path.join(DIR, "exclude-third-party.txt"), "utf8").split("\n").map(x => x.trim()).filter(Boolean));
@@ -73,6 +74,7 @@ for (const d of m.datasets) {
       parts.push(t); used++;
     }
     console.error("[" + d.dataset_id + "] articles used=" + used + " excluded=" + excluded + " no_text=" + noText + " non_khmer=" + nonKhmer);
+    nonKhmerSkipped = nonKhmer;
     text = parts.join("\n").normalize("NFC").replace(/[\u200B\uFEFF]/g, "");
   } else {
     text = rawBuf.toString("utf8").normalize("NFC").replace(/[\u200B\uFEFF]/g, "");
@@ -96,7 +98,7 @@ for (const d of m.datasets) {
   const counts = d.data_type !== "synthetic" && (d.approved_purposes || []).includes("training");
   if (counts) rep.eligibleWords += words;
   rep.sources.push({ dataset_id: d.dataset_id, tokenizer_id: d.tokenizer_id, duplicate_exact: documentDuplicate,
-    sentence_duplicates: dup,
+    sentence_duplicates: dup, non_khmer_skipped: nonKhmerSkipped,
     normalized_content_sha256: normalizedSha, sentences: sents.length, kept, words, counts_toward_target: counts });
 }
 rep.totalWordsProcessed = total;

@@ -28,4 +28,6 @@ ok('vocab blocked', !!blk('km-vocab-voa-001'));
 ok('target 75M', r.target === 75000000);
 ok('progressPercent matches eligibleWords/target', r.progressPercent === +(r.eligibleWords / r.target * 100).toFixed(6));
 ok('only mot-km-voa-001 and km-wiki-001 count toward target', (r.sources || []).filter(s => s.counts_toward_target).map(s => s.dataset_id).sort().join() === 'km-wiki-001,mot-km-voa-001');
+ok('every source reports non_khmer_skipped', (r.sources || []).every(s => typeof s.non_khmer_skipped === 'number'));
+ok('mot-km-voa-001 skipped 821 non-Khmer articles', (() => { const m = src('mot-km-voa-001'); return !!m && m.non_khmer_skipped === 821; })());
 process.exit(fail ? 1 : 0);
