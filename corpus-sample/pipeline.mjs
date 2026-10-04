@@ -48,10 +48,33 @@ for (const d of m.datasets) {
 
   const f = (d.files || [])[0];
   if (!f || !f.path) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: ["files_missing"] }); continue; }
-  if (/\.(tgz|tar|gz|zip)$/i.test(f.path)) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: ["archive_not_extracted"] }); continue; }
+  const isArchive = /\.(tgz|tar|gz|zip)$/i.test(f.path);
+  const exDir = path.join(DIR, "extracted", path.basename(f.path).replace(/\.(tgz|tar|gz|zip)$/i, ""));
+  if (isArchive && !fs.existsSync(path.join(exDir, "article"))) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: ["archive_not_extracted"] }); continue; }
   const rawBuf = fs.readFileSync(path.join(DIR, f.path));
   if ((f.content_sha256 || d.sha256) && crypto.createHash("sha256").update(rawBuf).digest("hex") !== (f.content_sha256 || d.sha256)) { rep.blocked.push({ dataset_id: d.dataset_id, reasons: ["checksum_mismatch"] }); continue; }
-  const text = rawBuf.toString("utf8").normalize("NFC").replace(/[\u200B\uFEFF]/g, "");
+  let text;
+  if (isArchive) {
+    const excl = new Set(fs.readFileSync(path.join(DIR, "exclude-third-party.txt"), "utf8").split("\n").map(x => x.trim()).filter(Boolean));
+    const base = path.basename(exDir);
+    const exclIds = new Set([...excl].map(x => (x.match(/_(\d+)\.json$/) || [])[1]).filter(Boolean));
+    const parts = [];
+    let used = 0, excluded = 0, noText = 0;
+    for (const fn of fs.readdirSync(path.join(exDir, "article")).sort()) {
+      if (!fn.endsWith(".json")) continue;
+      if (exclIds.has((fn.match(/(\d+)\.json$/) || [])[1])) { excluded++; continue; }
+      let j;
+      try { j = JSON.parse(fs.readFileSync(path.join(exDir, "article", fn), "utf8")); } catch { noText++; continue; }
+      let t = j.paragraphs;
+      if (Array.isArray(t)) t = t.join("\n");
+      if (typeof t !== "string" || !t.trim()) { noText++; continue; }
+      parts.push(t); used++;
+    }
+    console.error("[" + d.dataset_id + "] articles used=" + used + " excluded=" + excluded + " no_text=" + noText);
+    text = parts.join("\n").normalize("NFC").replace(/[\u200B\uFEFF]/g, "");
+  } else {
+    text = rawBuf.toString("utf8").normalize("NFC").replace(/[\u200B\uFEFF]/g, "");
+  }
   const normalizedSha = crypto.createHash("sha256").update(text).digest("hex");
   const documentDuplicate = seenDocs.has(normalizedSha);
   if (documentDuplicate) {
