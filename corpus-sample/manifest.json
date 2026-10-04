@@ -462,6 +462,40 @@
       "provenance": [],
       "pipeline_version": "0.2",
       "tokenizer_id": "Intl.Segmenter:km:word"
+    },
+    {
+      "dataset_id": "hplt-v2-khm-001",
+      "source_name": "HPLT v2.0 Khmer (khm-Khmr), cleaned corpus",
+      "source_url": "https://hplt-project.org/datasets/v2.0",
+      "source_country": "MULTI",
+      "language": "Khmer",
+      "language_code": "km",
+      "license": "CC0-1.0 (HPLT release; source-level terms require verification)",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "data_type": "native",
+      "version": "HPLT v2.0",
+      "file": null,
+      "rights_review_status": "pending",
+      "approved_purposes": [],
+      "restrictions": [
+        "HPLT release is marked CC0; verify provenance and source-level rights before counting",
+        "source family listed by HPLT as CC/IA",
+        "do not assume all underlying source material is independently redistributable without verification"
+      ],
+      "usage_notes": "Metadata-only candidate. HPLT reports 700.99k cleaned Khmer documents and 113.80M cleaned words. Not downloaded, not counted.",
+      "processing_status": "rights_review",
+      "quality_status": "unreviewed",
+      "privacy_review_status": "pending",
+      "license_evidence": null,
+      "acquisition_method": null,
+      "retrieved_at": null,
+      "collection_date": null,
+      "retention_policy": "",
+      "files": [],
+      "parent_dataset_ids": [],
+      "provenance": [],
+      "pipeline_version": "0.2",
+      "tokenizer_id": "Intl.Segmenter:km:word"
     }
   ]
 }
