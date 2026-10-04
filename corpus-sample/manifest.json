@@ -448,9 +448,12 @@
       "rights_review_status": "pending",
       "approved_purposes": [],
       "restrictions": [
-        "news text from VOV and regional outlets; publisher rights unverified"
+        "news text from VOV and regional outlets; publisher rights unverified",
+        "CC BY 4.0 on the arXiv page is for the paper; no corpus license or data link found (checked 2026-10-05)",
+        "Khmer text is news from VOV and four regional outlets; publisher rights not held",
+        "paper counts BPE subword tokens (24M for all three languages), not Khmer words"
       ],
-      "usage_notes": "Metadata-only candidate. Khmer: 27,808 documents per the paper. Word count and license not yet known. Not downloaded, not counted.",
+      "usage_notes": "Metadata-only candidate. Khmer: 27,808 documents per the paper. No download link found as of 2026-10-05; word count unknown and likely far below the 51.6M gap. Not downloaded, not counted.",
       "processing_status": "rights_review",
       "quality_status": "unreviewed",
       "privacy_review_status": "pending",
