@@ -41,3 +41,9 @@ P0 is limited to defining policy, provenance fields, and the future pipeline con
 - validation, quarantine, deduplication, and audit-log behavior are implemented and tested on synthetic fixtures or separately approved samples.
 
 A source that fails any gate remains metadata-only or is rejected. P0 does not create an allowlist or approve any source by implication.
+
+## Status snapshot (2026-10-05)
+
+Verified retained word tokens: 23,388,795 of 75,000,000 (31.19%); remaining 51,611,205. Contributors: mot-km-voa-001 16,278,627 and km-wiki-001 7,110,168. Sources reviewed and not counted: oscar-2201-km (rejected), frequencywords-2018-001 (pending, wordlist rather than text), km-vocab-voa-001 (derived wordlist), vn-minority-corpus-km-001 (pending, license and size unknown).
+
+No further source with clear rights and large Khmer text volume has been identified. Reaching 75M requires either new rights-approved sources (for example, written permission from rights holders) or a revised target. The target above is unchanged until the owner decides.
