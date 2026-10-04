@@ -414,8 +414,11 @@
       "processing_status": "rejected",
       "quality_status": "unreviewed",
       "license_evidence": {
-        "url": "https://huggingface.co/datasets/oscar-corpus/OSCAR-2201",
-        "checked_at": "2026-10-04",
+        "terms_url": "https://huggingface.co/datasets/oscar-corpus/OSCAR-2201",
+        "reviewer": "Claude (assistant) on behalf of owner Khoem Soksivutha",
+        "decision": "rejected",
+        "access_date": "2026-10-04",
+        "checksum_or_archive_ref": "not_downloaded: dataset card read online 2026-10-04, no archive saved",
         "notes": "Dataset card: access temporarily suspended; only metadata and annotations are CC0-1.0; crawled text derived from Common Crawl Nov/Dec 2021, authors hold no copyright; use outside TDM/research exceptions prohibited in France; the 22.01 paper abstract says the corpus is published under a research-only license."
       },
       "acquisition_method": "downloaded from MOT release v1.11 (asset_url); acquired before rights approval; kept local, not committed",
