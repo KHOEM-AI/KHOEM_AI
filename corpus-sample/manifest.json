@@ -253,7 +253,7 @@
       "restrictions": [
         "attribution required (CC BY 4.0)",
         "verify third-party content inside VOA items",
-        "wordlist generated before the exclusion of 729 third-party files (exclude-third-party.txt) and not regenerated; 142-144 files without outlet signals not human-reviewed"
+        "wordlist generated before the exclusion of 729 third-party files (exclude-third-party.txt) and not regenerated; 144 files without outlet signals not human-reviewed"
       ],
       "usage_notes": "Derived word list (22,756 tokens, freq>=5) from mot-km-voa-001. Already committed in repo before review; internal analysis only until parent third-party scan is complete.",
       "asset_size_bytes": 172567694,
