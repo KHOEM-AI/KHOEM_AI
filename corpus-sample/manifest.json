@@ -381,6 +381,47 @@
       "pipeline_version": "0.2",
       "tokenizer_id": "Intl.Segmenter:km:word",
       "quality_notes": "Approximate word count 7,111,791 after exact sentence dedup (one-off scan, 2026-10-04); 14,662 main-namespace articles; 73,086 duplicate sentences dropped by extract-kmwiki.py. Automated check: 335,942 lines, median_khmer_ratio 0.953, empty 0; 20 email addresses found in text (privacy_review_status set by owner)."
+    },
+    {
+      "dataset_id": "oscar-2201-km",
+      "source_name": "OSCAR 22.01 (Khmer subcorpus)",
+      "source_url": "https://huggingface.co/datasets/oscar-corpus/OSCAR-2201",
+      "source_country": "US",
+      "language": "Khmer",
+      "language_code": "km",
+      "license": "CC0-1.0 (packaging only; underlying text not owned by OSCAR)",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "data_type": "web_crawl",
+      "version": "22.01",
+      "file": "khm_khmer_voanews.tgz",
+      "domain": "khmer-general",
+      "rights_review_status": "pending",
+      "approved_purposes": [],
+      "restrictions": [
+        "gated download; terms not yet reviewed",
+        "underlying web text rights unverified",
+        "may contain personal data"
+      ],
+      "usage_notes": "Candidate source 3. Reported 30,564,131 space-separated words (not Intl.Segmenter words). Not downloaded. Overlap with km-wiki-001 and mot-km-voa-001 expected.",
+      "asset_size_bytes": 172567694,
+      "asset_url": "https://github.com/bltlab/mot/releases/download/v1.11/khm_khmer_voanews.tgz",
+      "language_code_iso639_3": "khm",
+      "source_content_status": "underlying web text rights NOT verified",
+      "attribution": "OSCAR 22.01 Khmer subcorpus, derived from Common Crawl.",
+      "collection_date": null,
+      "provenance": [],
+      "processing_status": "rights_review",
+      "quality_status": "unreviewed",
+      "license_evidence": null,
+      "acquisition_method": "downloaded from MOT release v1.11 (asset_url); acquired before rights approval; kept local, not committed",
+      "retrieved_at": "2026-10-02T17:21:56+07:00",
+      "retention_policy": "local only, not committed; delete on takedown or license change",
+      "privacy_review_status": "pending",
+      "files": [],
+      "parent_dataset_ids": [],
+      "pipeline_version": "0.2",
+      "tokenizer_id": "Intl.Segmenter:km:word",
+      "quality_notes": "Automated check on local VOA articles: {\"article_files\": 30950, \"empty_or_unreadable\": 0, \"median_khmer_ratio\": 0.947}; thresholds: >=1000 files, median Khmer ratio >=0.5, empty <=5%"
     }
   ]
 }
