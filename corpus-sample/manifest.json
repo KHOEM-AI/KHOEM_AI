@@ -177,13 +177,14 @@
       "domain": "khmer-general",
       "rights_review_status": "approved",
       "approved_purposes": [
-        "internal analysis"
+        "internal analysis",
+        "training"
       ],
       "restrictions": [
         "attribution required (CC BY 4.0)",
         "verify third-party content inside VOA items"
       ],
-      "usage_notes": "Downloaded to raw/ (local only, not committed); extracted to extracted/. Approved for internal analysis only. Heuristic third-party exclusion: 81 article files excluded (external-outlet author attribution or multiple credit signals; see exclude-third-party.txt); 792 further files with a single outlet credit in the final paragraphs are pending review (pending-third-party-review.txt) and NOT excluded. Scan is NOT verified complete; training NOT approved.",
+      "usage_notes": "Downloaded to raw/ (local only, not committed); extracted to extracted/. Approved for internal analysis and training by owner on 2026-10-04 on the basis of a HEURISTIC third-party exclusion: 666 article files excluded (81 by external-outlet author attribution or multiple credit signals, see exclude-third-party.txt; 585 more with an external outlet named in the final two paragraphs). 207 further files with no outlet in the final two paragraphs remain unreviewed and are NOT excluded. Scan is NOT verified complete.",
       "asset_size_bytes": 172567694,
       "asset_url": "https://github.com/bltlab/mot/releases/download/v1.11/khm_khmer_voanews.tgz",
       "language_code_iso639_3": "khm",
@@ -203,7 +204,7 @@
         "archive_ref": "corpus-sample/evidence/",
         "reviewer": "khoem401grab-lgtm",
         "decision": "approved",
-        "notes": "Owner approval for internal analysis only. Terms from MOT release and paper; third-party items inside VOA content still unverified.",
+        "notes": "Owner approval for internal analysis and training (2026-10-04). Terms from MOT release and paper; third-party items inside VOA content only heuristically excluded, not verified complete.",
         "evidence_files": [
           {
             "path": "evidence/cc-by-4.0-legalcode.txt",
