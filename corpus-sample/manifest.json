@@ -430,6 +430,38 @@
       "pipeline_version": "0.2",
       "tokenizer_id": "Intl.Segmenter:km:word",
       "quality_notes": "Automated check on local VOA articles: {\"article_files\": 30950, \"empty_or_unreadable\": 0, \"median_khmer_ratio\": 0.947}; thresholds: >=1000 files, median Khmer ratio >=0.5, empty <=5%"
+    },
+    {
+      "dataset_id": "vn-minority-corpus-km-001",
+      "source_name": "Echoes Across Vietnam's Highlands, Delta, and Coast (Cham, Khmer, Tay-Nung corpus), Khmer subset",
+      "source_url": "https://arxiv.org/pdf/2607.08362",
+      "source_country": "VN",
+      "language": "Khmer",
+      "language_code": "km",
+      "license": "UNKNOWN",
+      "license_url": null,
+      "data_type": "native",
+      "version": "UNKNOWN",
+      "file": null,
+      "rights_review_status": "pending",
+      "approved_purposes": [],
+      "restrictions": [
+        "news text from VOV and regional outlets; publisher rights unverified"
+      ],
+      "usage_notes": "Metadata-only candidate. Khmer: 27,808 documents per the paper. Word count and license not yet known. Not downloaded, not counted.",
+      "processing_status": "rights_review",
+      "quality_status": "unreviewed",
+      "privacy_review_status": "pending",
+      "license_evidence": null,
+      "acquisition_method": null,
+      "retrieved_at": null,
+      "collection_date": null,
+      "retention_policy": "",
+      "files": [],
+      "parent_dataset_ids": [],
+      "provenance": [],
+      "pipeline_version": "0.2",
+      "tokenizer_id": "Intl.Segmenter:km:word"
     }
   ]
 }
