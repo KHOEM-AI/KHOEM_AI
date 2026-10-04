@@ -1,6 +1,6 @@
 /**
  * KHOEM NOW — Global vocabulary.
- * 47,925 unique headwords across 55 language codes.
+ * 70,209 unique headwords across 55 language codes.
  *
  * Includes the original curated entries plus approximately 10,000 additional,
  * deduplicated tokens from supported FrequencyWords 2018 language lists.
@@ -12,7 +12,16 @@
  *
  * Attribution: hermitdave/FrequencyWords, 2018 content lists, CC BY-SA 4.0.
  * Source: https://github.com/hermitdave/FrequencyWords
+ *
+ * Khmer corpus additions: 22,284 tokens from km-corpus-vocabulary.ts not already present,
+ * category "common". Derived from Multilingual Open Text (MOT) Release 1, Voice of America,
+ * Palen-Michel, Kim, Partlan, Lignos; collection licensed CC BY 4.0
+ * (https://creativecommons.org/licenses/by/4.0/). Changes: tokenized, filtered, deduplicated.
+ * Approved for internal analysis and training; third-party content scan of the source is
+ * incomplete (see corpus-sample/manifest.json).
  */
+
+import { KM_CORPUS_VOCABULARY } from "./km-corpus-vocabulary";
 
 export type GlobalVocabularyEntry = {
   term: string;
@@ -48037,10 +48046,22 @@ const GENERATED_VOCABULARY: readonly GlobalVocabularyEntry[] = GENERATED_VOCABUL
   category: CATEGORY_OVERRIDES[`${language}:${term}`] ?? "common",
 }));
 
+/** Khmer corpus tokens (MOT/VOA) not already present in the Khmer entries above. */
+const EXISTING_KM_TERMS = new Set(
+  [...GLOBAL_195_VOCABULARY, ...GENERATED_VOCABULARY]
+    .filter((entry) => entry.language === "km")
+    .map((entry) => entry.term.normalize("NFC")),
+);
+
+const KM_CORPUS_ENTRIES: readonly GlobalVocabularyEntry[] = KM_CORPUS_VOCABULARY
+  .filter((term) => !EXISTING_KM_TERMS.has(term))
+  .map((term) => ({ term, language: "km", countries: ["KH"], category: "common" }));
+
 /** Complete vocabulary; primary terms are unique within each language. */
 export const GLOBAL_VOCABULARY: readonly GlobalVocabularyEntry[] = [
   ...GLOBAL_195_VOCABULARY,
   ...GENERATED_VOCABULARY,
+  ...KM_CORPUS_ENTRIES,
 ];
 
 export const GLOBAL_VOCABULARY_COUNT = GLOBAL_VOCABULARY.length;

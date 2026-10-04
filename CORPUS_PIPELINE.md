@@ -8,7 +8,7 @@
 - Preserve source, file, and record lineage through every transformation. Each output is traceable to its input checksum, dataset ID, license evidence, pipeline version, and decision log.
 - Unknown rights, unresolved restrictions, missing provenance, or failed privacy/quality checks means blocked or quarantined, never silently accepted.
 - Separate datasets by rights group where obligations differ. Keep attribution and share-alike requirements available with every downstream export.
-- The 47,925-entry vocabulary is a separate asset, not corpus input or part of the 75M token count.
+- The 70,209-entry vocabulary is a separate asset, not corpus input or part of the 75M token count.
 - Pipeline stages must be deterministic where practical, resumable, and idempotent. A retry must not create untracked duplicate records.
 
 ## State progression

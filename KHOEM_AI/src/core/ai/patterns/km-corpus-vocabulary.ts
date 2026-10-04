@@ -9,7 +9,7 @@
  * Attribution: derived from Multilingual Open Text (MOT) Release 1, Voice of America,
  * Palen-Michel, Kim, Partlan, Lignos. Collection licensed CC BY 4.0
  * (https://creativecommons.org/licenses/by/4.0/). Changes: tokenized, filtered, deduplicated.
- * Status: internal analysis only; third-party content scan of the source is incomplete.
+ * Status: internal analysis and training; third-party content scan of the source is incomplete.
  */
 export const KM_CORPUS_VOCABULARY: readonly string[] = [
   "បាន", "លោក", "ដែល", "ថា", "មាន", "និង", "នេះ", "របស់", "នៅ", "ជា",
