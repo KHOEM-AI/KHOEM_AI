@@ -315,6 +315,71 @@
       "privacy_review_status": "pending",
       "quality_status": "unreviewed",
       "processing_status": "rights_review"
+    },
+    {
+      "dataset_id": "km-wiki-001",
+      "source_name": "Khmer Wikipedia (kmwiki) pages-articles dump",
+      "source_url": "https://km.wikipedia.org",
+      "source_country": "US",
+      "language": "Khmer",
+      "language_code": "km",
+      "language_code_iso639_3": "khm",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "data_type": "native",
+      "version": "kmwiki-latest dump, Last-Modified 2026-10-01",
+      "file": "kmwiki-clean.txt",
+      "domain": "khmer-general",
+      "rights_review_status": "approved",
+      "approved_purposes": [
+        "internal analysis",
+        "training"
+      ],
+      "restrictions": [
+        "attribution required (CC BY-SA 4.0)",
+        "share-alike: decide whether it applies to training before approving"
+      ],
+      "usage_notes": "Plain text extracted approximately from the dump by extract-kmwiki.py (main namespace, redirects skipped, markup stripped heuristically, exact duplicate sentences dropped). Raw and clean files are local only, not committed.",
+      "asset_url": "https://dumps.wikimedia.org/kmwiki/latest/kmwiki-latest-pages-articles.xml.bz2",
+      "asset_size_bytes": 33066610,
+      "sha256": "efca403dcdeda460fbce3fbcc11e0a6a8ef5885d12137d79622e039bf993183e",
+      "retrieved_at": "2026-10-04",
+      "acquisition_method": "downloaded from dumps.wikimedia.org (asset_url); acquired before rights approval; kept local, not committed",
+      "retention_policy": "local only, not committed; delete on takedown or license change",
+      "privacy_review_status": "passed",
+      "quality_status": "passed",
+      "processing_status": "ready",
+      "license_evidence": {
+        "terms_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "access_date": "2026-10-04",
+        "evidence_reference": "https://creativecommons.org/licenses/by-sa/4.0/legalcode",
+        "evidence_sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5",
+        "archive_ref": "corpus-sample/evidence/",
+        "reviewer": "khoem401grab-lgtm",
+        "decision": "approved",
+        "notes": "Owner approval for: internal analysis, training. CC BY-SA 4.0 share-alike applicability to training decided by owner.",
+        "evidence_files": [
+          {
+            "path": "evidence/cc-by-sa-4.0-legalcode.txt",
+            "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+          },
+          {
+            "path": "evidence/wikimedia-terms-of-use.html",
+            "sha256": "3d87e9b05bacd89f46e6db5393485d5af37ca704b071482531f3abdd137f5cfe"
+          }
+        ]
+      },
+      "files": [
+        {
+          "file_id": "km-wiki-001-f1",
+          "path": "raw/kmwiki-clean.txt",
+          "content_sha256": "962cb888c7789183bf50e1f9e2917f4cfcaa7dc18a36ede1083682eda6bc8d78"
+        }
+      ],
+      "parent_dataset_ids": [],
+      "pipeline_version": "0.2",
+      "tokenizer_id": "Intl.Segmenter:km:word",
+      "quality_notes": "Approximate word count 7,111,791 after exact sentence dedup (one-off scan, 2026-10-04); 14,662 main-namespace articles; 73,086 duplicate sentences dropped by extract-kmwiki.py. Automated check: 335,942 lines, median_khmer_ratio 0.953, empty 0; 20 email addresses found in text (privacy_review_status set by owner)."
     }
   ]
 }

@@ -12,7 +12,7 @@ const g = 'corpus-sample/raw/km-general.txt', x = 'corpus-sample/raw/km-exactdup
 ok('fixture raw bytes differ', rawsha(g) !== rawsha(x));
 ok('fixture normalized hash equal', norm(g) === norm(x));
 ok('pipeline_version 0.2', r.pipeline_version === '0.2');
-ok('eligibleWords 0', r.eligibleWords === 0);
+ok('eligibleWords equals sum of counted sources', r.eligibleWords === (r.sources || []).filter(s => s.counts_toward_target).reduce((a, s) => a + s.words, 0));
 const a = src('sample-km-general-001');
 ok('general: unique, 45 words', a && a.duplicate_exact === false && a.words === 45);
 const d = src('sample-km-dup-001');
@@ -26,6 +26,6 @@ ok('uniqueWords includes sample vocab (>=76)', r.uniqueWords >= 76);
 ok('mot processed but not counted', (() => { const m = r.sources.find(s => s.dataset_id === 'mot-km-voa-001'); return !!m && m.counts_toward_target === false && !blk('mot-km-voa-001'); })());
 ok('vocab blocked', !!blk('km-vocab-voa-001'));
 ok('target 75M', r.target === 75000000);
-ok('progressPercent 0', r.progressPercent === 0);
-ok('no source counts toward target', (r.sources || []).every(s => s.counts_toward_target === false));
+ok('progressPercent matches eligibleWords/target', r.progressPercent === +(r.eligibleWords / r.target * 100).toFixed(6));
+ok('only km-wiki-001 counts toward target (mot excluded)', (r.sources || []).filter(s => s.counts_toward_target).map(s => s.dataset_id).join() === 'km-wiki-001');
 process.exit(fail ? 1 : 0);
