@@ -417,8 +417,14 @@
         "reviewer": "khoem401grab-lgtm",
         "decision": "rejected",
         "access_date": "2026-10-04",
-        "checksum_or_archive_ref": "not_downloaded: dataset card read online 2026-10-04, no archive saved",
-        "notes": "Dataset card: access temporarily suspended; only metadata and annotations are CC0-1.0; crawled text derived from Common Crawl Nov/Dec 2021, authors hold no copyright; use outside TDM/research exceptions prohibited in France; the 22.01 paper abstract says the corpus is published under a research-only license. | Rejection drafted by assistant; confirmed by owner khoem401grab-lgtm on 2026-10-05."
+        "checksum_or_archive_ref": "archived 2026-10-05: see evidence_files",
+        "notes": "Dataset card: access temporarily suspended; only metadata and annotations are CC0-1.0; crawled text derived from Common Crawl Nov/Dec 2021, authors hold no copyright; use outside TDM/research exceptions prohibited in France; the 22.01 paper abstract says the corpus is published under a research-only license. | Rejection drafted by assistant; confirmed by owner khoem401grab-lgtm on 2026-10-05. | Snapshots saved 2026-10-05 (raw HTML as fetched by curl; may differ from pages read earlier).",
+        "evidence_files": [
+          {
+            "path": "evidence/oscar-2201-dataset-card.html",
+            "sha256": "4178ee34f82cce3dd2d92ff72abf7780808474e9ac3a13d675edfe213faabca9"
+          }
+        ]
       },
       "acquisition_method": null,
       "retrieved_at": null,
@@ -496,8 +502,18 @@
         "reviewer": "khoem401grab-lgtm",
         "decision": "rejected",
         "access_date": "2026-10-05",
-        "checksum_or_archive_ref": "not_downloaded: terms read online 2026-10-05 via search excerpts of the HPLT v2.0 page, the HPLT2.0_cleaned Hugging Face card and the HPLT 3.0 paper (arXiv 2511.01066); no archive saved",
-        "notes": "HPLT terms: we do not own the text; only the packaging is CC0. Source family CC/IA. HPLT 3.0 ethics statement: much web content is copyrighted or has terms not intended for training use; no rights claimed or granted for the text; only metadata and annotations are public domain. Takedown: legitimate requests remove sources from the next release only (hplt-datasets@ufal.mff.cuni.cz). Same basis as oscar-2201-km. Pages were not archived; fetch and save them to evidence/ if a stronger record is needed. | Rejection drafted by assistant; confirmed by owner khoem401grab-lgtm on 2026-10-05."
+        "checksum_or_archive_ref": "archived 2026-10-05: see evidence_files",
+        "notes": "HPLT terms: we do not own the text; only the packaging is CC0. Source family CC/IA. HPLT 3.0 ethics statement: much web content is copyrighted or has terms not intended for training use; no rights claimed or granted for the text; only metadata and annotations are public domain. Takedown: legitimate requests remove sources from the next release only (hplt-datasets@ufal.mff.cuni.cz). Same basis as oscar-2201-km. | Rejection drafted by assistant; confirmed by owner khoem401grab-lgtm on 2026-10-05. | Snapshots saved 2026-10-05 (raw HTML as fetched by curl; may differ from pages read earlier).",
+        "evidence_files": [
+          {
+            "path": "evidence/hplt-v2.0-datasets-page.html",
+            "sha256": "dc55d5616d4f56ba7c56cfbe7b632a24b83a3e0884d88f350e900d4a7e4c6d4f"
+          },
+          {
+            "path": "evidence/hplt-3.0-paper-arxiv-2511.01066.html",
+            "sha256": "06026f5a53cd1601a1791931cc48562540c90d016610ae016527bc14eb419189"
+          }
+        ]
       },
       "acquisition_method": null,
       "retrieved_at": null,
