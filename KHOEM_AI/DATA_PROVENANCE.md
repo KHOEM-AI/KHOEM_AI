@@ -109,8 +109,8 @@ Facts only. This section is not a rights approval or a legal conclusion.
 - Generator: not present in this repository. The asset is not reproducible from the repo.
 - Header says "punctuation removed", but `9ff150e` contained punctuation tokens. The `7e822d3` message says "digits removed", but only single-digit tokens were removed. Multi-digit Khmer-digit tokens remain.
 - Hygiene tests: `KHOEM_AI/tests/km-corpus-vocabulary.test.ts` (sha256, count, no duplicates, NFC, Khmer script, no Latin/ASCII digits/whitespace/zero-width/punctuation, no single-character tokens). These are content-hygiene checks only.
-- Raw VOA files (`corpus-sample/raw/voa_extracted/`) were never tracked in git. Only four synthetic fixtures are tracked under `corpus-sample/raw/`.
-- No production code imports `KM_CORPUS_VOCABULARY`. It is referenced only by the test and `corpus-sample/manifest.json`.
+- Raw VOA files (`KHOEM_AI/corpus-sample/raw/voa_extracted/`) were never tracked in git. Only four synthetic fixtures are tracked under `KHOEM_AI/corpus-sample/raw/`.
+- No production code imports `KM_CORPUS_VOCABULARY`. It is referenced only by the test and `KHOEM_AI/corpus-sample/manifest.json`.
 - Gate status: `assert.mjs` confirms `mot-km-voa-001` and `km-vocab-voa-001` are blocked and nothing counts toward the target.
 - Rights review: pending. `license_evidence: null`, `rights_review_status: pending`, `privacy_review_status: pending`, `approved_purposes: []`.
 
@@ -140,7 +140,7 @@ Do not pre-fill evidence values. Do not set `decision: approved` while any item 
 
 Facts only. Not a rights approval or a legal conclusion. This addendum supersedes the "Generator: not present" line above; earlier text is kept for history.
 
-- Generator: `corpus-sample/build-vocab.mjs` is now in the repository (commit `f40af9f`).
+- Generator: `KHOEM_AI/corpus-sample/build-vocab.mjs` is now in the repository (commit `f40af9f`).
 - Reproducibility: the builder outputs 22,761 tokens; the committed asset has 22,756. The builder output contains every asset token plus 5 extra: U+17D7 (repetition sign), U+17AD, U+17B3, U+17AB, U+17A9 (independent vowels). No decision yet on keeping or removing them. The asset is therefore not byte-for-byte reproducible.
 - Visibility: the repository was public when this was checked and was set to private afterwards (GitHub API returned 404 without credentials). Copies made while it was public cannot be recalled.
 - Rights review: still pending. `license_evidence: null`, `rights_review_status: pending`, `privacy_review_status: pending`, `approved_purposes: []`. `NOTICE` remains an unverified skeleton.

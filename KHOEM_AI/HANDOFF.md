@@ -24,12 +24,15 @@ Read this first. It supersedes the "Status snapshot" in CORPUS_STRATEGY.md.
 
 ## Open items
 - The GitHub repo is private. Before making it public or sharing the code, review or remove the VOA-derived tokens merged into KHOEM_AI/src/core/ai/patterns/global-195-vocabulary.ts (third-party scan of VOA is incomplete).
-- Reaching 50M needs new rights-clear text: voluntary contributions from authors, or written permission from publishers (template: corpus-sample/permission-request-template.md). Save any permission as license_evidence in the manifest.
+- Reaching 50M needs new rights-clear text: voluntary contributions from authors, or written permission from publishers (template: KHOEM_AI/corpus-sample/permission-request-template.md). Save any permission as license_evidence in the manifest.
+
+## Repo layout
+The repo root holds only .gitignore, README.md and the KHOEM_AI/ folder. Everything else, including corpus-sample/ and the docs, lives inside KHOEM_AI/.
 
 ## How to verify (run exactly like this)
-cd ~/KHOEM_AI/corpus-sample && node --max-old-space-size=3072 pipeline.mjs >/dev/null 2>&1
-cd ~/KHOEM_AI && node corpus-sample/assert.mjs | grep FAIL; echo "assert_exit=${PIPESTATUS[0]}"
-Run assert.mjs from the repo root (it uses relative paths). Expected: assert_exit=0.
+cd ~/KHOEM_AI/KHOEM_AI/corpus-sample && node --max-old-space-size=3072 pipeline.mjs >/dev/null 2>&1
+cd ~/KHOEM_AI/KHOEM_AI && node corpus-sample/assert.mjs | grep FAIL; echo "assert_exit=${PIPESTATUS[0]}"
+Run assert.mjs from ~/KHOEM_AI/KHOEM_AI (the project folder; it uses relative paths). Expected: assert_exit=0.
 
 ## Gotchas
 - manifest.json uses "datasets" (a list) and the key "dataset_id".

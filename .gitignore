@@ -52,10 +52,10 @@ github-list.txt
 Thumbs.db
 .vscode/
 .idea/
-corpus-sample/report.json
-corpus-sample/raw/
+KHOEM_AI/corpus-sample/report.json
+KHOEM_AI/corpus-sample/raw/
 
-corpus-sample/extracted/
+KHOEM_AI/corpus-sample/extracted/
 
 # Local Khmer vocabulary analysis files
 km_195_candidates.tsv
@@ -63,5 +63,5 @@ km_195_clean.tsv
 km_195_final.tsv
 km_vocab_candidates.tsv
 *.bak*
-corpus-sample/raw/*.tgz
-corpus-sample/raw/voa_extracted/
+KHOEM_AI/corpus-sample/raw/*.tgz
+KHOEM_AI/corpus-sample/raw/voa_extracted/

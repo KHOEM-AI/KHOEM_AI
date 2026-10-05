@@ -201,7 +201,7 @@
         "access_date": "2026-10-04",
         "evidence_reference": "https://aclanthology.org/2022.lrec-1.224/",
         "evidence_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
-        "archive_ref": "corpus-sample/evidence/",
+        "archive_ref": "KHOEM_AI/corpus-sample/evidence/",
         "reviewer": "khoem401grab-lgtm",
         "decision": "approved",
         "notes": "Owner approval for internal analysis and training (2026-10-04). Terms from MOT release and paper; third-party items inside VOA content only heuristically excluded, not verified complete.",
@@ -243,7 +243,7 @@
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "data_type": "derived_wordlist",
       "version": "v1.11",
-      "file": "../KHOEM_AI/src/core/ai/patterns/km-corpus-vocabulary.ts",
+      "file": "../src/core/ai/patterns/km-corpus-vocabulary.ts",
       "domain": "khmer-general",
       "rights_review_status": "approved",
       "approved_purposes": [
@@ -271,7 +271,7 @@
         "access_date": "2026-10-04",
         "evidence_reference": "https://aclanthology.org/2022.lrec-1.224/",
         "evidence_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
-        "archive_ref": "corpus-sample/evidence/",
+        "archive_ref": "KHOEM_AI/corpus-sample/evidence/",
         "reviewer": "khoem401grab-lgtm",
         "decision": "approved",
         "notes": "Owner approval for internal analysis only. Redistribution withdrawn pending completion of third-party scan of parent mot-km-voa-001. Attribution required (CC BY 4.0)."
@@ -283,7 +283,7 @@
       "files": [
         {
           "file_id": "km-vocab-voa-001-f1",
-          "path": "../KHOEM_AI/src/core/ai/patterns/km-corpus-vocabulary.ts",
+          "path": "../src/core/ai/patterns/km-corpus-vocabulary.ts",
           "content_sha256": "6176c91bbaebcb607352d1fcd522e0342b12e99813688b7130584fc5bf255401"
         }
       ],
@@ -357,7 +357,7 @@
         "access_date": "2026-10-04",
         "evidence_reference": "https://creativecommons.org/licenses/by-sa/4.0/legalcode",
         "evidence_sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5",
-        "archive_ref": "corpus-sample/evidence/",
+        "archive_ref": "KHOEM_AI/corpus-sample/evidence/",
         "reviewer": "khoem401grab-lgtm",
         "decision": "approved",
         "notes": "Owner approval for: internal analysis, training. CC BY-SA 4.0 share-alike applicability to training decided by owner.",
