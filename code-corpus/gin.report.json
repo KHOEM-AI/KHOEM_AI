@@ -1,0 +1,90 @@
+{
+  "label": "gin",
+  "kind": "code",
+  "root": "/data/data/com.termux/files/home/code-raw/gin",
+  "license": "MIT",
+  "rights": "permissive license, attribution/notice may be required",
+  "git_commit": "43fe48e8a0f44af783116cdb010725e6bb50255f",
+  "created_at": "2026-10-05T06:10:21.515Z",
+  "counts_toward_khmer_target": false,
+  "tokenizer": "regex:identifier|number|symbol (approximate, not a model tokenizer)",
+  "exclude": [],
+  "total": {
+    "files": 98,
+    "lines": 24313,
+    "bytes": 696064,
+    "tokens": 207711
+  },
+  "by_language": {
+    "go": {
+      "files": 98,
+      "lines": 24313,
+      "bytes": 696064,
+      "tokens": 207711
+    }
+  },
+  "skipped": {
+    "ext": 31,
+    "bak_or_min": 0,
+    "too_big": 0,
+    "excluded": 0,
+    "binary": 0,
+    "generated": 1,
+    "long_lines": 0,
+    "secret": 0,
+    "duplicate": 0,
+    "empty": 0
+  },
+  "largest_files": [
+    {
+      "tokens": 38252,
+      "lines": 4058,
+      "path": "context_test.go"
+    },
+    {
+      "tokens": 14184,
+      "lines": 1114,
+      "path": "tree_test.go"
+    },
+    {
+      "tokens": 13199,
+      "lines": 1544,
+      "path": "context.go"
+    },
+    {
+      "tokens": 11919,
+      "lines": 1435,
+      "path": "binding/binding_test.go"
+    },
+    {
+      "tokens": 10483,
+      "lines": 1147,
+      "path": "binding/form_mapping_test.go"
+    },
+    {
+      "tokens": 9411,
+      "lines": 944,
+      "path": "routes_test.go"
+    },
+    {
+      "tokens": 9001,
+      "lines": 609,
+      "path": "gin_integration_test.go"
+    },
+    {
+      "tokens": 8993,
+      "lines": 1198,
+      "path": "gin_test.go"
+    },
+    {
+      "tokens": 7058,
+      "lines": 818,
+      "path": "render/render_test.go"
+    },
+    {
+      "tokens": 6920,
+      "lines": 862,
+      "path": "gin.go"
+    }
+  ]
+}

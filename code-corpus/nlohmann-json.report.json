@@ -1,0 +1,130 @@
+{
+  "label": "nlohmann-json",
+  "kind": "code",
+  "root": "/data/data/com.termux/files/home/code-raw/json",
+  "license": "MIT",
+  "rights": "permissive license, attribution/notice may be required",
+  "git_commit": "23d3b373e1a41db5adde1081b409e66de1d65030",
+  "created_at": "2026-10-05T06:10:23.736Z",
+  "counts_toward_khmer_target": false,
+  "tokenizer": "regex:identifier|number|symbol (approximate, not a model tokenizer)",
+  "exclude": [
+    "single_include/",
+    "tests/thirdparty/",
+    "tests/abi/"
+  ],
+  "total": {
+    "files": 443,
+    "lines": 110576,
+    "bytes": 4439763,
+    "tokens": 1043854
+  },
+  "by_language": {
+    "swift": {
+      "files": 2,
+      "lines": 41,
+      "bytes": 967,
+      "tokens": 232
+    },
+    "cpp": {
+      "files": 429,
+      "lines": 108733,
+      "bytes": 4339882,
+      "tokens": 1019429
+    },
+    "sql": {
+      "files": 1,
+      "lines": 288,
+      "bytes": 36823,
+      "tokens": 9776
+    },
+    "css": {
+      "files": 1,
+      "lines": 21,
+      "bytes": 627,
+      "tokens": 176
+    },
+    "lua": {
+      "files": 1,
+      "lines": 9,
+      "bytes": 197,
+      "tokens": 52
+    },
+    "python": {
+      "files": 8,
+      "lines": 1429,
+      "bytes": 58937,
+      "tokens": 13513
+    },
+    "javascript": {
+      "files": 1,
+      "lines": 55,
+      "bytes": 2330,
+      "tokens": 676
+    }
+  },
+  "skipped": {
+    "ext": 688,
+    "bak_or_min": 0,
+    "too_big": 0,
+    "excluded": 19,
+    "binary": 0,
+    "generated": 0,
+    "long_lines": 0,
+    "secret": 0,
+    "duplicate": 20,
+    "empty": 0
+  },
+  "largest_files": [
+    {
+      "tokens": 60675,
+      "lines": 4531,
+      "path": "tests/src/unit-bjdata.cpp"
+    },
+    {
+      "tokens": 59429,
+      "lines": 7330,
+      "path": "include/nlohmann/json.hpp"
+    },
+    {
+      "tokens": 39820,
+      "lines": 3314,
+      "path": "tests/src/unit-cbor.cpp"
+    },
+    {
+      "tokens": 36950,
+      "lines": 3231,
+      "path": "tests/src/unit-ubjson.cpp"
+    },
+    {
+      "tokens": 34699,
+      "lines": 2977,
+      "path": "tests/src/unit-class_parser.cpp"
+    },
+    {
+      "tokens": 27966,
+      "lines": 4426,
+      "path": "include/nlohmann/detail/input/binary_reader.hpp"
+    },
+    {
+      "tokens": 27693,
+      "lines": 2108,
+      "path": "tests/src/unit-element_access2.cpp"
+    },
+    {
+      "tokens": 24159,
+      "lines": 2525,
+      "path": "tests/src/unit-msgpack.cpp"
+    },
+    {
+      "tokens": 21173,
+      "lines": 898,
+      "path": "include/nlohmann/detail/macro_scope.hpp"
+    },
+    {
+      "tokens": 20863,
+      "lines": 2054,
+      "path": "tests/src/unit-json_patch.cpp"
+    }
+  ]
+}

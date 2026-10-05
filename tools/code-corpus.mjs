@@ -45,6 +45,7 @@ const EXT = {
   ".py": "python", ".css": "css", ".html": "html", ".htm": "html",
   ".c": "c", ".h": "c", ".cpp": "cpp", ".cc": "cpp", ".hpp": "cpp",
   ".cs": "csharp", ".java": "java", ".sql": "sql", ".sh": "shell", ".bash": "shell",
+  ".go": "go", ".rs": "rust", ".kt": "kotlin", ".php": "php", ".rb": "ruby", ".swift": "swift", ".dart": "dart", ".lua": "lua", ".scala": "scala", ".r": "r",
 };
 
 const SKIP_DIRS = new Set([

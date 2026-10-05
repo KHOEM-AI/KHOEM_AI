@@ -1,0 +1,90 @@
+{
+  "label": "gson",
+  "kind": "code",
+  "root": "/data/data/com.termux/files/home/code-raw/gson",
+  "license": "Apache-2.0",
+  "rights": "permissive license, attribution/notice may be required",
+  "git_commit": "216c41b6e70dc04e6856418dd76bb00c854eb6b4",
+  "created_at": "2026-10-05T06:05:59.497Z",
+  "counts_toward_khmer_target": false,
+  "tokenizer": "regex:identifier|number|symbol (approximate, not a model tokenizer)",
+  "exclude": [],
+  "total": {
+    "files": 264,
+    "lines": 57382,
+    "bytes": 2021450,
+    "tokens": 446572
+  },
+  "by_language": {
+    "java": {
+      "files": 264,
+      "lines": 57382,
+      "bytes": 2021450,
+      "tokens": 446572
+    }
+  },
+  "skipped": {
+    "ext": 48,
+    "bak_or_min": 0,
+    "too_big": 0,
+    "excluded": 0,
+    "binary": 0,
+    "generated": 0,
+    "long_lines": 0,
+    "secret": 0,
+    "duplicate": 0,
+    "empty": 0
+  },
+  "largest_files": [
+    {
+      "tokens": 23215,
+      "lines": 2480,
+      "path": "gson/src/test/java/com/google/gson/stream/JsonReaderTest.java"
+    },
+    {
+      "tokens": 13874,
+      "lines": 2022,
+      "path": "gson/src/main/java/com/google/gson/stream/JsonReader.java"
+    },
+    {
+      "tokens": 12883,
+      "lines": 1289,
+      "path": "gson/src/main/java/com/google/gson/Gson.java"
+    },
+    {
+      "tokens": 9998,
+      "lines": 1131,
+      "path": "gson/src/test/java/com/google/gson/functional/DefaultTypeAdaptersTest.java"
+    },
+    {
+      "tokens": 9346,
+      "lines": 1078,
+      "path": "gson/src/main/java/com/google/gson/GsonBuilder.java"
+    },
+    {
+      "tokens": 8372,
+      "lines": 973,
+      "path": "gson/src/test/java/com/google/gson/functional/PrimitiveTest.java"
+    },
+    {
+      "tokens": 8095,
+      "lines": 809,
+      "path": "gson/src/test/java/com/google/gson/functional/MapTest.java"
+    },
+    {
+      "tokens": 7673,
+      "lines": 994,
+      "path": "gson/src/test/java/com/google/gson/stream/JsonWriterTest.java"
+    },
+    {
+      "tokens": 7108,
+      "lines": 1113,
+      "path": "gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java"
+    },
+    {
+      "tokens": 6156,
+      "lines": 837,
+      "path": "gson/src/main/java/com/google/gson/stream/JsonWriter.java"
+    }
+  ]
+}

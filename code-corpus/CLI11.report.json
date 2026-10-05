@@ -1,0 +1,105 @@
+{
+  "label": "CLI11",
+  "kind": "code",
+  "root": "/data/data/com.termux/files/home/code-raw/CLI11",
+  "license": "BSD-3-Clause",
+  "rights": "permissive license, attribution/notice may be required",
+  "git_commit": "eced4d837d0ab57242b1c25d03780d35bf2b0d52",
+  "created_at": "2026-10-05T06:10:24.637Z",
+  "counts_toward_khmer_target": false,
+  "tokenizer": "regex:identifier|number|symbol (approximate, not a model tokenizer)",
+  "exclude": [
+    "single-include/",
+    "docs/"
+  ],
+  "total": {
+    "files": 116,
+    "lines": 39371,
+    "bytes": 1294421,
+    "tokens": 360532
+  },
+  "by_language": {
+    "cpp": {
+      "files": 111,
+      "lines": 39112,
+      "bytes": 1286468,
+      "tokens": 358432
+    },
+    "python": {
+      "files": 3,
+      "lines": 233,
+      "bytes": 7337,
+      "tokens": 1888
+    },
+    "shell": {
+      "files": 2,
+      "lines": 26,
+      "bytes": 616,
+      "tokens": 212
+    }
+  },
+  "skipped": {
+    "ext": 195,
+    "bak_or_min": 0,
+    "too_big": 0,
+    "excluded": 5,
+    "binary": 0,
+    "generated": 0,
+    "long_lines": 0,
+    "secret": 0,
+    "duplicate": 0,
+    "empty": 0
+  },
+  "largest_files": [
+    {
+      "tokens": 41676,
+      "lines": 4554,
+      "path": "tests/ConfigFileTest.cpp"
+    },
+    {
+      "tokens": 30594,
+      "lines": 3282,
+      "path": "tests/AppTest.cpp"
+    },
+    {
+      "tokens": 22779,
+      "lines": 2833,
+      "path": "include/CLI/impl/App_inl.hpp"
+    },
+    {
+      "tokens": 22474,
+      "lines": 2530,
+      "path": "tests/SubcommandTest.cpp"
+    },
+    {
+      "tokens": 22336,
+      "lines": 1828,
+      "path": "tests/HelpersTest.cpp"
+    },
+    {
+      "tokens": 18758,
+      "lines": 1863,
+      "path": "include/CLI/TypeTools.hpp"
+    },
+    {
+      "tokens": 16285,
+      "lines": 1769,
+      "path": "tests/HelpTest.cpp"
+    },
+    {
+      "tokens": 12705,
+      "lines": 1456,
+      "path": "include/CLI/App.hpp"
+    },
+    {
+      "tokens": 11307,
+      "lines": 1157,
+      "path": "tests/OptionTypeTest.cpp"
+    },
+    {
+      "tokens": 8873,
+      "lines": 889,
+      "path": "tests/CreationTest.cpp"
+    }
+  ]
+}

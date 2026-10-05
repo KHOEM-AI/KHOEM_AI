@@ -1,0 +1,108 @@
+{
+  "label": "ripgrep",
+  "kind": "code",
+  "root": "/data/data/com.termux/files/home/code-raw/ripgrep",
+  "license": "MIT",
+  "rights": "permissive license, attribution/notice may be required",
+  "git_commit": "3fce3b5bb0236da2df6d99672afb8a719642eca7",
+  "created_at": "2026-10-05T06:10:22.501Z",
+  "counts_toward_khmer_target": false,
+  "tokenizer": "regex:identifier|number|symbol (approximate, not a model tokenizer)",
+  "exclude": [],
+  "total": {
+    "files": 113,
+    "lines": 56638,
+    "bytes": 1905261,
+    "tokens": 498380
+  },
+  "by_language": {
+    "lua": {
+      "files": 1,
+      "lines": 13,
+      "bytes": 192,
+      "tokens": 51
+    },
+    "rust": {
+      "files": 109,
+      "lines": 56463,
+      "bytes": 1900850,
+      "tokens": 497110
+    },
+    "shell": {
+      "files": 2,
+      "lines": 138,
+      "bytes": 3415,
+      "tokens": 1038
+    },
+    "ruby": {
+      "files": 1,
+      "lines": 24,
+      "bytes": 804,
+      "tokens": 181
+    }
+  },
+  "skipped": {
+    "ext": 121,
+    "bak_or_min": 0,
+    "too_big": 0,
+    "excluded": 0,
+    "binary": 0,
+    "generated": 1,
+    "long_lines": 0,
+    "secret": 0,
+    "duplicate": 0,
+    "empty": 0
+  },
+  "largest_files": [
+    {
+      "tokens": 67224,
+      "lines": 8162,
+      "path": "crates/core/flags/defs.rs"
+    },
+    {
+      "tokens": 30370,
+      "lines": 3988,
+      "path": "crates/printer/src/standard.rs"
+    },
+    {
+      "tokens": 22973,
+      "lines": 2741,
+      "path": "crates/ignore/src/walk.rs"
+    },
+    {
+      "tokens": 19434,
+      "lines": 1745,
+      "path": "tests/regression.rs"
+    },
+    {
+      "tokens": 17069,
+      "lines": 1687,
+      "path": "crates/globset/src/glob.rs"
+    },
+    {
+      "tokens": 13979,
+      "lines": 1614,
+      "path": "crates/ignore/src/dir.rs"
+    },
+    {
+      "tokens": 12928,
+      "lines": 1287,
+      "path": "crates/ignore/src/incremental.rs"
+    },
+    {
+      "tokens": 12790,
+      "lines": 1517,
+      "path": "crates/core/flags/hiargs.rs"
+    },
+    {
+      "tokens": 12453,
+      "lines": 1175,
+      "path": "tests/feature.rs"
+    },
+    {
+      "tokens": 11894,
+      "lines": 1199,
+      "path": "tests/misc.rs"
+    }
+  ]
+}
