@@ -1,0 +1,108 @@
+{
+  "label": "libuv",
+  "kind": "code",
+  "root": "/data/data/com.termux/files/home/code-raw/libuv",
+  "license": "MIT",
+  "rights": "permissive license, attribution/notice may be required",
+  "git_commit": "49b1c064714b412d7f7a2f5e7146c977554e57f9",
+  "created_at": "2026-10-05T05:59:12.785Z",
+  "counts_toward_khmer_target": false,
+  "tokenizer": "regex:identifier|number|symbol (approximate, not a model tokenizer)",
+  "exclude": [],
+  "total": {
+    "files": 373,
+    "lines": 116337,
+    "bytes": 3344529,
+    "tokens": 703922
+  },
+  "by_language": {
+    "shell": {
+      "files": 1,
+      "lines": 76,
+      "bytes": 2489,
+      "tokens": 661
+    },
+    "c": {
+      "files": 369,
+      "lines": 116071,
+      "bytes": 3337716,
+      "tokens": 701822
+    },
+    "javascript": {
+      "files": 1,
+      "lines": 21,
+      "bytes": 511,
+      "tokens": 155
+    },
+    "python": {
+      "files": 2,
+      "lines": 169,
+      "bytes": 3813,
+      "tokens": 1284
+    }
+  },
+  "skipped": {
+    "ext": 109,
+    "bak_or_min": 0,
+    "too_big": 0,
+    "excluded": 0,
+    "binary": 0,
+    "generated": 1,
+    "long_lines": 0,
+    "secret": 0,
+    "duplicate": 0,
+    "empty": 0
+  },
+  "largest_files": [
+    {
+      "tokens": 31981,
+      "lines": 5102,
+      "path": "test/test-fs.c"
+    },
+    {
+      "tokens": 21292,
+      "lines": 3826,
+      "path": "src/win/fs.c"
+    },
+    {
+      "tokens": 18018,
+      "lines": 4847,
+      "path": "src/win/winapi.h"
+    },
+    {
+      "tokens": 17810,
+      "lines": 2941,
+      "path": "src/win/pipe.c"
+    },
+    {
+      "tokens": 17774,
+      "lines": 2808,
+      "path": "src/unix/linux.c"
+    },
+    {
+      "tokens": 15745,
+      "lines": 2478,
+      "path": "src/win/tty.c"
+    },
+    {
+      "tokens": 15541,
+      "lines": 2388,
+      "path": "test/test-spawn.c"
+    },
+    {
+      "tokens": 13606,
+      "lines": 2328,
+      "path": "src/unix/fs.c"
+    },
+    {
+      "tokens": 12584,
+      "lines": 2223,
+      "path": "src/unix/core.c"
+    },
+    {
+      "tokens": 11711,
+      "lines": 1633,
+      "path": "test/test-tty-escape-sequence-processing.c"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "label": "flask",
+  "kind": "code",
+  "root": "/data/data/com.termux/files/home/code-raw/flask",
+  "license": "BSD-3-Clause",
+  "rights": "permissive license, attribution/notice may be required",
+  "git_commit": "d73fa1cdcbd8b1465c151db8924ba58b1dd14e35",
+  "created_at": "2026-10-05T05:59:17.749Z",
+  "counts_toward_khmer_target": false,
+  "tokenizer": "regex:identifier|number|symbol (approximate, not a model tokenizer)",
+  "exclude": [],
+  "total": {
+    "files": 104,
+    "lines": 18974,
+    "bytes": 602517,
+    "tokens": 134210
+  },
+  "by_language": {
+    "python": {
+      "files": 80,
+      "lines": 18425,
+      "bytes": 589437,
+      "tokens": 130049
+    },
+    "html": {
+      "files": 20,
+      "lines": 382,
+      "bytes": 10474,
+      "tokens": 3455
+    },
+    "sql": {
+      "files": 2,
+      "lines": 30,
+      "bytes": 892,
+      "tokens": 192
+    },
+    "css": {
+      "files": 2,
+      "lines": 137,
+      "bytes": 1714,
+      "tokens": 514
+    }
+  },
+  "skipped": {
+    "ext": 127,
+    "bak_or_min": 0,
+    "too_big": 0,
+    "excluded": 0,
+    "binary": 0,
+    "generated": 0,
+    "long_lines": 0,
+    "secret": 0,
+    "duplicate": 0,
+    "empty": 3
+  },
+  "largest_files": [
+    {
+      "tokens": 13953,
+      "lines": 1975,
+      "path": "tests/test_basic.py"
+    },
+    {
+      "tokens": 12205,
+      "lines": 1629,
+      "path": "src/flask/app.py"
+    },
+    {
+      "tokens": 8067,
+      "lines": 1128,
+      "path": "src/flask/cli.py"
+    },
+    {
+      "tokens": 7814,
+      "lines": 1116,
+      "path": "tests/test_blueprints.py"
+    },
+    {
+      "tokens": 7781,
+      "lines": 1014,
+      "path": "src/flask/sansio/app.py"
+    },
+    {
+      "tokens": 6148,
+      "lines": 801,
+      "path": "src/flask/sansio/scaffold.py"
+    },
+    {
+      "tokens": 5310,
+      "lines": 683,
+      "path": "src/flask/helpers.py"
+    },
+    {
+      "tokens": 5088,
+      "lines": 693,
+      "path": "src/flask/sansio/blueprints.py"
+    },
+    {
+      "tokens": 4789,
+      "lines": 704,
+      "path": "tests/test_cli.py"
+    },
+    {
+      "tokens": 3759,
+      "lines": 541,
+      "path": "src/flask/ctx.py"
+    }
+  ]
+}

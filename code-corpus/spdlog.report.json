@@ -1,0 +1,108 @@
+{
+  "label": "spdlog",
+  "kind": "code",
+  "root": "/data/data/com.termux/files/home/code-raw/spdlog",
+  "license": "MIT",
+  "rights": "permissive license, attribution/notice may be required",
+  "git_commit": "d6c93f38a08b4ea0f8ffcfd7f7857307d5d5c3fa",
+  "created_at": "2026-10-05T05:59:16.787Z",
+  "counts_toward_khmer_target": false,
+  "tokenizer": "regex:identifier|number|symbol (approximate, not a model tokenizer)",
+  "exclude": [],
+  "total": {
+    "files": 156,
+    "lines": 33012,
+    "bytes": 1160053,
+    "tokens": 278325
+  },
+  "by_language": {
+    "cpp": {
+      "files": 42,
+      "lines": 5231,
+      "bytes": 196280,
+      "tokens": 52051
+    },
+    "c": {
+      "files": 111,
+      "lines": 27730,
+      "bytes": 962420,
+      "tokens": 225758
+    },
+    "shell": {
+      "files": 2,
+      "lines": 33,
+      "bytes": 856,
+      "tokens": 308
+    },
+    "python": {
+      "files": 1,
+      "lines": 18,
+      "bytes": 497,
+      "tokens": 208
+    }
+  },
+  "skipped": {
+    "ext": 30,
+    "bak_or_min": 0,
+    "too_big": 0,
+    "excluded": 0,
+    "binary": 0,
+    "generated": 0,
+    "long_lines": 0,
+    "secret": 0,
+    "duplicate": 0,
+    "empty": 0
+  },
+  "largest_files": [
+    {
+      "tokens": 39012,
+      "lines": 4396,
+      "path": "include/spdlog/fmt/bundled/format.h"
+    },
+    {
+      "tokens": 24405,
+      "lines": 3011,
+      "path": "include/spdlog/fmt/bundled/base.h"
+    },
+    {
+      "tokens": 19534,
+      "lines": 2247,
+      "path": "include/spdlog/fmt/bundled/chrono.h"
+    },
+    {
+      "tokens": 18836,
+      "lines": 1949,
+      "path": "include/spdlog/fmt/bundled/format-inl.h"
+    },
+    {
+      "tokens": 10284,
+      "lines": 1353,
+      "path": "include/spdlog/pattern_formatter-inl.h"
+    },
+    {
+      "tokens": 7497,
+      "lines": 672,
+      "path": "tests/test_pattern_formatter.cpp"
+    },
+    {
+      "tokens": 7035,
+      "lines": 852,
+      "path": "include/spdlog/fmt/bundled/ranges.h"
+    },
+    {
+      "tokens": 6330,
+      "lines": 638,
+      "path": "include/spdlog/fmt/bundled/color.h"
+    },
+    {
+      "tokens": 5946,
+      "lines": 728,
+      "path": "include/spdlog/fmt/bundled/std.h"
+    },
+    {
+      "tokens": 5274,
+      "lines": 625,
+      "path": "include/spdlog/fmt/bundled/printf.h"
+    }
+  ]
+}

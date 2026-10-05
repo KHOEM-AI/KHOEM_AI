@@ -1,0 +1,102 @@
+{
+  "label": "express",
+  "kind": "code",
+  "root": "/data/data/com.termux/files/home/code-raw/express",
+  "license": "MIT",
+  "rights": "permissive license, attribution/notice may be required",
+  "git_commit": "7ef98448f8b38099ab1ded55e458538ad47a51e7",
+  "created_at": "2026-10-05T05:50:43.463Z",
+  "counts_toward_khmer_target": false,
+  "tokenizer": "regex:identifier|number|symbol (approximate, not a model tokenizer)",
+  "exclude": [],
+  "total": {
+    "files": 153,
+    "lines": 21730,
+    "bytes": 550300,
+    "tokens": 162649
+  },
+  "by_language": {
+    "javascript": {
+      "files": 141,
+      "lines": 21633,
+      "bytes": 548685,
+      "tokens": 162051
+    },
+    "css": {
+      "files": 4,
+      "lines": 47,
+      "bytes": 601,
+      "tokens": 193
+    },
+    "html": {
+      "files": 8,
+      "lines": 50,
+      "bytes": 1014,
+      "tokens": 405
+    }
+  },
+  "skipped": {
+    "ext": 61,
+    "bak_or_min": 0,
+    "too_big": 0,
+    "excluded": 0,
+    "binary": 0,
+    "generated": 0,
+    "long_lines": 0,
+    "secret": 0,
+    "duplicate": 0,
+    "empty": 0
+  },
+  "largest_files": [
+    {
+      "tokens": 9090,
+      "lines": 1218,
+      "path": "test/app.router.js"
+    },
+    {
+      "tokens": 7663,
+      "lines": 829,
+      "path": "test/express.urlencoded.js"
+    },
+    {
+      "tokens": 7018,
+      "lines": 1050,
+      "path": "lib/response.js"
+    },
+    {
+      "tokens": 6862,
+      "lines": 756,
+      "path": "test/express.json.js"
+    },
+    {
+      "tokens": 6608,
+      "lines": 816,
+      "path": "test/express.static.js"
+    },
+    {
+      "tokens": 6138,
+      "lines": 914,
+      "path": "test/res.sendFile.js"
+    },
+    {
+      "tokens": 5271,
+      "lines": 637,
+      "path": "test/Router.js"
+    },
+    {
+      "tokens": 5028,
+      "lines": 567,
+      "path": "test/express.text.js"
+    },
+    {
+      "tokens": 4650,
+      "lines": 636,
+      "path": "test/res.send.js"
+    },
+    {
+      "tokens": 4642,
+      "lines": 514,
+      "path": "test/express.raw.js"
+    }
+  ]
+}

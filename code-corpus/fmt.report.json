@@ -1,0 +1,120 @@
+{
+  "label": "fmt",
+  "kind": "code",
+  "root": "/data/data/com.termux/files/home/code-raw/fmt",
+  "license": "MIT",
+  "rights": "permissive license, attribution/notice may be required",
+  "git_commit": "4afd0e498e9e1dd68775cc52087df774a19c761f",
+  "created_at": "2026-10-05T05:59:13.839Z",
+  "counts_toward_khmer_target": false,
+  "tokenizer": "regex:identifier|number|symbol (approximate, not a model tokenizer)",
+  "exclude": [],
+  "total": {
+    "files": 81,
+    "lines": 72062,
+    "bytes": 2622286,
+    "tokens": 628175
+  },
+  "by_language": {
+    "css": {
+      "files": 1,
+      "lines": 118,
+      "bytes": 2267,
+      "tokens": 735
+    },
+    "javascript": {
+      "files": 1,
+      "lines": 5,
+      "bytes": 76,
+      "tokens": 27
+    },
+    "c": {
+      "files": 27,
+      "lines": 42940,
+      "bytes": 1598993,
+      "tokens": 361008
+    },
+    "cpp": {
+      "files": 47,
+      "lines": 27438,
+      "bytes": 969674,
+      "tokens": 253823
+    },
+    "python": {
+      "files": 4,
+      "lines": 1470,
+      "bytes": 49163,
+      "tokens": 12049
+    },
+    "shell": {
+      "files": 1,
+      "lines": 91,
+      "bytes": 2113,
+      "tokens": 533
+    }
+  },
+  "skipped": {
+    "ext": 64,
+    "bak_or_min": 0,
+    "too_big": 0,
+    "excluded": 0,
+    "binary": 0,
+    "generated": 0,
+    "long_lines": 0,
+    "secret": 0,
+    "duplicate": 0,
+    "empty": 0
+  },
+  "largest_files": [
+    {
+      "tokens": 115409,
+      "lines": 14443,
+      "path": "test/gtest/gmock-gtest-all.cc"
+    },
+    {
+      "tokens": 99973,
+      "lines": 12400,
+      "path": "test/gtest/gtest/gtest.h"
+    },
+    {
+      "tokens": 98410,
+      "lines": 11660,
+      "path": "test/gtest/gmock/gmock.h"
+    },
+    {
+      "tokens": 41335,
+      "lines": 4674,
+      "path": "include/fmt/format.h"
+    },
+    {
+      "tokens": 34696,
+      "lines": 2748,
+      "path": "test/format-test.cc"
+    },
+    {
+      "tokens": 24143,
+      "lines": 2963,
+      "path": "include/fmt/core.h"
+    },
+    {
+      "tokens": 19729,
+      "lines": 2256,
+      "path": "include/fmt/chrono.h"
+    },
+    {
+      "tokens": 19384,
+      "lines": 1992,
+      "path": "include/fmt/format-inl.h"
+    },
+    {
+      "tokens": 16864,
+      "lines": 1047,
+      "path": "test/chrono-test.cc"
+    },
+    {
+      "tokens": 9982,
+      "lines": 892,
+      "path": "test/ranges-test.cc"
+    }
+  ]
+}

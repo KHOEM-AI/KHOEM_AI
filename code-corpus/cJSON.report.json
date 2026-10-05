@@ -1,0 +1,102 @@
+{
+  "label": "cJSON",
+  "kind": "code",
+  "root": "/data/data/com.termux/files/home/code-raw/cJSON",
+  "license": "MIT",
+  "rights": "permissive license, attribution/notice may be required",
+  "git_commit": "6d9f2443ab071f86e5d9b43025a40929ec41c46c",
+  "created_at": "2026-10-05T05:59:11.642Z",
+  "counts_toward_khmer_target": false,
+  "tokenizer": "regex:identifier|number|symbol (approximate, not a model tokenizer)",
+  "exclude": [],
+  "total": {
+    "files": 76,
+    "lines": 21299,
+    "bytes": 705265,
+    "tokens": 146586
+  },
+  "by_language": {
+    "c": {
+      "files": 71,
+      "lines": 20977,
+      "bytes": 693279,
+      "tokens": 143733
+    },
+    "shell": {
+      "files": 3,
+      "lines": 35,
+      "bytes": 874,
+      "tokens": 242
+    },
+    "python": {
+      "files": 2,
+      "lines": 287,
+      "bytes": 11112,
+      "tokens": 2611
+    }
+  },
+  "skipped": {
+    "ext": 125,
+    "bak_or_min": 0,
+    "too_big": 0,
+    "excluded": 0,
+    "binary": 0,
+    "generated": 22,
+    "long_lines": 0,
+    "secret": 0,
+    "duplicate": 6,
+    "empty": 0
+  },
+  "largest_files": [
+    {
+      "tokens": 26414,
+      "lines": 5338,
+      "path": "tests/unity/test/tests/testunity.c"
+    },
+    {
+      "tokens": 17470,
+      "lines": 3207,
+      "path": "cJSON.c"
+    },
+    {
+      "tokens": 13511,
+      "lines": 871,
+      "path": "tests/unity/src/unity_internals.h"
+    },
+    {
+      "tokens": 10378,
+      "lines": 504,
+      "path": "tests/unity/src/unity.h"
+    },
+    {
+      "tokens": 10324,
+      "lines": 1571,
+      "path": "tests/unity/src/unity.c"
+    },
+    {
+      "tokens": 8502,
+      "lines": 1486,
+      "path": "cJSON_Utils.c"
+    },
+    {
+      "tokens": 6380,
+      "lines": 839,
+      "path": "tests/misc_tests.c"
+    },
+    {
+      "tokens": 3475,
+      "lines": 307,
+      "path": "cJSON.h"
+    },
+    {
+      "tokens": 3161,
+      "lines": 544,
+      "path": "tests/unity/extras/fixture/test/unity_fixture_Test.c"
+    },
+    {
+      "tokens": 3071,
+      "lines": 240,
+      "path": "tests/unity/examples/unity_config.h"
+    }
+  ]
+}

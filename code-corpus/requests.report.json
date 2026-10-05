@@ -1,0 +1,102 @@
+{
+  "label": "requests",
+  "kind": "code",
+  "root": "/data/data/com.termux/files/home/code-raw/requests",
+  "license": "Apache-2.0",
+  "rights": "permissive license, attribution/notice may be required",
+  "git_commit": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+  "created_at": "2026-10-05T05:59:18.664Z",
+  "counts_toward_khmer_target": false,
+  "tokenizer": "regex:identifier|number|symbol (approximate, not a model tokenizer)",
+  "exclude": [],
+  "total": {
+    "files": 37,
+    "lines": 11729,
+    "bytes": 396627,
+    "tokens": 87258
+  },
+  "by_language": {
+    "css": {
+      "files": 1,
+      "lines": 13,
+      "bytes": 287,
+      "tokens": 90
+    },
+    "html": {
+      "files": 1,
+      "lines": 34,
+      "bytes": 1361,
+      "tokens": 603
+    },
+    "python": {
+      "files": 35,
+      "lines": 11682,
+      "bytes": 394979,
+      "tokens": 86565
+    }
+  },
+  "skipped": {
+    "ext": 89,
+    "bak_or_min": 0,
+    "too_big": 0,
+    "excluded": 0,
+    "binary": 0,
+    "generated": 1,
+    "long_lines": 0,
+    "secret": 0,
+    "duplicate": 0,
+    "empty": 1
+  },
+  "largest_files": [
+    {
+      "tokens": 25055,
+      "lines": 3095,
+      "path": "tests/test_requests.py"
+    },
+    {
+      "tokens": 8246,
+      "lines": 1014,
+      "path": "tests/test_utils.py"
+    },
+    {
+      "tokens": 8187,
+      "lines": 1185,
+      "path": "src/requests/models.py"
+    },
+    {
+      "tokens": 7918,
+      "lines": 1156,
+      "path": "src/requests/utils.py"
+    },
+    {
+      "tokens": 6676,
+      "lines": 921,
+      "path": "src/requests/sessions.py"
+    },
+    {
+      "tokens": 5093,
+      "lines": 749,
+      "path": "src/requests/adapters.py"
+    },
+    {
+      "tokens": 4655,
+      "lines": 626,
+      "path": "src/requests/cookies.py"
+    },
+    {
+      "tokens": 3546,
+      "lines": 429,
+      "path": "tests/test_lowlevel.py"
+    },
+    {
+      "tokens": 2633,
+      "lines": 355,
+      "path": "src/requests/auth.py"
+    },
+    {
+      "tokens": 1877,
+      "lines": 181,
+      "path": "src/requests/api.py"
+    }
+  ]
+}
