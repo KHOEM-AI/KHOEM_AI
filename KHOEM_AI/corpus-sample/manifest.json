@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "target_words_total": 50000000,
+  "target_words_total": 75000000,
   "datasets": [
     {
       "dataset_id": "sample-km-general-001",
@@ -247,8 +247,7 @@
       "domain": "khmer-general",
       "rights_review_status": "approved",
       "approved_purposes": [
-        "internal analysis",
-        "training"
+        "internal analysis"
       ],
       "restrictions": [
         "attribution required (CC BY 4.0)",
@@ -415,11 +414,11 @@
       "quality_status": "unreviewed",
       "license_evidence": {
         "terms_url": "https://huggingface.co/datasets/oscar-corpus/OSCAR-2201",
-        "reviewer": "Claude (assistant) on behalf of owner Khoem Soksivutha",
+        "reviewer": "khoem401grab-lgtm",
         "decision": "rejected",
         "access_date": "2026-10-04",
         "checksum_or_archive_ref": "not_downloaded: dataset card read online 2026-10-04, no archive saved",
-        "notes": "Dataset card: access temporarily suspended; only metadata and annotations are CC0-1.0; crawled text derived from Common Crawl Nov/Dec 2021, authors hold no copyright; use outside TDM/research exceptions prohibited in France; the 22.01 paper abstract says the corpus is published under a research-only license."
+        "notes": "Dataset card: access temporarily suspended; only metadata and annotations are CC0-1.0; crawled text derived from Common Crawl Nov/Dec 2021, authors hold no copyright; use outside TDM/research exceptions prohibited in France; the 22.01 paper abstract says the corpus is published under a research-only license. | Rejection drafted by assistant; owner confirmation date: FILL-IN (verify before relying on it)."
       },
       "acquisition_method": null,
       "retrieved_at": null,
@@ -494,11 +493,11 @@
       "privacy_review_status": "pending",
       "license_evidence": {
         "terms_url": "https://hplt-project.org/datasets/v2.0",
-        "reviewer": "Claude (assistant) on behalf of owner Khoem Soksivutha",
+        "reviewer": "khoem401grab-lgtm",
         "decision": "rejected",
         "access_date": "2026-10-05",
         "checksum_or_archive_ref": "not_downloaded: terms read online 2026-10-05 via search excerpts of the HPLT v2.0 page, the HPLT2.0_cleaned Hugging Face card and the HPLT 3.0 paper (arXiv 2511.01066); no archive saved",
-        "notes": "HPLT terms: we do not own the text; only the packaging is CC0. Source family CC/IA. HPLT 3.0 ethics statement: much web content is copyrighted or has terms not intended for training use; no rights claimed or granted for the text; only metadata and annotations are public domain. Takedown: legitimate requests remove sources from the next release only (hplt-datasets@ufal.mff.cuni.cz). Same basis as oscar-2201-km. Pages were not archived; fetch and save them to evidence/ if a stronger record is needed."
+        "notes": "HPLT terms: we do not own the text; only the packaging is CC0. Source family CC/IA. HPLT 3.0 ethics statement: much web content is copyrighted or has terms not intended for training use; no rights claimed or granted for the text; only metadata and annotations are public domain. Takedown: legitimate requests remove sources from the next release only (hplt-datasets@ufal.mff.cuni.cz). Same basis as oscar-2201-km. Pages were not archived; fetch and save them to evidence/ if a stronger record is needed. | Rejection drafted by assistant; owner confirmation date: FILL-IN (verify before relying on it)."
       },
       "acquisition_method": null,
       "retrieved_at": null,

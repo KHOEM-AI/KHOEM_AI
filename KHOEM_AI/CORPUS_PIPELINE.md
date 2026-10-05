@@ -8,7 +8,7 @@
 - Preserve source, file, and record lineage through every transformation. Each output is traceable to its input checksum, dataset ID, license evidence, pipeline version, and decision log.
 - Unknown rights, unresolved restrictions, missing provenance, or failed privacy/quality checks means blocked or quarantined, never silently accepted.
 - Separate datasets by rights group where obligations differ. Keep attribution and share-alike requirements available with every downstream export.
-- The 70,209-entry vocabulary is a separate asset, not corpus input or part of the 50M token count.
+- The 70,209-entry vocabulary is a separate asset, not corpus input or part of the 75M token count.
 - Pipeline stages must be deterministic where practical, resumable, and idempotent. A retry must not create untracked duplicate records.
 
 ## State progression
@@ -33,7 +33,7 @@ QUARANTINED, REJECTED, and FAILED are terminal or review states. Every transitio
 
 ## Counting and reports
 
-The 50,000,000 goal is retained word-token occurrences after validation, normalization, privacy/quality review, and exact document deduplication. Repeated occurrences within retained documents count; repeated documents do not. Report raw extracted counts, excluded/quarantined counts, accepted counts, and deduplication deltas separately. Every count is grouped by language, data type, dataset, tokenizer/version, and rights group. Do not add the lexicon's unique term count to corpus tokens.
+The 75,000,000 goal is retained word-token occurrences after validation, normalization, privacy/quality review, and exact document deduplication. Repeated occurrences within retained documents count; repeated documents do not. Report raw extracted counts, excluded/quarantined counts, accepted counts, and deduplication deltas separately. Every count is grouped by language, data type, dataset, tokenizer/version, and rights group. Do not add the lexicon's unique term count to corpus tokens.
 
 ## Failure handling and audit
 
