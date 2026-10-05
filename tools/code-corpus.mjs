@@ -6,6 +6,11 @@
 // Usage:
 //   node tools/code-corpus.mjs --root . --license project-owned --label khoem-own
 //   node tools/code-corpus.mjs --root ../some-repo --license auto --label some-repo
+//   node tools/code-corpus.mjs --root . --license project-owned --label khoem-own \
+//        --exclude vocabulary/,patterns/global-195-vocabulary
+//
+// --exclude a,b,c : skip any file whose relative path contains one of these strings
+//                   (use for data tables and files derived from third-party datasets)
 //
 // --license project-owned : your own code (no license check)
 // --license auto          : read LICENSE/COPYING in root; only permissive accepted
@@ -30,6 +35,7 @@ const OUT = path.resolve(arg("out", "code-corpus"));
 const LABEL = arg("label", path.basename(ROOT));
 const LICENSE_ARG = arg("license", "");
 const MAX_BYTES = 1024 * 1024; // skip files > 1 MB
+const EXCLUDE = arg("exclude", "").split(",").map((x) => x.trim()).filter(Boolean);
 
 const PERMISSIVE = ["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC", "Unlicense", "CC0-1.0", "0BSD"];
 
@@ -44,7 +50,7 @@ const EXT = {
 const SKIP_DIRS = new Set([
   ".git", "node_modules", "dist", "build", "out", "coverage", ".next", ".cache",
   "__pycache__", "venv", ".venv", "vendor", "target", "bin", "obj",
-  "raw", "extracted", "evidence", "code-corpus",
+  "raw", "extracted", "evidence", "code-corpus", "_archive",
 ]);
 
 const SECRET_RES = [
@@ -109,8 +115,9 @@ const outPath = path.join(OUT, `${LABEL}.jsonl`);
 const ws = fs.createWriteStream(outPath);
 
 const seen = new Set();
+const biggest = [];
 const stats = {};
-const skipped = { ext: 0, bak_or_min: 0, too_big: 0, binary: 0, generated: 0, long_lines: 0, secret: 0, duplicate: 0, empty: 0 };
+const skipped = { ext: 0, bak_or_min: 0, too_big: 0, excluded: 0, binary: 0, generated: 0, long_lines: 0, secret: 0, duplicate: 0, empty: 0 };
 const bump = (lang, k, n) => { (stats[lang] ??= { files: 0, lines: 0, bytes: 0, tokens: 0 })[k] += n; };
 
 for (const file of walk(ROOT)) {
@@ -118,6 +125,8 @@ for (const file of walk(ROOT)) {
   const ext = path.extname(base).toLowerCase();
   const lang = EXT[ext];
   if (!lang) { skipped.ext++; continue; }
+  const rel = path.relative(ROOT, file);
+  if (EXCLUDE.some((x) => rel.includes(x))) { skipped.excluded++; continue; }
   if (/\.bak/i.test(base) || /\.min\.(js|css)$/i.test(base)) { skipped.bak_or_min++; continue; }
   let buf;
   try { buf = fs.readFileSync(file); } catch { continue; }
@@ -134,6 +143,7 @@ for (const file of walk(ROOT)) {
   if (seen.has(sha)) { skipped.duplicate++; continue; }
   seen.add(sha);
   const tokens = (text.match(tokRe) || []).length;
+  biggest.push([tokens, lines.length, rel]);
   ws.write(JSON.stringify({ lang, path: path.relative(ROOT, file), sha256: sha, bytes: buf.length, lines: lines.length, tokens, text }) + "\n");
   bump(lang, "files", 1); bump(lang, "lines", lines.length); bump(lang, "bytes", buf.length); bump(lang, "tokens", tokens);
 }
@@ -149,7 +159,8 @@ const report = {
   git_commit: commit, created_at: new Date().toISOString(),
   counts_toward_khmer_target: false,
   tokenizer: "regex:identifier|number|symbol (approximate, not a model tokenizer)",
-  total, by_language: stats, skipped,
+  exclude: EXCLUDE, total, by_language: stats, skipped,
+  largest_files: biggest.sort((a, b) => b[0] - a[0]).slice(0, 10).map(([tokens, lines, p]) => ({ tokens, lines, path: p })),
 };
 fs.writeFileSync(path.join(OUT, `${LABEL}.report.json`), JSON.stringify(report, null, 2));
 
@@ -157,4 +168,6 @@ console.log(`license=${license}  files=${total.files}  lines=${total.lines}  tok
 for (const [l, s] of Object.entries(stats).sort((a, b) => b[1].tokens - a[1].tokens))
   console.log(`  ${l.padEnd(11)} files=${String(s.files).padStart(4)} lines=${String(s.lines).padStart(7)} tokens~${s.tokens}`);
 console.log("skipped:", JSON.stringify(skipped));
+console.log("largest files (check they are code, not data tables):");
+for (const [t, l, p] of biggest.sort((a, b) => b[0] - a[0]).slice(0, 5)) console.log("  ", String(t).padStart(8), String(l).padStart(6), p);
 console.log("wrote:", outPath);

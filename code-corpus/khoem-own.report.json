@@ -1,0 +1,111 @@
+{
+  "label": "khoem-own",
+  "kind": "code",
+  "root": "/data/data/com.termux/files/home/KHOEM_AI",
+  "license": "project-owned",
+  "rights": "owner's own code",
+  "git_commit": "1ac8b61d6713b619b2dcd2f8046affe03eefa4ec",
+  "created_at": "2026-10-05T05:41:27.372Z",
+  "counts_toward_khmer_target": false,
+  "tokenizer": "regex:identifier|number|symbol (approximate, not a model tokenizer)",
+  "exclude": [
+    "vocabulary/",
+    "global-195-vocabulary"
+  ],
+  "total": {
+    "files": 86,
+    "lines": 7044,
+    "bytes": 292987,
+    "tokens": 92651
+  },
+  "by_language": {
+    "javascript": {
+      "files": 7,
+      "lines": 582,
+      "bytes": 31766,
+      "tokens": 10843
+    },
+    "python": {
+      "files": 1,
+      "lines": 44,
+      "bytes": 2225,
+      "tokens": 888
+    },
+    "shell": {
+      "files": 1,
+      "lines": 7,
+      "bytes": 170,
+      "tokens": 58
+    },
+    "typescript": {
+      "files": 77,
+      "lines": 6411,
+      "bytes": 258826,
+      "tokens": 80862
+    }
+  },
+  "skipped": {
+    "ext": 80,
+    "bak_or_min": 0,
+    "too_big": 0,
+    "excluded": 3,
+    "binary": 0,
+    "generated": 2,
+    "long_lines": 0,
+    "secret": 0,
+    "duplicate": 34,
+    "empty": 0
+  },
+  "largest_files": [
+    {
+      "tokens": 4089,
+      "lines": 215,
+      "path": "KHOEM_AI/localization/src/locales/km/app.ts"
+    },
+    {
+      "tokens": 3588,
+      "lines": 202,
+      "path": "KHOEM_AI/localization/tests/api.test.ts"
+    },
+    {
+      "tokens": 3537,
+      "lines": 336,
+      "path": "KHOEM_AI/keys/en.ts"
+    },
+    {
+      "tokens": 3049,
+      "lines": 174,
+      "path": "tools/code-corpus.mjs"
+    },
+    {
+      "tokens": 3035,
+      "lines": 243,
+      "path": "KHOEM_AI/localization/src/api/server.ts"
+    },
+    {
+      "tokens": 2882,
+      "lines": 153,
+      "path": "KHOEM_AI/localization/src/registry/languages.ts"
+    },
+    {
+      "tokens": 2881,
+      "lines": 336,
+      "path": "KHOEM_AI/keys/km.ts"
+    },
+    {
+      "tokens": 2441,
+      "lines": 133,
+      "path": "KHOEM_AI/localization/src/locales/my/app.ts"
+    },
+    {
+      "tokens": 2412,
+      "lines": 118,
+      "path": "KHOEM_AI/corpus-sample/gates-test.mjs"
+    },
+    {
+      "tokens": 2253,
+      "lines": 134,
+      "path": "KHOEM_AI/localization/src/locales/el/app.ts"
+    }
+  ]
+}
