@@ -1,0 +1,22 @@
+KHOEM_AI - Third-party code notice
+
+The code corpus used to build training data (code-corpus/) was derived from
+the open-source projects below. The corpus files themselves are NOT
+distributed in this repository. Each project remains under its own license;
+copyright notices belong to their respective authors.
+
+Project         License        Commit
+CLI11           BSD-3-Clause   eced4d837d0ab57242b1c25d03780d35bf2b0d52
+cJSON           MIT            6d9f2443ab071f86e5d9b43025a40929ec41c46c
+express         MIT            7ef98448f8b38099ab1ded55e458538ad47a51e7
+flask           BSD-3-Clause   d73fa1cdcbd8b1465c151db8924ba58b1dd14e35
+fmt             MIT            4afd0e498e9e1dd68775cc52087df774a19c761f
+gin             MIT            43fe48e8a0f44af783116cdb010725e6bb50255f
+gson            Apache-2.0     216c41b6e70dc04e6856418dd76bb00c854eb6b4
+libuv           MIT            49b1c064714b412d7f7a2f5e7146c977554e57f9
+nlohmann-json   MIT            23d3b373e1a41db5adde1081b409e66de1d65030
+requests        Apache-2.0     611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60
+ripgrep         MIT            3fce3b5bb0236da2df6d99672afb8a719642eca7
+spdlog          MIT            d6c93f38a08b4ea0f8ffcfd7f7857307d5d5c3fa
+
+khoem-own: project-owned (the author's own code).
