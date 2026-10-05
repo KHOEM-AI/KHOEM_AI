@@ -56,7 +56,8 @@ for (const d of m.datasets) {
   let nonKhmerSkipped = 0;
   let text;
   if (isArchive) {
-    const excl = new Set(fs.readFileSync(path.join(DIR, "exclude-third-party.txt"), "utf8").split("\n").map(x => x.trim()).filter(Boolean));
+    const readList = f => fs.existsSync(path.join(DIR, f)) ? fs.readFileSync(path.join(DIR, f), "utf8").split("\n").map(x => x.trim()).filter(Boolean) : [];
+    const excl = new Set([...readList("exclude-third-party.txt"), ...readList("pending-third-party-review.txt")]);
     const base = path.basename(exDir);
     const exclIds = new Set([...excl].map(x => (x.match(/_(\d+)\.json$/) || [])[1]).filter(Boolean));
     const parts = [];
