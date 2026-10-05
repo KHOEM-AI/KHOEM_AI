@@ -44,7 +44,7 @@ A source that fails any gate remains metadata-only or is rejected. P0 does not c
 
 ## Status snapshot (2026-10-05)
 
-Verified retained word tokens: 23,319,234 of 75,000,000 (31.09%); remaining 51,680,766. Contributors: mot-km-voa-001 16,209,066 and km-wiki-001 7,110,168. Sources reviewed and not counted: oscar-2201-km (rejected), frequencywords-2018-001 (pending, wordlist rather than text), km-vocab-voa-001 (derived wordlist), vn-minority-corpus-km-001 (pending, license and size unknown).
+Verified retained word tokens: 23,319,234 of 75,000,000 (31.09%); remaining 51,680,766. Contributors: mot-km-voa-001 16,209,065 and km-wiki-001 7,110,169. Sources reviewed and not counted: oscar-2201-km (rejected), frequencywords-2018-001 (pending, wordlist rather than text), km-vocab-voa-001 (derived wordlist), vn-minority-corpus-km-001 (pending, license and size unknown).
 Note: files in pending-third-party-review.txt are excluded from the count (effective 144 articles). The third-party scan of MOT is not verified complete.
 
 No further source with clear rights and large Khmer text volume has been identified. Reaching 75M requires either new rights-approved sources (for example, written permission from rights holders) or a revised target. The target above is unchanged until the owner decides.
