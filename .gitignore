@@ -65,3 +65,4 @@ km_vocab_candidates.tsv
 *.bak*
 KHOEM_AI/corpus-sample/raw/*.tgz
 KHOEM_AI/corpus-sample/raw/voa_extracted/
+KHOEM_AI/corpus-sample/sentences.UNFILTERED.jsonl
