@@ -61,6 +61,7 @@ sig = inspect.signature(SFTConfig.__init__).parameters
 P = dict(output_dir=cfg["output_dir"], per_device_train_batch_size=cfg["batch_size"], per_device_eval_batch_size=2, gradient_accumulation_steps=cfg["gradient_accumulation_steps"], max_steps=STEPS, seed=cfg["random_state"], fp16=not torch.cuda.is_bf16_supported(), bf16=torch.cuda.is_bf16_supported(), learning_rate=cfg["learning_rate"], warmup_steps=cfg["warmup_steps"], logging_steps=10, report_to="none", dataset_text_field="text", optim=cfg["optimizer"])
 P["eval_strategy" if "eval_strategy" in sig else "evaluation_strategy"] = "no"
 P["max_length" if "max_length" in sig else "max_seq_length"] = cfg["max_seq_length"]
+P.update(save_strategy="steps", save_steps=500, save_total_limit=2)
 K = dict(model=model, train_dataset=train, eval_dataset=valid, args=SFTConfig(**P))
 K["processing_class" if "processing_class" in inspect.signature(SFTTrainer.__init__).parameters else "tokenizer"] = tok
 trainer = SFTTrainer(**K)
