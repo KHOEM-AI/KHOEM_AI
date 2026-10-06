@@ -31,26 +31,46 @@ def run_eval(model, tok, n):
         os.unlink(p)
     return ok / n
 
+import eval_khmer_code as KE
+
+def run_khmer_eval(model, tok):
+    FastLanguageModel.for_inference(model)
+    ok = 0
+    for prompt, name, test in KE.TASKS:
+        ids = tok.apply_chat_template([{"role": "user", "content": prompt}], add_generation_prompt=True, return_tensors="pt").to("cuda")
+        with torch.no_grad():
+            out = model.generate(input_ids=ids, max_new_tokens=400, do_sample=False)
+        reply = tok.decode(out[0][ids.shape[1]:], skip_special_tokens=True)
+        ok += KE.run_test(KE.extract(reply), test)
+    return ok / len(KE.TASKS)
+
 cfg = load()
 N = int(os.environ.get("N_EVAL", 164))
-STEPS = int(os.environ.get("MAX_STEPS", 300))
+STEPS = int(os.environ.get("MAX_STEPS", 3300))  # ~1 epoch of 26.8K rows at effective batch 8
 model, tok = FastLanguageModel.from_pretrained(model_name=cfg["model_name"], max_seq_length=cfg["max_seq_length"], load_in_4bit=cfg["load_in_4bit"])
 before = run_eval(model, tok, N); print(f"HumanEval មុន: {before:.3f}")
+kb = run_khmer_eval(model, tok); print(f"Khmer-code មុន: {kb:.3f}")
 model = FastLanguageModel.get_peft_model(model, r=cfg["lora_rank"], lora_alpha=cfg["lora_alpha"], lora_dropout=cfg["lora_dropout"], target_modules=cfg["target_modules"], use_gradient_checkpointing=cfg["gradient_checkpointing"], random_state=cfg["random_state"])
 FastLanguageModel.for_training(model)
 fmt = lambda ex: {"text": tok.apply_chat_template(ex["messages"], tokenize=False)}
-train = load_dataset("json", data_files="data/train.jsonl", split="train").map(fmt)
-valid = load_dataset("json", data_files="data/valid.jsonl", split="train").map(fmt)
+train = load_dataset("json", data_files="data_clean/final_train.jsonl", split="train").map(fmt)
+valid = load_dataset("json", data_files="data_clean/final_valid.jsonl", split="train").map(fmt)
 sig = inspect.signature(SFTConfig.__init__).parameters
 P = dict(output_dir=cfg["output_dir"], per_device_train_batch_size=cfg["batch_size"], per_device_eval_batch_size=2, gradient_accumulation_steps=cfg["gradient_accumulation_steps"], max_steps=STEPS, seed=cfg["random_state"], fp16=not torch.cuda.is_bf16_supported(), bf16=torch.cuda.is_bf16_supported(), learning_rate=cfg["learning_rate"], warmup_steps=cfg["warmup_steps"], logging_steps=10, report_to="none", dataset_text_field="text", optim=cfg["optimizer"])
 P["eval_strategy" if "eval_strategy" in sig else "evaluation_strategy"] = "no"
 P["max_length" if "max_length" in sig else "max_seq_length"] = cfg["max_seq_length"]
 K = dict(model=model, train_dataset=train, eval_dataset=valid, args=SFTConfig(**P))
 K["processing_class" if "processing_class" in inspect.signature(SFTTrainer.__init__).parameters else "tokenizer"] = tok
-SFTTrainer(**K).train()
+trainer = SFTTrainer(**K)
+test = load_dataset("json", data_files="data_clean/final_test.jsonl", split="train").map(fmt)
+tl0 = trainer.evaluate(eval_dataset=test)["eval_loss"]; print(f"Test loss មុន: {tl0:.4f}")
+trainer.train()
+tl1 = trainer.evaluate(eval_dataset=test)["eval_loss"]; print(f"Test loss ក្រោយ: {tl1:.4f} (មុន {tl0:.4f})")
 after = run_eval(model, tok, N)
 print(f"HumanEval មុន: {before:.3f} → ក្រោយ: {after:.3f}")
-if after < before - 0.03: print("⚠️ ពិន្ទុធ្លាក់ ៖ កុំប្រើ adapter នេះ")
+ka = run_khmer_eval(model, tok); print(f"Khmer-code ក្រោយ: {ka:.3f} (មុន {kb:.3f})")
 if after < before - 0.03: sys.exit("HumanEval ធ្លាក់ច្រើន: មិនរក្សាទុក adapter")
+if ka < kb: sys.exit("Khmer-code ធ្លាក់: មិនរក្សាទុក adapter")
+if tl1 >= tl0: sys.exit("Test loss មិនប្រសើរ: មិនរក្សាទុក adapter")
 out = Path(cfg["output_dir"]) / "adapter"; out.mkdir(parents=True, exist_ok=True)
 model.save_pretrained(out); tok.save_pretrained(out)
