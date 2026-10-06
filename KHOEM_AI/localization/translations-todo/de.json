@@ -1,0 +1,550 @@
+{
+ "ai.menu.observability01": {
+  "en": "No events recorded",
+  "km": "មិនទាន់មានព្រឹត្តិការណ៍"
+ },
+ "ai.menu.observability02": {
+  "en": "Event type",
+  "km": "ប្រភេទព្រឹត្តិការណ៍"
+ },
+ "ai.menu.observability03": {
+  "en": "All events",
+  "km": "ទាំងអស់"
+ },
+ "ai.menu.observability04": {
+  "en": "Time range",
+  "km": "រយៈពេល"
+ },
+ "ai.menu.observability05": {
+  "en": "All time",
+  "km": "គ្រប់ពេល"
+ },
+ "ai.menu.observability06": {
+  "en": "Last 5 minutes",
+  "km": "៥ នាទីចុងក្រោយ"
+ },
+ "ai.menu.observability07": {
+  "en": "Last 1 hour",
+  "km": "១ ម៉ោងចុងក្រោយ"
+ },
+ "ai.menu.observability08": {
+  "en": "Last 24 hours",
+  "km": "២៤ ម៉ោងចុងក្រោយ"
+ },
+ "ai.menu.observability09": {
+  "en": "Sort",
+  "km": "តម្រៀប"
+ },
+ "ai.menu.observability10": {
+  "en": "Newest first",
+  "km": "ថ្មីបំផុតមុន"
+ },
+ "ai.menu.observability11": {
+  "en": "Oldest first",
+  "km": "ចាស់បំផុតមុន"
+ },
+ "ai.menu.observability12": {
+  "en": "Show",
+  "km": "ចំនួនបង្ហាញ"
+ },
+ "ai.menu.observability13": {
+  "en": "All",
+  "km": "ទាំងអស់"
+ },
+ "ai.menu.observability14": {
+  "en": "Search",
+  "km": "ស្វែងរក"
+ },
+ "ai.menu.observability15": {
+  "en": "Search event, task ID, or metadata",
+  "km": "ស្វែងរក Event, Task ID ឬ Metadata"
+ },
+ "ai.menu.observability16": {
+  "en": "No events match this filter",
+  "km": "មិនមានព្រឹត្តិការណ៍ប្រភេទនេះ"
+ },
+ "ai.menu.observability17": {
+  "en": "Time",
+  "km": "ពេលវេលា"
+ },
+ "ai.menu.observability18": {
+  "en": "Task ID",
+  "km": "Task ID"
+ },
+ "ai.menu.observability19": {
+  "en": "Duration",
+  "km": "រយៈពេល"
+ },
+ "ai.menu.observability20": {
+  "en": "Metadata",
+  "km": "ព័ត៌មានលម្អិត"
+ },
+ "ai.menu.observability21": {
+  "en": "No metadata",
+  "km": "គ្មាន Metadata"
+ },
+ "ai.menu.observability22": {
+  "en": "Tasks, circuit breakers, model routing, and verification",
+  "km": "ភារកិច្ច, Circuit Breaker, ការចាត់តាំង Model, និងការផ្ទៀងផ្ទាត់"
+ },
+ "ai.menu.observability23": {
+  "en": "Load tasks",
+  "km": "ផ្ទុកភារកិច្ច"
+ },
+ "ai.menu.observability24": {
+  "en": "Load circuit breakers",
+  "km": "ផ្ទុក Circuit Breakers"
+ },
+ "ai.menu.observability25": {
+  "en": "Load model routing",
+  "km": "ផ្ទុកការចាត់តាំង Model"
+ },
+ "ai.menu.observability26": {
+  "en": "Load verification",
+  "km": "ផ្ទុកការផ្ទៀងផ្ទាត់"
+ },
+ "ai.menu.observability27": {
+  "en": "Run new verification",
+  "km": "ដំណើរការផ្ទៀងផ្ទាត់ថ្មី"
+ },
+ "ai.menu.observability28": {
+  "en": "View detail",
+  "km": "មើលលម្អិត"
+ },
+ "ai.menu.observability29": {
+  "en": "Task",
+  "km": "ព័ត៌មានភារកិច្ច"
+ },
+ "ai.menu.observability30": {
+  "en": "Task event history",
+  "km": "ប្រវត្តិព្រឹត្តិការណ៍"
+ },
+ "ai.menu.observability31": {
+  "en": "View circuit detail",
+  "km": "មើលលម្អិត Circuit"
+ },
+ "ai.menu.observability32": {
+  "en": "Decide provider",
+  "km": "សម្រេចជ្រើសរើស Provider"
+ },
+ "ai.menu.observability33": {
+  "en": "Tasks",
+  "km": "ភារកិច្ច"
+ },
+ "ai.menu.observability34": {
+  "en": "Recent task events",
+  "km": "ព្រឹត្តិការណ៍ថ្មីៗ"
+ },
+ "ai.menu.observability35": {
+  "en": "Circuit breakers",
+  "km": "Circuit Breakers"
+ },
+ "ai.menu.observability36": {
+  "en": "Model routing",
+  "km": "ការចាត់តាំង Model"
+ },
+ "ai.menu.observability37": {
+  "en": "Verification",
+  "km": "ការផ្ទៀងផ្ទាត់"
+ },
+ "ai.menu.observability38": {
+  "en": "Check answer consistency",
+  "km": "ត្រួតពិនិត្យភាពស៊ីសង្វាក់ចម្លើយ"
+ },
+ "ai.menu.observability39": {
+  "en": "one answer per line",
+  "km": "មួយចម្លើយក្នុងមួយបន្ទាត់"
+ },
+ "ai.menu.observability40": {
+  "en": "Check",
+  "km": "ត្រួតពិនិត្យ"
+ },
+ "ai.menu.code01": {
+  "en": "Scan, analyze, and check code health",
+  "km": "ស្កេន វិភាគ និងត្រួតពិនិត្យសុខភាពកូដ"
+ },
+ "ai.menu.code02": {
+  "en": "Rescan repo",
+  "km": "ស្កេនកូដឡើងវិញ"
+ },
+ "ai.menu.code03": {
+  "en": "Check code health",
+  "km": "ពិនិត្យសុខភាពកូដ"
+ },
+ "ai.menu.code04": {
+  "en": "View findings",
+  "km": "មើល Findings"
+ },
+ "ai.menu.code05": {
+  "en": "Files indexed",
+  "km": "ចំនួនឯកសារ"
+ },
+ "ai.menu.code06": {
+  "en": "Code health",
+  "km": "សុខភាពកូដ"
+ },
+ "ai.menu.code07": {
+  "en": "Oversized files",
+  "km": "ឯកសារធំពេក"
+ },
+ "ai.menu.code08": {
+  "en": "No findings",
+  "km": "គ្មានបញ្ហារកឃើញ"
+ },
+ "ai.menu.code09": {
+  "en": "Fix",
+  "km": "ដំណោះស្រាយ"
+ },
+ "ai.menu.code10": {
+  "en": "Find symbol",
+  "km": "ស្វែងរក Symbol"
+ },
+ "ai.menu.code11": {
+  "en": "function/class name",
+  "km": "ឈ្មោះ function/class"
+ },
+ "ai.menu.code12": {
+  "en": "Search",
+  "km": "ស្វែងរក"
+ },
+ "ai.menu.code13": {
+  "en": "Not found",
+  "km": "រកមិនឃើញ"
+ },
+ "ai.menu.code14": {
+  "en": "Check dependencies",
+  "km": "ត្រួតពិនិត្យ Dependency"
+ },
+ "ai.menu.code15": {
+  "en": "Check",
+  "km": "មើល"
+ },
+ "ai.menu.code16": {
+  "en": "Depends on",
+  "km": "ហៅប្រើ"
+ },
+ "ai.menu.code17": {
+  "en": "Used by",
+  "km": "ត្រូវបានហៅដោយ"
+ },
+ "ai.menu.code18": {
+  "en": "All symbols in project",
+  "km": "រាល់ Symbol ក្នុងគម្រោង"
+ },
+ "ai.menu.code19": {
+  "en": "Load all",
+  "km": "ផ្ទុកទាំងអស់"
+ },
+ "ai.menu.code20": {
+  "en": "None",
+  "km": "គ្មាន"
+ },
+ "ai.menu.code21": {
+  "en": "Find circular dependencies",
+  "km": "រក Circular Dependency"
+ },
+ "ai.menu.code22": {
+  "en": "Check",
+  "km": "ត្រួតពិនិត្យ"
+ },
+ "ai.menu.code23": {
+  "en": "No circular dependencies found",
+  "km": "រកមិនឃើញ circular dependency"
+ },
+ "ai.menu.code24": {
+  "en": "Test code in sandbox",
+  "km": "សាកល្បងកូដក្នុង Sandbox"
+ },
+ "ai.menu.code25": {
+  "en": "full new file content",
+  "km": "ខ្លឹមសារកូដថ្មីទាំងស្រុង"
+ },
+ "ai.menu.code26": {
+  "en": "reason (optional)",
+  "km": "មូលហេតុ (មិនចាំបាច់)"
+ },
+ "ai.menu.code27": {
+  "en": "Run test",
+  "km": "រត់សាកល្បង"
+ },
+ "ai.menu.code28": {
+  "en": "Legacy tools (Phase 1)",
+  "km": "ឧបករណ៍ចាស់ (Legacy Phase 1)"
+ },
+ "ai.menu.code29": {
+  "en": "Scan",
+  "km": "Scan"
+ },
+ "ai.menu.code30": {
+  "en": "Check",
+  "km": "Check"
+ },
+ "ai.menu.code31": {
+  "en": "search term",
+  "km": "ពាក្យស្វែងរក"
+ },
+ "ai.menu.code32": {
+  "en": "Find",
+  "km": "Find"
+ },
+ "ai.menu.code33": {
+  "en": "Funcs",
+  "km": "Funcs"
+ },
+ "ai.menu.code34": {
+  "en": "Read",
+  "km": "Read"
+ },
+ "ai.menu.management01": {
+  "en": "Goals, ideas, plans, experiments, and budgets",
+  "km": "គោលដៅ, គំនិត, ផែនការ, ការពិសោធន៍, និងថវិកា"
+ },
+ "ai.menu.management02": {
+  "en": "Goals",
+  "km": "គោលដៅ"
+ },
+ "ai.menu.management03": {
+  "en": "New goal title",
+  "km": "ចំណងជើងគោលដៅថ្មី"
+ },
+ "ai.menu.management04": {
+  "en": "Create",
+  "km": "បង្កើត"
+ },
+ "ai.menu.management05": {
+  "en": "Load",
+  "km": "ផ្ទុក"
+ },
+ "ai.menu.management06": {
+  "en": "Ideas",
+  "km": "គំនិត"
+ },
+ "ai.menu.management07": {
+  "en": "New idea title",
+  "km": "គំនិតថ្មី"
+ },
+ "ai.menu.management08": {
+  "en": "View progress",
+  "km": "មើលវឌ្ឍនភាព"
+ },
+ "ai.menu.management09": {
+  "en": "Rank by priority",
+  "km": "ចាត់ចំណាត់ថ្នាក់តាមអាទិភាព"
+ },
+ "ai.menu.management10": {
+  "en": "Plans",
+  "km": "ផែនការ"
+ },
+ "ai.menu.management11": {
+  "en": "New plan title",
+  "km": "ផែនការថ្មី"
+ },
+ "ai.menu.management12": {
+  "en": "View detail",
+  "km": "មើលលម្អិត"
+ },
+ "ai.menu.management13": {
+  "en": "Experiments",
+  "km": "ការពិសោធន៍"
+ },
+ "ai.menu.management14": {
+  "en": "New experiment title",
+  "km": "ការពិសោធន៍ថ្មី"
+ },
+ "ai.menu.management15": {
+  "en": "new status",
+  "km": "ដំណាក់កាលថ្មី"
+ },
+ "ai.menu.management16": {
+  "en": "Transition",
+  "km": "ប្តូរដំណាក់កាល"
+ },
+ "ai.menu.management17": {
+  "en": "Budgets",
+  "km": "ថវិកា"
+ },
+ "ai.menu.management18": {
+  "en": "Task ID",
+  "km": "Task ID"
+ },
+ "ai.menu.safety01": {
+  "en": "Rollback snapshots and self-evaluation",
+  "km": "Rollback Snapshot និង ការវាយតម្លៃខ្លួនឯង"
+ },
+ "ai.menu.safety02": {
+  "en": "Rollback snapshots",
+  "km": "Rollback Snapshot"
+ },
+ "ai.menu.safety03": {
+  "en": "reason (optional)",
+  "km": "មូលហេតុ (ស្រេចចិត្ត)"
+ },
+ "ai.menu.safety04": {
+  "en": "Create snapshot",
+  "km": "បង្កើត Snapshot"
+ },
+ "ai.menu.safety05": {
+  "en": "Load",
+  "km": "ផ្ទុក"
+ },
+ "ai.menu.safety06": {
+  "en": "Rollback plan",
+  "km": "គម្រោង Rollback"
+ },
+ "ai.menu.safety07": {
+  "en": "Snapshot ID",
+  "km": "Snapshot ID"
+ },
+ "ai.menu.safety08": {
+  "en": "View plan",
+  "km": "មើលគម្រោង"
+ },
+ "ai.menu.safety09": {
+  "en": "Self-evaluation",
+  "km": "ការវាយតម្លៃខ្លួនឯង"
+ },
+ "ai.menu.safety10": {
+  "en": "input (optional)",
+  "km": "ព័ត៌មានបញ្ចូល (ស្រេចចិត្ត)"
+ },
+ "ai.menu.safety11": {
+  "en": "Run evaluation",
+  "km": "ដំណើរការវាយតម្លៃ"
+ },
+ "ai.menu.toolreg01": {
+  "en": "Discover tools/APIs the AI can use",
+  "km": "រកមើល tool/API ដែល AI អាចប្រើ"
+ },
+ "ai.menu.toolreg02": {
+  "en": "Load all tools",
+  "km": "ផ្ទុក Tools ទាំងអស់"
+ },
+ "ai.menu.toolreg03": {
+  "en": "No tools registered",
+  "km": "គ្មាន tool"
+ },
+ "ai.menu.toolreg04": {
+  "en": "Capabilities",
+  "km": "សមត្ថភាព"
+ },
+ "ai.menu.toolreg05": {
+  "en": "Find tool",
+  "km": "ស្វែងរក Tool"
+ },
+ "ai.menu.toolreg06": {
+  "en": "keyword",
+  "km": "ពាក្យគន្លឹះ"
+ },
+ "ai.menu.toolreg07": {
+  "en": "Search",
+  "km": "ស្វែងរក"
+ },
+ "ai.menu.toolreg08": {
+  "en": "Not found",
+  "km": "រកមិនឃើញ"
+ },
+ "ai.menu.toolreg09": {
+  "en": "Check risk",
+  "km": "ត្រួតពិនិត្យ Risk"
+ },
+ "ai.menu.toolreg10": {
+  "en": "Tool ID",
+  "km": "Tool ID"
+ },
+ "ai.menu.toolreg11": {
+  "en": "Check",
+  "km": "ត្រួតពិនិត្យ"
+ },
+ "ai.menu.audit01": {
+  "en": "Review policy decisions and system metrics",
+  "km": "ត្រួតពិនិត្យសកម្មភាព និងទិន្នន័យប្រព័ន្ធ"
+ },
+ "ai.menu.audit02": {
+  "en": "Load audit log",
+  "km": "ផ្ទុកកំណត់ត្រា Audit"
+ },
+ "ai.menu.audit03": {
+  "en": "Load metrics",
+  "km": "ផ្ទុក Metrics"
+ },
+ "ai.menu.audit04": {
+  "en": "Policy decisions",
+  "km": "សេចក្តីសម្រេចផ្នែក Policy"
+ },
+ "ai.menu.audit05": {
+  "en": "No data",
+  "km": "គ្មានទិន្នន័យ"
+ },
+ "ai.menu.audit06": {
+  "en": "Audit events",
+  "km": "ព្រឹត្តិការណ៍ Audit"
+ },
+ "ai.menu.audit07": {
+  "en": "System metrics",
+  "km": "Metrics ប្រព័ន្ធ"
+ },
+ "ai.menu.patch01": {
+  "en": "Pending code patch proposals",
+  "km": "សំណើកែកូដកំពុងរង់ចាំ"
+ },
+ "ai.menu.patch02": {
+  "en": "No proposals pending.",
+  "km": "គ្មានសំណើកំពុងរង់ចាំ។"
+ },
+ "ai.menu.patch03": {
+  "en": "Approve",
+  "km": "អនុម័ត"
+ },
+ "ai.menu.patch04": {
+  "en": "Reject",
+  "km": "បដិសេធ"
+ },
+ "ai.menu.patch05": {
+  "en": "Apply",
+  "km": "អនុវត្ត"
+ },
+ "ai.menu.messageLike": {
+  "en": "Like",
+  "km": "ចូលចិត្ត"
+ },
+ "ai.menu.messageDislike": {
+  "en": "Dislike",
+  "km": "មិនចូលចិត្ត"
+ },
+ "ai.menu.messageRegenerate": {
+  "en": "Regenerate",
+  "km": "ឆ្លើយម្ដងទៀត"
+ },
+ "ai.menu.messageCopy": {
+  "en": "Copy",
+  "km": "ចម្លង"
+ },
+ "ai.menu.messageNewChat": {
+  "en": "New chat",
+  "km": "ជជែកថ្មី"
+ },
+ "ai.menu.chatEmptyTitle": {
+  "en": "Start a conversation with AI",
+  "km": "ចាប់ផ្ដើមសន្ទនាជាមួយ AI"
+ },
+ "ai.menu.chatEmptyHint": {
+  "en": "Type your question below and press Enter to send",
+  "km": "សរសេរសំណួរខាងក្រោម ហើយចុច Enter ដើម្បីផ្ញើ"
+ },
+ "ai.menu.chatThinking": {
+  "en": "Thinking…",
+  "km": "កំពុងគិត…"
+ },
+ "ai.menu.chatPlaceholder": {
+  "en": "Type your question here...",
+  "km": "សរសេរសំណួររបស់អ្នកនៅទីនេះ..."
+ },
+ "ai.menu.chatSendAria": {
+  "en": "Send message",
+  "km": "ផ្ញើសារ"
+ },
+ "ai.menu.chatSend": {
+  "en": "Send",
+  "km": "ផ្ញើ"
+ }
+}

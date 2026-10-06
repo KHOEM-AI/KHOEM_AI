@@ -100,6 +100,7 @@ const FLAGS: Readonly<Record<string, string>> = {
   "ja": "🇯🇵",
   "ka": "🇬🇪",
   "kk": "🇰🇿",
+  "mn": "🇲🇳",
   "km": "🇰🇭",
   "kn": "🇮🇳",
   "ko": "🇰🇷",

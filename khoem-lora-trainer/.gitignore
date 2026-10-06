@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+outputs/*
+logs/*
+data/*.jsonl
+data_clean/

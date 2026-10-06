@@ -36,12 +36,36 @@ function jsEnd(lines, i, st = strip) {
   return -1;
 }
 function pyEnd(lines, i) {
-  let last = i;
-  for (let j = i + 1; j <= i + 81 && j < lines.length; j++) {
-    if (lines[j].trim() === '') continue;
-    if (/^\s/.test(lines[j])) { last = j; if (j - i > 80) return -1; } else break;
+  let depth = 0, tq = null, sigDone = false, sigEnd = i, last = i;
+  for (let j = i; j <= i + 81 && j < lines.length; j++) {
+    const s = lines[j];
+    const inStr = tq !== null;
+    if (!inStr && s.trim() === '') continue;
+    if (j > i && sigDone && !inStr && depth === 0 && !/^\s/.test(s)) break;
+    if (j - i > 80) return -1;
+    let code = '';
+    for (let p = 0; p < s.length; p++) {
+      const c = s[p];
+      if (tq) {
+        if (c === '\\') { p++; continue; }
+        if (s.startsWith(tq, p)) { p += 2; tq = null; }
+        continue;
+      }
+      if (c === '#') break;
+      if (c === '"' || c === "'") {
+        const t = c + c + c;
+        if (s.startsWith(t, p)) { tq = t; p += 2; continue; }
+        for (p++; p < s.length && s[p] !== c; p++) if (s[p] === '\\') p++;
+        continue;
+      }
+      if ('([{'.includes(c)) depth++;
+      else if (')]}'.includes(c)) depth--;
+      code += c;
+    }
+    last = j;
+    if (!sigDone && depth === 0 && !tq && /:\s*$/.test(code)) { sigDone = true; sigEnd = j; }
   }
-  return last > i ? last : -1;
+  return sigDone && depth === 0 && !tq && last > sigEnd ? last : -1;
 }
 const JS1 = /^(export\s+)?(default\s+)?(async\s+)?function\s*\*?\s*([A-Za-z0-9_$]+)\s*\(/;
 const JS2 = /^(export\s+)?const\s+([A-Za-z0-9_$]+)\s*(:[^=]+)?=\s*(async\s*)?(\([^)]*\)|[A-Za-z0-9_$]+)\s*(:[^=]+)?=>/;
