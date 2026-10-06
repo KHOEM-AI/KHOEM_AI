@@ -11,7 +11,7 @@ def extract(t):
     return m[0] if m else t
 
 def run_eval(model, tok, n):
-    he = load_dataset("openai_humaneval", split="test").select(range(n))
+    he = load_dataset("openai/openai_humaneval", split="test").select(range(n))
     FastLanguageModel.for_inference(model)
     ok = 0
     for ex in he:
