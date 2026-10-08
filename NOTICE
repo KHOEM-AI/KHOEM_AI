@@ -6,12 +6,13 @@ distributed in this repository. Each project remains under its own license;
 copyright notices belong to their respective authors.
 
 Project         License        Commit
-CLI11           BSD-3-Clause   eced4d837d0ab57242b1c25d03780d35bf2b0d52
 anyhow          MIT            2cbb4e1bcbf8e7015f8d8b04a291c4c0597030b4
 attrs           MIT            a602f78ff670f22be90fb8aea501a6cc30e10fdd
 cJSON           MIT            6d9f2443ab071f86e5d9b43025a40929ec41c46c
 clap            MIT            4be56132cf7a5ef6e237409a13225a5829cb24e4
+CLI11           BSD-3-Clause   eced4d837d0ab57242b1c25d03780d35bf2b0d52
 click           BSD-3-Clause   2247b35ea1c47c727d7a06e51fa280e12a863ff6
+dart-http       BSD-3-Clause   585d433ba315702b63904fddba4459db5fec2d87
 express         MIT            7ef98448f8b38099ab1ded55e458538ad47a51e7
 fd              MIT            14dcd92fb76ca0ebc2e82671a275f67c790d25fc
 flask           BSD-3-Clause   d73fa1cdcbd8b1465c151db8924ba58b1dd14e35
@@ -20,12 +21,15 @@ gin             MIT            43fe48e8a0f44af783116cdb010725e6bb50255f
 gson            Apache-2.0     216c41b6e70dc04e6856418dd76bb00c854eb6b4
 httpx           BSD-3-Clause   b5addb64f0161ff6bfe94c124ef76f6a1fba5254
 jinja           BSD-3-Clause   5ef70112a1ff19c05324ff889dd30405b1002044
+ktor            Apache-2.0     f76c50da18f6b284ce4ae7b4e84bed4c9aea5ce0
+laravel        MIT            725381d29c9fa132dfe042f8458a9ed31d27a040
 libuv           MIT            49b1c064714b412d7f7a2f5e7146c977554e57f9
 nlohmann-json   MIT            23d3b373e1a41db5adde1081b409e66de1d65030
 requests        Apache-2.0     611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60
 rich            MIT            9d8f9a372cc5916fd4781fec207ced7ddac2f08f
 ripgrep         MIT            3fce3b5bb0236da2df6d99672afb8a719642eca7
 spdlog          MIT            d6c93f38a08b4ea0f8ffcfd7f7857307d5d5c3fa
+swift-nio       Apache-2.0     6db9d9abd92ad7399b8a564cafbb87d3507245fa
 walkdir         MIT            6fd031c82ba5a4204b4ce6eae73dacb00dc072ec
 
 Note: walkdir, fd, anyhow and clap are dual-licensed (per their Cargo.toml); they are used here under the MIT terms.
