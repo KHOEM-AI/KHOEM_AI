@@ -55,8 +55,8 @@ kb = run_khmer_eval(model, tok); print(f"Khmer-code មុន: {kb:.3f}")
 model = FastLanguageModel.get_peft_model(model, r=cfg["lora_rank"], lora_alpha=cfg["lora_alpha"], lora_dropout=cfg["lora_dropout"], target_modules=cfg["target_modules"], use_gradient_checkpointing=cfg["gradient_checkpointing"], random_state=cfg["random_state"])
 FastLanguageModel.for_training(model)
 fmt = lambda ex: {"text": tok.apply_chat_template(ex["messages"], tokenize=False)}
-train = load_dataset("json", data_files="data_clean/final_train.jsonl", split="train").map(fmt)
-valid = load_dataset("json", data_files="data_clean/final_valid.jsonl", split="train").map(fmt)
+train = load_dataset("json", data_files="data_clean/final_train_v5b.jsonl", split="train").map(fmt)
+valid = load_dataset("json", data_files="data_clean/final_valid_v5b.jsonl", split="train").map(fmt)
 sig = inspect.signature(SFTConfig.__init__).parameters
 P = dict(output_dir=cfg["output_dir"], per_device_train_batch_size=cfg["batch_size"], per_device_eval_batch_size=2, gradient_accumulation_steps=cfg["gradient_accumulation_steps"], max_steps=STEPS, seed=cfg["random_state"], fp16=not torch.cuda.is_bf16_supported(), bf16=torch.cuda.is_bf16_supported(), learning_rate=cfg["learning_rate"], warmup_steps=cfg["warmup_steps"], logging_steps=10, report_to="none", dataset_text_field="text", optim=cfg["optimizer"])
 P["eval_strategy" if "eval_strategy" in sig else "evaluation_strategy"] = "no"
@@ -65,7 +65,7 @@ P.update(save_strategy="steps", save_steps=500, save_total_limit=2)
 K = dict(model=model, train_dataset=train, eval_dataset=valid, args=SFTConfig(**P))
 K["processing_class" if "processing_class" in inspect.signature(SFTTrainer.__init__).parameters else "tokenizer"] = tok
 trainer = SFTTrainer(**K)
-test = load_dataset("json", data_files="data_clean/final_test.jsonl", split="train").map(fmt)
+test = load_dataset("json", data_files="data_clean/final_test_v5b.jsonl", split="train").map(fmt)
 tl0 = trainer.evaluate(eval_dataset=test)["eval_loss"]; print(f"Test loss មុន: {tl0:.4f}")
 ck = sorted(Path(cfg["output_dir"]).glob("checkpoint-*"), key=lambda d: int(d.name.split("-")[-1]))
 trainer.train(resume_from_checkpoint=str(ck[-1]) if ck else None)
