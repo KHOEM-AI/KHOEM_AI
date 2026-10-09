@@ -10,8 +10,10 @@ const nest = (f) => { const o = {}; for (const [k, v] of Object.entries(f)) { co
 const mode = process.argv[2] || "scan";
 const { LOCALE_LOADERS } = await imp("dist/src/locales/index.js");
 const { LANGUAGES } = await imp("dist/src/registry/languages.js");
-const en = flat((await LOCALE_LOADERS.en()).default);
-const km = flat((await LOCALE_LOADERS.km()).default);
+const { loadLocale } = await imp("dist/src/core/loader.js");
+const LL = async (id) => { try { return await loadLocale(id); } catch { return {}; } };
+const en = await LL("en");
+const km = await LL("km");
 const ids = LANGUAGES.map((l) => l.languageId).filter((i) => i !== "en" && i !== "km");
 const todoDir = path.join(root, "translations-todo"), doneDir = path.join(root, "translations-done");
 fs.mkdirSync(todoDir, { recursive: true }); fs.mkdirSync(doneDir, { recursive: true });
@@ -19,7 +21,7 @@ fs.mkdirSync(todoDir, { recursive: true }); fs.mkdirSync(doneDir, { recursive: t
 if (mode === "scan") {
   let total = 0;
   for (const id of ids) {
-    const cur = LOCALE_LOADERS[id] ? flat((await LOCALE_LOADERS[id]()).default) : {};
+    const cur = await LL(id);
     const miss = {};
     for (const k of Object.keys(en)) if (!(k in cur) || cur[k] === "") miss[k] = { en: en[k], km: km[k] ?? "" };
     total += Object.keys(miss).length;
@@ -39,7 +41,7 @@ if (mode === "apply") {
     const done = JSON.parse(fs.readFileSync(path.join(doneDir, f), "utf8"));
     const bad = Object.keys(done).filter((k) => !(k in en));
     if (bad.length) { console.log("SKIP", id, "unknown keys:", bad.slice(0, 3)); continue; }
-    const ph = (s) => (JSON.stringify(s).match(/\{\{[^}]+\}\}/g) || []).sort().join();
+    const ph = (s) => [...new Set(JSON.stringify(s).match(/\{\{[^}]+\}\}/g) || [])].sort().join();
     const badPh = Object.keys(done).filter((k) => ph(done[k]) !== ph(en[k]));
     if (badPh.length) { console.log("SKIP", id, "placeholder mismatch:", badPh.slice(0, 3)); continue; }
     const dir = path.join(root, "src/locales", id);
