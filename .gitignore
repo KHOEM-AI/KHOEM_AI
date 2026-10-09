@@ -72,3 +72,8 @@ code-corpus/pairs/*.jsonl
 code-corpus/pairs-small/*.jsonl
 /train.jsonl
 /valid.jsonl
+lang-check/
+
+repos/
+khoem-lora-trainer/kaggle_upload/
+khoem-lora-trainer/kaggle_upload_prev/
