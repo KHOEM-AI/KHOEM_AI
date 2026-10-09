@@ -25,7 +25,8 @@ def run_eval(model, tok, n):
         with tempfile.NamedTemporaryFile("w", suffix=".py", delete=False) as f:
             f.write(prog); p = f.name
         try:
-            ok += subprocess.run([sys.executable, p], capture_output=True, timeout=10).returncode == 0
+            r_ = subprocess.run([sys.executable, p], capture_output=True, timeout=10); ok += r_.returncode == 0
+            if r_.returncode != 0: open("he_fail.txt", "a", encoding="utf-8").write("### " + ex["entry_point"] + "\n" + reply + "\n--- ERR ---\n" + r_.stderr.decode()[-300:] + "\n\n")
         except subprocess.TimeoutExpired:
             pass
         os.unlink(p)
@@ -55,16 +56,18 @@ kb = run_khmer_eval(model, tok); print(f"Khmer-code មុន: {kb:.3f}")
 model = FastLanguageModel.get_peft_model(model, r=cfg["lora_rank"], lora_alpha=cfg["lora_alpha"], lora_dropout=cfg["lora_dropout"], target_modules=cfg["target_modules"], use_gradient_checkpointing=cfg["gradient_checkpointing"], random_state=cfg["random_state"])
 FastLanguageModel.for_training(model)
 fmt = lambda ex: {"text": tok.apply_chat_template(ex["messages"], tokenize=False)}
-train = load_dataset("json", data_files="data_clean/final_train_v5b.jsonl", split="train").map(fmt)
+train = load_dataset("json", data_files="data_clean/final_train_v6.jsonl", split="train").map(fmt)
 valid = load_dataset("json", data_files="data_clean/final_valid_v5b.jsonl", split="train").map(fmt)
 sig = inspect.signature(SFTConfig.__init__).parameters
-P = dict(output_dir=cfg["output_dir"], per_device_train_batch_size=cfg["batch_size"], per_device_eval_batch_size=2, gradient_accumulation_steps=cfg["gradient_accumulation_steps"], max_steps=STEPS, seed=cfg["random_state"], fp16=not torch.cuda.is_bf16_supported(), bf16=torch.cuda.is_bf16_supported(), learning_rate=cfg["learning_rate"], warmup_steps=cfg["warmup_steps"], logging_steps=10, report_to="none", dataset_text_field="text", optim=cfg["optimizer"])
+P = dict(output_dir=cfg["output_dir"], per_device_train_batch_size=cfg["batch_size"], per_device_eval_batch_size=2, gradient_accumulation_steps=cfg["gradient_accumulation_steps"], max_steps=STEPS, seed=cfg["random_state"], fp16=not torch.cuda.is_bf16_supported(), bf16=torch.cuda.is_bf16_supported(), learning_rate=min(cfg["learning_rate"],5e-5), warmup_steps=cfg["warmup_steps"], logging_steps=10, report_to="none", dataset_text_field="text", optim=cfg["optimizer"])
 P["eval_strategy" if "eval_strategy" in sig else "evaluation_strategy"] = "no"
 P["max_length" if "max_length" in sig else "max_seq_length"] = cfg["max_seq_length"]
 P.update(save_strategy="steps", save_steps=500, save_total_limit=2)
 K = dict(model=model, train_dataset=train, eval_dataset=valid, args=SFTConfig(**P))
 K["processing_class" if "processing_class" in inspect.signature(SFTTrainer.__init__).parameters else "tokenizer"] = tok
 trainer = SFTTrainer(**K)
+from unsloth.chat_templates import train_on_responses_only
+trainer = train_on_responses_only(trainer, instruction_part="<|im_start|>user\n", response_part="<|im_start|>assistant\n")
 test = load_dataset("json", data_files="data_clean/final_test_v5b.jsonl", split="train").map(fmt)
 tl0 = trainer.evaluate(eval_dataset=test)["eval_loss"]; print(f"Test loss មុន: {tl0:.4f}")
 ck = sorted(Path(cfg["output_dir"]).glob("checkpoint-*"), key=lambda d: int(d.name.split("-")[-1]))
