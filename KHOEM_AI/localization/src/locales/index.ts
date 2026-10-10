@@ -42,5 +42,8 @@ export const LOCALE_LOADERS: Readonly<Record<string, () => Promise<{ default: Tr
   fr: () => import("./fr/index.js"),
   mn: () => import("./mn/index.js"),
   fil: () => import("./fil/index.js"),
+  da: () => import("./da/index.js"),
+  fi: () => import("./fi/index.js"),
+  nb: () => import("./nb/index.js"),
 };
 export const SOURCE_LOCALE = "en";
