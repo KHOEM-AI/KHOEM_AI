@@ -1,0 +1,126 @@
+{
+ "ai.menu.voiceSpeak": {
+  "en": "Read aloud",
+  "km": "អានជាសំឡេង"
+ },
+ "ai.menu.voiceFemale": {
+  "en": "Female",
+  "km": "ស្រី"
+ },
+ "ai.menu.voiceMale": {
+  "en": "Male",
+  "km": "ប្រុស"
+ },
+ "ai.menu.voiceTest": {
+  "en": "Test voice",
+  "km": "សាកសំឡេង"
+ },
+ "ai.menu.voiceAgeLabel": {
+  "en": "Choose age group",
+  "km": "ជ្រើសក្រុមអាយុ"
+ },
+ "ai.menu.voiceTestSentence": {
+  "en": "Hello, I am testing the voice.",
+  "km": "សួស្តី ខ្ញុំកំពុងសាកល្បងសំឡេង។"
+ },
+ "ai.menu.voiceCharLabel": {
+  "en": "Choose character",
+  "km": "ជ្រើសតួអង្គ"
+ },
+ "ai.menu.voiceEmotionLabel": {
+  "en": "Choose emotion",
+  "km": "ជ្រើសអារម្មណ៍"
+ },
+ "ai.menu.voiceChar_child_boy": {
+  "en": "Boy",
+  "km": "ក្មេងប្រុស"
+ },
+ "ai.menu.voiceChar_child_girl": {
+  "en": "Girl",
+  "km": "ក្មេងស្រី"
+ },
+ "ai.menu.voiceChar_teen_boy": {
+  "en": "Teen boy",
+  "km": "ជំទង់ប្រុស"
+ },
+ "ai.menu.voiceChar_teen_girl": {
+  "en": "Teen girl",
+  "km": "ជំទង់ស្រី"
+ },
+ "ai.menu.voiceChar_young_man": {
+  "en": "Young man",
+  "km": "យុវជន"
+ },
+ "ai.menu.voiceChar_young_woman": {
+  "en": "Young woman",
+  "km": "យុវតី"
+ },
+ "ai.menu.voiceChar_husband": {
+  "en": "Husband",
+  "km": "ប្ដី"
+ },
+ "ai.menu.voiceChar_wife": {
+  "en": "Wife",
+  "km": "ប្រពន្ធ"
+ },
+ "ai.menu.voiceChar_father": {
+  "en": "Father",
+  "km": "ឪពុក"
+ },
+ "ai.menu.voiceChar_mother": {
+  "en": "Mother",
+  "km": "ម្ដាយ"
+ },
+ "ai.menu.voiceChar_grandfather": {
+  "en": "Grandfather",
+  "km": "តា"
+ },
+ "ai.menu.voiceChar_grandmother": {
+  "en": "Grandmother",
+  "km": "យាយ"
+ },
+ "ai.menu.voiceChar_big_brother": {
+  "en": "Older brother",
+  "km": "បងប្រុស"
+ },
+ "ai.menu.voiceChar_big_sister": {
+  "en": "Older sister",
+  "km": "បងស្រី"
+ },
+ "ai.menu.voiceChar_male_friend": {
+  "en": "Male friend",
+  "km": "មិត្តភក្តិប្រុស"
+ },
+ "ai.menu.voiceChar_female_friend": {
+  "en": "Female friend",
+  "km": "មិត្តភក្តិស្រី"
+ },
+ "ai.menu.voiceChar_foreman": {
+  "en": "Foreman",
+  "km": "មេការ"
+ },
+ "ai.menu.voiceChar_worker": {
+  "en": "Worker",
+  "km": "កម្មករ"
+ },
+ "ai.menu.voiceEmo_normal": {
+  "en": "Normal",
+  "km": "ធម្មតា"
+ },
+ "ai.menu.voiceEmo_happy": {
+  "en": "Happy",
+  "km": "រីករាយ"
+ },
+ "ai.menu.voiceEmo_scared": {
+  "en": "Scared",
+  "km": "ភ័យ"
+ },
+ "ai.menu.voiceEmo_angry": {
+  "en": "Angry",
+  "km": "ខឹង"
+ },
+ "ai.menu.voiceEmo_sad": {
+  "en": "Sad",
+  "km": "ស្រងូតស្រងាត់"
+ }
+}
