@@ -32,3 +32,6 @@ export function getLocale(id: string): LocaleRecord {
   if (!l) throw new KhoemError("LOCALE_NOT_FOUND", `Locale not found: ${id}`);
   return l;
 }
+
+export { searchKnowledge, fuzzySearchKnowledge, normalizeKnowledgeQuery, knowledgeStats } from "./knowledge/search.js";
+export type { KnowledgeEntry } from "./knowledge/data.js";

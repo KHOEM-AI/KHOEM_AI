@@ -5,6 +5,7 @@ import {
   getTranslationDetailed, listLanguages, listLocales,
 } from "../index.js";
 import { availableLocales } from "../core/loader.js";
+import { searchKnowledge } from "../knowledge/search.js";
 import type { ErrorCode, TranslationParams } from "../types/index.js";
 
 type ApiErrorCode =
@@ -223,6 +224,13 @@ export function createApiServer(options: ApiServerOptions = {}): Server {
       } else if (p0 === "api" && parts.length === 2 && p1 === "coverage") {
         only(["GET"]);
         reply(200, { success: true, data: await allCoverage() });
+      } else if (p0 === "api" && parts.length === 2 && p1 === "knowledge") {
+        only(["GET"]);
+        const q = url.searchParams;
+        if (q.getAll("q").length > 1) throw bad("Duplicate query parameter");
+        const query = requireString(q.get("q"), "q", 200);
+        const answer = searchKnowledge(query);
+        reply(200, { success: true, data: { query, found: answer !== null, answer } });
       } else {
         throw new ApiError(404, "NOT_FOUND", "Route not found");
       }
