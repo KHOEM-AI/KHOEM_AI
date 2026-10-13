@@ -9,6 +9,7 @@ export const KNOWLEDGE_DATABASES: readonly (readonly KnowledgeEntry[])[] = [
   [
     {
       "keywords": [
+        "programming",
         "python programming",
         "python language",
         "python",
@@ -233,8 +234,7 @@ export const KNOWLEDGE_DATABASES: readonly (readonly KnowledgeEntry[])[] = [
       "keywords": [
         "នរោត្តម សីហនុ",
         "sihanouk",
-        "ឯករាជ្យជាតិ",
-        "ភ្នំពេញ"
+        "ឯករាជ្យជាតិ"
       ],
       "info": "👑 ព្រះករុណា ព្រះបាទសម្តេចព្រះនរោត្តម សីហនុ (King Norodom Sihanouk): ព្រះបិតាឯករាជ្យជាតិ ដែលមានព្រះរាជកិច្ចដឹកនាំ និងបង្រួបបង្រួមជាតិនៅរាជធានីភ្នំពេញ និងទូទាំងប្រទេស។"
     },
@@ -326,8 +326,7 @@ export const KNOWLEDGE_DATABASES: readonly (readonly KnowledgeEntry[])[] = [
     {
       "keywords": [
         "ស្រាបៀរអង្គរ",
-        "angkor beer",
-        "ភ្នំពេញ"
+        "angkor beer"
       ],
       "info": "🍺 ស្រាបៀរអង្គរ (Angkor Beer): ស្រាបៀរជាតិលំដាប់អន្តរជាតិ បិតនិងផលិតដោយក្រុមហ៊ុន Cambrew ក្នុងរាជធានីភ្នំពេញ។"
     }
@@ -387,6 +386,14 @@ export const KNOWLEDGE_DATABASES: readonly (readonly KnowledgeEntry[])[] = [
         "ទំហំកម្ពុជា"
       ],
       "info": "🗺️ ភូមិសាស្ត្រកម្ពុជា៖ ស្ថិតក្នុងអាស៊ីអាគ្នេយ៍ មានព្រំដែនជាប់ប្រទេសថៃ ឡាវ និងវៀតណាម ហើយមានឆ្នេរសមុទ្រតាមឈូងសមុទ្រថៃ។ មានផ្ទៃដីប្រហែល ១៨១,០០០ គីឡូម៉ែត្រការ៉េ ចែកជា ២៤ ខេត្ត និង ១ រាជធានី (ភ្នំពេញ)។ អាកាសធាតុត្រូពិច មានរដូវភ្លៀងប្រហែលពីខែឧសភាដល់តុលា និងរដូវប្រាំងពីខែវិច្ឆិកាដល់មេសា។"
+    },
+    {
+      "keywords": [
+        "ភ្នំពេញ",
+        "រាជធានីភ្នំពេញ",
+        "phnom penh"
+      ],
+      "info": "🏙️ ភ្នំពេញ៖ ជារាជធានី និងទីក្រុងធំជាងគេនៃប្រទេសកម្ពុជា។ ស្ថិតនៅត្រង់ចតុមុខ ជាចំណុចជួបគ្នានៃទន្លេមេគង្គ ទន្លេសាប និងទន្លេបាសាក់។"
     },
     {
       "keywords": [

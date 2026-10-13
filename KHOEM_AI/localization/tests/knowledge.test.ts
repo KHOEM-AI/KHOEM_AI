@@ -35,7 +35,7 @@ test("knowledge: skips current healthcare questions, empty and unknown", () => {
 });
 
 test("knowledge: stats", () => {
-  assert.deepEqual(knowledgeStats(), { databases: 8, totalEntries: 43 });
+  assert.deepEqual(knowledgeStats(), { databases: 8, totalEntries: 44 });
 });
 
 test("GET /api/knowledge contract", async () => {
@@ -93,4 +93,11 @@ test("GET /api/knowledge?exact=1", async () => {
   } finally {
     await new Promise<void>((r) => server.close(() => r()));
   }
+});
+
+test("knowledge: Phnom Penh and bare programming", () => {
+  assert.ok(has("ភ្នំពេញ", "ចតុមុខ"));
+  assert.ok(has("Phnom Penh", "ចតុមុខ"));
+  assert.ok(has("programming", "Programming"));
+  assert.ok(searchKnowledgeExact("ភ្នំពេញ")?.includes("ចតុមុខ"));
 });
