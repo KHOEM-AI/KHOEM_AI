@@ -109,3 +109,28 @@ export function knowledgeStats(): { databases: number; totalEntries: number } {
     totalEntries: KNOWLEDGE_DATABASES.reduce((n, db) => n + db.length, 0),
   };
 }
+
+/**
+ * Strict lookup for routing ahead of the generic language replies.
+ * Real keyword match only (no fuzzy), keyword must cover most of the query,
+ * and AI-alias queries are skipped. Returns null otherwise.
+ */
+export function searchKnowledgeExact(query: unknown, minCoverage = 0.6): string | null {
+  const q = normalizeKnowledgeQuery(query);
+  if (!q || isCurrentHealthcareQuestion(q)) return null;
+  const routed = aliasQuery(q);
+  if (routed !== q) return null;
+
+  let bestInfo: string | null = null;
+  let bestLen = 0;
+  for (const db of KNOWLEDGE_DATABASES) {
+    for (const item of db) {
+      for (const keyword of item.keywords) {
+        const key = normalizeKnowledgeQuery(keyword);
+        if (key.length < 2 || GENERIC_KEYS.has(key) || !q.includes(key)) continue;
+        if (key.length > bestLen) { bestLen = key.length; bestInfo = item.info; }
+      }
+    }
+  }
+  return bestInfo !== null && bestLen / q.length >= minCoverage ? bestInfo : null;
+}

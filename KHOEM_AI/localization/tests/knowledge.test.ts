@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import type { AddressInfo } from "node:net";
-import { searchKnowledge, knowledgeStats } from "../src/index.js";
+import { searchKnowledge, searchKnowledgeExact, knowledgeStats } from "../src/index.js";
 import { createApiServer } from "../src/api/server.js";
 
 const has = (q: string, part: string): boolean => searchKnowledge(q)?.includes(part) ?? false;
@@ -61,6 +61,35 @@ test("GET /api/knowledge contract", async () => {
     assert.equal((await get("/api/knowledge?q=a&q=b")).status, 400);
     assert.equal((await get("/api/knowledge?q=" + "x".repeat(201))).status, 400);
     assert.equal((await fetch(base + "/api/knowledge?q=a", { method: "POST" })).status, 405);
+  } finally {
+    await new Promise<void>((r) => server.close(() => r()));
+  }
+});
+
+test("knowledge exact: real keywords only, never fuzzy or loose", () => {
+  assert.ok(searchKnowledgeExact("ទន្លេមេគង្គ")?.includes("មេគង្គ"));
+  assert.ok(searchKnowledgeExact("ភ្នំអូរ៉ាល់")?.includes("ភ្នំអូរ៉ាល់"));
+  assert.ok(searchKnowledgeExact("Tonle Sap")?.includes("ទន្លេសាប"));
+  for (const q of ["ទឹក", "ទន្លេ", "ភ្នំ", "សួស្តី", "ទូរស័ព្ទថ្មអស់លឿន", "pythn", "What is AI", "ពន្យល់អំពី AI", "សេវាពេទ្យ", "hello world", ""]) {
+    assert.equal(searchKnowledgeExact(q), null, q);
+  }
+});
+
+test("GET /api/knowledge?exact=1", async () => {
+  const server = createApiServer({ rateLimit: false });
+  await new Promise<void>((r) => server.listen(0, "127.0.0.1", r));
+  const base = `http://127.0.0.1:${(server.address() as AddressInfo).port}`;
+  const get = async (p: string) => {
+    const r = await fetch(base + p);
+    return { status: r.status, json: (await r.json()) as { data?: { found: boolean } } };
+  };
+  try {
+    const hit = await get("/api/knowledge?exact=1&q=" + encodeURIComponent("ទន្លេមេគង្គ"));
+    assert.equal(hit.json.data?.found, true);
+    const miss = await get("/api/knowledge?exact=1&q=" + encodeURIComponent("ទូរស័ព្ទថ្មអស់លឿន"));
+    assert.equal(miss.status, 200);
+    assert.equal(miss.json.data?.found, false);
+    assert.equal((await get("/api/knowledge?q=a&exact=1&exact=1")).status, 400);
   } finally {
     await new Promise<void>((r) => server.close(() => r()));
   }

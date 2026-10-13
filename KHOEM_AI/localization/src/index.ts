@@ -33,5 +33,5 @@ export function getLocale(id: string): LocaleRecord {
   return l;
 }
 
-export { searchKnowledge, fuzzySearchKnowledge, normalizeKnowledgeQuery, knowledgeStats } from "./knowledge/search.js";
+export { searchKnowledge, searchKnowledgeExact, fuzzySearchKnowledge, normalizeKnowledgeQuery, knowledgeStats } from "./knowledge/search.js";
 export type { KnowledgeEntry } from "./knowledge/data.js";
