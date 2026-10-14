@@ -35,7 +35,7 @@ test("knowledge: skips current healthcare questions, empty and unknown", () => {
 });
 
 test("knowledge: stats", () => {
-  assert.deepEqual(knowledgeStats(), { databases: 8, totalEntries: 44 });
+  assert.deepEqual(knowledgeStats(), { databases: 11, totalEntries: 94 });
 });
 
 test("GET /api/knowledge contract", async () => {
