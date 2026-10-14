@@ -1,6 +1,7 @@
 import { LIFE_DATABASE } from "./data.life.js";
 import { GENERAL_DATABASE } from "./data.general.js";
 import { HEALTH_DATABASE } from "./data.health.js";
+import { VEHICLE_DATABASE } from "./data.vehicle.js";
 // Copied from AI/src/ai/knowledge.mjs (8 databases, 43 entries).
 // Order matters: earlier databases win ties in search. Edit here, not in AI.
 export interface KnowledgeEntry {
@@ -427,4 +428,4 @@ const BASE_DATABASES: readonly (readonly KnowledgeEntry[])[] = [
   ]
 ];
 
-export const KNOWLEDGE_DATABASES: readonly (readonly KnowledgeEntry[])[] = [...BASE_DATABASES, HEALTH_DATABASE, GENERAL_DATABASE, LIFE_DATABASE];
+export const KNOWLEDGE_DATABASES: readonly (readonly KnowledgeEntry[])[] = [...BASE_DATABASES, HEALTH_DATABASE, GENERAL_DATABASE, LIFE_DATABASE, VEHICLE_DATABASE];
