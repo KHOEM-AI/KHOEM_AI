@@ -10,7 +10,7 @@ const km: TranslationTree = {
   navigation: { home: "ទំព័រដើម", settings: "ការកំណត់", profile: "ប្រវត្តិរូប", dashboard: "ផ្ទាំងគ្រប់គ្រង" },
   auth: { login: "ចូលគណនី", logout: "ចាកចេញ", register: "ចុះឈ្មោះ", forgotPassword: "ភ្លេចពាក្យសម្ងាត់" },
   errors: {
-    network: "បញ្ហាបណ្តាញ។ សូមពិនិត្យការតភ្ជាប់របស់អ្នក។",
+    network: "បញ្ហាបណ្ដាញ។ សូមពិនិត្យការតភ្ជាប់របស់អ្នក។",
     notFound: "រកមិនឃើញ", unauthorized: "មិនមានការអនុញ្ញាត",
     forbidden: "ហាមឃាត់", server: "កំហុសម៉ាស៊ីនមេ",
   },

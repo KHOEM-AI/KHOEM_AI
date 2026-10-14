@@ -6,7 +6,7 @@ import { canonicalizeLocale } from "./resolver.js";
 import type { FlatTranslations, PluralForms, TranslationTree } from "../types/index.js";
 
 const PLURAL_KEYS = new Set(["zero", "one", "two", "few", "many", "other"]);
-const KEY_RE = /^[A-Za-z][A-Za-z0-9]*(\.[A-Za-z][A-Za-z0-9]*)*$/;
+const KEY_RE = /^[A-Za-z][A-Za-z0-9_]*(\.[A-Za-z][A-Za-z0-9_]*)*$/;
 
 export const isValidKey = (k: unknown): k is string => typeof k === "string" && k.length <= 200 && KEY_RE.test(k);
 
