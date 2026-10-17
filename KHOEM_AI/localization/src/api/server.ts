@@ -6,6 +6,7 @@ import {
 } from "../index.js";
 import { availableLocales } from "../core/loader.js";
 import { searchKnowledge, searchKnowledgeExact } from "../knowledge/search.js";
+import { searchKhmer, searchKhmerExact } from "../khmer/search.js";
 import type { ErrorCode, TranslationParams } from "../types/index.js";
 
 type ApiErrorCode =
@@ -224,6 +225,13 @@ export function createApiServer(options: ApiServerOptions = {}): Server {
       } else if (p0 === "api" && parts.length === 2 && p1 === "coverage") {
         only(["GET"]);
         reply(200, { success: true, data: await allCoverage() });
+      } else if (p0 === "api" && parts.length === 2 && p1 === "khmer") {
+        only(["GET"]);
+        const q = url.searchParams;
+        if (q.getAll("q").length > 1 || q.getAll("exact").length > 1) throw bad("Duplicate query parameter");
+        const query = requireString(q.get("q"), "q", 200);
+        const answer = q.get("exact") === "1" ? searchKhmerExact(query) : searchKhmer(query);
+        reply(200, { success: true, data: { query, found: answer !== null, answer } });
       } else if (p0 === "api" && parts.length === 2 && p1 === "knowledge") {
         only(["GET"]);
         const q = url.searchParams;
