@@ -7,6 +7,8 @@ KHOEM_DIR="${KHOEM_DIR:-$ROOT/localization}"
 AI_DIR="${AI_DIR:-$HOME/ai-project/AI}"
 LOG_DIR="${LOG_DIR:-$HOME}"
 PIDS=()
+NAMES=()
+LOGS=()
 
 up() { curl -fsS -o /dev/null -m 2 "$1" 2>/dev/null; }
 
@@ -24,7 +26,7 @@ start() {
   local name="$1" url="$2" dir="$3" logf="$4"; shift 4
   if up "$url"; then echo "  • $name: already running (use ./ai.sh restart for new code)"; return 0; fi
   ( cd "$dir" && exec "$@" ) >"$logf" 2>&1 &
-  PIDS+=("$!")
+  PIDS+=("$!"); NAMES+=("$name"); LOGS+=("$logf")
   wait_for "$url" "$name" || { echo "    log: $logf"; exit 1; }
 }
 
@@ -66,8 +68,17 @@ run() {
   echo; echo "Ready. Ctrl+C stops what this command started."
   while true; do
     sleep 2
-    for p in "${PIDS[@]:-}"; do
-      [ -n "$p" ] && ! kill -0 "$p" 2>/dev/null && { echo "A service stopped; see logs in $LOG_DIR"; exit 1; }
+    for i in "${!PIDS[@]}"; do
+      p="${PIDS[$i]}"
+      if [ -n "$p" ] && ! kill -0 "$p" 2>/dev/null; then
+        wait "$p" 2>/dev/null; rc=$?
+        echo "A service stopped: ${NAMES[$i]} (pid $p, exit code $rc) at $(date +%H:%M:%S)"
+        echo "  log: ${LOGS[$i]}"
+        tail -n 8 "${LOGS[$i]}" 2>/dev/null | sed "s/^/  | /"
+        echo "  --- ps ---"
+        ps -ef | grep -E "server\.mjs|vite|api/main\.js" | grep -v grep
+        exit 1
+      fi
     done
   done
 }
