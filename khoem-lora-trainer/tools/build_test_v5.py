@@ -8,10 +8,9 @@ IN_T = "data_clean/final_train_v5.jsonl"
 IN_V = "data_clean/final_valid_v5.jsonl"
 IN_X = "data_clean/final_test.jsonl"
 OUT_T = "data_clean/final_train_v5b.jsonl"
-OUT_V = "data_clean/final_valid_v5b.jsonl"
 OUT_X = "data_clean/final_test_v5b.jsonl"
 
-if APPLY and any(os.path.exists(p) for p in (OUT_T, OUT_V, OUT_X)):
+if APPLY and any(os.path.exists(p) for p in (OUT_T, OUT_X)):
     sys.exit("v5b មានរួចហើយ មិនជាន់ទេ")
 
 F = re.compile(chr(96) * 3 + r"(\w+)\n(.*?)\n" + chr(96) * 3, re.S)
@@ -93,7 +92,7 @@ if not APPLY:
     sys.exit(0)
 if total:
     sys.exit("មាន leak មិនសរសេរ")
-for p, rows in ((OUT_T, newtrain), (OUT_V, valid), (OUT_X, test)):
+for p, rows in ((OUT_T, newtrain), (OUT_X, test)):
     with open(p, "w", encoding="utf-8") as f:
         for r in rows:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
