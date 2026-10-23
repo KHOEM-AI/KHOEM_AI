@@ -14,6 +14,7 @@ def run_training(train_path, valid_path, cfg, log):
     log(f'Dataset: {len(train):,} train / {len(valid):,} valid')
     sig=inspect.signature(SFTConfig.__init__).parameters
     params=dict(output_dir=cfg['output_dir'], per_device_train_batch_size=cfg['batch_size'], gradient_accumulation_steps=cfg['gradient_accumulation_steps'], num_train_epochs=cfg['epochs'], learning_rate=cfg['learning_rate'], warmup_steps=cfg['warmup_steps'], logging_steps=cfg['logging_steps'], report_to='none', dataset_text_field='text', eval_strategy='epoch', optim=cfg['optimizer'], seed=cfg['random_state'], fp16=not torch.cuda.is_bf16_supported(), bf16=torch.cuda.is_bf16_supported())
+    if cfg.get('max_steps'): params['max_steps']=cfg['max_steps']
     if 'max_length' in sig: params['max_length']=cfg['max_seq_length']
     elif 'max_seq_length' in sig: params['max_seq_length']=cfg['max_seq_length']
     if 'evaluation_strategy' in sig and 'eval_strategy' not in sig: params['evaluation_strategy']=params.pop('eval_strategy')
