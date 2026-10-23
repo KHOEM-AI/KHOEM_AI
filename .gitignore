@@ -82,3 +82,9 @@ tok_train.txt
 */train.bin
 khoem-lora-trainer/kaggle_upload_v*/
 */val.bin
+v9_check/
+khoem-lora-kaggle/
+kaggle_khoem75m/
+khoem16k_v3_data/
+KHOEM_AI/localization/staging-ai-languages/
+code-corpus/*.report.json
