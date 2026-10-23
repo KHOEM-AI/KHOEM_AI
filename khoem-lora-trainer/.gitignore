@@ -4,3 +4,4 @@ outputs/*
 logs/*
 data/*.jsonl
 data_clean/
+emails.txt

@@ -77,3 +77,8 @@ lang-check/
 repos/
 khoem-lora-trainer/kaggle_upload/
 khoem-lora-trainer/kaggle_upload_prev/
+code-corpus/pairs.v1-keep/
+tok_train.txt
+*/train.bin
+khoem-lora-trainer/kaggle_upload_v*/
+*/val.bin

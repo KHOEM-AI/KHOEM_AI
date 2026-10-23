@@ -1,0 +1,87 @@
+/* KHOEM-AI colors. Generated. Other apps: import this file and use var(--khoem-c###). */
+:root {
+  --khoem-c001: #38bdf8; /* 91 uses */
+  --khoem-c002: #ffffff; /* 41 uses */
+  --khoem-c003: #000000; /* 35 uses */
+  --khoem-c004: #22c55e; /* 12 uses */
+  --khoem-c005: #7dd3fc; /* 10 uses */
+  --khoem-c006: #94a3b8; /* 9 uses */
+  --khoem-c007: #f87171; /* 8 uses */
+  --khoem-c008: #4ade80; /* 8 uses */
+  --khoem-c009: #1b1b1f; /* 7 uses */
+  --khoem-c010: #04121c; /* 7 uses */
+  --khoem-c011: #08080a; /* 5 uses */
+  --khoem-c012: #e2e8f0; /* 5 uses */
+  --khoem-c013: #fb923c; /* 5 uses */
+  --khoem-c014: #050507; /* 4 uses */
+  --khoem-c015: #ffd93b; /* 4 uses */
+  --khoem-c016: #a78bfa; /* 4 uses */
+  --khoem-c017: #bae6fd; /* 4 uses */
+  --khoem-c018: #facc15; /* 4 uses */
+  --khoem-c019: #020203; /* 3 uses */
+  --khoem-c020: #09090b; /* 3 uses */
+  --khoem-c021: #ff5fa2; /* 3 uses */
+  --khoem-c022: #0ea5e9; /* 3 uses */
+  --khoem-c023: #111114; /* 2 uses */
+  --khoem-c024: #303036; /* 2 uses */
+  --khoem-c025: #66666e; /* 2 uses */
+  --khoem-c026: #070709; /* 2 uses */
+  --khoem-c027: #cbd5e1; /* 2 uses */
+  --khoem-c028: #fbbf24; /* 2 uses */
+  --khoem-c029: #18181c; /* 1 uses */
+  --khoem-c030: #45454d; /* 1 uses */
+  --khoem-c031: #f7f7f9; /* 1 uses */
+  --khoem-c032: #9999a1; /* 1 uses */
+  --khoem-c033: #eeeef2; /* 1 uses */
+  --khoem-c034: #202025; /* 1 uses */
+  --khoem-c035: #0d0d10; /* 1 uses */
+  --khoem-c036: #ff7777; /* 1 uses */
+  --khoem-c037: #111115; /* 1 uses */
+  --khoem-c038: #0b0b0e; /* 1 uses */
+  --khoem-c039: #19191d; /* 1 uses */
+  --khoem-c040: #111113; /* 1 uses */
+  --khoem-c041: #cfcfd3; /* 1 uses */
+  --khoem-c042: #77777e; /* 1 uses */
+  --khoem-c043: #44444a; /* 1 uses */
+  --khoem-c044: #5b5b63; /* 1 uses */
+  --khoem-c045: #222226; /* 1 uses */
+  --khoem-c046: #414148; /* 1 uses */
+  --khoem-c047: #29292e; /* 1 uses */
+  --khoem-c048: #3b3b42; /* 1 uses */
+  --khoem-c049: #17171b; /* 1 uses */
+  --khoem-c050: #35353c; /* 1 uses */
+  --khoem-c051: #160909; /* 1 uses */
+  --khoem-c052: #452020; /* 1 uses */
+  --khoem-c053: #151518; /* 1 uses */
+  --khoem-c054: #38383f; /* 1 uses */
+  --khoem-c055: #68686f; /* 1 uses */
+  --khoem-c056: #707078; /* 1 uses */
+  --khoem-c057: #101012; /* 1 uses */
+  --khoem-c058: #d8d8dc; /* 1 uses */
+  --khoem-c059: #89898f; /* 1 uses */
+  --khoem-c060: #606066; /* 1 uses */
+  --khoem-c061: #626269; /* 1 uses */
+  --khoem-c062: #101014; /* 1 uses */
+  --khoem-c063: #00508c; /* 1 uses */
+  --khoem-c064: #e11d48; /* 1 uses */
+  --khoem-c065: #ef4444; /* 1 uses */
+  --khoem-c066: #3b82f6; /* 1 uses */
+  --khoem-c067: #c084fc; /* 1 uses */
+  --khoem-c068: #64748b; /* 1 uses */
+  --khoem-c069: #e0a800; /* 1 uses */
+  --khoem-c070: #808080; /* 1 uses */
+  --khoem-ui-bg: #020203;
+  --khoem-ui-surface: #09090b;
+  --khoem-ui-surface-2: #111114;
+  --khoem-ui-surface-3: #18181c;
+  --khoem-ui-border: #303036;
+  --khoem-ui-border-light: #45454d;
+  --khoem-ui-text: #f7f7f9;
+  --khoem-ui-text-dim: #9999a1;
+  --khoem-ui-silver: #eeeeF2;
+  --khoem-ui-user-bubble: #202025;
+  --khoem-ui-assistant-bubble: #0d0d10;
+  --khoem-ui-error: #ff7777;
+  --khoem-ui-health-color: #22c55e;
+  --khoem-ui-badge-color: #22c55e;
+}
