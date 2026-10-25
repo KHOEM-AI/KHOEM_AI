@@ -88,3 +88,5 @@ kaggle_khoem75m/
 khoem16k_v3_data/
 KHOEM_AI/localization/staging-ai-languages/
 code-corpus/*.report.json
+__pycache__/
+bench
