@@ -1,3 +1,4 @@
+````text
 KHOEM_AI — OFFICIAL MASTER ARCHITECTURE & BUILD SPECIFICATION
 
 PROJECT NAME
@@ -1937,3 +1938,5 @@ API STATUS
 DOCUMENTATION STATUS
 
 Do not declare COMPLETE until all mandatory quality gates pass.
+
+````
