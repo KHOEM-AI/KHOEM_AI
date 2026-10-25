@@ -52,7 +52,7 @@ class App(tk.Tk):
     def environment(self): self.write('\n[Environment]\n'+check_environment())
     def dataset(self):
         self.write('\n[Dataset]')
-        for name in ['final_train_v5b.jsonl','final_valid_v5b.jsonl']:
+        for name in ['final_train_v6.jsonl','final_valid_v5b.jsonl']:
             ok,msg=validate_jsonl(APP_DIR/'data_clean'/name); self.write(msg)
     def start_training(self):
         if messagebox.askyesno('Confirm training','Start LoRA training now?'):
@@ -60,7 +60,7 @@ class App(tk.Tk):
     def _train(self):
         try:
             from train import run_training
-            run_training(APP_DIR/'data_clean'/'final_train_v5b.jsonl', APP_DIR/'data_clean'/'final_valid_v5b.jsonl', self.cfg, self.write)
+            run_training(APP_DIR/'data_clean'/'final_train_v6.jsonl', APP_DIR/'data_clean'/'final_valid_v5b.jsonl', self.cfg, self.write)
         except Exception as e: self.write(f'TRAINING ERROR: {type(e).__name__}: {e}')
 
 if __name__ == '__main__': App().mainloop()
