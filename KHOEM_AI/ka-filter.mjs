@@ -1,0 +1,11 @@
+import fs from "node:fs";
+const brain = fs.readFileSync(process.env.HOME + "/ai-project/AI/src/ai/khmer.mjs", "utf8");
+const rows = fs.readFileSync("km_vocab_candidates.tsv", "utf8").split("\n").map(l => l.split("\t"));
+const khmerOnly = /^[\u1780-\u17FF]+$/;
+const ka = rows.filter(([w, n]) => w && khmerOnly.test(w) && w.startsWith("ក") && w.length >= 2 && Number(n) >= 20 && !w.endsWith("\u17D2"));
+const have = ka.filter(([w]) => brain.includes(w));
+const need = ka.filter(([w]) => !brain.includes(w));
+fs.writeFileSync("ka-all.tsv", ka.map(r => r.join("\t")).join("\n"));
+fs.writeFileSync("ka-new-top100.txt", need.slice(0, 100).map(r => r[0]).join("\n"));
+console.log("ក ស្អាត:", ka.length, "| មានក្នុងខួរស្រាប់:", have.length, "| ខ្វះ:", need.length);
+console.log(need.slice(0, 30).map(r => r[0]).join(" "));

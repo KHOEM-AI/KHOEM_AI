@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0",
+  "project": "KHOEM_AI",
+  "purpose": "Khmer TTS voice profile specifications",
+  "profile_count": 18,
+  "note_km": "នេះជាការកំណត់លក្ខណៈសំឡេង មិនមែនជាសំឡេងដែលបានបង្កើតរួចទេ។ ត្រូវភ្ជាប់ engine_voice_id នៅពេលជ្រើសរើស TTS engine។",
+  "profiles": [
+    {
+      "id": "child_5_12_female",
+      "label_km": "កុមារ ស្រី",
+      "age_min": 5,
+      "age_max": 12,
+      "gender_presentation": "female",
+      "voice_style_km": "សំឡេងក្មេង ស្រាល និងធម្មជាតិ",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "child_5_12_male",
+      "label_km": "កុមារ ប្រុស",
+      "age_min": 5,
+      "age_max": 12,
+      "gender_presentation": "male",
+      "voice_style_km": "សំឡេងក្មេង ស្រាល និងធម្មជាតិ",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "teen_13_17_female",
+      "label_km": "វ័យជំទង់ ស្រី",
+      "age_min": 13,
+      "age_max": 17,
+      "gender_presentation": "female",
+      "voice_style_km": "សំឡេងវ័យជំទង់ ច្បាស់ និងមានថាមពល",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "teen_13_17_male",
+      "label_km": "វ័យជំទង់ ប្រុស",
+      "age_min": 13,
+      "age_max": 17,
+      "gender_presentation": "male",
+      "voice_style_km": "សំឡេងវ័យជំទង់ ច្បាស់ និងមានថាមពល",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "young_18_25_female",
+      "label_km": "វ័យក្មេង ស្រី",
+      "age_min": 18,
+      "age_max": 25,
+      "gender_presentation": "female",
+      "voice_style_km": "សំឡេងវ័យក្មេង រលូន និងមានភាពទាក់ទាញ",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "young_18_25_male",
+      "label_km": "វ័យក្មេង ប្រុស",
+      "age_min": 18,
+      "age_max": 25,
+      "gender_presentation": "male",
+      "voice_style_km": "សំឡេងវ័យក្មេង រលូន និងមានភាពទាក់ទាញ",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "adult_26_35_female",
+      "label_km": "វ័យពេញវ័យ ស្រី",
+      "age_min": 26,
+      "age_max": 35,
+      "gender_presentation": "female",
+      "voice_style_km": "សំឡេងមានទំនុកចិត្ត និងស្ថិរភាព",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "adult_26_35_male",
+      "label_km": "វ័យពេញវ័យ ប្រុស",
+      "age_min": 26,
+      "age_max": 35,
+      "gender_presentation": "male",
+      "voice_style_km": "សំឡេងមានទំនុកចិត្ត និងស្ថិរភាព",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "middle_36_45_female",
+      "label_km": "វ័យកណ្ដាល ស្រី",
+      "age_min": 36,
+      "age_max": 45,
+      "gender_presentation": "female",
+      "voice_style_km": "សំឡេងពេញលេញ និងស្ងប់ស្ងាត់",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "middle_36_45_male",
+      "label_km": "វ័យកណ្ដាល ប្រុស",
+      "age_min": 36,
+      "age_max": 45,
+      "gender_presentation": "male",
+      "voice_style_km": "សំឡេងពេញលេញ និងស្ងប់ស្ងាត់",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "middle_older_46_55_female",
+      "label_km": "វ័យកណ្ដាលចាស់ ស្រី",
+      "age_min": 46,
+      "age_max": 55,
+      "gender_presentation": "female",
+      "voice_style_km": "សំឡេងមានបទពិសោធន៍ និងទម្ងន់",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "middle_older_46_55_male",
+      "label_km": "វ័យកណ្ដាលចាស់ ប្រុស",
+      "age_min": 46,
+      "age_max": 55,
+      "gender_presentation": "male",
+      "voice_style_km": "សំឡេងមានបទពិសោធន៍ និងទម្ងន់",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "older_56_65_female",
+      "label_km": "វ័យចាស់ ស្រី",
+      "age_min": 56,
+      "age_max": 65,
+      "gender_presentation": "female",
+      "voice_style_km": "សំឡេងចាស់ទុំ ស្រទន់ និងមានចង្វាក់យឺត",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "older_56_65_male",
+      "label_km": "វ័យចាស់ ប្រុស",
+      "age_min": 56,
+      "age_max": 65,
+      "gender_presentation": "male",
+      "voice_style_km": "សំឡេងចាស់ទុំ ស្រទន់ និងមានចង្វាក់យឺត",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "elder_66_70_female",
+      "label_km": "វ័យចាស់ ៦៦–៧០ ស្រី",
+      "age_min": 66,
+      "age_max": 70,
+      "gender_presentation": "female",
+      "voice_style_km": "សំឡេងចាស់ទុំ បែបប្រពៃណី និងមានភាពធម្មជាតិ",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "elder_66_70_male",
+      "label_km": "វ័យចាស់ ៦៦–៧០ ប្រុស",
+      "age_min": 66,
+      "age_max": 70,
+      "gender_presentation": "male",
+      "voice_style_km": "សំឡេងចាស់ទុំ បែបប្រពៃណី និងមានភាពធម្មជាតិ",
+      "role": "general",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "young_lead_female",
+      "label_km": "តួឯកស្រីវ័យក្មេង",
+      "age_min": 18,
+      "age_max": 35,
+      "gender_presentation": "female",
+      "voice_style_km": "ពិរោះ រលូន មានអារម្មណ៍ និងលេចធ្លោ ប៉ុន្តែត្រូវស្តាប់ធម្មជាតិ",
+      "role": "lead",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    },
+    {
+      "id": "young_supporting_female",
+      "label_km": "តួរងស្រីវ័យក្មេង",
+      "age_min": 18,
+      "age_max": 35,
+      "gender_presentation": "female",
+      "voice_style_km": "ច្បាស់ មានអត្តសញ្ញាណខ្លួនឯង មិនលេចធ្លោជាងតួឯក",
+      "role": "supporting",
+      "engine_voice_id": null,
+      "status": "profile_spec_only"
+    }
+  ]
+}
