@@ -35,7 +35,7 @@ immutable       MIT            686b8baf1dc825419f5ded2968b48e3432644aff
 jinja           BSD-3-Clause   5ef70112a1ff19c05324ff889dd30405b1002044
 jotai           MIT            dceab08751320d2bfd707e7a54a880db73d7a069
 ktor            Apache-2.0     f76c50da18f6b284ce4ae7b4e84bed4c9aea5ce0
-laravel        MIT            725381d29c9fa132dfe042f8458a9ed31d27a040
+laravel         MIT            725381d29c9fa132dfe042f8458a9ed31d27a040
 libuv           MIT            49b1c064714b412d7f7a2f5e7146c977554e57f9
 lit             BSD-3-Clause   01dbc6673cdc211543932afd0ca04e223e567366
 lo              MIT            5c6ddcb7063c9908031340db03f27ba7483d1ece
