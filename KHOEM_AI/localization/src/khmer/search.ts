@@ -1,4 +1,5 @@
 import { KHMER_ENTRIES } from "./data.js";
+import { KHMER_EXTRA_ENTRIES } from "./data.extra.js";
 
 const norm = (s: string): string =>
   s
@@ -11,7 +12,7 @@ const norm = (s: string): string =>
 const MAP = new Map<string, string>();
 const ALIASES: string[] = [];
 
-for (const [keys, answer] of KHMER_ENTRIES) {
+for (const [keys, answer] of [...KHMER_ENTRIES, ...KHMER_EXTRA_ENTRIES]) {
   for (const alias of keys.split("|")) {
     const key = norm(alias);
     if (!key) continue;
