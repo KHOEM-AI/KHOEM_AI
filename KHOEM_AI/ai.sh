@@ -42,7 +42,7 @@ build_api() {
 stop_all() {
   pkill -f "$KHOEM_DIR/dist/src/api/main.js" 2>/dev/null
   pkill -f "$AI_DIR/server.mjs" 2>/dev/null
-  pkill -f "$AI_DIR/node_modules/.bin/vite" 2>/dev/null
+  pkill -f "$AI_DIR/node_modules/.bin/vite --host 127.0.0.1" 2>/dev/null
   sleep 1
 }
 
