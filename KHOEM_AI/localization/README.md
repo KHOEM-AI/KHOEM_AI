@@ -43,3 +43,12 @@ Documentation index: `../docs/README.md`.
 - Do NOT put computed answers (functions, dates/times) here; they live in the AI app.
 - Before adding entries: run `npm run verify` (build, duplicate check, locale validation, tests).
 - Do NOT duplicate entries that already exist in AI `khmer.mjs` unless intentional.
+
+## Dictionary API (2026-10-30)
+`GET /api/dictionary?q=<word>&from=<en|km|zh>&to=<en|km|zh>`
+
+- ស្វែងរកក្នុង UI phrases (en, km, zh) និងឈ្មោះពណ៌ (`src/lexicon/colors.ts`)
+- ត្រឡប់ `found`, `matches` (`text`, `original`, `source`, `missing`) និង `suggestions`
+- `missing: true` = មិនទាន់មានឈ្មោះក្នុងភាសានោះ (ខ្មែរភាគច្រើននៅទទេសម្រាប់ពណ៌កម្រ)
+- មិនបកអត្ថបទសេរី ត្រឹមតែឃ្លា/ពាក្យដែលមានក្នុងទិន្នន័យ
+- បន្ថែមពណ៌ថ្មី៖ កែ `src/lexicon/colors.ts` ហើយរត់ `npm test`
