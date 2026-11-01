@@ -1,0 +1,9 @@
+{
+  "generated": "2026-11-01",
+  "files": 25,
+  "total": 29434,
+  "seen_2_plus": 29201,
+  "seen_5_plus": 22423,
+  "seen_10_plus": 16234,
+  "note": "Words cut by ICU (Intl.Segmenter km). Not checked against a dictionary: names and fragments are included."
+}

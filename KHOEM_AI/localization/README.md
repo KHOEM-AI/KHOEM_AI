@@ -52,3 +52,6 @@ Documentation index: `../docs/README.md`.
 - `missing: true` = មិនទាន់មានឈ្មោះក្នុងភាសានោះ (ខ្មែរភាគច្រើននៅទទេសម្រាប់ពណ៌កម្រ)
 - មិនបកអត្ថបទសេរី ត្រឹមតែឃ្លា/ពាក្យដែលមានក្នុងទិន្នន័យ
 - បន្ថែមពណ៌ថ្មី៖ កែ `src/lexicon/colors.ts` ហើយរត់ `npm test`
+
+## Khmer word list (2026-10-30)
+`node tools/khmer-words/extract.mjs` បង្កើត `data/khmer-words.tsv` (ពាក្យ + ចំនួនដង) និង `data/khmer-words.stats.json`។ មើល `tools/khmer-words/README.md`។
