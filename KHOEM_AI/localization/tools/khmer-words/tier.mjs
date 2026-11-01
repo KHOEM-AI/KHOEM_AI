@@ -32,6 +32,16 @@ if (existsSync(wf)) {
   }
 }
 
+const wiki = new Set();
+const kw = `${HOME}/khoem-corpora/kmwiki.xml`;
+if (existsSync(kw)) {
+  const rl2 = createInterface({ input: createReadStream(kw, { encoding: 'utf8' }), crlfDelay: Infinity });
+  for await (const line of rl2) {
+    const m = line.match(/<title>([^<]+)<\/title>/);
+    if (m) { const t = m[1].trim().normalize('NFC'); if (VALID.test(t)) wiki.add(t); }
+  }
+}
+
 const voa = new Set();
 try {
   for (const line of readFileSync(`${A}/data/voa-wordlist.tsv`, 'utf8').split('\n')) {
@@ -45,7 +55,7 @@ const rows = [];
 for (const [w, c] of raw) {
   if (!VALID.test(w)) { stat.dropped_invalid++; continue; }
   let tier;
-  if (wikt.has(w) || voa.has(w)) tier = 'A';
+  if (wikt.has(w) || voa.has(w) || wiki.has(w)) tier = 'A';
   else if (c >= TB) tier = 'B';
   else if (c >= TC) tier = 'C';
   else { stat.dropped_rare++; continue; }
@@ -53,17 +63,18 @@ for (const [w, c] of raw) {
   rows.push([w, c, tier]);
 }
 for (const w of wikt) if (!rawSet.has(w)) { stat.A++; rows.push([w, 0, 'A']); }
+for (const w of wiki) if (!rawSet.has(w) && !wikt.has(w)) { stat.A++; rows.push([w, 0, 'A']); }
 
 rows.sort((x, y) => x[2].localeCompare(y[2]) || y[1] - x[1] || (x[0] < y[0] ? -1 : 1));
 writeFileSync(`${L}/data/khmer-words.clean.tsv`, rows.map((r) => r.join('\t')).join('\n') + '\n');
 
 let stats = {};
 try { stats = JSON.parse(readFileSync(`${L}/data/khmer-words.stats.json`, 'utf8')); } catch { /* new */ }
-stats.clean = { total: rows.length, ...stat, wiktionary_titles: wikt.size, columns: 'word, count, tier (A trusted, B seen ' + TB + '+, C seen ' + TC + '-' + (TB - 1) + ')' };
+stats.clean = { total: rows.length, ...stat, wiktionary_titles: wikt.size, wikipedia_titles: wiki.size, columns: 'word, count, tier (A trusted, B seen ' + TB + '+, C seen ' + TC + '-' + (TB - 1) + ')' };
 writeFileSync(`${L}/data/khmer-words.stats.json`, JSON.stringify(stats, null, 2) + '\n');
 
 console.log(`✅ ស្អាតសរុប : ${rows.length}`);
-console.log(`ថ្នាក់ A (វិគីវចនានុក្រម/VOA) : ${stat.A}   (ចំណងជើងវិគីវចនានុក្រមខ្មែរ៖ ${wikt.size})`);
+console.log(`ថ្នាក់ A (វិគីវចនានុក្រម/VOA) : ${stat.A}   (វិគីវចនានុក្រម៖ ${wikt.size} · វិគីភីឌា៖ ${wiki.size})`);
 console.log(`ថ្នាក់ B (ឃើញ ≥5)          : ${stat.B}`);
 console.log(`ថ្នាក់ C (ឃើញ 2-4)         : ${stat.C}`);
 console.log(`ដកចេញ ឃើញ 1 ដង           : ${stat.dropped_rare}`);
