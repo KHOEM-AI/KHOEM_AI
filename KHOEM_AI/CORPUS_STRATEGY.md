@@ -4,7 +4,7 @@
 
 ## Goal and counting rule
 
-The planning target is **75,000,000 retained word-token occurrences** across rights-approved datasets. Count only text that has passed parsing, normalization, privacy/quality checks, and exact document deduplication. A repeated word occurrence inside a retained document counts again; vocabulary type counts are a separate metric. Report counts by language, data type, dataset, and tokenizer version as well as the aggregate. Pin and version each language tokenizer; whitespace splitting is not a valid default for languages without reliable whitespace word boundaries.
+The planning target is **50,000,000 retained word-token occurrences** across rights-approved datasets. Count only text that has passed parsing, normalization, privacy/quality checks, and exact document deduplication. A repeated word occurrence inside a retained document counts again; vocabulary type counts are a separate metric. Report counts by language, data type, dataset, and tokenizer version as well as the aggregate. Pin and version each language tokenizer; whitespace splitting is not a valid default for languages without reliable whitespace word boundaries.
 
 The existing 70,209-entry vocabulary at KHOEM_AI/src/core/ai/patterns/global-195-vocabulary.ts is a separate lexicon asset. It is not corpus text and does not count toward this target.
 
@@ -37,16 +37,16 @@ P0 is limited to defining policy, provenance fields, and the future pipeline con
 - the provenance schema and processing states in DATA_PROVENANCE.md are adopted;
 - a human reviewer approves the data policy and the source-specific license evidence;
 - allowed purposes, retention/deletion handling, and privacy exclusions are recorded for each source;
-- language-specific tokenizers and the 75M counting rule are pinned;
+- language-specific tokenizers and the 50M counting rule are pinned;
 - validation, quarantine, deduplication, and audit-log behavior are implemented and tested on synthetic fixtures or separately approved samples.
 
 A source that fails any gate remains metadata-only or is rejected. P0 does not create an allowlist or approve any source by implication.
 
 ## Status snapshot (2026-10-05)
 
-Verified retained word tokens: 23,319,234 of 75,000,000 (31.09%); remaining 51,680,766. Contributors: mot-km-voa-001 16,209,065 and km-wiki-001 7,110,169. Sources reviewed and not counted: oscar-2201-km (rejected), frequencywords-2018-001 (pending, wordlist rather than text), km-vocab-voa-001 (derived wordlist), vn-minority-corpus-km-001 (pending, license and size unknown).
+Verified retained word tokens: 23,388,795 of 50,000,000 (46.78%); remaining 26,611,205. Contributors: mot-km-voa-001 16,278,627 and km-wiki-001 7,110,168. Sources reviewed and not counted: oscar-2201-km (rejected), frequencywords-2018-001 (pending, wordlist rather than text), km-vocab-voa-001 (derived wordlist), vn-minority-corpus-km-001 (pending, license and size unknown).
 Note: files in pending-third-party-review.txt are excluded from the count (effective 144 articles). The third-party scan of MOT is not verified complete.
 
-No further source with clear rights and large Khmer text volume has been identified. Reaching 75M requires either new rights-approved sources (for example, written permission from rights holders) or a revised target. The target above is unchanged until the owner decides.
+No further source with clear rights and large Khmer text volume has been identified. Reaching 50M requires new rights-approved sources (for example, written permission from rights holders). See HANDOFF.md for current status.
 
-Target history (owner): 75,000,000 -> 50,000,000 -> restored to 75,000,000 on 2026-10-05. The 75,000,000 target is in force.
+Target history (owner): 75,000,000 -> 50,000,000 -> restored to 75,000,000 -> revised to 50,000,000 on 2026-10-05 (see HANDOFF.md). The 50,000,000 target is in force.

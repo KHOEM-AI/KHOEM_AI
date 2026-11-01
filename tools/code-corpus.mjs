@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // KHOEM_AI code corpus builder.
 // Kept SEPARATE from the Khmer pipeline (pipeline.mjs) so code never counts
-// toward the 75M Khmer-word target.
+// toward the 50M Khmer-word target.
 //
 // Usage:
 //   node tools/code-corpus.mjs --root . --license project-owned --label khoem-own
