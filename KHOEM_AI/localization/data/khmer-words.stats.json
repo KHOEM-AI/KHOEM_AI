@@ -5,5 +5,15 @@
   "seen_2_plus": 76825,
   "seen_5_plus": 49493,
   "seen_10_plus": 35127,
-  "note": "Words cut by ICU (Intl.Segmenter km). Not checked against a dictionary: names and fragments are included."
+  "note": "Words cut by ICU (Intl.Segmenter km). Not checked against a dictionary: names and fragments are included.",
+  "clean": {
+    "total": 84891,
+    "A": 42116,
+    "B": 20173,
+    "C": 22602,
+    "dropped_invalid": 5552,
+    "dropped_rare": 22355,
+    "wiktionary_titles": 27919,
+    "columns": "word, count, tier (A trusted, B seen 5+, C seen 2-4)"
+  }
 }
