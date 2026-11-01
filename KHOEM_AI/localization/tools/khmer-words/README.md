@@ -23,3 +23,9 @@
 - B = ឃើញ ≥5 ដង  ·  C = ឃើញ 2-4 ដង
 - ដកចេញ៖ ឃើញ 1 ដង និងពាក្យរចនាសម្ព័ន្ធអក្សរខ្មែរខុស (ពិនិត្យដោយក្បួនសាមញ្ញ មិនមែនវចនានុក្រមទេ)
 - `data/khmer-words.tsv` នៅជាបញ្ជីដើម (មិនបានសម្អាត)
+
+## CC-100 ភាសាខ្មែរ (2026-11-01)
+- `stream.mjs` អានអត្ថបទពី stdin ហើយបូកចំនួនពាក្យចូល `data/khmer-words.tsv` (រក្សាតែឃើញ ≥3 ដង)
+- ប្រើ៖ `xz -dc km.txt.xz | head -c 600M | node tools/khmer-words/stream.mjs`
+- ថ្នាក់ពាក្យ៖ `TIER_B=20 TIER_C=5 node tools/khmer-words/tier.mjs`
+- អត្ថបទដើមនៅ `~/khoem-corpora/` មិនរុយទៅ GitHub ទេ (រុយតែបញ្ជីពាក្យ និងចំនួនដង)

@@ -5,6 +5,8 @@ const HOME = process.env.HOME;
 const L = `${HOME}/KHOEM_AI/KHOEM_AI/localization`;
 const A = `${HOME}/ai-project/AI`;
 
+const TB = Number(process.env.TIER_B) || 5;
+const TC = Number(process.env.TIER_C) || 2;
 const C = '[\\u1780-\\u17A2]';
 const IV = '[\\u17A3-\\u17B3]';
 const SIGN = '[\\u17C6-\\u17C8\\u17CB-\\u17D1\\u17D3\\u17DD]';
@@ -44,8 +46,8 @@ for (const [w, c] of raw) {
   if (!VALID.test(w)) { stat.dropped_invalid++; continue; }
   let tier;
   if (wikt.has(w) || voa.has(w)) tier = 'A';
-  else if (c >= 5) tier = 'B';
-  else if (c >= 2) tier = 'C';
+  else if (c >= TB) tier = 'B';
+  else if (c >= TC) tier = 'C';
   else { stat.dropped_rare++; continue; }
   stat[tier]++;
   rows.push([w, c, tier]);
@@ -57,7 +59,7 @@ writeFileSync(`${L}/data/khmer-words.clean.tsv`, rows.map((r) => r.join('\t')).j
 
 let stats = {};
 try { stats = JSON.parse(readFileSync(`${L}/data/khmer-words.stats.json`, 'utf8')); } catch { /* new */ }
-stats.clean = { total: rows.length, ...stat, wiktionary_titles: wikt.size, columns: 'word, count, tier (A trusted, B seen 5+, C seen 2-4)' };
+stats.clean = { total: rows.length, ...stat, wiktionary_titles: wikt.size, columns: 'word, count, tier (A trusted, B seen ' + TB + '+, C seen ' + TC + '-' + (TB - 1) + ')' };
 writeFileSync(`${L}/data/khmer-words.stats.json`, JSON.stringify(stats, null, 2) + '\n');
 
 console.log(`✅ ស្អាតសរុប : ${rows.length}`);

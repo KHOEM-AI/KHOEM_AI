@@ -1,19 +1,25 @@
 {
   "generated": "2026-11-01",
   "files": 27,
-  "total": 102591,
-  "seen_2_plus": 76825,
-  "seen_5_plus": 49493,
-  "seen_10_plus": 35127,
-  "note": "Words cut by ICU (Intl.Segmenter km). Not checked against a dictionary: names and fragments are included.",
+  "total": 81580,
+  "seen_5_plus": 63005,
+  "seen_10_plus": 45628,
+  "note": "Words cut by ICU (Intl.Segmenter km). Raw list keeps words seen 3+ times. Not checked against a dictionary.",
   "clean": {
-    "total": 84891,
+    "total": 73832,
     "A": 42116,
-    "B": 20173,
-    "C": 22602,
-    "dropped_invalid": 5552,
-    "dropped_rare": 22355,
+    "B": 14269,
+    "C": 17447,
+    "dropped_invalid": 4158,
+    "dropped_rare": 15513,
     "wiktionary_titles": 27919,
-    "columns": "word, count, tier (A trusted, B seen 5+, C seen 2-4)"
+    "columns": "word, count, tier (A trusted, B seen 20+, C seen 5-19)"
+  },
+  "seen_20_plus": 33832,
+  "cc100": {
+    "lines": 2746315,
+    "chars": 228709199,
+    "prune_rounds": 0,
+    "keep_min": 3
   }
 }
