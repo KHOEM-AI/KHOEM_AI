@@ -553,11 +553,11 @@
       "language": "Khmer",
       "language_code": "km",
       "file": null,
-      "rights_review_status": "pending",
+      "rights_review_status": "rejected",
       "approved_purposes": [],
       "privacy_review_status": "pending",
       "quality_status": "unreviewed",
-      "processing_status": "rights_review",
+      "processing_status": "rejected",
       "source_country": "UNKNOWN",
       "dataset_id": "cc100-km-001",
       "source_name": "CC-100 Khmer (km.txt.xz)",
@@ -571,7 +571,14 @@
         "text rights not verified; owner decision needed (compare the earlier decisions on oscar-2201-km and hplt-v2-khm-001, both rejected)",
         "only word counts were merged; raw text is local and not committed"
       ],
-      "usage_notes": "Retroactive provenance record. Word frequency counts (kept at >=3) were merged into localization/data/khmer-words.tsv by tools/khmer-words/stream.mjs on 2026-11-01. Raw text is in ~/khoem-corpora, not committed. Not counted toward the word target."
+      "usage_notes": "Rejected on 2026-11-01: CC-100 word counts were removed from the word list. Text rights could not be verified; same basis as oscar-2201-km and hplt-v2-khm-001. Raw text was never committed. Not counted toward the word target.",
+      "license_evidence": {
+        "decision": "rejected",
+        "access_date": "2026-11-01",
+        "reviewer": "khoem401grab-lgtm",
+        "notes": "Counts removed by restoring localization/data/khmer-words.tsv from khmer-words.base.tsv and rerunning tier.mjs. Rejection drafted by assistant; applied by the owner on 2026-11-01. The earlier commit history of the repository still contains the merged counts."
+      },
+      "retention_policy": "raw text (km.txt.xz) is local only; delete from ~/khoem-corpora when no longer needed"
     },
     {
       "language": "Khmer",
@@ -589,21 +596,19 @@
       "license": "mixed; see parent_dataset_ids",
       "license_url": null,
       "data_type": "derived_wordlist",
-      "version": "2026-11-01",
+      "version": "2026-11-01 (CC-100 counts removed)",
       "domain": "khmer-wordlist",
       "restrictions": [
         "words and counts only; source text is local and not committed",
         "contains titles derived from CC BY-SA 4.0 sources (attribution and share-alike; see ATTRIBUTION.md)",
-        "includes counts from cc100-km-001 whose text rights are unverified",
         "tier A includes place names, personal names and broken fragments; not a linguistic certification",
         "do not count toward the Khmer word target"
       ],
-      "usage_notes": "Retroactive provenance record. Files: localization/data/khmer-words.{tsv,base.tsv,clean.tsv,stats.json,compound-candidates.tsv}. Tier A = Khmer Wiktionary titles, Khmer Wikipedia titles or VOA list (seen >=5); B = seen >=5; C = seen 2-4. Compound candidates are report-only.",
+      "usage_notes": "Retroactive provenance record. Files: localization/data/khmer-words.{tsv,base.tsv,clean.tsv,stats.json,compound-candidates.tsv}. Tier A = Khmer Wiktionary titles, Khmer Wikipedia titles or VOA list (seen >=5); B = seen >=5; C = seen 2-4. Compound candidates are report-only. CC-100 counts were removed on 2026-11-01 (see cc100-km-001).",
       "parent_dataset_ids": [
         "km-wiki-001",
         "km-wiktionary-001",
-        "mot-km-voa-001",
-        "cc100-km-001"
+        "mot-km-voa-001"
       ]
     }
   ]

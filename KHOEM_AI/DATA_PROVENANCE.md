@@ -192,3 +192,13 @@ Facts only. Not a rights approval or a legal conclusion.
 - Manifest: `km-wordlist-001`, `km-wiktionary-001` and `cc100-km-001` are recorded as pending, with empty `approved_purposes`. `km-wiki-001` and `mot-km-voa-001` keep their existing records.
 - Open: text rights of CC-100 are not verified (compare `oscar-2201-km` and `hplt-v2-khm-001`, both rejected); share-alike applicability to the derived word list is not decided.
 - The word list does not count toward the word target.
+
+## Addendum: CC-100 counts removed from the word list (recorded 2026-11-01)
+
+Facts only. Supersedes the numbers and the CC-100 source in the previous khmer-words addendum; earlier text is kept for history.
+
+- `localization/data/khmer-words.tsv` was restored from `khmer-words.base.tsv` (counts before CC-100) and `tier.mjs` was rerun. The CC-100 counts are no longer in the working tree.
+- `cc100-km-001` is recorded as rejected (text rights not verified; same basis as `oscar-2201-km` and `hplt-v2-khm-001`). Earlier commits in the repository history still contain the merged counts.
+- Counts printed by `tier.mjs` after the removal: clean total 71,776; tier A 52,197 (Wiktionary titles 27,919; Wikipedia titles 11,472); tier B 7,269; tier C 12,310; removed: seen once 44,884, malformed structure 5,552.
+- `findCompounds.mjs` was rerun on the new clean list: 6,604 suspected compounds in tier C. Report-only; nothing was removed from `clean.tsv`.
+- `km-wordlist-001` no longer lists `cc100-km-001` as a parent. Open: share-alike applicability to the derived word list; editorial cleanup of tier A (place names, personal names, fragments).
