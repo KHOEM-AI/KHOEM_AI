@@ -15,8 +15,8 @@ Consumer projects (AI, RSV, VTH, CAI, KI, iQ-AI, MI-K, EI-T) consume it; it neve
 
 ## Status (measured, not claimed)
 - 61 registered languages as of 0.2.0 (metadata: ISO 639, BCP 47, ISO 15924, direction); see `CHANGELOG.md`
-- Translation data: `en` (canonical source) and `km` (draft, needs native review), plus partial data for `ar`, `fr`, `mn`, `fil`
-- Other languages are `planned` (no translations yet; runtime falls back to `en`)
+- Translation data: 53 languages at 273/273 keys (measured by `npm run report:translations`). `en` is the canonical source; `km` is a draft that needs native review; 21 are `review` and 30 are `draft` (machine translations, not human-reviewed)
+- 8 registered languages are `planned` only (no translations yet; runtime falls back to `en`)
 - Exact live numbers: `GET /health` (languages, locales, languages with data) or `npm run report:translations`
 
 ## Commands

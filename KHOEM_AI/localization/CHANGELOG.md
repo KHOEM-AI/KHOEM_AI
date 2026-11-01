@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+- Translation data: 53 languages now at 273/273 keys (previous per-language counts such as `ar` 37/105 were outdated).
+- Declared status: 30 languages with complete data changed `planned` -> `draft` (machine translations, not human-reviewed). `km` stays `draft`.
+- 8 registered languages remain `planned` (no data).
+
 ## 0.2.0
 - Registry: 60 -> 61 languages (added Mongolian `mn` / ISO 639-3 `mon` / Cyrl).
 - Translation data (status: partial, imported from AI `src/i18n`, genuinely translated keys only; no English copies): `ar` 37/105, `fr` 16/105, `mn` 17/105, `fil` 16/105 (`tl` resolves to `fil`).
