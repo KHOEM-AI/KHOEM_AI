@@ -3,6 +3,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 
 const HOME = process.env.HOME;
 const L = `${HOME}/KHOEM_AI/KHOEM_AI/localization`;
+const BASE = `${L}/data/khmer-words.base.tsv`;
 const RAW = `${L}/data/khmer-words.tsv`;
 const STATS = `${L}/data/khmer-words.stats.json`;
 const KEEP_MIN = 3;
@@ -14,8 +15,8 @@ if (typeof Intl.Segmenter !== 'function') { console.log('❌ node នេះគ�
 const seg = new Intl.Segmenter('km', { granularity: 'word' });
 
 const counts = new Map();
-if (existsSync(RAW)) {
-  for (const l of readFileSync(RAW, 'utf8').split('\n')) {
+if (existsSync(BASE)) {
+  for (const l of readFileSync(BASE, 'utf8').split('\n')) {
     if (!l) continue;
     const [w, c] = l.split('\t');
     counts.set(w, Number(c) || 0);

@@ -35,3 +35,8 @@
 - ប្រើ៖ `xz -dc km.txt.xz | head -c 600M | node tools/khmer-words/stream.mjs`
 - ថ្នាក់ពាក្យ៖ `TIER_B=20 TIER_C=5 node tools/khmer-words/tier.mjs`
 - អត្ថបទដើមនៅ `~/khoem-corpora/` មិនរុយទៅ GitHub ទេ (រុយតែបញ្ជីពាក្យ និងចំនួនដង)
+
+## ការកែ (2026-11-01)
+- ការរត់ CC-100 លើកទី 2 រាប់ស្ទួន ត្រូវបានកែពី `data/khmer-words.base.tsv`
+- `base.tsv` = ចំនួនពីប្រភពក្នុងម៉ាស៊ីន (វិគីភីឌា វិគីវចនានុក្រម VOA ...) មុន CC-100
+- `stream.mjs` ឥឡូវអានពី `base.tsv` ដូច្នេះរត់ប៉ុន្មានដងក៏មិនស្ទួន
