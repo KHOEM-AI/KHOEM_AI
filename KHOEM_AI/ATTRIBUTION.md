@@ -17,3 +17,11 @@
 - Status: rights review is pending (`mot-km-voa-001`). The raw files are kept locally, are not committed, and are not redistributed in this repository.
 - Derived data: a frequency-filtered Khmer word list (`km-vocab-voa-001`) is described in `DATA_PROVENANCE.md`; no source text is written out. Its rights review is also pending.
 - Obligation: credit the MOT authors and Voice of America, link the CC BY 4.0 license (https://creativecommons.org/licenses/by/4.0/), and state that changes were made.
+
+### Wikimedia: Khmer Wikipedia and Khmer Wiktionary (CC BY-SA 4.0)
+
+- Sources: https://km.wikipedia.org (recorded as `km-wiki-001`) and https://km.wiktionary.org (recorded as `km-wiktionary-001`). Content by Wikimedia contributors.
+- Stated terms: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). Evidence files are in `KHOEM_AI/corpus-sample/evidence/`.
+- Used in: `km-wiki-001` (text, local only), and page titles as tier-A entries in `KHOEM_AI/localization/data/khmer-words.clean.tsv` (`km-wordlist-001`, rights review pending).
+- Changes made: titles extracted, merged with frequency counts and filtered by simple Khmer structure rules.
+- Obligation: credit Wikimedia contributors, link the license, state that changes were made. Share-alike applicability to the derived word list is not decided.

@@ -524,6 +524,87 @@
       "provenance": [],
       "pipeline_version": "0.2",
       "tokenizer_id": "Intl.Segmenter:km:word"
+    },
+    {
+      "language": "Khmer",
+      "language_code": "km",
+      "file": null,
+      "rights_review_status": "pending",
+      "approved_purposes": [],
+      "privacy_review_status": "pending",
+      "quality_status": "unreviewed",
+      "processing_status": "rights_review",
+      "source_country": "UNKNOWN",
+      "dataset_id": "km-wiktionary-001",
+      "source_name": "Khmer Wiktionary (kmwiktionary) dump, page titles",
+      "source_url": "https://km.wiktionary.org",
+      "license": "CC BY-SA 4.0 (as stated by Wikimedia; verify at source)",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "data_type": "native",
+      "version": "local file kmwiktionary.xml",
+      "domain": "khmer-wordlist",
+      "restrictions": [
+        "attribution required (CC BY-SA 4.0)",
+        "share-alike: decide whether it applies to the derived word list"
+      ],
+      "usage_notes": "Retroactive provenance record. Page titles (27,919 as printed by tier.mjs on 2026-11-01) are a tier-A source in localization/tools/khmer-words/tier.mjs. The dump stays local in ~/khoem-corpora, not committed. Not counted toward the word target."
+    },
+    {
+      "language": "Khmer",
+      "language_code": "km",
+      "file": null,
+      "rights_review_status": "pending",
+      "approved_purposes": [],
+      "privacy_review_status": "pending",
+      "quality_status": "unreviewed",
+      "processing_status": "rights_review",
+      "source_country": "UNKNOWN",
+      "dataset_id": "cc100-km-001",
+      "source_name": "CC-100 Khmer (km.txt.xz)",
+      "source_url": "https://data.statmt.org/cc-100/",
+      "license": "not verified (verify at source; underlying web text is not owned by the compilers)",
+      "license_url": null,
+      "data_type": "native",
+      "version": "km.txt.xz (as downloaded 2026-11-01)",
+      "domain": "khmer-wordlist",
+      "restrictions": [
+        "text rights not verified; owner decision needed (compare the earlier decisions on oscar-2201-km and hplt-v2-khm-001, both rejected)",
+        "only word counts were merged; raw text is local and not committed"
+      ],
+      "usage_notes": "Retroactive provenance record. Word frequency counts (kept at >=3) were merged into localization/data/khmer-words.tsv by tools/khmer-words/stream.mjs on 2026-11-01. Raw text is in ~/khoem-corpora, not committed. Not counted toward the word target."
+    },
+    {
+      "language": "Khmer",
+      "language_code": "km",
+      "file": "../localization/data/khmer-words.clean.tsv",
+      "rights_review_status": "pending",
+      "approved_purposes": [],
+      "privacy_review_status": "pending",
+      "quality_status": "unreviewed",
+      "processing_status": "rights_review",
+      "source_country": "UNKNOWN",
+      "dataset_id": "km-wordlist-001",
+      "source_name": "Khmer word list (localization/tools/khmer-words): counts and tiers from several sources",
+      "source_url": null,
+      "license": "mixed; see parent_dataset_ids",
+      "license_url": null,
+      "data_type": "derived_wordlist",
+      "version": "2026-11-01",
+      "domain": "khmer-wordlist",
+      "restrictions": [
+        "words and counts only; source text is local and not committed",
+        "contains titles derived from CC BY-SA 4.0 sources (attribution and share-alike; see ATTRIBUTION.md)",
+        "includes counts from cc100-km-001 whose text rights are unverified",
+        "tier A includes place names, personal names and broken fragments; not a linguistic certification",
+        "do not count toward the Khmer word target"
+      ],
+      "usage_notes": "Retroactive provenance record. Files: localization/data/khmer-words.{tsv,base.tsv,clean.tsv,stats.json,compound-candidates.tsv}. Tier A = Khmer Wiktionary titles, Khmer Wikipedia titles or VOA list (seen >=5); B = seen >=5; C = seen 2-4. Compound candidates are report-only.",
+      "parent_dataset_ids": [
+        "km-wiki-001",
+        "km-wiktionary-001",
+        "mot-km-voa-001",
+        "cc100-km-001"
+      ]
     }
   ]
 }

@@ -179,3 +179,16 @@ Facts only. Not a rights approval or a legal conclusion.
 - Hand-curated entries (`GLOBAL_195_VOCABULARY`, including 16 `km`) are unchanged. Khmer entries: 599 (583 rows + 16 curated). Total entries: 47,925.
 - Scope: this file only. `km-corpus-vocabulary.ts` and the legacy-token policy are not affected.
 - The removed terms are not stored in this repository (the maintainer keeps a local list).
+
+## Addendum: khmer-words word list sources (recorded 2026-11-01)
+
+Facts only. Not a rights approval or a legal conclusion.
+
+- The word list in `KHOEM_AI/localization/data/` is built by `localization/tools/khmer-words/` from several sources. Only words and counts are committed; source text stays local in `~/khoem-corpora/`.
+- Sources: Khmer Wikipedia dump (titles added as a second tier-A source in commit `9b6cd5c`), Khmer Wiktionary dump (page titles), the VOA vocabulary list, and CC-100 Khmer (word counts merged by `stream.mjs`).
+- Counts printed by `tier.mjs` on 2026-11-01: clean total 83,298; tier A 52,197 (Wiktionary titles 27,919; Wikipedia titles 11,472); tier B 13,769; tier C 17,332; removed: seen once 15,468, malformed structure 4,158.
+- `findCompounds.mjs` is report-only: 8,468 tier-C words are suspected two- or three-word compounds, listed in `khmer-words.compound-candidates.tsv`. Nothing was removed from `clean.tsv`.
+- Tier A contains place names, personal names and broken fragments. No editorial cleanup has been done yet.
+- Manifest: `km-wordlist-001`, `km-wiktionary-001` and `cc100-km-001` are recorded as pending, with empty `approved_purposes`. `km-wiki-001` and `mot-km-voa-001` keep their existing records.
+- Open: text rights of CC-100 are not verified (compare `oscar-2201-km` and `hplt-v2-khm-001`, both rejected); share-alike applicability to the derived word list is not decided.
+- The word list does not count toward the word target.
