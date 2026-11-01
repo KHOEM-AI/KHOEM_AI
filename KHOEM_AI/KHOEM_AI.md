@@ -21,7 +21,7 @@ Path:
 
 "~/KHOEM_AI/KHOEM_AI/localization/src/registry/languages.ts"
 
-ឯកសារនេះមាន 60 language records និងជាប្រភពសំខាន់សម្រាប់ language metadata របស់ KHOEM_AI។
+ឯកសារនេះមាន 61 language records និងជាប្រភពសំខាន់សម្រាប់ language metadata របស់ KHOEM_AI។
 
 វាមានព័ត៌មាន៖
 
@@ -74,7 +74,7 @@ Path:
 តួនាទី៖
 
 - ជា language options/registry ជំនួយដែលមានពីមុន។
-- មាន language codes មួយចំនួនដែលស្ថិតក្នុង registry 60 រួចហើយ។
+- មាន language codes មួយចំនួនដែលស្ថិតក្នុង registry 61 រួចហើយ។
 - មិនត្រូវបង្កើត language ID ស្ទួនពីវាទៅ source registry ទេ។
 
 «ប្រសិនបើឯកសារនេះលែងត្រូវបានប្រើប្រាស់ គួរតែពិនិត្យ references មុនពេលលុប។ មិនលុបដោយសន្មត់។»
@@ -119,13 +119,13 @@ App.tsx ត្រូវប្រើ language data ពី KHOEM_AI API ជំន�
 
 6. ចំនួនភាសា
 
-បច្ចុប្បន្ន៖ 60 language records
+បច្ចុប្បន្ន៖ 61 language records
 
 គោលដៅគម្រោង៖ 307 languages
 
 ចំណាំ៖
 
-60 language records ≠ 60 languages ដែលមាន translation content 100%។
+61 language records ≠ 61 languages ដែលមាន translation content 100%។
 
 Language registry និង translation coverage គឺជារឿងពីរផ្សេងគ្នា។
 
@@ -226,7 +226,7 @@ Path| ស្ថានភាព| តួនាទី
 - "languages/" → 1 ថត
 - ឯកសារនៅក្នុង "languages/" → 2
 - Main language registry → "localization/src/registry/languages.ts"
-- Language records → 60
+- Language records → 61
 - Project target → 307 languages
 - KHOEM_AI → Single Source of Truth
 - AI App → ប្រើ KHOEM API
