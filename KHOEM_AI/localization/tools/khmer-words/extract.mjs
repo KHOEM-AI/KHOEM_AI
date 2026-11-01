@@ -1,4 +1,5 @@
-import { readFileSync, readdirSync, statSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { readFileSync, readdirSync, statSync, existsSync, mkdirSync, writeFileSync, createReadStream } from 'node:fs';
+import { createInterface } from 'node:readline';
 import { join } from 'node:path';
 
 const HOME = process.env.HOME;
@@ -57,12 +58,28 @@ for (const arg of process.argv.slice(2)) files.push(...walk(arg));
 const uniq = [...new Set(files)];
 const t0 = Date.now();
 let done = 0;
+const BIG = 30 * 1024 * 1024;
 for (const f of uniq) {
-  let text = '';
-  try { text = readFileSync(f, 'utf8'); } catch { continue; }
-  if (/wordlist/i.test(f)) addWordlist(text); else addText(text);
+  let size = 0;
+  try { size = statSync(f).size; } catch { continue; }
+  if (size > BIG) {
+    const rl = createInterface({ input: createReadStream(f, { encoding: 'utf8' }), crlfDelay: Infinity });
+    let buf = [];
+    let len = 0;
+    for await (const line of rl) {
+      if (!/[\u1780-\u17FF]/.test(line)) continue;
+      buf.push(line);
+      len += line.length;
+      if (len > 2000000) { addText(buf.join('\n')); buf = []; len = 0; }
+    }
+    if (buf.length) addText(buf.join('\n'));
+  } else {
+    let text = '';
+    try { text = readFileSync(f, 'utf8'); } catch { continue; }
+    if (/wordlist/i.test(f)) addWordlist(text); else addText(text);
+  }
   done++;
-  if (done % 10 === 0) console.log(`… ${done}/${uniq.length} ឯកសារ · ${counts.size} ពាក្យ`);
+  console.log('… ' + done + '/' + uniq.length + ' ' + f.split('/').pop() + ' · ' + counts.size + ' ពាក្យ');
 }
 
 const list = [...counts].sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? -1 : 1));
