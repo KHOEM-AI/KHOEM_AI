@@ -41,9 +41,12 @@ try {
 // 2) optional extra dataset modules
 for (let i = 0; i < args.length; i++) if (args[i] === "--also") {
   const m = await import(pathToFileURL(path.resolve(args[i + 1])));
-  const arr = m.KHMER_DATASET_V2 ?? m.default;
-  if (!Array.isArray(arr)) { console.error("--also module has no KHMER_DATASET_V2/default array"); process.exit(2); }
-  addAll(arr, path.basename(args[i + 1]));
+  // use KHMER_DATASET_V2 / default if present, else EVERY exported array of ["keys","answer"] pairs (e.g. EXTRA_ENTRIES_10000, ..._PERSONA_CLAIMS)
+  const isPairs = (v) => Array.isArray(v) && v.length && Array.isArray(v[0]) && typeof v[0][0] === "string";
+  const named = m.KHMER_DATASET_V2 ?? m.default;
+  const arrays = isPairs(named) ? [["default", named]] : Object.entries(m).filter(([, v]) => isPairs(v));
+  if (!arrays.length) { console.error(`--also ${args[i + 1]}: no array of ["key","answer"] pairs exported`); process.exit(2); }
+  for (const [name, arr] of arrays) { addAll(arr, `${path.basename(args[i + 1])}:${name}`); console.log(`  loaded ${name} (${arr.length}) from ${path.basename(args[i + 1])}`); }
 }
 console.log(`existing keys loaded: ${existing.size}`);
 
