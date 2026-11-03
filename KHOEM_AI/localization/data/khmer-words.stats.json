@@ -1,10 +1,10 @@
 {
   "generated": "2026-11-01",
   "files": 27,
-  "total": 81580,
-  "seen_5_plus": 63005,
-  "seen_10_plus": 45628,
-  "note": "Words cut by ICU (Intl.Segmenter km). Raw list keeps words seen 3+ times. Not checked against a dictionary.",
+  "total": 102591,
+  "seen_5_plus": 49493,
+  "seen_10_plus": 35127,
+  "note": "Words cut by ICU (Intl.Segmenter km). Raw list = counts from local sources (Khmer Wikipedia, Wiktionary, local files); not checked against a dictionary. CC-100 counts are not included.",
   "clean": {
     "total": 71776,
     "A": 52197,
@@ -16,12 +16,12 @@
     "wikipedia_titles": 11472,
     "columns": "word, count, tier (A trusted, B seen 20+, C seen 5-19)"
   },
-  "seen_20_plus": 33832,
+  "seen_20_plus": 25260,
   "cc100": {
     "lines": 2746315,
     "chars": 228709199,
     "prune_rounds": 0,
-    "keep_min": 3,
-    "corrected": "2026-11-01: counts were doubled by a second run; rebuilt from base list"
-  }
+    "keep_min": 3
+  },
+  "seen_2_plus": 76825
 }
