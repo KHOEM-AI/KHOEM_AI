@@ -6,6 +6,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 KHOEM_DIR="${KHOEM_DIR:-$ROOT/localization}"
 AI_DIR="${AI_DIR:-$HOME/ai-project/AI}"
 LOG_DIR="${LOG_DIR:-$HOME}"
+CIDC_DIR="${CIDC_DIR:-$HOME/storage/downloads/Central-Intelligence-Data-Core}"
 PIDS=()
 NAMES=()
 LOGS=()
@@ -49,6 +50,8 @@ stop_all() {
   pkill -f "$KHOEM_DIR/dist/src/api/main.js" 2>/dev/null
   pkill -f "$AI_DIR/server.mjs" 2>/dev/null
   pkill -f "$AI_DIR/node_modules/.bin/vite" 2>/dev/null
+  pkill -f "$CIDC_DIR/src/server.js" 2>/dev/null
+  pkill -f "$CIDC_DIR/src/ui.js" 2>/dev/null
   sleep 1
 }
 
@@ -80,6 +83,17 @@ run() {
   echo "KHOEM_AI"
   build_api
   start "KHOEM_AI API   :8790" "http://127.0.0.1:8790/health" "$KHOEM_DIR" "$LOG_DIR/khoem-api.log" node "$KHOEM_DIR/dist/src/api/main.js"
+  if [ -f "$CIDC_DIR/src/server.js" ]; then
+    [ -f "$HOME/.cidc_env" ] && . "$HOME/.cidc_env"
+    if [ -n "${CIDC_TOKEN:-}" ]; then
+      start "CIDC API       :8800" "http://127.0.0.1:8800/api/cidc/health" "$CIDC_DIR" "$LOG_DIR/cidc.log" env PORT=8800 node "$CIDC_DIR/src/server.js"
+      start "CIDC UI        :5190" "http://127.0.0.1:5190/" "$CIDC_DIR" "$LOG_DIR/cidc-ui.log" env UI_PORT=5190 node "$CIDC_DIR/src/ui.js"
+    else
+      echo "  - CIDC: no token in ~/.cidc_env (skipped)"
+    fi
+  else
+    echo "  - CIDC not found at $CIDC_DIR (skipped)"
+  fi
   if [ -d "$AI_DIR" ]; then
     start "AI backend     :8787" "http://127.0.0.1:8787/api/status" "$AI_DIR" "$LOG_DIR/ai-server.log" node "$AI_DIR/server.mjs"
     start "AI UI          :5175" "http://127.0.0.1:5175/" "$AI_DIR" "$LOG_DIR/ai-ui.log" "$AI_DIR/node_modules/.bin/vite" --host 127.0.0.1
