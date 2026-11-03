@@ -1,22 +1,22 @@
 {
   "generated": "2026-11-01",
   "files": 27,
-  "total": 81580,
-  "seen_5_plus": 63005,
-  "seen_10_plus": 45628,
+  "total": 65016,
+  "seen_5_plus": 49493,
+  "seen_10_plus": 35127,
   "note": "Words cut by ICU (Intl.Segmenter km). Raw list keeps words seen 3+ times. Not checked against a dictionary.",
   "clean": {
     "total": 71776,
     "A": 52197,
     "B": 7269,
     "C": 12310,
-    "dropped_invalid": 5552,
-    "dropped_rare": 44884,
+    "dropped_invalid": 2250,
+    "dropped_rare": 12715,
     "wiktionary_titles": 27919,
     "wikipedia_titles": 11472,
     "columns": "word, count, tier (A trusted, B seen 20+, C seen 5-19)"
   },
-  "seen_20_plus": 33832,
+  "seen_20_plus": 25260,
   "cc100": {
     "lines": 2746315,
     "chars": 228709199,
