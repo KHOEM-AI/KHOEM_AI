@@ -9,6 +9,7 @@ import { searchKnowledge, searchKnowledgeExact } from "../knowledge/search.js";
 import { searchKhmer, searchKhmerExact } from "../khmer/search.js";
 import type { ErrorCode, TranslationParams } from "../types/index.js";
 import { lookupDictionary } from "../lexicon/dictionary.js";
+import { analyzeKhmer } from "../lexicon/khmerWords.js";
 
 type ApiErrorCode =
   | ErrorCode | "NOT_FOUND" | "METHOD_NOT_ALLOWED" | "INVALID_JSON"
@@ -204,6 +205,13 @@ export function createApiServer(options: ApiServerOptions = {}): Server {
         const canon = raw.length <= 35 ? canonicalizeLocale(raw) : null;
         if (!canon) throw new KhoemError("INVALID_LOCALE", "Invalid locale identifier");
         reply(200, { success: true, data: getLocale(canon) });
+      } else if (p0 === "api" && parts.length === 2 && p1 === "khmer-words") {
+        only(["GET"]);
+        const q = url.searchParams;
+        if (q.getAll("q").length > 1 || q.getAll("to").length > 1) throw bad("Duplicate query parameter");
+        const query = requireString(q.get("q"), "q", 400);
+        const to = q.get("to") ?? "en";
+        reply(200, { success: true, data: await analyzeKhmer(query, to) });
       } else if (p0 === "api" && parts.length === 2 && p1 === "dictionary") {
         only(["GET"]);
         const q = url.searchParams;

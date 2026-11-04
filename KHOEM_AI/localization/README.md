@@ -55,3 +55,11 @@ Documentation index: `../docs/README.md`.
 
 ## Khmer word list (2026-10-30)
 `node tools/khmer-words/extract.mjs` បង្កើត `data/khmer-words.tsv` (ពាក្យ + ចំនួនដង) និង `data/khmer-words.stats.json`។ មើល `tools/khmer-words/README.md`។
+
+## Khmer words API (2026-11-05)
+`GET /api/khmer-words?q=<khmer text>&to=<en|zh>`
+
+- កាត់អត្ថបទខ្មែរជាពាក្យ (ICU `Intl.Segmenter`) ហើយត្រឡប់ `tokens` មាន `known` `tier` `count` `translation`
+- `known` = មានក្នុង `data/khmer-words.clean.tsv` មិនមែនមានន័យបកប្រែទេ។ ព្យញ្ជនៈតែមួយ (ក ខ ឆ...) មិនរាប់ជាពាក្យ
+- `translation` ចេញតែពេលពាក្យនោះមានក្នុងវចនានុក្រម (`/api/dictionary`)
+- កូដ៖ `src/lexicon/khmerWords.ts`
