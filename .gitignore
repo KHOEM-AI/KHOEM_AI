@@ -90,3 +90,4 @@ KHOEM_AI/localization/staging-ai-languages/
 KHOEM_AI/code-corpus/*.report.json
 __pycache__/
 bench
+!archive/*.zip
