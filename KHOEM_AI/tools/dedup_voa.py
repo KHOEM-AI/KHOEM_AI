@@ -3,7 +3,7 @@ KH = re.compile(r"[\u1780-\u17FF]")
 seen = set()
 files = dup = 0
 kh_all = kh_uniq = 0
-with tarfile.open("KHOEM_AI/corpus-sample/raw/khm_khmer_voanews.tgz") as t:
+with tarfile.open("corpus-sample/raw/khm_khmer_voanews.tgz") as t:
     for m in t:
         if not m.isfile():
             continue

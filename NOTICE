@@ -1,6 +1,6 @@
 KHOEM_AI - Third-party code notice
 
-The code corpus used to build training data (code-corpus/) was derived from
+The code corpus used to build training data (KHOEM_AI/code-corpus/) was derived from
 the open-source projects below. The corpus files themselves are NOT
 distributed in this repository. Each project remains under its own license;
 copyright notices belong to their respective authors.

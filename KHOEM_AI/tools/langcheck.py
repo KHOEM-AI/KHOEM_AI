@@ -12,7 +12,7 @@ import collections
 import hashlib
 import random
 
-ROOT = os.path.expanduser(sys.argv[sys.argv.index("--root") + 1]) if "--root" in sys.argv else os.path.expanduser("~/KHOEM_AI")
+ROOT = os.path.expanduser(sys.argv[sys.argv.index("--root") + 1]) if "--root" in sys.argv else os.path.expanduser("~/KHOEM_AI/KHOEM_AI")
 DATA = os.path.join(ROOT, "khoem-lora-trainer", "data")
 OUT = os.path.join(ROOT, "lang-check")
 N = 200

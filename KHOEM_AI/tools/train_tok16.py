@@ -3,7 +3,7 @@ home = os.path.expanduser("~/KHOEM_AI")
 raw = home + "/KHOEM_AI/corpus-sample/raw/"
 spm.SentencePieceTrainer.train(
     input=raw + "kmwiki-clean.txt," + raw + "voa-sample.txt",
-    model_prefix=home + "/khoem_bpe16k",
+    model_prefix=home + "/KHOEM_AI/tokenizers/khoem_bpe16k",
     vocab_size=16000,
     model_type="bpe",
     character_coverage=0.9995,

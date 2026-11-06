@@ -4,7 +4,7 @@
 import os, sys, json, glob, shutil, time
 H = os.path.expanduser("~")
 DL = os.path.join(H, "storage/downloads")
-TR = os.path.join(H, "KHOEM_AI/khoem-lora-trainer")
+TR = os.path.join(H, "KHOEM_AI/KHOEM_AI/khoem-lora-trainer")
 DATA, NB = os.path.join(TR, "data"), os.path.join(TR, "notebooks")
 OLD = os.path.join(H, "KHOEM_AI_old_" + time.strftime("%Y%m%d_%H%M"))
 APPLY = "--apply" in sys.argv

@@ -1,5 +1,5 @@
 import json, os, re, collections, statistics, sys
-D = os.path.expanduser(sys.argv[1] if len(sys.argv) > 1 else "~/KHOEM_AI/khoem-lora-trainer/data")
+D = os.path.expanduser(sys.argv[1] if len(sys.argv) > 1 else "~/KHOEM_AI/KHOEM_AI/khoem-lora-trainer/data")
 KH = re.compile(r"[\u1780-\u17FF]")
 
 def load(name):

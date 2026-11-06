@@ -1,6 +1,6 @@
 import sentencepiece as spm, array, hashlib, os, re, glob, json
-sp = spm.SentencePieceProcessor(model_file="khoem_bpe16k_v2.model")
-base = "KHOEM_AI/corpus-sample/"
+sp = spm.SentencePieceProcessor(model_file="tokenizers/khoem_bpe16k_v2.model")
+base = "corpus-sample/"
 zw = re.compile(r"[\u200b\u200c\u200d\u2060\ufeff]")
 ws = re.compile(r"\s+")
 H = lambda s: hashlib.md5(ws.sub("", s).encode()).digest()

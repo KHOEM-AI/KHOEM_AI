@@ -11,9 +11,10 @@ from pathlib import Path
 warnings.filterwarnings("ignore")
 HOME = Path.home()
 ROOT = Path(os.environ.get("KHOEM_ROOT", HOME / "KHOEM_AI"))
+PROJ = ROOT / "KHOEM_AI"   # project folder: tools, code-corpus, khoem-lora-trainer
 DL = Path(os.environ.get("KHOEM_DL", HOME / "storage" / "downloads"))
-TR, UP, BK = ROOT / "khoem-lora-trainer", DL / "KAGGLE_UPLOAD", DL / "KHOEM_BACKUP"
-V1 = ROOT / "code-corpus" / "pairs.v1-keep"   # v1 ដែលបានបង្កក
+TR, UP, BK = PROJ / "khoem-lora-trainer", DL / "KAGGLE_UPLOAD", DL / "KHOEM_BACKUP"
+V1 = PROJ / "code-corpus" / "pairs.v1-keep"   # v1 ដែលបានបង្កក
 FLAGS = {a for a in sys.argv[1:] if a.startswith("--")}
 fails, warns = [], []
 
@@ -30,7 +31,7 @@ def sha(p):
 # 1. ឯកសារចាំបាច់
 sec("ឯកសារ")
 for p in [TR / "notebooks/khoem_lora.ipynb", TR / "config.json", TR / "data/train.jsonl", TR / "data/valid.jsonl",
-          TR / "data/test.jsonl", ROOT / "NOTICE", ROOT / "tools/make-pairs.mjs"]:
+          TR / "data/test.jsonl", ROOT / "NOTICE", PROJ / "tools/make-pairs.mjs"]:
     (ok if p.exists() else bad)(f"{p.relative_to(ROOT)} {'មាន' if p.exists() else 'បាត់!'}")
 
 # 2. ច្បាប់ចម្លងត្រូវដូចគ្នា
@@ -97,7 +98,7 @@ sec("NOTICE")
 np_ = ROOT / "NOTICE"
 if np_.exists():
     notice = np_.read_text(encoding="utf-8"); miss = []
-    for rp in sorted((ROOT / "code-corpus").glob("*.report.json")):
+    for rp in sorted((PROJ / "code-corpus").glob("*.report.json")):
         lab = rp.name[:-len(".report.json")]
         if lab == "khoem-own": continue
         try: c = json.loads(rp.read_text(encoding="utf-8")).get("git_commit", "")
@@ -128,7 +129,7 @@ if "--no-backup" not in FLAGS:
     sec("backup")
     F = set()
     for rel in ("NOTICE", "README.md", ".gitignore"): F.add(ROOT / rel)
-    for g in ("tools/*.mjs", "tools/*.py", "tools/*.bak-*", "code-corpus/*.report.json", "*.bak-*"): F.update(ROOT.glob(g))
+    for g in ("KHOEM_AI/tools/*.mjs", "KHOEM_AI/tools/*.py", "KHOEM_AI/tools/*.bak-*", "KHOEM_AI/code-corpus/*.report.json", "*.bak-*"): F.update(ROOT.glob(g))
     for rel in ("notebooks/khoem_lora.ipynb", "config.json", "config.py", "train.py", "run_colab.py", "app.py", "check_data.py",
                 "requirements.txt", "README.md", ".gitignore", "data/train.jsonl", "data/valid.jsonl", "data/test.jsonl"): F.add(TR / rel)
     for g in ("tests/*.py", "tests/*.bak-*", "notebooks/*.bak-*", "notebooks/_merge_backup_*/*", "*.bak-*", "data/*.bak-*"): F.update(TR.glob(g))

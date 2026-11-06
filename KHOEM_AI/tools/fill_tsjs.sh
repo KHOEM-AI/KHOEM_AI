@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd ~/KHOEM_AI || exit 1
+cd ~/KHOEM_AI/KHOEM_AI || exit 1
 
 echo "=== 1. PATCH ts_pairs.py ==="
 python3 - <<'PY'

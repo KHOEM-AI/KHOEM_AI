@@ -4,7 +4,7 @@ home = os.path.expanduser("~/KHOEM_AI")
 raw = home + "/KHOEM_AI/corpus-sample/raw/"
 out = home + "/khoem75m_data/"
 os.makedirs(out, exist_ok=True)
-sp = spm.SentencePieceProcessor(model_file=home + "/khoem_bpe16k.model")
+sp = spm.SentencePieceProcessor(model_file=home + "/KHOEM_AI/tokenizers/khoem_bpe16k.model")
 EOS = sp.eos_id()
 tr = open(out + "train.bin", "wb"); va = open(out + "val.bin", "wb")
 nt = nv = i = 0

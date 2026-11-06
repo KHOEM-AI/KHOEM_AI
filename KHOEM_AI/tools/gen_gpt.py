@@ -4,7 +4,7 @@ home = os.path.expanduser("~/KHOEM_AI")
 D, L = int(os.environ.get("D", 128)), int(os.environ.get("L", 4))
 s = torch.load(f"{home}/ckpt_d{D}l{L}.pt")
 m = GPT(**s["cfg"]); m.load_state_dict(s["model"]); m.eval()
-sp = spm.SentencePieceProcessor(model_file=f"{home}/khoem_bpe16k.model")
+sp = spm.SentencePieceProcessor(model_file=f"{home}/KHOEM_AI/tokenizers/khoem_bpe16k.model")
 ids = sp.encode(sys.argv[1] if len(sys.argv) > 1 else "ប្រទេសកម្ពុជា")
 T = s["cfg"]["T"]
 with torch.no_grad():

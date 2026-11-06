@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path.cwd()
 HOME = Path.home()
-KHOEM = HOME / "KHOEM_AI"
+KHOEM = HOME / "KHOEM_AI" / "KHOEM_AI"
 OLD = HOME / "KHOEM_AI_old_20261006_1005"
 DOWNLOADS = HOME / "storage" / "downloads"
 

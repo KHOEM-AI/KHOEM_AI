@@ -2,7 +2,7 @@ import sentencepiece as spm, os
 home = os.path.expanduser("~/KHOEM_AI")
 spm.SentencePieceTrainer.train(
     input=home + "/KHOEM_AI/corpus-sample/raw/kmwiki-clean.txt",
-    model_prefix=home + "/khoem_bpe8k",
+    model_prefix=home + "/KHOEM_AI/tokenizers/khoem_bpe8k",
     vocab_size=8000,
     model_type="bpe",
     character_coverage=0.9995,
