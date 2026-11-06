@@ -8,7 +8,7 @@
 //
 // Usage (run from KHOEM_AI/localization, after `npm run build`):
 //   node tools/check-new-entries.mjs new.txt            # report only
-//   node tools/check-new-entries.mjs new.txt --write    # append the NEW ones to src/khmer/data.extra.5.ts
+//   node tools/check-new-entries.mjs new.txt --write    # append the NEW ones to src/khmer/data.hand.ts
 //   node tools/check-new-entries.mjs new.txt --also ../../khmer_base.mjs   # also compare with another dataset module
 //
 // Rules: an entry is skipped if ANY of its keys already exists (same normalisation as src/khmer/search.ts).
@@ -98,19 +98,19 @@ warn.slice(0, 40).forEach((s) => console.log("  WARN ", s));
 // 4) write only the new ones
 if (flag("--write")) {
   if (!good.length) { console.log("nothing to write"); process.exit(0); }
-  const part = path.resolve("src/khmer/data.extra.5.ts");
+  const part = path.resolve("src/khmer/data.hand.ts");
   const body = good.map(([k, a]) => `  [${JSON.stringify(k)}, ${JSON.stringify(a)}],`).join("\n");
-  let head = "// Hand-typed Khmer entries (check-new-entries.mjs). Earlier entries win on duplicate keys.\nexport const KHMER_EXTRA_PART_5: [string, string][] = [\n";
+  let head = "// Hand-typed Khmer entries (check-new-entries.mjs). Earlier entries win on duplicate keys.\nexport const KHMER_HAND_ENTRIES: [string, string][] = [\n";
   let prev = "";
   if (fs.existsSync(part)) { prev = fs.readFileSync(part, "utf8").replace(/\n\];\s*$/, "\n"); head = ""; }
   fs.writeFileSync(part, (prev || head) + body + "\n];\n");
 
   const agg = path.resolve("src/khmer/data.extra.ts");
   let s = fs.readFileSync(agg, "utf8");
-  if (!s.includes("KHMER_EXTRA_PART_5")) {
-    s = s.replace(/(import \{ KHMER_EXTRA_PART_4 \} from "\.\/data\.extra\.4\.js";)/, `$1\nimport { KHMER_EXTRA_PART_5 } from "./data.extra.5.js";`)
-         .replace(/(\s*\.\.\.KHMER_EXTRA_PART_4,)/, `$1\n  ...KHMER_EXTRA_PART_5,`);
+  if (!s.includes("KHMER_HAND_ENTRIES")) {
+    s = s.replace(/(import \{ KHMER_EXTRA_PART_4 \} from "\.\/data\.extra\.4\.js";)/, `$1\nimport { KHMER_HAND_ENTRIES } from "./data.extra.5.js";`)
+         .replace(/(\s*\.\.\.KHMER_EXTRA_PART_4,)/, `$1\n  ...KHMER_HAND_ENTRIES,`);
     fs.writeFileSync(agg, s);
   }
-  console.log(`appended ${good.length} entries to src/khmer/data.extra.5.ts. Now run: npm run verify`);
+  console.log(`appended ${good.length} entries to src/khmer/data.hand.ts. Now run: npm run verify`);
 }

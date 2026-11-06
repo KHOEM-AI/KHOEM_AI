@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// replace-answers.mjs: replace the ANSWER of existing hand-typed entries in src/khmer/data.extra.5.ts
+// replace-answers.mjs: replace the ANSWER of existing hand-typed entries in src/khmer/data.hand.ts
 // Input: lines  ["key|alias","new answer"],   (the key must match the existing entry exactly)
 // Usage (from KHOEM_AI/localization):
 //   node tools/replace-answers.mjs expand16.txt           # dry run: shows what would change
@@ -9,7 +9,7 @@ import path from "node:path";
 const file = process.argv[2];
 const write = process.argv.includes("--write");
 if (!file) { console.error("usage: node tools/replace-answers.mjs <file.txt> [--write]"); process.exit(2); }
-const target = path.resolve("src/khmer/data.extra.5.ts");
+const target = path.resolve("src/khmer/data.hand.ts");
 const seg = new Intl.Segmenter("km", { granularity: "word" });
 const words = (t) => [...seg.segment(t)].filter((s) => s.isWordLike).length;
 const repl = new Map();

@@ -3,12 +3,12 @@ import { KHMER_EXTRA_PART_1 } from "./data.extra.1.js";
 import { KHMER_EXTRA_PART_2 } from "./data.extra.2.js";
 import { KHMER_EXTRA_PART_3 } from "./data.extra.3.js";
 import { KHMER_EXTRA_PART_4 } from "./data.extra.4.js";
-import { KHMER_EXTRA_PART_5 } from "./data.extra.5.js";
+import { KHMER_HAND_ENTRIES } from "./data.hand.js";
 
 export const KHMER_EXTRA_ENTRIES: [string, string][] = [
   ...KHMER_EXTRA_PART_1,
   ...KHMER_EXTRA_PART_2,
   ...KHMER_EXTRA_PART_3,
   ...KHMER_EXTRA_PART_4,
-  ...KHMER_EXTRA_PART_5,
+  ...KHMER_HAND_ENTRIES,
 ];
