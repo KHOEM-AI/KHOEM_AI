@@ -727,3 +727,4 @@ khm_khmer_voanews/article/a_us-refugee-program-gets-slow-start-in-2018_4098586.j
 khm_khmer_voanews/article/a_white-house-covid-expert-virus-widespread-in-us-rural-urban-areas-_5528462.json
 khm_khmer_voanews/article/a_world-vaccine-scramble_5577920.json
 khm_khmer_voanews/article/a_xi-declares-a-people-s-war-on-the-coronavirus_5277888.json
+khm_khmer_voanews/article/a_a-40-2009-09-24-voa9-90179452_1141481.json
