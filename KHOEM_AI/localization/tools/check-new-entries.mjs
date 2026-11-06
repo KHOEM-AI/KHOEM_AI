@@ -108,7 +108,7 @@ if (flag("--write")) {
   const agg = path.resolve("src/khmer/data.extra.ts");
   let s = fs.readFileSync(agg, "utf8");
   if (!s.includes("KHMER_HAND_ENTRIES")) {
-    s = s.replace(/(import \{ KHMER_EXTRA_PART_4 \} from "\.\/data\.extra\.4\.js";)/, `$1\nimport { KHMER_HAND_ENTRIES } from "./data.extra.5.js";`)
+    s = s.replace(/(import \{ KHMER_EXTRA_PART_4 \} from "\.\/data\.extra\.4\.js";)/, `$1\nimport { KHMER_HAND_ENTRIES } from "./data.hand.js";`)
          .replace(/(\s*\.\.\.KHMER_EXTRA_PART_4,)/, `$1\n  ...KHMER_HAND_ENTRIES,`);
     fs.writeFileSync(agg, s);
   }
