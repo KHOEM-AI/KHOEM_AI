@@ -1,4 +1,4 @@
-# KHOEM_AI Khmer corpus: handoff (updated 2026-10-05)
+# KHOEM_AI Khmer corpus: handoff (updated 2026-11-07)
 
 Read this first. It supersedes the "Status snapshot" in CORPUS_STRATEGY.md.
 
@@ -9,12 +9,12 @@ Read this first. It supersedes the "Status snapshot" in CORPUS_STRATEGY.md.
 
 ## Target and progress
 - Target: 50,000,000 Khmer words (revised by the owner from 75,000,000 on 2026-10-05).
-- Counted: 23,388,795 (46.78%). Remaining: 26,611,205.
-- Counted sources: mot-km-voa-001 = 16,278,627; km-wiki-001 = 7,110,168.
+- Counted: 23,318,638 (46.64%). Remaining: 26,681,362. (pipeline.mjs, 2026-11-07)
+- Counted sources: mot-km-voa-001 = 16,208,466; km-wiki-001 = 7,110,172.
 - Tokenizer: Intl.Segmenter:km:word.
 
 ## Source status (details in corpus-sample/manifest.json)
-- mot-km-voa-001: approved (internal analysis, training). CC BY 4.0. 729 files excluded as likely third-party (exclude-third-party.txt); 144 files without outlet signals not human-reviewed; pipeline skips 821 non-Khmer articles.
+- mot-km-voa-001: approved (internal analysis, training). CC BY 4.0. 729 files excluded as likely third-party (exclude-third-party.txt); 2026-11-07 review (review-voa.mjs): 919 articles name a news agency; the 38 that look like credit lines were reviewed by the owner (1 excluded, 37 kept); the other 881 only cite an agency in running text and were not reviewed one by one; pipeline skips 821 non-Khmer articles.
 - km-wiki-001: approved (internal analysis, training). CC BY-SA 4.0, share-alike decided by the owner.
 - km-vocab-voa-001: derived wordlist, not corpus text, not counted. Approved for internal analysis and training.
 - oscar-2201-km: rejected (text rights not held, access suspended, research-only).
