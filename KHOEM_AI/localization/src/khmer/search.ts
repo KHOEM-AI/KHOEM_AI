@@ -1,25 +1,12 @@
-import { KHMER_ENTRIES } from "./data.js";
-import { KHMER_EXTRA_ENTRIES } from "./data.extra.js";
-import { KHMER_EXTRA2_ENTRIES } from "./data.extra2.js";
-import { KHMER_EXTRA3_ENTRIES } from "./data.extra3.js";
-import { KHMER_EXTRA4_ENTRIES } from "./data.extra4.js";
-import { KHMER_EXTRA5_ENTRIES } from "./data.extra5.js";
-import { KHMER_EXTRA6_ENTRIES } from "./data.extra6.js";
-import { KHMER_EXTRA7_ENTRIES } from "./data.extra7.js";
-import { KHMER_EXTRA8_ENTRIES } from "./data.extra8.js";
-
-const norm = (s: string): string =>
-  s
-    .normalize("NFC")
-    .trim()
-    .toLowerCase()
-    .replace(/[?។!！？,，.៖;；:]+$/u, "")
-    .replace(/\s+/gu, " ");
+import { KHMER_ALL_ENTRIES } from "./levels/index.js";
+import { foldKhmer, normKhmer as norm } from "./norm.js";
 
 const MAP = new Map<string, string>();
+// Spelling-variant fallback. null = the variants have different answers, so never guess.
+const FOLD = new Map<string, string | null>();
 const ALIASES: string[] = [];
 
-for (const [keys, answer] of [...KHMER_ENTRIES, ...KHMER_EXTRA_ENTRIES, ...KHMER_EXTRA2_ENTRIES, ...KHMER_EXTRA3_ENTRIES, ...KHMER_EXTRA4_ENTRIES, ...KHMER_EXTRA5_ENTRIES, ...KHMER_EXTRA6_ENTRIES, ...KHMER_EXTRA7_ENTRIES, ...KHMER_EXTRA8_ENTRIES]) {
+for (const [keys, answer] of KHMER_ALL_ENTRIES) {
   for (const alias of keys.split("|")) {
     const key = norm(alias);
     if (!key) continue;
@@ -28,7 +15,17 @@ for (const [keys, answer] of [...KHMER_ENTRIES, ...KHMER_EXTRA_ENTRIES, ...KHMER
       MAP.set(key, answer);
       ALIASES.push(key);
     }
+
+    const folded = foldKhmer(alias);
+    const seen = FOLD.get(folded);
+    if (seen === undefined) FOLD.set(folded, answer);
+    else if (seen !== answer) FOLD.set(folded, null);
   }
+}
+
+function foldLookup(q: string): string | null {
+  const key = foldKhmer(q);
+  return key ? FOLD.get(key) ?? null : null;
 }
 
 const chars = (s: string): string[] => Array.from(s);
@@ -81,7 +78,8 @@ function editDistance(a: string, b: string, limit: number): number {
 
 export function searchKhmerExact(q: string): string | null {
   const key = norm(q);
-  return key ? MAP.get(key) ?? null : null;
+  if (!key) return null;
+  return MAP.get(key) ?? foldLookup(q);
 }
 
 export function searchKhmer(q: string): string | null {
@@ -90,6 +88,9 @@ export function searchKhmer(q: string): string | null {
 
   const exact = MAP.get(key);
   if (exact !== undefined) return exact;
+
+  const folded = foldLookup(q);
+  if (folded !== null) return folded;
 
   const queryLength = chars(key).length;
 

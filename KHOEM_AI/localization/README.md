@@ -31,11 +31,11 @@ Documentation index: `../docs/README.md`.
 
 ## Khmer knowledge data (source of truth)
 
-- Files: `src/khmer/data.ts` (18,915 entries), `data.extra.1-4.ts` (25,555 entries, aggregated by `data.extra.ts`); total 44,470 entries, 50,965 unique triggers (measured 2026-10-28).
+- Files: `src/khmer/levels/level{1,2,3}/part-NNN.ts` (55401 entries in 76 parts, each at most 1000 entries). See `src/khmer/levels/README.md` and `ORIGIN.tsv`.
 - Full guide (format, lookup, how to add safely, limits): `../docs/KHMER_KNOWLEDGE.md`.
 - Entry format: `["key|alias2|alias3", "answer"]`. Answers are plain strings only.
-- Lookup order in `search.ts`: `KHMER_ENTRIES` first, then `KHMER_EXTRA_ENTRIES`
-  (earlier entries win on duplicate keys).
+- Lookup order in `search.ts`: level 1, then 2, then 3 (`KHMER_ALL_ENTRIES`); earlier entries win on duplicate keys.
+  Spelling variants (ឲ/ឱ, ្ដ/្ត) are matched only as a fallback when the exact key is missing and the variants agree on one answer.
 - Normalization (`norm`): NFC, trim, lowercase, strip trailing `? ។ ! ！ ？ , ， . ៖ ; ； :`,
   collapse whitespace. NOTE: the AI app uses a different `fold` (maps `្ដ` to `្ត`).
 - API: `GET /api/khmer?q=<text>&exact=1` (exact) or without `exact` (fuzzy, edit distance <= 1-2).
