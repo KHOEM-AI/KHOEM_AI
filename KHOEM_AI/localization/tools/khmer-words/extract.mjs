@@ -45,8 +45,6 @@ function walk(p, out = []) {
 
 const files = [];
 for (const f of [
-  `${L}/src/khmer/data.ts`, `${L}/src/khmer/data.extra.1.ts`, `${L}/src/khmer/data.extra.2.ts`,
-  `${L}/src/khmer/data.extra.3.ts`, `${L}/src/khmer/data.extra.4.ts`,
   `${L}/staging-ai-languages/khmer.clean14.mjs`, `${L}/staging-ai-languages/khmer.merged.mjs`,
   `${A}/data/voa-wordlist.tsv`,
 ]) if (existsSync(f)) files.push(f);
@@ -54,6 +52,9 @@ try {
   for (const n of readdirSync(`${A}/src/ai`)) if (/^(khmer|lexicon).*\.mjs$/.test(n)) files.push(`${A}/src/ai/${n}`);
 } catch { /* ignore */ }
 for (const arg of process.argv.slice(2)) files.push(...walk(arg));
+
+// every Khmer knowledge part (src/khmer/levels: level1, level2, level3)
+files.push(...walk(`${L}/src/khmer/levels`).filter((f) => /part-\d+\.ts$/.test(f)));
 
 const uniq = [...new Set(files)];
 const t0 = Date.now();

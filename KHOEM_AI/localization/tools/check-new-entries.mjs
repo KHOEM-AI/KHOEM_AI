@@ -6,17 +6,18 @@
 //   ["key|alias2","answer"],            (the same JSON-array line format used in khmer.mjs / data.extra.*.ts)
 //   Blank lines and lines starting with # are ignored.
 //
-// Usage (run from KHOEM_AI/localization, after `npm run build`):
+// Usage (run from KHOEM_AI/localization; reads the TypeScript source in src/khmer/levels, no build needed):
 //   node tools/check-new-entries.mjs new.txt            # report only
-//   node tools/check-new-entries.mjs new.txt --write    # append the NEW ones to src/khmer/data.hand.ts
+//   node tools/check-new-entries.mjs new.txt --write    # append the NEW ones to the END of level 1 (src/khmer/levels/), then regenerate index.ts/README/ORIGIN
 //   node tools/check-new-entries.mjs new.txt --also ../../khmer_base.mjs   # also compare with another dataset module
 //
-// Rules: an entry is skipped if ANY of its keys already exists (same normalisation as src/khmer/search.ts).
+// Rules: an entry is skipped if ANY of its keys already exists (same normalisation as src/khmer/norm.ts).
 // Answers are reported when they are far from ~50 words (default 35..80, change with --min/--max).
 
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { levelsDir, loadParts, norm, isPairs, appendToLevel1, appendOrigin, regenerate } from "./lib/khmer-levels.mjs";
 
 const args = process.argv.slice(2);
 const file = args.find((a) => !a.startsWith("--") && args[args.indexOf(a) - 1] !== "--also" && args[args.indexOf(a) - 1] !== "--min" && args[args.indexOf(a) - 1] !== "--max");
@@ -25,24 +26,19 @@ const val = (n, d) => (args.includes(n) ? args[args.indexOf(n) + 1] : d);
 if (!file) { console.error("usage: node tools/check-new-entries.mjs <file.txt> [--write] [--also module.mjs] [--min 35] [--max 80]"); process.exit(2); }
 const MIN = Number(val("--min", 35)), MAX = Number(val("--max", 80));
 
-const norm = (s) => s.normalize("NFC").trim().toLowerCase().replace(/[?។!！？,，.៖;；:]+$/u, "").replace(/\s+/gu, " ");
 const seg = new Intl.Segmenter("km", { granularity: "word" });
 const words = (t) => [...seg.segment(t)].filter((s) => s.isWordLike).length;
 
-// 1) existing keys from the compiled repo data (src/khmer/data*.ts -> dist/src/khmer/*.js)
-const distDir = path.resolve("dist/src/khmer");
+// 1) existing keys from the TypeScript source parts (src/khmer/levels)
+const dir = levelsDir();
 const existing = new Map(); // key -> where
 const addAll = (entries, where) => { for (const [keys] of entries) for (const k of keys.split("|")) { const n = norm(k); if (n && !existing.has(n)) existing.set(n, where); } };
-try {
-  addAll((await import(pathToFileURL(path.join(distDir, "data.js")))).KHMER_ENTRIES, "data.ts");
-  addAll((await import(pathToFileURL(path.join(distDir, "data.extra.js")))).KHMER_EXTRA_ENTRIES, "data.extra");
-} catch (e) { console.error("Cannot load dist/src/khmer. Run `npm run build` in localization first.\n" + e.message); process.exit(2); }
+for (const p of loadParts(dir)) addAll(p.entries, p.name);
 
 // 2) optional extra dataset modules
 for (let i = 0; i < args.length; i++) if (args[i] === "--also") {
   const m = await import(pathToFileURL(path.resolve(args[i + 1])));
   // use KHMER_DATASET_V2 / default if present, else EVERY exported array of ["keys","answer"] pairs (e.g. EXTRA_ENTRIES_10000, ..._PERSONA_CLAIMS)
-  const isPairs = (v) => Array.isArray(v) && v.length && Array.isArray(v[0]) && typeof v[0][0] === "string";
   const named = m.KHMER_DATASET_V2 ?? m.default;
   const arrays = isPairs(named) ? [["default", named]] : Object.entries(m).filter(([, v]) => isPairs(v));
   if (!arrays.length) { console.error(`--also ${args[i + 1]}: no array of ["key","answer"] pairs exported`); process.exit(2); }
@@ -95,22 +91,22 @@ console.log(`new & usable: ${good.length}   skipped (already exist): ${skipped.l
 skipped.slice(0, 40).forEach((s) => console.log("  SKIP ", s));
 warn.slice(0, 40).forEach((s) => console.log("  WARN ", s));
 
-// 4) write only the new ones
+// 4) write only the new ones: appended to the END of level 1 (new part when 1000 entries / 400000 bytes is reached)
 if (flag("--write")) {
   if (!good.length) { console.log("nothing to write"); process.exit(0); }
-  const part = path.resolve("src/khmer/data.hand.ts");
-  const body = good.map(([k, a]) => `  [${JSON.stringify(k)}, ${JSON.stringify(a)}],`).join("\n");
-  let head = "// Hand-typed Khmer entries (check-new-entries.mjs). Earlier entries win on duplicate keys.\nexport const KHMER_HAND_ENTRIES: [string, string][] = [\n";
-  let prev = "";
-  if (fs.existsSync(part)) { prev = fs.readFileSync(part, "utf8").replace(/\n\];\s*$/, "\n"); head = ""; }
-  fs.writeFileSync(part, (prev || head) + body + "\n];\n");
-
-  const agg = path.resolve("src/khmer/data.extra.ts");
-  let s = fs.readFileSync(agg, "utf8");
-  if (!s.includes("KHMER_HAND_ENTRIES")) {
-    s = s.replace(/(import \{ KHMER_EXTRA_PART_4 \} from "\.\/data\.extra\.4\.js";)/, `$1\nimport { KHMER_HAND_ENTRIES } from "./data.hand.js";`)
-         .replace(/(\s*\.\.\.KHMER_EXTRA_PART_4,)/, `$1\n  ...KHMER_HAND_ENTRIES,`);
-    fs.writeFileSync(agg, s);
+  const before = loadParts(dir).filter((p) => p.level === 1);
+  const firstPart = before[before.length - 1];
+  const touched = appendToLevel1(dir, good);
+  // ORIGIN.tsv rows: one per new entry, with its part and 1-based index inside that part
+  const originFile = path.join(dir, "ORIGIN.tsv");
+  const handBefore = fs.readFileSync(originFile, "utf8").split("\n").filter((l) => l.split("\t")[3] === "hand-typed").length;
+  const after = loadParts(dir).filter((p) => touched.includes(p.name));
+  let origin = handBefore + 1, left = good.length;
+  for (const p of after) {
+    const had = p.name === firstPart?.name ? firstPart.entries.length : 0;
+    const add = Math.min(left, p.entries.length - had);
+    if (add > 0) { appendOrigin(dir, p.name, had + 1, add, origin); origin += add; left -= add; }
   }
-  console.log(`appended ${good.length} entries to src/khmer/data.hand.ts. Now run: npm run verify`);
+  regenerate(dir);
+  console.log(`appended ${good.length} entries to ${touched.join(", ")} and regenerated index.ts, README.md, ORIGIN.tsv. Now run: npm run verify`);
 }

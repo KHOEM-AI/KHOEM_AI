@@ -1,25 +1,21 @@
 #!/usr/bin/env node
 // missing-from-repo.mjs: how much of the big phone files is NOT yet in the repo? (read-only, writes nothing in the repo)
-// usage (from KHOEM_AI/localization, after `npm run build`):
+// Reads src/khmer/levels (TypeScript source, no build needed).
+// usage (from KHOEM_AI/localization):
 //   node --max-old-space-size=3072 tools/missing-from-repo.mjs ~/base.mjs ~/downloads/khmer.extra35000.mjs
-// options: --dist dist/src/khmer   --out ~/tmp/missing.json
+// option: --out ~/tmp/missing.json
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { levelsDir, loadAllEntries, norm, isPairs } from "./lib/khmer-levels.mjs";
 const args = process.argv.slice(2);
 const val = (n, d) => (args.includes(n) ? args[args.indexOf(n) + 1] : d);
-const dist = path.resolve(val("--dist", "dist/src/khmer"));
 const out = val("--out", null);
-const mods = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--dist" && args[i - 1] !== "--out");
-const norm = (s) => s.normalize("NFC").trim().toLowerCase().replace(/[?។!！？,，.៖;；:]+$/u, "").replace(/\s+/gu, " ");
-const isPairs = (v) => Array.isArray(v) && v.length && Array.isArray(v[0]) && typeof v[0][0] === "string";
+const mods = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--out");
 
 // 1) every key the repo already answers
 const repo = new Set();
-for (const f of fs.readdirSync(dist).filter((f) => /^data(\.extra[\d.]*)?\.js$/.test(f))) {
-  const m = await import(pathToFileURL(path.join(dist, f)));
-  for (const v of Object.values(m)) if (isPairs(v)) for (const [k] of v) for (const a of k.split("|")) { const n = norm(a); if (n) repo.add(n); }
-}
+for (const [k] of loadAllEntries(levelsDir())) for (const a of k.split("|")) { const n = norm(a); if (n) repo.add(n); }
 console.log("keys already in repo:", repo.size);
 
 // 2) compare the big files (PERSONA_CLAIMS arrays are never counted)

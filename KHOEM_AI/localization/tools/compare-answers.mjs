@@ -1,25 +1,21 @@
 #!/usr/bin/env node
 // compare-answers.mjs: for entries of the big phone files, is the ANSWER text in the repo the same? (read-only)
-// usage (from KHOEM_AI/localization, after `npm run build`):
+// Reads src/khmer/levels (TypeScript source, no build needed).
+// usage (from KHOEM_AI/localization):
 //   node --max-old-space-size=3072 tools/compare-answers.mjs ~/base.mjs ~/downloads/khmer.extra35000.mjs [--out ~/tmp/different.json]
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { levelsDir, loadAllEntries, norm, isPairs } from "./lib/khmer-levels.mjs";
 const args = process.argv.slice(2);
 const val = (n, d) => (args.includes(n) ? args[args.indexOf(n) + 1] : d);
-const dist = path.resolve(val("--dist", "dist/src/khmer"));
 const out = val("--out", null);
-const mods = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--dist" && args[i - 1] !== "--out");
-const norm = (s) => s.normalize("NFC").trim().toLowerCase().replace(/[?។!！？,，.៖;；:]+$/u, "").replace(/\s+/gu, " ");
+const mods = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--out");
 const txt = (s) => s.normalize("NFC").replace(/\s+/gu, " ").trim();
-const isPairs = (v) => Array.isArray(v) && v.length && Array.isArray(v[0]) && typeof v[0][0] === "string";
 
 const repo = new Map(); // key -> answer (first wins, same as search.ts)
 let repoBytes = 0;
-for (const f of fs.readdirSync(dist).filter((f) => /^data(\.extra[\d.]*)?\.js$/.test(f))) {
-  const m = await import(pathToFileURL(path.join(dist, f)));
-  for (const v of Object.values(m)) if (isPairs(v)) for (const [k, a] of v) { repoBytes += Buffer.byteLength(a); for (const x of k.split("|")) { const n = norm(x); if (n && !repo.has(n)) repo.set(n, a); } }
-}
+for (const [k, a] of loadAllEntries(levelsDir())) { repoBytes += Buffer.byteLength(a); for (const x of k.split("|")) { const n = norm(x); if (n && !repo.has(n)) repo.set(n, a); } }
 console.log("repo: keys", repo.size, "| answer bytes", repoBytes);
 
 const diff = [];

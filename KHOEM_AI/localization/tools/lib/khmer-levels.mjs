@@ -1,0 +1,142 @@
+// Shared helper for the Khmer tools. Reads and writes src/khmer/levels/ (the TypeScript SOURCE, not dist/),
+// so the tools can never see stale compiled data.
+// Layout: levels/level{1,2,3}/part-NNN.ts, index.ts, README.md, ORIGIN.tsv (see levels/README.md).
+import fs from "node:fs";
+import path from "node:path";
+
+export const MAX_ENTRIES = 1000;
+export const MAX_BYTES = 400000;
+
+// Same as normKhmer in src/khmer/norm.ts (tests/khmer-tools.test.ts checks they agree).
+export const norm = (s) =>
+  s.normalize("NFC").replace(/[​-‍﻿]/gu, "").trim().toLowerCase()
+    .replace(/[?។!！？,，.៖;；:]+$/u, "").replace(/\s+/gu, " ");
+
+export const isPairs = (v) => Array.isArray(v) && v.length > 0 && Array.isArray(v[0]) && typeof v[0][0] === "string";
+
+export function levelsDir(base = "src/khmer/levels") {
+  const dir = path.resolve(base);
+  if (!fs.existsSync(path.join(dir, "index.ts"))) {
+    throw new Error(`Cannot find ${dir}/index.ts. Run this tool from KHOEM_AI/localization.`);
+  }
+  return dir;
+}
+
+// Parts in lookup order: level 1, 2, 3, then part number.
+export function listParts(dir) {
+  const parts = [];
+  for (const level of [1, 2, 3]) {
+    const sub = path.join(dir, `level${level}`);
+    if (!fs.existsSync(sub)) continue;
+    for (const f of fs.readdirSync(sub).filter((x) => /^part-\d{3}\.ts$/.test(x)).sort()) {
+      parts.push({ level, name: `level${level}/${f.replace(/\.ts$/, "")}`, file: path.join(sub, f) });
+    }
+  }
+  return parts;
+}
+
+// Entry lines look like:   ["key|alias","answer"],
+export function parseEntries(text) {
+  const out = [];
+  for (const line of text.split("\n")) {
+    const t = line.trim();
+    if (!t.startsWith('["')) continue;
+    const e = JSON.parse(t.replace(/,$/, ""));
+    if (!Array.isArray(e) || e.length !== 2 || typeof e[0] !== "string" || typeof e[1] !== "string") {
+      throw new Error("bad entry line: " + t.slice(0, 80));
+    }
+    out.push(e);
+  }
+  return out;
+}
+
+export function loadParts(dir) {
+  return listParts(dir).map((p) => ({ ...p, entries: parseEntries(fs.readFileSync(p.file, "utf8")) }));
+}
+
+// All entries in lookup order (the same order as KHMER_ALL_ENTRIES).
+export function loadAllEntries(dir) {
+  return loadParts(dir).flatMap((p) => p.entries);
+}
+
+// norm(key) -> answer (the first entry wins, same as search.ts).
+export function loadKeyMap(dir) {
+  const map = new Map();
+  for (const [keys, answer] of loadAllEntries(dir)) {
+    for (const k of keys.split("|")) { const n = norm(k); if (n && !map.has(n)) map.set(n, answer); }
+  }
+  return map;
+}
+
+const partHeader = (level, nnn, count) =>
+  `// Khmer knowledge, level ${level}, part ${nnn}: ${count} entries. Earlier entries win on duplicate keys.\n` +
+  `// Copyright (c) 2026 @KHOEM-AI. All rights reserved. See DATA-NOTICE.md. Origins of every entry: ORIGIN.tsv.\n`;
+export const partText = (level, nnn, entries) =>
+  partHeader(level, nnn, entries.length) + `export const L${level}_${nnn}: [string, string][] = [\n` +
+  entries.map(([k, a]) => `  [${JSON.stringify(k)},${JSON.stringify(a)}],\n`).join("") + `];\n`;
+
+// Rewrite one part file, or the line list inside it.
+const lineBytes = (e) => Buffer.byteLength(`  [${JSON.stringify(e[0])},${JSON.stringify(e[1])}],\n`);
+// Bytes of the entry lines only. MAX_BYTES limits this number (the 2-line header adds about 200 bytes to the file).
+export const entryBytes = (entries) => entries.reduce((n, e) => n + lineBytes(e), 0);
+// Size of the whole part FILE (header included), the same number the README table reports.
+const fileBytes = (level, nnn, entries) => Buffer.byteLength(partText(level, nnn, entries));
+
+// Append entries to the END of level 1 (the last part). A new part starts when the entry limit or the byte limit would be passed.
+// Returns the list of touched part names. Does NOT regenerate index/README/ORIGIN (call regenerate()).
+export function appendToLevel1(dir, entries) {
+  const parts = loadParts(dir).filter((p) => p.level === 1);
+  let last = parts[parts.length - 1];
+  const touched = new Set();
+  let cur = last ? last.entries.slice() : [];
+  let num = last ? Number(/part-(\d{3})$/.exec(last.name)[1]) : 1;
+  let bytes = entryBytes(cur);
+  const flush = () => {
+    const nnn = String(num).padStart(3, "0");
+    fs.mkdirSync(path.join(dir, "level1"), { recursive: true });
+    fs.writeFileSync(path.join(dir, "level1", `part-${nnn}.ts`), partText(1, nnn, cur));
+    touched.add(`level1/part-${nnn}`);
+  };
+  for (const e of entries) {
+    const b = lineBytes(e);
+    if (cur.length >= MAX_ENTRIES || bytes + b > MAX_BYTES) { flush(); num++; cur = []; bytes = 0; }
+    cur.push(e); bytes += b;
+  }
+  flush();
+  return [...touched];
+}
+
+const rows = (parts) => parts.map((p) => ({ level: p.level, name: p.name, n: p.entries.length, bytes: fileBytes(p.level, /part-(\d{3})$/.exec(p.name)[1], p.entries) }));
+
+export function indexText(parts) {
+  const id = (p) => `L${p.level}_${/part-(\d{3})$/.exec(p.name)[1]}`;
+  return `// AUTO-GENERATED by restructure-khmer.mjs. Parts are listed level 1, then 2, then 3; earlier entries win on duplicate keys.\n` +
+    parts.map((p) => `import { ${id(p)} } from "./${p.name}.js";\n`).join("") +
+    `\nexport interface KhmerPart { readonly level: 1 | 2 | 3; readonly name: string; readonly entries: [string, string][]; }\n\n` +
+    `export const KHMER_PARTS: readonly KhmerPart[] = [\n` +
+    parts.map((p) => `  { level: ${p.level}, name: ${JSON.stringify(p.name)}, entries: ${id(p)} },\n`).join("") +
+    `];\n\nexport const KHMER_ALL_ENTRIES: [string, string][] = KHMER_PARTS.flatMap((p) => p.entries);\n`;
+}
+
+// Regenerate index.ts and the numbers in the README table from the part files on disk.
+// With nothing changed this reproduces the existing files byte for byte.
+export function regenerate(dir) {
+  const parts = loadParts(dir);
+  fs.writeFileSync(path.join(dir, "index.ts"), indexText(parts));
+  const readmeFile = path.join(dir, "README.md");
+  let readme = fs.readFileSync(readmeFile, "utf8");
+  const stat = (lv) => { const r = rows(parts.filter((p) => p.level === lv)); return { parts: r.length, n: r.reduce((a, x) => a + x.n, 0), bytes: r.reduce((a, x) => a + x.bytes, 0) }; };
+  for (const lv of [1, 2, 3]) {
+    const s = stat(lv);
+    readme = readme.replace(new RegExp(`^(\\| ${lv} \\| [^|]*\\| )\\d+( \\| )\\d+( \\| )\\d+( \\|)$`, "m"), `$1${s.parts}$2${s.n}$3${s.bytes}$4`);
+  }
+  fs.writeFileSync(readmeFile, readme);
+}
+
+// Add ORIGIN.tsv rows for newly appended entries (origin_file "hand-typed", origin_index = running number).
+export function appendOrigin(dir, partName, firstIndex, count, originStart) {
+  const f = path.join(dir, "ORIGIN.tsv");
+  let add = "";
+  for (let i = 0; i < count; i++) add += `1\t${partName}\t${firstIndex + i}\thand-typed\t${originStart + i}\n`;
+  fs.appendFileSync(f, add);
+}
