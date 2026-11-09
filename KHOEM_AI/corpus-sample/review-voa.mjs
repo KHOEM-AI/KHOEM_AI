@@ -4,6 +4,7 @@
 //   node review-voa.mjs --list        count + preview candidate files, change nothing
 //   node review-voa.mjs               interactive: x = exclude, k = keep, s = skip for now, q = quit (resumable)
 // Options: --only credit|mention  (review only source-line-like hits, or only mid-text mentions)
+//          --sample N [--seed S]  review only N randomly chosen candidates (same N for the same seed), to estimate how many need excluding
 // Candidates = articles NOT already in exclude-third-party.txt / pending-third-party-review.txt that mention
 // a known outlet or credit anywhere in the text. Decisions are saved in review-decisions.json.
 import fs from "node:fs";
@@ -38,6 +39,14 @@ for (const fn of fs.readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) 
   const m = text.match(SIGNAL); if (!m) continue;
   const c = classify(ps); if (only && c.cls !== only) continue;
   cands.push({ fn, id, j, ps, text, at: m.index, hit: m[0], cls: c.cls });
+}
+const total = cands.length;
+if (a.includes("--sample")) {
+  const N = Number(a[a.indexOf("--sample") + 1]), seed = a.includes("--seed") ? Number(a[a.indexOf("--seed") + 1]) : 1;
+  let t = seed >>> 0; const rnd = () => { t = (t + 0x6D2B79F5) >>> 0; let x = Math.imul(t ^ (t >>> 15), 1 | t); x ^= x + Math.imul(x ^ (x >>> 7), 61 | x); return ((x ^ (x >>> 14)) >>> 0) / 4294967296; };
+  for (let i = cands.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [cands[i], cands[j]] = [cands[j], cands[i]]; }
+  if (N > 0) cands.length = Math.min(N, cands.length);
+  console.log(`sampling ${cands.length} of ${total} candidates (seed ${seed})`);
 }
 console.log(`candidates: ${cands.length}   already decided: ${Object.keys(dec).length}   excluded/pending lists: ${done.size}`);
 const byCls = {}, byHit = {}; cands.forEach((c) => { byCls[c.cls] = (byCls[c.cls] || 0) + 1; byHit[c.hit] = (byHit[c.hit] || 0) + 1; });
