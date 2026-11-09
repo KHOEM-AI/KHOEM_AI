@@ -5,7 +5,7 @@ Each part holds at most 1000 entries and 400000 bytes. When a part is full, star
 
 | Level | Rule (entries sharing the same answer text) | Parts | Entries | Total bytes |
 |---|---|---|---|---|
-| 1 | answer used by 1 entry | 32 | 21167 | 11691947 |
+| 1 | answer used by 1 entry | 32 | 21180 | 11702120 |
 | 2 | answer shared by 2-5 entries | 13 | 10325 | 4736890 |
 | 3 | answer shared by 6+ entries (generic template answers) | 31 | 24055 | 11876398 |
 
