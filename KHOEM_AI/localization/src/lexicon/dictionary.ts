@@ -1,19 +1,20 @@
 import { loadLocale } from "../core/loader.js";
 import { KhoemError } from "../core/errors.js";
 import { COLOR_TERMS } from "./colors.js";
+import { PHRASE_TERMS } from "./phrases.js";
 
 export type DictLang = "en" | "km" | "zh";
 const LANGS: readonly string[] = ["en", "km", "zh"];
 
 interface Entry {
   key: string;
-  source: "ui" | "color";
+  source: "ui" | "color" | "phrase";
   texts: Record<DictLang, string>;
 }
 
 export interface DictMatch {
   key: string;
-  source: "ui" | "color";
+  source: "ui" | "color" | "phrase";
   original: string;
   text: string;
   missing: boolean;
@@ -48,6 +49,9 @@ async function build(): Promise<Entry[]> {
   }
   for (const c of COLOR_TERMS) {
     entries.push({ key: "color." + c.id, source: "color", texts: { en: c.en, km: c.km, zh: c.zh } });
+  }
+  for (const p of PHRASE_TERMS) {
+    entries.push({ key: "phrase." + p.id, source: "phrase", texts: { en: p.en, km: p.km, zh: p.zh } });
   }
   return entries;
 }

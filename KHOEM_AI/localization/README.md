@@ -63,3 +63,9 @@ Documentation index: `../docs/README.md`.
 - `known` = មានក្នុង `data/khmer-words.clean.tsv` មិនមែនមានន័យបកប្រែទេ។ ព្យញ្ជនៈតែមួយ (ក ខ ឆ...) មិនរាប់ជាពាក្យ
 - `translation` ចេញតែពេលពាក្យនោះមានក្នុងវចនានុក្រម (`/api/dictionary`)
 - កូដ៖ `src/lexicon/khmerWords.ts`
+
+## Phrase dictionary (draft, 2026-11-10)
+`src/lexicon/phrases.ts` មានពាក្យ និងឃ្លាប្រចាំថ្ងៃ English · ខ្មែរ · 中文 (សួស្តី លេខ ថ្ងៃ គ្រួសារ ម្ហូប កិរិយាស័ព្ទ ប្រទេស...)
+- ចូលក្នុង `/api/dictionary` ជា `source: "phrase"` ហើយ `/api/khmer-words` ប្រើវាសម្រាប់ព្រួញបកប្រែ
+- **ព្រាង** ការបកប្រែមិនទាន់មានអ្នកខ្មែរ/ចិនផ្ទៀងផ្ទាត់ សូមកែកំហុសក្នុងឯកសារ
+- បន្ថែម៖ ដាក់ជួរ `["English", "ខ្មែរ", "中文"]` ក្នុង `RAW` ហើយរត់ `npm test`
